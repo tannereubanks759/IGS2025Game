@@ -61,7 +61,7 @@ public class zombieAIV1 : MonoBehaviour
     // Handles AI movement
     void MoveAI()
     {
-        if (animator.GetBool("playerDetected") && animator.GetBool("isStanding") && !animator.GetBool("canAttack"))
+        if (animator.GetBool("playerDetected") && animator.GetBool("isStanding") && !animator.GetBool("canAttack") && (animator.GetInteger("health") >= 1))
         {
             // set the agent's destination to be the player's position
             agent.destination = player.transform.position;
@@ -71,16 +71,29 @@ public class zombieAIV1 : MonoBehaviour
     // Checks if the AI can attack
     void CanAttack()
     {
-        
+        // There are times when the distance doesnt seem to line up (ie ().mag = 2f, which is greater than 1.5f)
+        Debug.Log((player.transform.position - this.transform.position).magnitude);
+
+        // Set the canAttack bool in the animator if the player is in attack range
         if ((player.transform.position - this.transform.position).magnitude < attackRange)
         {
+            // Stop the agent then attack
             agent.isStopped = true;
             animator.SetBool("canAttack", true);
         }
         else
         {
+            // Activate the agent again then allow the player to move
             agent.isStopped = false;
             animator.SetBool("canAttack", false);
         }
+    }
+
+    // "Despawns" the bodies of dead zombies (add a fade out later)
+    public void Death()
+    {
+        // Anim plays multiple times, not sure if the agent.isStopped line is even working
+        agent.isStopped = true;
+        Destroy(this.gameObject);
     }
 }
