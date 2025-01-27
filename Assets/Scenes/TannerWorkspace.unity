@@ -337,8 +337,13 @@ MonoBehaviour:
   bullet: {fileID: 44114013129905757, guid: 62c1c5f6629bdb9479545f549bcbfd35, type: 3}
   ShootKey: 323
   AimKey: 324
+  ReloadKey: 114
   muzzleFlash: {fileID: 1514201517}
   fireRate: 0.1
+  magazineSize: 30
+  bulletCount: 0
+  anim: {fileID: 548301189}
+  playerScript: {fileID: 4459864851273614952}
 --- !u!95 &548301189
 Animator:
   serializedVersion: 7
@@ -705,28 +710,6 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &46858429913503907
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6374602723462498250}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 59052c6b39b1d414ca3e3111674c620c, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &133467482378689742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,6 +2942,7 @@ MonoBehaviour:
   playerCanMove: 1
   walkSpeed: 5
   maxVelocityChange: 10
+  isWalking: 0
   enableSprint: 1
   unlimitedSprint: 1
   sprintKey: 304
@@ -2973,6 +2957,7 @@ MonoBehaviour:
   sprintBar: {fileID: 4459864849869884064}
   sprintBarWidthPercent: 0.3
   sprintBarHeightPercent: 0.02
+  isSprinting: 0
   enableJump: 1
   jumpKey: 32
   jumpPower: 5
@@ -3430,7 +3415,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7938855207321908697}
-  - component: {fileID: 46858429913503907}
   m_Layer: 0
   m_Name: FpsArms
   m_TagString: Untagged

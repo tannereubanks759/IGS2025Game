@@ -24,8 +24,34 @@ public class GunScript : MonoBehaviour
     }
     void Update()
     {
-        
+        //anim control for walking and running
+        if (playerScript.isSprinting)
+        {
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isRunning", true);
+        }
+        else if (playerScript.isWalking)
+        {
+            anim.SetBool("isWalking", true);
+            anim.SetBool("isRunning", false);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isRunning", false);
+        }
 
+
+
+
+
+
+
+
+
+
+
+        //anim for aiming
         if (Input.GetKey(AimKey))
         {
             anim.SetBool("isAiming", true);
@@ -34,6 +60,11 @@ public class GunScript : MonoBehaviour
         {
             anim.SetBool("isAiming", false);
         }
+
+
+
+
+        //anim for shooting
         if (Input.GetKey(ShootKey))
         {
             if(nextFire < Time.time && bulletCount > 0f) //has ammo
@@ -54,6 +85,13 @@ public class GunScript : MonoBehaviour
             anim.SetBool("isFiring", false);
         }
 
+
+
+
+
+
+
+        //anim for reloading
         if (Input.GetKeyDown(ReloadKey))
         {
             anim.SetTrigger("isReloading");
