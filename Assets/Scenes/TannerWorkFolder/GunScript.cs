@@ -1,3 +1,4 @@
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -18,6 +19,7 @@ public class GunScript : MonoBehaviour
     public FirstPersonController playerScript;
     public AudioSource gunSound;
     public AudioClip ammoEmptySound;
+    public float velocityThresh;
 
     void Start()
     {
@@ -27,12 +29,12 @@ public class GunScript : MonoBehaviour
     void Update()
     {
         //anim control for walking and running
-        if (playerScript.isSprinting && playerScript.rb.linearVelocity != Vector3.zero)
+        if (playerScript.isSprinting && playerScript.rb.linearVelocity.magnitude > velocityThresh)
         {
             anim.SetBool("isWalking", false);
             anim.SetBool("isRunning", true);
         }
-        else if (playerScript.isWalking)
+        else if ((Mathf.Abs(Input.GetAxis("Horizontal")) > .1f || Mathf.Abs(Input.GetAxis("Vertical")) > .1f) && playerScript.rb.linearVelocity.magnitude > velocityThresh)
         {
             anim.SetBool("isWalking", true);
             anim.SetBool("isRunning", false);
@@ -82,9 +84,9 @@ public class GunScript : MonoBehaviour
 
 
         //anim for reloading
-        if (Input.GetKeyDown(ReloadKey))
+        if (Input.GetKeyDown(ReloadKey) && anim.GetBool("isReloading") == false)
         {
-            anim.SetTrigger("isReloading");
+            anim.SetBool("isReloading", true);
             //Reload();
         }
     }
@@ -99,5 +101,10 @@ public class GunScript : MonoBehaviour
     public void Reload()
     {
         bulletCount = magazineSize;
+    }
+
+    public void SetReloadingFalse()
+    {
+        anim.SetBool("isReloading", false);
     }
 }
