@@ -1,18 +1,22 @@
 using Unity.AppUI.UI;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class miniGameScript : MonoBehaviour
 {
     public GameObject ui;
+    public GameObject questUI;
     public bool isInteractable = false;
     private bool hasQuest = false;
     public string quest;
+    public TextMeshProUGUI questText;
     public string[] quests = { "Get 8 headshots", "Get kills within indicated zone", "Get 5 kills without reloading " };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ui.SetActive(false);
+        questUI.SetActive(false);
     }
     
     // Update is called once per frame
@@ -53,7 +57,28 @@ public class miniGameScript : MonoBehaviour
         Debug.Log(number);
         hasQuest = true;
         quest = quests[number];
+        questStarter(quest, number);
         Debug.Log(quest);
     }
+    void questStarter(string textFromArray, int numberOfQuest)
+    {
+        //bool isGoal = false;
+        questText.text = textFromArray;
+        questUI.SetActive(true);
+    }
+    void headShot()
+    {
+        Debug.Log("headshot quest");
+        //quest 1 tracks headshots
+    }
+    void timeInArea()
+    {
+        Debug.Log("time quest");
+        // tracks time in area with colliders
+    }
+        
+
+
+    
     
 }
