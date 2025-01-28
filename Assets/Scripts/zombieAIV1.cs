@@ -89,6 +89,13 @@ public class zombieAIV1 : MonoBehaviour
         }
     }
 
+    // Public function to call when the zombie takes damage
+    public void TakeDamage()
+    {
+        // Set the health by getting the health and subtracting 1
+        animator.SetInteger("health", animator.GetInteger("health") - 1);
+    }
+
     // "Despawns" the bodies of dead zombies (add a fade out later)
     public void Death()
     {
