@@ -103,8 +103,18 @@ public class zombieAIV1 : MonoBehaviour
         if (animator.GetInteger("health") <= 0)
         {
             animator.SetBool("isDead", true);
+
             // Anim plays multiple times, not sure if the agent.isStopped line is even working
             agent.isStopped = true;
+
+            // Get the colliders on the gameobject
+            Collider[] colliders = this.GetComponentsInChildren<Collider>();
+
+            // Disable colliders
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                colliders[i].enabled = false;
+            }
         }
     }
 
