@@ -34,6 +34,7 @@ public class zombieAIV1 : MonoBehaviour
         PlayerDetected();
         MoveAI();
         CanAttack();
+        IsDead();
     }
 
     // Set the is standing bool to true
@@ -96,11 +97,21 @@ public class zombieAIV1 : MonoBehaviour
         animator.SetInteger("health", animator.GetInteger("health") - i);
     }
 
+    // Checks if the AI is dead
+    void IsDead()
+    {
+        if (animator.GetInteger("health") <= 0)
+        {
+            animator.SetBool("isDead", true);
+            // Anim plays multiple times, not sure if the agent.isStopped line is even working
+            agent.isStopped = true;
+        }
+    }
+
+
     // "Despawns" the bodies of dead zombies (add a fade out later)
     public void Death()
     {
-        // Anim plays multiple times, not sure if the agent.isStopped line is even working
-        agent.isStopped = true;
         Destroy(this.gameObject);
     }
 }
