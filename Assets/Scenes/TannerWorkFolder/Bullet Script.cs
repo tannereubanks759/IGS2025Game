@@ -6,8 +6,10 @@ public class BulletScript : MonoBehaviour
     private Rigidbody rb;
     private float lifeTimer = 1f; //Seconds
     private float nextTime;
+    private ParticleSystem bulletImpact;
     void Start()
     {
+        bulletImpact = this.GetComponent<ParticleSystem>();
         nextTime = Time.time + lifeTimer;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(this.transform.forward * velocity, ForceMode.Impulse);
@@ -23,7 +25,11 @@ public class BulletScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        nextTime += .3f;
         Debug.Log("bullet collided");
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        bulletImpact.Play();
+        rb.isKinematic = true;
+        
     }
 }

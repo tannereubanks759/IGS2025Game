@@ -10,12 +10,14 @@ public class GunScript : MonoBehaviour
     public KeyCode AimKey;
     public KeyCode ReloadKey;
     public VisualEffect muzzleFlash;
-    public float fireRate;
+    //public float fireRate;
     public float magazineSize;
     public float bulletCount;
     public Animator anim; //booleans: isWalking isRunning isAiming isFiring isReloading
     private float nextFire;
     public FirstPersonController playerScript;
+    public AudioSource gunSound;
+    public AudioClip ammoEmptySound;
 
     void Start()
     {
@@ -25,7 +27,7 @@ public class GunScript : MonoBehaviour
     void Update()
     {
         //anim control for walking and running
-        if (playerScript.isSprinting)
+        if (playerScript.isSprinting && playerScript.rb.linearVelocity != Vector3.zero)
         {
             anim.SetBool("isWalking", false);
             anim.SetBool("isRunning", true);
@@ -43,14 +45,6 @@ public class GunScript : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-
         //anim for aiming
         if (Input.GetKey(AimKey))
         {
@@ -62,22 +56,18 @@ public class GunScript : MonoBehaviour
         }
 
 
-
-
         //anim for shooting
         if (Input.GetKey(ShootKey))
         {
-            if(nextFire < Time.time && bulletCount > 0f) //has ammo
-            {
-                Fire();
-            }
-            else if(nextFire < Time.time && bulletCount <= 0f) //does not have ammo
-            {
-                //play tick sound here
-            }
             if(bulletCount > 0f)
             {
                 anim.SetBool("isFiring", true);
+            }
+            else if(Time.time > nextFire)
+            {
+                gunSound.PlayOneShot(ammoEmptySound, .5f);
+                nextFire = Time.time + 1f;
+                anim.SetBool("isFiring", false);
             }
         }
         else
@@ -85,10 +75,10 @@ public class GunScript : MonoBehaviour
             anim.SetBool("isFiring", false);
         }
 
-
-
-
-
+        if (Input.GetKeyDown(ShootKey) && bulletCount <= 0f)
+        {
+            gunSound.PlayOneShot(ammoEmptySound, .5f);
+        }
 
 
         //anim for reloading
@@ -102,7 +92,6 @@ public class GunScript : MonoBehaviour
     {
         Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
         muzzleFlash.Play();
-        nextFire = Time.time + fireRate;
         bulletCount -= 1f;
         Debug.Log("Fire");
     }
