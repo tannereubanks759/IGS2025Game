@@ -25,11 +25,30 @@ public class BulletScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        nextTime += .3f;
-        Debug.Log("bullet collided");
-        //Destroy(this.gameObject);
-        bulletImpact.Play();
-        rb.isKinematic = true;
+        if (collision.gameObject.layer == 8)
+        {
+            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(1);
+            nextTime += .3f;
+            Debug.Log("Hit Zombie");
+            bulletImpact.Play();
+            rb.isKinematic = true;
+        }
+        else if (collision.gameObject.layer == 9)
+        {
+            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(3);
+            nextTime += .3f;
+            Debug.Log("Hit Zombie head");
+            bulletImpact.Play();
+            rb.isKinematic = true;
+        }
+        else
+        {
+            nextTime += .3f;
+            Debug.Log("bullet collided");
+            bulletImpact.Play();
+            rb.isKinematic = true;
+        }
+        
         
     }
 }

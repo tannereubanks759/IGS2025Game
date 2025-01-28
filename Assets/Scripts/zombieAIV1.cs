@@ -72,7 +72,7 @@ public class zombieAIV1 : MonoBehaviour
     void CanAttack()
     {
         // There are times when the distance doesnt seem to line up (ie ().mag = 2f, which is greater than 1.5f)
-        Debug.Log((player.transform.position - this.transform.position).magnitude);
+        //Debug.Log((player.transform.position - this.transform.position).magnitude);
 
         // Set the canAttack bool in the animator if the player is in attack range
         if ((player.transform.position - this.transform.position).magnitude < attackRange)
@@ -90,10 +90,10 @@ public class zombieAIV1 : MonoBehaviour
     }
 
     // Public function to call when the zombie takes damage
-    public void TakeDamage()
+    public void TakeDamage(int i)
     {
         // Set the health by getting the health and subtracting 1
-        animator.SetInteger("health", animator.GetInteger("health") - 1);
+        animator.SetInteger("health", animator.GetInteger("health") - i);
     }
 
     // "Despawns" the bodies of dead zombies (add a fade out later)
