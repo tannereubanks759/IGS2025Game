@@ -16,11 +16,7 @@ public class swingTrap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //debug key
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            trapAnim.SetBool("isOn", true);
-        }
+        
         if (Input.GetKeyDown(KeyCode.E)&& canInteract) 
         {
             trapAnim.SetBool("isOn", true);
