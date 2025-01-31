@@ -14,10 +14,14 @@ public class zombieAIV1 : MonoBehaviour
 
     // The number that controls the melee range of the ai
     float attackRange = 1.5f;
-
+    private bool isDead = false;
+    private miniGameScript miniGameS;
+    public GameObject objWscript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+      miniGameS = objWscript.GetComponent<miniGameScript>();
+        
         // Get the navmesh agent from the gameObject
         agent = GetComponent<NavMeshAgent>();
 
@@ -94,7 +98,24 @@ public class zombieAIV1 : MonoBehaviour
     public void TakeDamage(int i)
     {
         // Set the health by getting the health and subtracting 1
-        animator.SetInteger("health", animator.GetInteger("health") - i);
+        if(isDead!=true)
+        {
+            animator.SetInteger("health", animator.GetInteger("health") - i);
+            // If a headshot
+            if (i == 3)
+            {
+                // and the headshot minigame is active
+                if (miniGameS.headShotQuest == true)
+                {
+                    
+                    miniGameS.currentHeadShots += 1;
+                    //Debug.Log("Headshot tracked");
+                    isDead = true;
+                    miniGameS.printHs();
+                }
+            }
+        }
+       
     }
 
     // Checks if the AI is dead

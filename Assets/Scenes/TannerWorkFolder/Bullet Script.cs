@@ -7,6 +7,7 @@ public class BulletScript : MonoBehaviour
     private float lifeTimer = 1f; //Seconds
     private float nextTime;
     private ParticleSystem bulletImpact;
+    miniGameScript miniScript;
     void Start()
     {
         bulletImpact = this.GetComponent<ParticleSystem>();
