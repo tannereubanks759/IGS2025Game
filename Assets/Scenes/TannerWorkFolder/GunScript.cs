@@ -1,7 +1,8 @@
 using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.VFX;
-
+using UnityEngine.UI;
+using TMPro;
 public class GunScript : MonoBehaviour
 {
     
@@ -14,17 +15,20 @@ public class GunScript : MonoBehaviour
     //public float fireRate;
     public float magazineSize;
     public float bulletCount;
+    private float totalAmmo;
     public Animator anim; //booleans: isWalking isRunning isAiming isFiring isReloading
     private float nextFire;
     public FirstPersonController playerScript;
     public AudioSource gunSound;
     public AudioClip ammoEmptySound;
     public float velocityThresh;
-
+    public TextMeshProUGUI BulletText;
     void Start()
     {
         bulletCount = magazineSize;
         nextFire = Time.time;
+        totalAmmo = 400;
+        BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
     }
     void Update()
     {
@@ -65,12 +69,18 @@ public class GunScript : MonoBehaviour
             {
                 anim.SetBool("isFiring", true);
             }
-            else if(Time.time > nextFire)
+            else
             {
-                gunSound.PlayOneShot(ammoEmptySound, .5f);
-                nextFire = Time.time + 1f;
                 anim.SetBool("isFiring", false);
+                if (Time.time > nextFire)
+                {
+                    gunSound.PlayOneShot(ammoEmptySound, .5f);
+                    nextFire = Time.time + 1f;
+
+                }
             }
+            
+            
         }
         else
         {
@@ -95,12 +105,15 @@ public class GunScript : MonoBehaviour
         Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
         muzzleFlash.Play();
         bulletCount -= 1f;
+        BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
         Debug.Log("Fire");
     }
 
     public void Reload()
     {
+        totalAmmo -= magazineSize - bulletCount;
         bulletCount = magazineSize;
+        BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
     }
 
     public void SetReloadingFalse()
