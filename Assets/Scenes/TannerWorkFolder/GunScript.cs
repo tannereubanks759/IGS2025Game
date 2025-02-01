@@ -19,10 +19,17 @@ public class GunScript : MonoBehaviour
     public Animator anim; //booleans: isWalking isRunning isAiming isFiring isReloading
     private float nextFire;
     public FirstPersonController playerScript;
-    public AudioSource gunSound;
-    public AudioClip ammoEmptySound;
+    
     public float velocityThresh;
     public TextMeshProUGUI BulletText;
+
+    //sounds
+    public AudioSource gunSound;
+    public AudioClip ammoEmptySound;
+    public AudioClip unload;
+    public AudioClip load;
+    public AudioClip gunShot;
+
     void Start()
     {
         bulletCount = magazineSize;
@@ -104,7 +111,11 @@ public class GunScript : MonoBehaviour
     {
         Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
         muzzleFlash.Play();
-        bulletCount -= 1f;
+        gunSound.PlayOneShot(gunShot, .2f);
+        if(bulletCount > 0)
+        {
+            bulletCount -= 1f;
+        }
         BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
         Debug.Log("Fire");
     }
@@ -119,5 +130,24 @@ public class GunScript : MonoBehaviour
     public void SetReloadingFalse()
     {
         anim.SetBool("isReloading", false);
+    }
+    public void SetTotalAmmo(float total)
+    {
+        totalAmmo = total;
+        BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
+    }
+    public float GetTotalAmmo()
+    {
+        return totalAmmo;
+    }
+
+    public void PlayLoadSound()
+    {
+        gunSound.PlayOneShot(load, .5f);
+
+    }
+    public void PlayUnloadSound()
+    {
+        gunSound.PlayOneShot(unload, .5f);
     }
 }
