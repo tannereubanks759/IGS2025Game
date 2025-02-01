@@ -59,7 +59,7 @@ public class GunScript : MonoBehaviour
 
 
         //anim for shooting
-        if (Input.GetKey(ShootKey))
+        if (playerScript.cameraCanMove && Input.GetKey(ShootKey))
         {
             if(bulletCount > 0f)
             {
