@@ -13,7 +13,7 @@ public class zombieAIV1 : MonoBehaviour
     Animator animator;
 
     // The number that controls the melee range of the ai
-    float attackRange = 1.5f;
+    float attackRange = 2f;
 
     // Colliders to handle the ai attacking the player
     [SerializeField] private Collider rightHand;
@@ -90,11 +90,12 @@ public class zombieAIV1 : MonoBehaviour
         //Debug.Log((player.transform.position - this.transform.position).magnitude);
 
         // Set the canAttack bool in the animator if the player is in attack range
-        if ((player.transform.position - this.transform.position).magnitude < attackRange)
+        if (Vector3.Distance(this.transform.position, player.transform.position) < attackRange)
         {
             // Stop the agent then attack
-            agent.isStopped = true;
             animator.SetBool("canAttack", true);
+            agent.isStopped = true;
+            
         }
         else
         {

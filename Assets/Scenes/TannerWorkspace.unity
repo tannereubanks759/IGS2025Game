@@ -256,6 +256,127 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &116542164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 116542167}
+  - component: {fileID: 116542166}
+  - component: {fileID: 116542165}
+  m_Layer: 0
+  m_Name: Spot Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &116542165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116542164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &116542166
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116542164}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 160.3
+  m_Range: 15.9
+  m_SpotAngle: 82.27434
+  m_InnerSpotAngle: 0
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!4 &116542167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116542164}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 9.85, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &143814996
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,12 +824,7 @@ Transform:
   m_LocalPosition: {x: -13.203853, y: 2.7747936, z: 7.9907637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1422054863}
-  - {fileID: 1166437888}
-  - {fileID: 811202534}
-  - {fileID: 402683560}
-  - {fileID: 1833811964}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274005821
@@ -849,11 +965,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274005821}
   m_CullTransparentMesh: 1
---- !u!4 &402683560 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-  m_PrefabInstance: {fileID: 847533356}
-  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &380941770
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3804341465483610741, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_Name
+      value: AdultZombieClown
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.685278
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000023841858
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.481199
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 83d4438cb5467924385696a364b29866, type: 3}
 --- !u!1 &412900333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,63 +1654,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698134745}
   m_CullTransparentMesh: 1
---- !u!1001 &713083129
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 238365405}
-    m_Modifications:
-    - target: {fileID: 3804341465483610741, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_Name
-      value: AdultZombieClown (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.774794
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.099657
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 83d4438cb5467924385696a364b29866, type: 3}
 --- !u!1 &775702788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,11 +1917,6 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 77f5c756df434e44aa5d759148d05ad9, type: 2}
   m_BuildHeightMesh: 0
---- !u!4 &811202534 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-  m_PrefabInstance: {fileID: 2088133909}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &829618554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,63 +2045,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1001 &847533356
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 238365405}
-    m_Modifications:
-    - target: {fileID: 3804341465483610741, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_Name
-      value: AdultZombieClown (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.774794
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.099657
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 83d4438cb5467924385696a364b29866, type: 3}
 --- !u!1 &877843996
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,11 +2712,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!4 &1166437888 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-  m_PrefabInstance: {fileID: 713083129}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1272815045
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,68 +2845,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272815045}
   m_CullTransparentMesh: 1
---- !u!4 &1422054863 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-  m_PrefabInstance: {fileID: 1477912590}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1477912590
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 238365405}
-    m_Modifications:
-    - target: {fileID: 3804341465483610741, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_Name
-      value: AdultZombieClown
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.677399
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.774794
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.099657
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 83d4438cb5467924385696a364b29866, type: 3}
 --- !u!1 &1509420812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2966,63 +2948,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1001 &1515959095
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 238365405}
-    m_Modifications:
-    - target: {fileID: 3804341465483610741, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_Name
-      value: AdultZombieClown (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.774794
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.099657
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 83d4438cb5467924385696a364b29866, type: 3}
 --- !u!1 &1523636873
 GameObject:
   m_ObjectHideFlags: 0
@@ -3991,11 +3916,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779278456}
   m_CullTransparentMesh: 1
---- !u!4 &1833811964 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-  m_PrefabInstance: {fileID: 1515959095}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1850731125
 GameObject:
   m_ObjectHideFlags: 0
@@ -4562,63 +4482,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083410804}
   m_CullTransparentMesh: 1
---- !u!1001 &2088133909
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 238365405}
-    m_Modifications:
-    - target: {fileID: 3804341465483610741, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_Name
-      value: AdultZombieClown (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.774794
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.099657
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 83d4438cb5467924385696a364b29866, type: 3}
 --- !u!224 &27318190528084307
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8033,13 +7896,51 @@ GameObject:
   - component: {fileID: 3820841184028613410}
   - component: {fileID: 4453645751452997668}
   - component: {fileID: 1318154952095606874}
-  m_Layer: 0
+  - component: {fileID: 8536945239686813496}
+  - component: {fileID: 8536945239686813497}
+  m_Layer: 11
   m_Name: FirstPersonController
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8536945239686813496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536945239686813495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284f7ca4f732a0343af2dccd76390e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1980175575}
+--- !u!136 &8536945239686813497
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536945239686813495}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8676023483320712239
 GameObject:
   m_ObjectHideFlags: 0
@@ -8471,3 +8372,5 @@ SceneRoots:
   - {fileID: 1850731128}
   - {fileID: 877844000}
   - {fileID: 1980175578}
+  - {fileID: 116542167}
+  - {fileID: 380941770}
