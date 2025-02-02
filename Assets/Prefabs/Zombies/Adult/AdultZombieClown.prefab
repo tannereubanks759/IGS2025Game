@@ -1534,7 +1534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9165206816066697759}
   - component: {fileID: 7999784451186269947}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: mixamorig:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1805,7 +1805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8350728874882005366}
   - component: {fileID: 5006992955342142005}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}

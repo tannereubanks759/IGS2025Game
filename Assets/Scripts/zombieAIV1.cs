@@ -36,6 +36,10 @@ public class zombieAIV1 : MonoBehaviour
 
         // Get the player
         player = GameObject.FindWithTag("Player");
+
+        // turn attack collider off by deafault
+        rightHand.enabled = false;
+        leftHand.enabled = false;
     }
 
     // Update is called once per frame
