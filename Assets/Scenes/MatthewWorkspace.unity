@@ -636,6 +636,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
+      propertyPath: spawnEffect
+      value: 
+      objectReference: {fileID: 6141965808668165640, guid: d3b703d93fc857c49b43ae1971e8a44b, type: 3}
+    - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
+      propertyPath: spawnEffectLifetime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

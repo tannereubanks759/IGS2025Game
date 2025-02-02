@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class zombieSpawner : MonoBehaviour
 {
@@ -9,12 +10,17 @@ public class zombieSpawner : MonoBehaviour
     // The game time
     private float gameTime;
 
+    // range that the spawner will activate
     [SerializeField] private float spawnRange;
 
     // Player tracking
     private bool playerNear;
     private GameObject player;
     private float playerDistance;
+
+    // The particles that play during spawning
+    [SerializeField] VisualEffect spawnEffect;
+    [SerializeField] private float spawnEffectLifetime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,6 +50,8 @@ public class zombieSpawner : MonoBehaviour
     {
         var index = UnityEngine.Random.Range(0, zombArray.Length);
 
+        PlayParticles();
+
         GameObject Zombie = Instantiate(zombArray[index], this.transform.position, Quaternion.identity);
 
         gameTime = 0;
@@ -64,5 +72,17 @@ public class zombieSpawner : MonoBehaviour
         {
             playerNear = true;
         }
+    }
+
+    // Play the particle system
+    void PlayParticles()
+    {
+        var spawnPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+
+        VisualEffect newParticleEffect = Instantiate(spawnEffect, spawnPos, Quaternion.identity);
+
+        newParticleEffect.Play();
+
+        Destroy(newParticleEffect.gameObject, spawnEffectLifetime);
     }
 }
