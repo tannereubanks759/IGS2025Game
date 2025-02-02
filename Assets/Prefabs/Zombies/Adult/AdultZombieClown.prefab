@@ -861,6 +861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7052a5e163326674192e4e9cf4d7f61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightHand: {fileID: 5006992955342142005}
+  leftHand: {fileID: 7999784451186269947}
   objWscript: {fileID: 4422903606704842899, guid: a144e7d5002785e469ed1e45aec24d6e, type: 3}
 --- !u!195 &175364179217721678
 NavMeshAgent:
@@ -1531,6 +1533,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9165206816066697759}
+  - component: {fileID: 7999784451186269947}
   m_Layer: 8
   m_Name: mixamorig:LeftHand
   m_TagString: Untagged
@@ -1558,6 +1561,27 @@ Transform:
   - {fileID: 5418731295542652143}
   m_Father: {fileID: 5365326651131062403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7999784451186269947
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6373221680934083791}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.125
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &6436044254988350949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,6 +1804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8350728874882005366}
+  - component: {fileID: 5006992955342142005}
   m_Layer: 8
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
@@ -1807,6 +1832,27 @@ Transform:
   - {fileID: 569349764252003602}
   m_Father: {fileID: 558388611500294770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5006992955342142005
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449231455630023053}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.125
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &7559079439784487943
 GameObject:
   m_ObjectHideFlags: 0

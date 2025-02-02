@@ -14,9 +14,15 @@ public class zombieAIV1 : MonoBehaviour
 
     // The number that controls the melee range of the ai
     float attackRange = 1.5f;
+
+    // Colliders to handle the ai attacking the player
+    [SerializeField] private Collider rightHand;
+    [SerializeField] private Collider leftHand;
+
     private bool isDead = false;
     private miniGameScript miniGameS;
     public GameObject objWscript;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -137,6 +143,20 @@ public class zombieAIV1 : MonoBehaviour
                 colliders[i].enabled = false;
             }
         }
+    }
+
+    // Activates the attack colliders
+    public void ActivateColliders()
+    {
+        rightHand.enabled = true;
+        leftHand.enabled = true;
+    }
+
+    // De-activates the attack colliders
+    public void DeactivateColliders()
+    {
+        rightHand.enabled = false;
+        leftHand.enabled = false;
     }
 
 
