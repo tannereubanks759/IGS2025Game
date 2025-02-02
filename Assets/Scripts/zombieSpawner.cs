@@ -19,13 +19,14 @@ public class zombieSpawner : MonoBehaviour
     private float playerDistance;
 
     // The particles that play during spawning
-    [SerializeField] VisualEffect spawnEffect;
+    private VisualEffect spawnEffect; 
     [SerializeField] private float spawnEffectLifetime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        spawnEffect = GetComponentInChildren<VisualEffect>();
     }
 
     void Update()
@@ -50,8 +51,6 @@ public class zombieSpawner : MonoBehaviour
     {
         var index = UnityEngine.Random.Range(0, zombArray.Length);
 
-        PlayParticles();
-
         GameObject Zombie = Instantiate(zombArray[index], this.transform.position, Quaternion.identity);
 
         gameTime = 0;
@@ -67,22 +66,24 @@ public class zombieSpawner : MonoBehaviour
         if (playerDistance > spawnRange)
         {
             playerNear = false;
+            StopParticles();
         }
         else
         {
             playerNear = true;
+            PlayParticles();
         }
     }
 
     // Play the particle system
     void PlayParticles()
     {
-        var spawnPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+        spawnEffect.Play();
 
-        VisualEffect newParticleEffect = Instantiate(spawnEffect, spawnPos, Quaternion.identity);
-
-        newParticleEffect.Play();
-
-        Destroy(newParticleEffect.gameObject, spawnEffectLifetime);
+    }
+    
+    void StopParticles()
+    {
+        spawnEffect.Stop();
     }
 }
