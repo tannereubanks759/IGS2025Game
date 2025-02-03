@@ -122,8 +122,16 @@ public class GunScript : MonoBehaviour
 
     public void Reload()
     {
-        totalAmmo -= magazineSize - bulletCount;
-        bulletCount = magazineSize;
+        if(totalAmmo >= 30)
+        {
+            totalAmmo -= magazineSize - bulletCount;
+            bulletCount = magazineSize;
+        }
+        else if(totalAmmo < 30 && totalAmmo > 0)
+        {
+            bulletCount = totalAmmo;
+            totalAmmo = 0;
+        }
         BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
     }
 
