@@ -60,7 +60,7 @@ public class zombieAIV1 : MonoBehaviour
     // Sets the animator bool for player detection
     void PlayerDetected()
     {
-        if (player != null)
+        if (player != null && animator.GetBool("isStanding") == true)
         {
             // Set the animator bool to true so that the run anim plays
             animator.SetBool("playerDetected", true);

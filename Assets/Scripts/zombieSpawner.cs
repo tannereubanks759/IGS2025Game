@@ -6,7 +6,7 @@ public class zombieSpawner : MonoBehaviour
 {
     // The zombie prefabs
     [SerializeField] private GameObject[] zombies;
-
+    [SerializeField] private float spawnRate;
     // The game time
     private float gameTime;
 
@@ -20,7 +20,6 @@ public class zombieSpawner : MonoBehaviour
 
     // The particles that play during spawning
     private VisualEffect spawnEffect; 
-    [SerializeField] private float spawnEffectLifetime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,7 +39,7 @@ public class zombieSpawner : MonoBehaviour
     {
         gameTime += Time.deltaTime;
 
-        if (gameTime > 5 && playerNear)
+        if (gameTime > spawnRate && playerNear)
         {
             SpawnZombie(zombies);
         }

@@ -47,9 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombies:
   - {fileID: 3804341465483610741, guid: 83d4438cb5467924385696a364b29866, type: 3}
+  spawnRate: 6
   spawnRange: 30
-  spawnEffect: {fileID: 6141965808668165640, guid: d3b703d93fc857c49b43ae1971e8a44b, type: 3}
-  spawnEffectLifetime: 3
 --- !u!1 &2615215436540456943
 GameObject:
   m_ObjectHideFlags: 0

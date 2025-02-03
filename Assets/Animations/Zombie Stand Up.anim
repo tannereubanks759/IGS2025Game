@@ -105859,7 +105859,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 3.5166667
+  - time: 5.15
     functionName: IsStanding
     data: 
     objectReferenceParameter: {fileID: 0}
