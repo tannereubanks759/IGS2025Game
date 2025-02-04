@@ -6,6 +6,8 @@ public class swingTrap : MonoBehaviour
     public Animator trapAnim;
     bool canInteract = false;
     public GameObject interactUI;
+    public miniGameScript miniGameObject;
+    public int costPrice;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,8 +21,24 @@ public class swingTrap : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.E)&& canInteract) 
         {
-            trapAnim.SetBool("isOn", true);
+            if(miniGameObject.tickets >= costPrice)
+            {
+                trapAnim.SetBool("isOn", true);
+                miniGameObject.tickets -= costPrice;
+                miniGameObject.ticketText.text = miniGameObject.tickets.ToString();
+            }
+            else
+            {
+                Debug.Log("Not enough money");
+            }
+
         }
+        
+        if(Input.GetKeyUp(KeyCode.G))
+        {
+            trapAnim.SetBool("isOn", false);
+        }
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -30,6 +48,7 @@ public class swingTrap : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         canInteract = false;
+        
         interactUI.SetActive(false);
     }
 }
