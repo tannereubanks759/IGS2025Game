@@ -26,8 +26,8 @@ public class zombieAIV1 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      miniGameS = objWscript.GetComponent<miniGameScript>();
-        
+        miniGameS = miniGameScript.instance;
+
         // Get the navmesh agent from the gameObject
         agent = GetComponent<NavMeshAgent>();
 
@@ -170,5 +170,9 @@ public class zombieAIV1 : MonoBehaviour
     public void Death()
     {
         Destroy(this.gameObject);
+    }
+    public void SetMinigameScript(miniGameScript script)
+    {
+        miniGameS = script;
     }
 }

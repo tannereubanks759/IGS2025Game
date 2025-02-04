@@ -863,7 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHand: {fileID: 5006992955342142005}
   leftHand: {fileID: 7999784451186269947}
-  objWscript: {fileID: 4422903606704842899, guid: a144e7d5002785e469ed1e45aec24d6e, type: 3}
+  objWscript: {fileID: 0}
 --- !u!195 &175364179217721678
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -13,16 +13,28 @@ public class miniGameScript : MonoBehaviour
     public TextMeshProUGUI questText;
     public int currentHeadShots = 0;
     public bool headShotQuest = false;
+    public static miniGameScript instance;
+    public TextMeshProUGUI currentScore;
+    public TextMeshProUGUI currentOutOfScore;
+    public TextMeshProUGUI ticketText;
+    public int tickets =0;
     //private int prevHs = 0;
-    public string[] quests = { "Get 8 headshots", "Get kills within indicated zone", "Get 5 kills without reloading " };
+    public string[] quests;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHeadShots = 0;
         ui.SetActive(false);
         questUI.SetActive(false);
+        
     }
-    
+    private void Awake()
+    {
+        instance = this;
+        
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,10 +42,7 @@ public class miniGameScript : MonoBehaviour
         {
             startMinigame();
         }
-        if(Input.GetKeyDown(KeyCode.N))
-        {
-            hasQuest = false;
-        }
+       
         
         
     }
@@ -57,8 +66,30 @@ public class miniGameScript : MonoBehaviour
     }
     public void printHs()
     {
-        Debug.Log("Current headshot count: ");
-        Debug.Log(currentHeadShots);
+        if(currentHeadShots==5)
+        {
+            currentScore.text = currentHeadShots.ToString();
+            headShotQuest = false;
+            resetQuest();
+
+        }
+        else
+        {
+            currentScore.text = currentHeadShots.ToString();
+        }
+        
+        
+    }
+    void resetQuest()
+    {
+        questUI.SetActive(false);
+        currentHeadShots = 0;
+        currentOutOfScore.text = " ";
+        currentScore.text = "0";
+        hasQuest = false;
+        tickets++;
+        ticketText.text = tickets.ToString();
+
     }
     void startMinigame()
     {
@@ -76,7 +107,7 @@ public class miniGameScript : MonoBehaviour
         //bool isGoal = false;
         questText.text = textFromArray;
         questUI.SetActive(true);
-        if (numberOfQuest == 1)
+        if (numberOfQuest == 0)
         {
             headShot();
         }
@@ -89,6 +120,7 @@ public class miniGameScript : MonoBehaviour
     {
         Debug.Log("headshot quest");
         headShotQuest = true;
+        currentOutOfScore.text = "/5";
     }
     void timeInArea()
     {

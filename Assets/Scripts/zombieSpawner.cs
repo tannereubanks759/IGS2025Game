@@ -51,7 +51,12 @@ public class zombieSpawner : MonoBehaviour
         var index = UnityEngine.Random.Range(0, zombArray.Length);
 
         GameObject Zombie = Instantiate(zombArray[index], this.transform.position, Quaternion.identity);
-
+        zombieAIV1 zombieScript = Zombie.GetComponent<zombieAIV1>();
+        if (zombieScript != null)
+        {
+            zombieScript.SetMinigameScript(miniGameScript.instance);
+        }
+        
         gameTime = 0;
     }
 
