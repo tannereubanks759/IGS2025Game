@@ -46,7 +46,7 @@ public class miniGameScript : MonoBehaviour
         
         
     }
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player" && hasQuest == false)
         {
@@ -54,8 +54,26 @@ public class miniGameScript : MonoBehaviour
             ui.SetActive(true);
             isInteractable=true;
         }
+    }*/
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && hasQuest == false)
+        {
+            //Debug.Log("Entered zone");
+            ui.SetActive(true);
+            isInteractable = true;
+        }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //Debug.Log("Left Zone");
+            ui.SetActive(false);
+            isInteractable = false;
+        }
+    }
+   /* private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -63,7 +81,7 @@ public class miniGameScript : MonoBehaviour
             ui.SetActive(false);
             isInteractable=false;
         }
-    }
+    }*/
     public void printHs()
     {
         if(currentHeadShots==5)
