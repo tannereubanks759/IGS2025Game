@@ -19,7 +19,7 @@ public class zombieAIV1 : MonoBehaviour
     [SerializeField] private Collider rightHand;
     [SerializeField] private Collider leftHand;
 
-    private bool isDead = false;
+    public bool isDead = false;
     private miniGameScript miniGameS;
     public GameObject objWscript;
 
