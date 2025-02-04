@@ -115,12 +115,13 @@ public class zombieAIV1 : MonoBehaviour
             // If a headshot
             if (i == 3)
             {
+                
                 // and the headshot minigame is active
                 if (miniGameS.headShotQuest == true)
                 {
                     
                     miniGameS.currentHeadShots += 1;
-                    //Debug.Log("Headshot tracked");
+                    Debug.Log("Headshot tracked");
                     isDead = true;
                     miniGameS.printHs();
                 }

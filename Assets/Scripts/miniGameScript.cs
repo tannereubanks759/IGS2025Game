@@ -35,6 +35,7 @@ public class miniGameScript : MonoBehaviour
             hasQuest = false;
         }
         
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
