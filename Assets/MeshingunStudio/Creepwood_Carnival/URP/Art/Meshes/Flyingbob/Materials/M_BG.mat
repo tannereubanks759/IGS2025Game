@@ -28,7 +28,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 5
+  version: 9
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -37,8 +37,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_BG
-  m_Shader: {fileID: -6465566751694194690, guid: 0edc9c58cc5145443bba60c88002b60b,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 0edc9c58cc5145443bba60c88002b60b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHATEST_ON
   m_InvalidKeywords:
@@ -57,6 +58,7 @@ Material:
   - TransparentBackface
   - RayTracingPrepass
   - MOTIONVECTORS
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -136,7 +138,15 @@ Material:
         m_Texture: {fileID: 2800000, guid: 8f6f3256e15a57c4ea6b387a045fbbe7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_54a13052521b4f239b528ceceee9315e_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 8f6f3256e15a57c4ea6b387a045fbbe7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_a706c1b8570748799508b674365e5bff_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a1ef6be6d0ac0ca40a766ed7b74f5a89, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a706c1b8570748799508b674365e5bff_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: a1ef6be6d0ac0ca40a766ed7b74f5a89, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -193,11 +203,12 @@ Material:
     - _AlphaCutoffShadow: 0.5
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _AlphaToMask: 0
+    - _AlphaToMask: 1
     - _AlphaToMaskInspectorValue: 0
     - _Anisotropy: 0
     - _Blend: 0
     - _BlendMode: 0
+    - _BlendModePreserveSpecular: 0
     - _CastShadows: 1
     - _CoatMask: 0
     - _ConservativeDepthOffsetEnable: 0
@@ -340,3 +351,4 @@ Material:
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
