@@ -111,6 +111,7 @@ public class GunScript : MonoBehaviour
     {
         Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
         muzzleFlash.Play();
+        gunSound.pitch = Random.Range(.5f, 1.5f);
         gunSound.PlayOneShot(gunShot, .2f);
         if(bulletCount > 0)
         {
@@ -122,6 +123,7 @@ public class GunScript : MonoBehaviour
 
     public void Reload()
     {
+        gunSound.pitch = 1f;
         if(totalAmmo >= 30)
         {
             totalAmmo -= magazineSize - bulletCount;
