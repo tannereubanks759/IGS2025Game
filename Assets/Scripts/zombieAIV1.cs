@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class zombieAIV1 : MonoBehaviour
 {
@@ -109,12 +110,14 @@ public class zombieAIV1 : MonoBehaviour
 
     public void OnParticleCollision(GameObject other)
     {
-        OnFire();
+        StartCoroutine(OnFire());
     }
 
-    void OnFire()
+    IEnumerator OnFire()
     {
-        Invoke("TakeDamage", 1.5f);
+        TakeDamage(1);
+
+        yield return null;
     }
 
     // Public function to call when the zombie takes damage

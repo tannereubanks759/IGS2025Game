@@ -1354,7 +1354,7 @@ GameObject:
   - component: {fileID: 5979844621154183271}
   - component: {fileID: 4444364805752067247}
   m_Layer: 8
-  m_Name: AdultZombieClownPrototype
+  m_Name: OLDAdultZombieClownPrototype
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
