@@ -124,6 +124,7 @@ public class zombieAIV1 : MonoBehaviour
         if(isDead!=true)
         {
             animator.SetInteger("health", animator.GetInteger("health") - i);
+            animator.SetTrigger("takeDamage");
             // If a headshot
             if (i == 3)
             {
