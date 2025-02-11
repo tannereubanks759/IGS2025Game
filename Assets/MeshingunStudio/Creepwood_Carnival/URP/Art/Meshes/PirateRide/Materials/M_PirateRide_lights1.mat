@@ -217,7 +217,7 @@ Material:
     - _AlphaToMaskInspectorValue: 0
     - _Anim_01_StepJump: 0
     - _Anim_02_Flashing: 0
-    - _Anim_03_Chasing: 1
+    - _Anim_03_Chasing: 0
     - _Anim_03_RGB: 1
     - _Anim_04_Alternate: 0
     - _Anim_04_RGB: 0
