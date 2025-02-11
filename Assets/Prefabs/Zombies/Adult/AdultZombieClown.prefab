@@ -863,6 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHand: {fileID: 5006992955342142005}
   leftHand: {fileID: 7999784451186269947}
+  isDead: 0
   objWscript: {fileID: 0}
 --- !u!195 &175364179217721678
 NavMeshAgent:
@@ -1576,9 +1577,9 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.125
   m_Center: {x: 0, y: 0.1, z: 0}
@@ -1847,9 +1848,9 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.125
   m_Center: {x: 0, y: 0.1, z: 0}
