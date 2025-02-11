@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b426d798881504ab8def4fa3035a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 1
+  velocity: 2
   bulletImpact: {fileID: 3999320162442059673}
   zombieImpact: {fileID: 2866714607828555333}
 --- !u!54 &6332558549674359251
