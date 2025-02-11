@@ -23,6 +23,8 @@ public class zombieAIV1 : MonoBehaviour
     private miniGameScript miniGameS;
     public GameObject objWscript;
 
+    private bool onFire;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -103,6 +105,16 @@ public class zombieAIV1 : MonoBehaviour
             agent.isStopped = false;
             animator.SetBool("canAttack", false);
         }
+    }
+
+    public void OnParticleCollision(GameObject other)
+    {
+        OnFire();
+    }
+
+    void OnFire()
+    {
+        Invoke("TakeDamage", 1.5f);
     }
 
     // Public function to call when the zombie takes damage
