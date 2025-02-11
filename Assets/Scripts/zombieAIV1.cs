@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class zombieAIV1 : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class zombieAIV1 : MonoBehaviour
     public bool isDead = false;
     private miniGameScript miniGameS;
     public GameObject objWscript;
+
+    private bool onFire;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -105,6 +108,18 @@ public class zombieAIV1 : MonoBehaviour
         }
     }
 
+    public void OnParticleCollision(GameObject other)
+    {
+        StartCoroutine(OnFire());
+    }
+
+    IEnumerator OnFire()
+    {
+        TakeDamage(1);
+
+        yield return null;
+    }
+
     // Public function to call when the zombie takes damage
     public void TakeDamage(int i)
     {
@@ -112,6 +127,7 @@ public class zombieAIV1 : MonoBehaviour
         if(isDead!=true)
         {
             animator.SetInteger("health", animator.GetInteger("health") - i);
+            animator.SetTrigger("takeDamage");
             // If a headshot
             if (i == 3)
             {
