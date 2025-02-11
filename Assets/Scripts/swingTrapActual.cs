@@ -17,7 +17,7 @@ public class swingTrapActual : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.layer == 8)
         {
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(4);
