@@ -1046,7 +1046,7 @@ GameObject:
   - component: {fileID: 311826503}
   - component: {fileID: 311826502}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: MusicVolText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1797,7 +1797,7 @@ GameObject:
   - component: {fileID: 561046290}
   - component: {fileID: 561046289}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: SFXVolText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3742,6 +3742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdultZombieClown
       objectReference: {fileID: 0}
+    - target: {fileID: 3804341465483610741, guid: 83d4438cb5467924385696a364b29866, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4555850547755055555, guid: 83d4438cb5467924385696a364b29866, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5176,7 +5180,7 @@ GameObject:
   - component: {fileID: 1640623797}
   - component: {fileID: 1640623796}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MasterVolText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6011,7 +6015,7 @@ GameObject:
   - component: {fileID: 1922331079}
   - component: {fileID: 1922331078}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: SettingsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6487,6 +6491,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdultFemaleZombie
       objectReference: {fileID: 0}
+    - target: {fileID: 7237725890706660843, guid: 201cfb04ad997f745bb1d36f4375e756, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8014791007978096465, guid: 201cfb04ad997f745bb1d36f4375e756, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.112
@@ -6546,7 +6554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1320528178323207849, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2280164348002879871, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6590,16 +6598,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3533448473595911514, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: spawnEffect
       value: 
       objectReference: {fileID: 6141965808668165640, guid: d3b703d93fc857c49b43ae1971e8a44b, type: 3}
     - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
+      propertyPath: zombies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: spawnEffectLifetime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
+      propertyPath: 'zombies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7237725890706660843, guid: 201cfb04ad997f745bb1d36f4375e756, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -2512,6 +2512,7 @@ MonoBehaviour:
   leftHand: {fileID: 324570342899363684}
   isDead: 0
   objWscript: {fileID: 0}
+  maxRunningAnimCount: 0
 --- !u!1 &8286469501968193730
 GameObject:
   m_ObjectHideFlags: 0
