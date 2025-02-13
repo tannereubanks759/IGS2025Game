@@ -23,6 +23,7 @@ public class swingTrap : MonoBehaviour
         {
             if(miniGameObject.tickets >= costPrice)
             {
+                
                 trapAnim.SetBool("isOn", true);
                 miniGameObject.tickets -= costPrice;
                 miniGameObject.ticketText.text = miniGameObject.tickets.ToString();
@@ -50,5 +51,9 @@ public class swingTrap : MonoBehaviour
         canInteract = false;
         
         interactUI.SetActive(false);
+    }
+    public void resetAnimationTrigger()
+    {
+        trapAnim.SetBool("isOn", false);
     }
 }

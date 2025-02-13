@@ -8389,6 +8389,17 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: f59f51ef1ca76164e8e30c9f6dbdcb7a, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &1580207501 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3809091178188598028, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+  m_PrefabInstance: {fileID: 6657585982711907050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cb84e7e6012c24bbf317d8a65c02d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1601496814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6110039371327510828, guid: 7385c248bf5c26a4094102cf18101709, type: 3}
@@ -13580,6 +13591,10 @@ PrefabInstance:
       propertyPath: miniGameObject
       value: 
       objectReference: {fileID: 6227924007905138582}
+    - target: {fileID: 6609120080065844317, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: swingTrapRef
+      value: 
+      objectReference: {fileID: 1580207501}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

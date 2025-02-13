@@ -47,7 +47,10 @@ public class miniGameScript : MonoBehaviour
         {
             startMinigame();
         }
-       
+       if(Input.GetKeyDown(KeyCode.G))
+        {
+            tickets++;
+        }
         
         
     }

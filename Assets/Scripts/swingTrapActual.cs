@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class swingTrapActual : MonoBehaviour
 {
-    
+    public swingTrap swingTrapRef;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,5 +28,9 @@ public class swingTrapActual : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
       
+    }
+    public void callResetFunctin()
+    {
+        swingTrapRef.resetAnimationTrigger();
     }
 }
