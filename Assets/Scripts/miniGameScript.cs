@@ -18,8 +18,13 @@ public class miniGameScript : MonoBehaviour
     public TextMeshProUGUI currentOutOfScore;
     public TextMeshProUGUI ticketText;
     public int tickets =0;
+    public float totalTime = 10f;
     //private int prevHs = 0;
     public string[] quests;
+    public timeInAreaScript areaScriptRef;
+    private bool isChanged = false;
+    public ticketGiverScript ticketGiverScriptRef;
+    public TextMeshProUGUI goGetTicketText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -98,15 +103,15 @@ public class miniGameScript : MonoBehaviour
         
         
     }
-    void resetQuest()
+    public void resetQuest()
     {
         questUI.SetActive(false);
         currentHeadShots = 0;
         currentOutOfScore.text = " ";
         currentScore.text = "0";
         hasQuest = false;
-        tickets++;
-        ticketText.text = tickets.ToString();
+        goGetTicketText.gameObject.SetActive(true);
+        ticketGiverScriptRef.canClaimTicket = true;
 
     }
     void startMinigame()
@@ -129,7 +134,7 @@ public class miniGameScript : MonoBehaviour
         {
             headShot();
         }
-        else if (numberOfQuest == 2) 
+        else if (numberOfQuest == 1) 
         {
             timeInArea();
         }
@@ -137,12 +142,26 @@ public class miniGameScript : MonoBehaviour
     void headShot()
     {
         Debug.Log("headshot quest");
+        if(isChanged)
+        {
+            currentScore.rectTransform.anchoredPosition += new Vector2(+60f, 0f);
+            isChanged = false;
+        }
         headShotQuest = true;
         currentOutOfScore.text = "/5";
     }
     void timeInArea()
     {
         Debug.Log("time quest");
+        if(isChanged==false)
+        {
+            currentScore.rectTransform.anchoredPosition += new Vector2(-60f, 0f);
+            isChanged = true;
+        }
+        areaScriptRef.timeInAreaMinigameOn = true;
+        currentOutOfScore.text = "/10";
+        currentScore.text = " ";
+
         // tracks time in area with colliders
     }
         
