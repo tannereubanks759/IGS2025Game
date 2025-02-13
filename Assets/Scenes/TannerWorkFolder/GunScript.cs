@@ -101,7 +101,7 @@ public class GunScript : MonoBehaviour
 
 
         //anim for reloading
-        if (Input.GetKeyDown(ReloadKey) && anim.GetBool("isReloading") == false)
+        if (((Input.GetKeyDown(ReloadKey) && bulletCount != 30f) || (Input.GetKey(ShootKey) && bulletCount <= 0f)) && anim.GetBool("isReloading") == false)
         {
             anim.SetBool("isReloading", true);
             //Reload();
