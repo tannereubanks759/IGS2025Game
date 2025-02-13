@@ -26,6 +26,8 @@ public class zombieAIV1 : MonoBehaviour
 
     private bool onFire;
 
+    [SerializeField] private int maxRunningAnimCount;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +45,8 @@ public class zombieAIV1 : MonoBehaviour
         // turn attack collider off by deafault
         rightHand.enabled = false;
         leftHand.enabled = false;
+
+        animator.SetInteger("randRun", Random.Range(0, maxRunningAnimCount));
     }
 
     // Update is called once per frame
