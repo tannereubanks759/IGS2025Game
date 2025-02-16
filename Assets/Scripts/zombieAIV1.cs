@@ -26,7 +26,7 @@ public class zombieAIV1 : MonoBehaviour
 
     private bool onFire;
 
-    [SerializeField] private int maxRunningAnimCount;
+    public int maxRunningAnimCount;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,7 +46,9 @@ public class zombieAIV1 : MonoBehaviour
         rightHand.enabled = false;
         leftHand.enabled = false;
 
-        animator.SetInteger("randRun", Random.Range(0, maxRunningAnimCount));
+        int randomRun = Random.Range(0, maxRunningAnimCount);
+        animator.SetInteger("randRun", randomRun);
+        
     }
 
     // Update is called once per frame
