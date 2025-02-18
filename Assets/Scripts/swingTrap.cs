@@ -35,10 +35,7 @@ public class swingTrap : MonoBehaviour
 
         }
         
-        if(Input.GetKeyUp(KeyCode.G))
-        {
-            trapAnim.SetBool("isOn", false);
-        }
+       
         
     }
     private void OnCollisionEnter(Collision collision)
