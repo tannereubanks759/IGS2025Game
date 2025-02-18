@@ -116,11 +116,18 @@ public class zombieAIV1 : MonoBehaviour
 
     public void OnParticleCollision(GameObject other)
     {
-        StartCoroutine(OnFire());
+        Debug.Log("collision works somewqhat");
+        if (other.gameObject.layer == 12)
+        {
+            Debug.Log("collision works");
+            StartCoroutine(OnFire());
+
+        }
     }
 
     IEnumerator OnFire()
     {
+        Debug.Log("made it here");
         TakeDamage(1);
 
         yield return null;
