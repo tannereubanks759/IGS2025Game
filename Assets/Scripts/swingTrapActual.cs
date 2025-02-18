@@ -20,7 +20,7 @@ public class swingTrapActual : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.layer == 8)
         {
-            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(4);
+            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(10);
             
         }
 
@@ -31,6 +31,7 @@ public class swingTrapActual : MonoBehaviour
     }
     public void callResetFunctin()
     {
-        swingTrapRef.resetAnimationTrigger();
+        swingTrapRef.trapAnim.SetBool("isOn", false);
+        
     }
 }
