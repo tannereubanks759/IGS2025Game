@@ -25,6 +25,7 @@ public class miniGameScript : MonoBehaviour
     private bool isChanged = false;
     public ticketGiverScript ticketGiverScriptRef;
     public TextMeshProUGUI goGetTicketText;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,7 +44,7 @@ public class miniGameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isInteractable && hasQuest == false)
+        if (Input.GetKeyDown(KeyCode.E) && isInteractable && hasQuest == false&&ticketGiverScriptRef.hasTaken==true)
         {
             startMinigame();
         }
@@ -65,7 +66,7 @@ public class miniGameScript : MonoBehaviour
     }*/
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && hasQuest == false)
+        if (other.gameObject.tag == "Player" && hasQuest == false && ticketGiverScriptRef.hasTaken==true)
         {
             //Debug.Log("Entered zone");
             ui.SetActive(true);
@@ -113,6 +114,7 @@ public class miniGameScript : MonoBehaviour
         currentOutOfScore.text = " ";
         currentScore.text = "0";
         hasQuest = false;
+        
         goGetTicketText.gameObject.SetActive(true);
         ticketGiverScriptRef.canClaimTicket = true;
 
@@ -120,12 +122,13 @@ public class miniGameScript : MonoBehaviour
     void startMinigame()
     {
         //float gameNumber = Random.value;
-        
+        ticketGiverScriptRef.hasTaken = false;
         int number = Random.Range( 0,  quests.Length);
         //Debug.Log(number);
         hasQuest = true;
         quest = quests[number];
         questStarter(quest, number);
+        
         //Debug.Log(quest);
     }
     void questStarter(string textFromArray, int numberOfQuest)
