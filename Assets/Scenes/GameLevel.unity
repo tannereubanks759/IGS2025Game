@@ -15259,6 +15259,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: swingTrap
       objectReference: {fileID: 0}
+    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -21
+      objectReference: {fileID: 0}
     - target: {fileID: 3809091178188598028, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: interactUI
       value: 
@@ -16237,10 +16245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e82f43ddcb8c5145b87ef3effb7cab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniGameScriptRef: {fileID: 6227924007905138582}
-  canClaimTicket: 0
-  interactUI: {fileID: 567568270}
-  ticketSound: {fileID: 766089835}
 --- !u!65 &8744748368649255438
 BoxCollider:
   m_ObjectHideFlags: 0
