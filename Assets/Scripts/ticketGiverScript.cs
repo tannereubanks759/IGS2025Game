@@ -7,7 +7,7 @@ public class ticketGiverScript : MonoBehaviour
     public GameObject interactUI;
     private bool inRangeToInteract = false;
     public AudioSource ticketSound;
-   
+    public bool hasTaken = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +24,7 @@ public class ticketGiverScript : MonoBehaviour
             miniGameScriptRef.goGetTicketText.gameObject.SetActive(false);
             ticketSound.Play();
             canClaimTicket = false;
+            hasTaken = true;
         }
         
     }

@@ -2966,7 +2966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: zombies.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: 'zombies.Array.data[1]'
@@ -3223,7 +3223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: zombies.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: 'zombies.Array.data[1]'
@@ -3660,7 +3660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: zombies.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: 'zombies.Array.data[1]'
@@ -8934,7 +8934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: zombies.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4740413973735956362, guid: b2c1ca90f7004e3418f1b4a6eb1eed89, type: 3}
       propertyPath: 'zombies.Array.data[1]'
@@ -15279,6 +15279,10 @@ PrefabInstance:
       propertyPath: swingTrapRef
       value: 
       objectReference: {fileID: 1580207501}
+    - target: {fileID: 7107884069005439356, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16245,6 +16249,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e82f43ddcb8c5145b87ef3effb7cab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  miniGameScriptRef: {fileID: 6227924007905138582}
+  canClaimTicket: 0
+  interactUI: {fileID: 567568270}
+  ticketSound: {fileID: 766089835}
+  hasTaken: 1
 --- !u!65 &8744748368649255438
 BoxCollider:
   m_ObjectHideFlags: 0
