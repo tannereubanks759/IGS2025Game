@@ -5,6 +5,9 @@ public class Interact : MonoBehaviour
     public GameObject InteractText;
     public AudioSource SoundEffects;
     public AudioClip RefillAmmoSound;
+    public miniGameScript minigameScriptRef;
+    public ticketGiverScript ticketGiverScriptRef;
+    public swingTrap swingTrapRef;
     void Start()
     {
         InteractText.SetActive(false);
@@ -25,6 +28,30 @@ public class Interact : MonoBehaviour
             {
                 GetComponentInChildren<GunScript>().SetTotalAmmo(400);
                 SoundEffects.PlayOneShot(RefillAmmoSound, .5f);
+            }
+        }
+        if(other.gameObject.tag == "Minigame Starter")
+        {
+            InteractText.SetActive(true);
+            if (Input.GetKey(KeyCode.E) && minigameScriptRef.isInteractable && minigameScriptRef.hasQuest == false && ticketGiverScriptRef.hasTaken == true)
+            {
+                minigameScriptRef.startMinigame();
+            }
+        }
+        if(other.gameObject.tag == "trap starter")
+        {
+            InteractText.SetActive(true);
+            if (Input.GetKey(KeyCode.E))
+            {
+                swingTrapRef.startTrap();
+            }
+        }
+        if(other.gameObject.tag== "ticketGiver")
+        {
+            InteractText.SetActive(true);
+            if (Input.GetKey(KeyCode.E) && ticketGiverScriptRef.inRangeToInteract && ticketGiverScriptRef.canClaimTicket)
+            {
+                ticketGiverScriptRef.giveTicket();
             }
         }
         

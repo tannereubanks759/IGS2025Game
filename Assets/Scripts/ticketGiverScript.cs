@@ -5,7 +5,7 @@ public class ticketGiverScript : MonoBehaviour
     public miniGameScript miniGameScriptRef;
     public bool canClaimTicket = false;
     public GameObject interactUI;
-    private bool inRangeToInteract = false;
+    public  bool inRangeToInteract = false;
     public AudioSource ticketSound;
     public bool hasTaken = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,7 +17,7 @@ public class ticketGiverScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)&&inRangeToInteract&&canClaimTicket) 
+        /*if(Input.GetKeyDown(KeyCode.E)&&inRangeToInteract&&canClaimTicket) 
         {
             miniGameScriptRef.tickets++;
             miniGameScriptRef.ticketText.text = miniGameScriptRef.tickets.ToString();
@@ -25,7 +25,8 @@ public class ticketGiverScript : MonoBehaviour
             ticketSound.Play();
             canClaimTicket = false;
             hasTaken = true;
-        }
+        }*/
+        
         
     }
     private void OnCollisionEnter(Collision collision)
@@ -43,5 +44,14 @@ public class ticketGiverScript : MonoBehaviour
             interactUI.SetActive(false);
             inRangeToInteract=false;
         }
-    } 
+    }
+    public void giveTicket()
+    {
+        miniGameScriptRef.tickets++;
+        miniGameScriptRef.ticketText.text = miniGameScriptRef.tickets.ToString();
+        miniGameScriptRef.goGetTicketText.gameObject.SetActive(false);
+        ticketSound.Play();
+        canClaimTicket = false;
+        hasTaken = true;
+    }
 }

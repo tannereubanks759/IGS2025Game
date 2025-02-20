@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ammo
+  - Minigame Starter
+  - trap starter
   layers:
   - Default
   - TransparentFX

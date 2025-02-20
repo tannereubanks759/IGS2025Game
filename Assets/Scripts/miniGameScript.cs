@@ -8,7 +8,7 @@ public class miniGameScript : MonoBehaviour
     public GameObject ui;
     public GameObject questUI;
     public bool isInteractable = false;
-    private bool hasQuest = false;
+    public bool hasQuest = false;
     public string quest;
     public TextMeshProUGUI questText;
     public int currentHeadShots = 0;
@@ -44,14 +44,14 @@ public class miniGameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isInteractable && hasQuest == false&&ticketGiverScriptRef.hasTaken==true)
+        /*if (Input.GetKeyDown(KeyCode.E) && isInteractable && hasQuest == false&&ticketGiverScriptRef.hasTaken==true)
         {
             startMinigame();
         }
        if(Input.GetKeyDown(KeyCode.G))
         {
             tickets++;
-        }
+        }*/
         
         
     }
@@ -119,7 +119,7 @@ public class miniGameScript : MonoBehaviour
         ticketGiverScriptRef.canClaimTicket = true;
 
     }
-    void startMinigame()
+    public void startMinigame()
     {
         //float gameNumber = Random.value;
         ticketGiverScriptRef.hasTaken = false;
