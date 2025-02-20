@@ -40,10 +40,15 @@ public class BulletScript : MonoBehaviour
         }
         else if (collision.gameObject.layer == 9)
         {
-            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(3);
-            Debug.Log("Hit Zombie head");
             zombieImpact.gameObject.SetActive(true);
             zombieImpact.Play();
+            collision.gameObject.GetComponentInChildren<VisualEffect>().Play();
+            collision.transform.parent.localScale = new Vector3(.01f, .01f, .01f);
+            collision.gameObject.GetComponentInChildren<VisualEffect>().gameObject.transform.localScale = new Vector3(100f, 100f, 100f);
+            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(3);
+            Debug.Log("Hit Zombie head");
+            
+            
         }
         else
         {
