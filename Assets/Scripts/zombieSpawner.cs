@@ -19,7 +19,10 @@ public class zombieSpawner : MonoBehaviour
     private float playerDistance;
 
     // The particles that play during spawning
-    private VisualEffect spawnEffect; 
+    private VisualEffect spawnEffect;
+
+    // The bool to control if the spawners can spawn
+    public static bool canSpawn;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,8 +33,11 @@ public class zombieSpawner : MonoBehaviour
 
     void Update()
     {
-        IsPlayerNear();
-        GameTimeManager();
+        if (canSpawn)
+        {
+            IsPlayerNear();
+            GameTimeManager();
+        }
     }
 
     // Time calculations
@@ -51,7 +57,9 @@ public class zombieSpawner : MonoBehaviour
         var index = UnityEngine.Random.Range(0, zombArray.Length);
 
         GameObject Zombie = Instantiate(zombArray[index], this.transform.position, Quaternion.identity);
+
         zombieAIV1 zombieScript = Zombie.GetComponent<zombieAIV1>();
+
         if (zombieScript != null)
         {
             zombieScript.SetMinigameScript(miniGameScript.instance);
