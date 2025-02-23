@@ -8,8 +8,10 @@ public class flamethrowerDamage : MonoBehaviour
         // The colliding body is in the zombie layer
         if (other.layer == 8)
         {
+            var zombie = other.GetComponent<zombieAIV1>();
+
             // Set the onFire variable to true
-            other.GetComponent<zombieAIV1>().onFire = true;
+            zombie.onFire = true;
         }
     }
 }

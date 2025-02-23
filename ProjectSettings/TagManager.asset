@@ -8,6 +8,7 @@ TagManager:
   - Minigame Starter
   - trap starter
   - ticketGiver
+  - ZombieManager
   layers:
   - Default
   - TransparentFX

@@ -145,6 +145,6 @@ public class zombieSpawner : MonoBehaviour
     // Update the can spawn variable
     void CanSpawnUpdate()
     {
-        canSpawn = zombieManager.spawnMaxReached;
+        canSpawn = !zombieManager.spawnMaxReached;
     }
 }
