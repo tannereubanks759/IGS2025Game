@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8552614567084675375}
   - component: {fileID: 1976508879850786752}
   - component: {fileID: 6901179641964804140}
+  - component: {fileID: 2894498617052380168}
   m_Layer: 12
   m_Name: PS_FIre_ADD
   m_TagString: Untagged
@@ -4833,6 +4834,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2894498617052380168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2771349016910894450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cafe5526ef4d1e4da8fd2d3d4ec1cfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3844997194244991362
 GameObject:
   m_ObjectHideFlags: 0
@@ -9677,7 +9690,6 @@ GameObject:
   - component: {fileID: 7894461816880394949}
   - component: {fileID: 3262532310420741901}
   - component: {fileID: 6723878331109858946}
-  - component: {fileID: -6607497730353671790}
   m_Layer: 0
   m_Name: PS_FlameThrower
   m_TagString: Untagged
@@ -14504,18 +14516,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-6607497730353671790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4397211970513763328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cafe5526ef4d1e4da8fd2d3d4ec1cfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7905677640309655683
 GameObject:
   m_ObjectHideFlags: 0
