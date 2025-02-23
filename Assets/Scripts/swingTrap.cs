@@ -9,6 +9,7 @@ public class swingTrap : MonoBehaviour
     public miniGameScript miniGameObject;
     public int costPrice;
     
+     public bool paid=false;    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -53,19 +54,17 @@ public class swingTrap : MonoBehaviour
     public void resetAnimationTrigger()
     {
         trapAnim.SetBool("isOn", false);
+        
     }
     public void startTrap()
     {
-        if (miniGameObject.tickets >= costPrice)
+        if (miniGameObject.tickets >= costPrice&&paid==false)
         {
-
+            paid = true;
             trapAnim.SetBool("isOn", true);
             miniGameObject.tickets -= costPrice;
             miniGameObject.ticketText.text = miniGameObject.tickets.ToString();
         }
-        else
-        {
-            Debug.Log("Not enough money");
-        }
+        
     }
 }

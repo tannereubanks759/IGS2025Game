@@ -8,6 +8,8 @@ public class ticketGiverScript : MonoBehaviour
     public  bool inRangeToInteract = false;
     public AudioSource ticketSound;
     public bool hasTaken = true;
+    float score = 0f;
+    int scoreInt = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,11 +49,21 @@ public class ticketGiverScript : MonoBehaviour
     }
     public void giveTicket()
     {
-        miniGameScriptRef.tickets++;
+        miniGameScriptRef.tickets += scoreInt;
         miniGameScriptRef.ticketText.text = miniGameScriptRef.tickets.ToString();
         miniGameScriptRef.goGetTicketText.gameObject.SetActive(false);
         ticketSound.Play();
         canClaimTicket = false;
         hasTaken = true;
+    }
+    public void calculateScore(float timeTaken)
+    {
+        Debug.Log("Time taken to complete quest: " + timeTaken);
+        score = 100f / timeTaken;
+        scoreInt =  Mathf.RoundToInt(score);
+        if(scoreInt <1)
+        {
+            scoreInt = 1;
+        }
     }
 }
