@@ -2655,6 +2655,9 @@ MonoBehaviour:
   InteractText: {fileID: 0}
   SoundEffects: {fileID: 718493663}
   RefillAmmoSound: {fileID: 8300000, guid: a8c0b6eb47ab5b045a776be2bd5eabb8, type: 3}
+  minigameScriptRef: {fileID: 0}
+  ticketGiverScriptRef: {fileID: 0}
+  swingTrapRef: {fileID: 0}
 --- !u!114 &718493666
 MonoBehaviour:
   m_ObjectHideFlags: 0
