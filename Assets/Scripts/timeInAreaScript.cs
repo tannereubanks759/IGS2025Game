@@ -30,10 +30,7 @@ public class timeInAreaScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player")&& timeInAreaMinigameOn)
-        {
-            Debug.Log("Player entered");
-        }
+       
         
     }
     private void OnTriggerStay(Collider other)

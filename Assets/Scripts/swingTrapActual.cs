@@ -32,6 +32,7 @@ public class swingTrapActual : MonoBehaviour
     public void callResetFunctin()
     {
         swingTrapRef.trapAnim.SetBool("isOn", false);
+        swingTrapRef.paid = false;
         
     }
 }

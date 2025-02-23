@@ -5,6 +5,7 @@ using TMPro;
 
 public class miniGameScript : MonoBehaviour
 {
+    #region Variables
     public GameObject ui;
     public GameObject questUI;
     public bool isInteractable = false;
@@ -19,13 +20,13 @@ public class miniGameScript : MonoBehaviour
     public TextMeshProUGUI ticketText;
     public int tickets =0;
     public float totalTime = 10f;
-    //private int prevHs = 0;
     public string[] quests;
     public timeInAreaScript areaScriptRef;
     private bool isChanged = false;
     public ticketGiverScript ticketGiverScriptRef;
     public TextMeshProUGUI goGetTicketText;
-    
+    public float miniGameTime=0f;
+    #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,31 +45,19 @@ public class miniGameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.E) && isInteractable && hasQuest == false&&ticketGiverScriptRef.hasTaken==true)
+       /*if(hasQuest)
         {
-            startMinigame();
-        }
-       if(Input.GetKeyDown(KeyCode.G))
-        {
-            tickets++;
+            miniGameTime += Time.deltaTime;
         }*/
         
         
     }
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player" && hasQuest == false)
-        {
-            //Debug.Log("Entered zone");
-            ui.SetActive(true);
-            isInteractable=true;
-        }
-    }*/
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && hasQuest == false && ticketGiverScriptRef.hasTaken==true)
         {
-            //Debug.Log("Entered zone");
+            
             ui.SetActive(true);
             isInteractable = true;
         }
@@ -82,15 +71,7 @@ public class miniGameScript : MonoBehaviour
             isInteractable = false;
         }
     }
-   /* private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            //Debug.Log("Left Zone");
-            ui.SetActive(false);
-            isInteractable=false;
-        }
-    }*/
+ 
     public void printHs()
     {
         if(currentHeadShots==5)
@@ -114,26 +95,31 @@ public class miniGameScript : MonoBehaviour
         currentOutOfScore.text = " ";
         currentScore.text = "0";
         hasQuest = false;
-        
+        // gives negative of time taken
+        miniGameTime -= Time.time;
+        miniGameTime *=  -1;
+        Debug.Log("Sent call to function of time");
+        ticketGiverScriptRef.calculateScore(miniGameTime);
         goGetTicketText.gameObject.SetActive(true);
         ticketGiverScriptRef.canClaimTicket = true;
 
     }
     public void startMinigame()
     {
-        //float gameNumber = Random.value;
+        
+        miniGameTime = Time.time;
         ticketGiverScriptRef.hasTaken = false;
         int number = Random.Range( 0,  quests.Length);
-        //Debug.Log(number);
+        
         hasQuest = true;
         quest = quests[number];
         questStarter(quest, number);
         
-        //Debug.Log(quest);
+        
     }
     void questStarter(string textFromArray, int numberOfQuest)
     {
-        //bool isGoal = false;
+        
         questText.text = textFromArray;
         questUI.SetActive(true);
         if (numberOfQuest == 0)
