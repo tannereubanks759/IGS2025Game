@@ -30,6 +30,9 @@ public class zombieAIV1 : MonoBehaviour
 
     public int maxRunningAnimCount;
 
+    private GameObject zombieManagerOBJ;
+    private ZombieManager zombieManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,7 +53,11 @@ public class zombieAIV1 : MonoBehaviour
 
         int randomRun = Random.Range(0, maxRunningAnimCount);
         animator.SetInteger("randRun", randomRun);
-        
+
+        // Find and get the zombie manager script reference
+        zombieManagerOBJ = GameObject.FindGameObjectWithTag("ZombieManager");
+        zombieManager = zombieManagerOBJ.GetComponent<ZombieManager>();
+
     }
 
     // Update is called once per frame
@@ -80,7 +87,8 @@ public class zombieAIV1 : MonoBehaviour
                  * The onFire variable is reset so that zombies 
                  * do not just burn out from 1 hit. More particle
                  * collision will just reset the on fire variable
-                 * and keep the timer/damage going
+                 * and keep the timer/damage going at the 1 damage
+                 * for every 3 seconds on fire rate
                  */
                 onFire = false;
             }
@@ -173,6 +181,9 @@ public class zombieAIV1 : MonoBehaviour
         if (animator.GetInteger("health") <= 0)
         {
             animator.SetBool("isDead", true);
+
+            // Decrement the total # of zombies
+            zombieManager.totalZombies--;
 
             // Anim plays multiple times, not sure if the agent.isStopped line is even working
             agent.isStopped = true;
