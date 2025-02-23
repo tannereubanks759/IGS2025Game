@@ -24,7 +24,9 @@ public class zombieAIV1 : MonoBehaviour
     private miniGameScript miniGameS;
     public GameObject objWscript;
 
-    private bool onFire;
+    // On fire variables
+    public bool onFire;
+    private float fireTimer;
 
     public int maxRunningAnimCount;
 
@@ -58,6 +60,31 @@ public class zombieAIV1 : MonoBehaviour
         MoveAI();
         CanAttack();
         IsDead();
+
+        // If the zombie is on fire (set by the flamethrowerDamage Script)
+        if (onFire)
+        {
+            // Increment the timer
+            fireTimer += Time.deltaTime;
+
+            // The zombie has been on fire for 3 seconds
+            if (fireTimer > 3)
+            {
+                // The zombie takes damage
+                TakeDamage(1);
+                
+                // The timer is reset
+                fireTimer = 0;
+
+                /* 
+                 * The onFire variable is reset so that zombies 
+                 * do not just burn out from 1 hit. More particle
+                 * collision will just reset the on fire variable
+                 * and keep the timer/damage going
+                 */
+                onFire = false;
+            }
+        }
     }
 
     // Set the is standing bool to true
@@ -112,25 +139,6 @@ public class zombieAIV1 : MonoBehaviour
             agent.isStopped = false;
             animator.SetBool("canAttack", false);
         }
-    }
-
-    public void OnParticleCollision(GameObject other)
-    {
-        Debug.Log("collision works somewqhat");
-        if (other.gameObject.layer == 12)
-        {
-            Debug.Log("collision works");
-            StartCoroutine(OnFire());
-
-        }
-    }
-
-    IEnumerator OnFire()
-    {
-        Debug.Log("made it here");
-        TakeDamage(1);
-
-        yield return null;
     }
 
     // Public function to call when the zombie takes damage
