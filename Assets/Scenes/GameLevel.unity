@@ -12400,6 +12400,52 @@ RectTransform:
   m_AnchoredPosition: {x: 73, y: -109}
   m_SizeDelta: {x: 151.008, y: 105.08}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2132771476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132771478}
+  - component: {fileID: 2132771477}
+  m_Layer: 0
+  m_Name: ZombieManager
+  m_TagString: ZombieManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2132771477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132771476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe024102e61c4584a96c74a685069d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalZombies: 0
+  spawnMaxReached: 0
+--- !u!4 &2132771478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132771476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &27318190528084307
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15038,6 +15084,7 @@ MonoBehaviour:
   ui: {fileID: 567568270}
   questUI: {fileID: 64514670}
   isInteractable: 0
+  hasQuest: 0
   quest: 
   questText: {fileID: 64514671}
   currentHeadShots: 0
@@ -15053,6 +15100,7 @@ MonoBehaviour:
   areaScriptRef: {fileID: 1601496818}
   ticketGiverScriptRef: {fileID: 8744748368649255436}
   goGetTicketText: {fileID: 1958469335}
+  miniGameTime: 0
 --- !u!4 &6239981536199690785
 Transform:
   m_ObjectHideFlags: 0
@@ -16474,6 +16522,7 @@ MonoBehaviour:
   miniGameScriptRef: {fileID: 6227924007905138582}
   canClaimTicket: 0
   interactUI: {fileID: 567568270}
+  inRangeToInteract: 0
   ticketSound: {fileID: 766089835}
   hasTaken: 1
 --- !u!65 &8744748368649255438
@@ -16583,6 +16632,9 @@ MonoBehaviour:
   InteractText: {fileID: 567568270}
   SoundEffects: {fileID: 8806082064906759172}
   RefillAmmoSound: {fileID: 8300000, guid: a8c0b6eb47ab5b045a776be2bd5eabb8, type: 3}
+  minigameScriptRef: {fileID: 0}
+  ticketGiverScriptRef: {fileID: 0}
+  swingTrapRef: {fileID: 0}
 --- !u!82 &8806082064906759172
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16899,3 +16951,4 @@ SceneRoots:
   - {fileID: 877844000}
   - {fileID: 608488943}
   - {fileID: 66132324}
+  - {fileID: 2132771478}
