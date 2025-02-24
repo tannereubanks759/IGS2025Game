@@ -5,7 +5,8 @@ public class ZombieManager : MonoBehaviour
 {
     // Holds the total/current number of zombies
     // and the max number of zombies
-    public int totalZombies;
+    public int totalZombiesAlive;
+    public int totalSpawnedZombies;
     private int maxZombies;
 
     // The current wave count
@@ -19,50 +20,37 @@ public class ZombieManager : MonoBehaviour
     void Start()
     {
         waveCount = 1;
+        maxZombies = 30;
         spawnMaxReached = false;
     }
 
     void Update()
     {
-        WaveManager();
+        //WaveManager();
         WaveCountUpdate();
     }
 
     // Updates the wave count based on the # of zombies
     void WaveCountUpdate()
     {
-        if (totalZombies == maxZombies && !spawnMaxReached)
+        if (totalSpawnedZombies == maxZombies && !spawnMaxReached)
         {
             spawnMaxReached = true;
         }
 
-        if (spawnMaxReached && totalZombies == 0)
+        if (spawnMaxReached && totalZombiesAlive == 0)
         {
             spawnMaxReached = false;
+            
             waveCount++;
+            totalSpawnedZombies = 0;
+            WaveManager();
         }
     }
 
     // Changes the maximum # of zombies based on the wave #
     void WaveManager()
     {
-        switch (waveCount)
-        {
-            case 1:
-                maxZombies = 30;
-                break;
-            case 2:
-                maxZombies = 50;
-                break;
-            case 3:
-                maxZombies = 75;
-                break;
-            case 4:
-                maxZombies = 110;
-                break;
-            default:
-                maxZombies = 30;
-                break;
-        }
+        maxZombies += 20 + (5 * (waveCount - 2));
     }
 }

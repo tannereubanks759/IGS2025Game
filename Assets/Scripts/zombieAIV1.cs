@@ -197,7 +197,7 @@ public class zombieAIV1 : MonoBehaviour
             animator.SetBool("isDead", true);
 
             // Decrement the total # of zombies
-            zombieManager.totalZombies--;
+            zombieManager.totalZombiesAlive--;
 
             // Anim plays multiple times, not sure if the agent.isStopped line is even working
             agent.isStopped = true;

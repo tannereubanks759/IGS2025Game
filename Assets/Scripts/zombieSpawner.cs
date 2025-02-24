@@ -97,7 +97,8 @@ public class zombieSpawner : MonoBehaviour
         GameObject Zombie = Instantiate(zombArray[index], this.transform.position, Quaternion.identity);
 
         // Increment the total # of zombies in the scene
-        zombieManager.totalZombies++;
+        zombieManager.totalSpawnedZombies++;
+        zombieManager.totalZombiesAlive++;
 
         // Either Andrew or Tanner did this part
         zombieAIV1 zombieScript = Zombie.GetComponent<zombieAIV1>();
