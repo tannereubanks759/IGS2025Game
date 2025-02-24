@@ -9,6 +9,9 @@ public class BulletScript : MonoBehaviour
     private float nextTime;
     public ParticleSystem bulletImpact;
     public VisualEffect zombieImpact;
+    private AudioSource bulletImpactSound;
+    private AudioClip headshotSound;
+    private AudioClip bodyshotSound;
 
     miniGameScript miniScript;
     void Start()
@@ -31,8 +34,10 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
+            float randomPitch = Random.Range(.08f, 1.3f);
+            bulletImpactSound.pitch = randomPitch;
+            bulletImpactSound.PlayOneShot(bodyshotSound);
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(1);
-            
             Debug.Log("Hit Zombie");
             zombieImpact.gameObject.SetActive(true);
             zombieImpact.Play();
@@ -40,6 +45,9 @@ public class BulletScript : MonoBehaviour
         }
         else if (collision.gameObject.layer == 9)
         {
+            float randomPitch = Random.Range(.08f, 1.3f);
+            bulletImpactSound.pitch = randomPitch;
+            bulletImpactSound.PlayOneShot(headshotSound);
             zombieImpact.gameObject.SetActive(true);
             zombieImpact.Play();
             collision.gameObject.GetComponentInChildren<VisualEffect>().Play();
@@ -47,7 +55,6 @@ public class BulletScript : MonoBehaviour
             collision.gameObject.GetComponentInChildren<VisualEffect>().gameObject.transform.localScale = new Vector3(100f, 100f, 100f);
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(3);
             Debug.Log("Hit Zombie head");
-            
             
         }
         else

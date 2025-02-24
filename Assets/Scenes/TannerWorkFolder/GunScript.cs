@@ -19,6 +19,7 @@ public class GunScript : MonoBehaviour
     public Animator anim; //booleans: isWalking isRunning isAiming isFiring isReloading
     private float nextFire;
     public FirstPersonController playerScript;
+    public GameObject crosshair;
     
     public float velocityThresh;
     public TextMeshProUGUI BulletText;
@@ -36,6 +37,7 @@ public class GunScript : MonoBehaviour
         nextFire = Time.time;
         totalAmmo = 400;
         BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
+        crosshair.SetActive(true);
     }
     void Update()
     {
@@ -61,10 +63,13 @@ public class GunScript : MonoBehaviour
         //anim for aiming
         if (Input.GetKey(AimKey))
         {
+            crosshair.SetActive(false);
             anim.SetBool("isAiming", true);
+
         }
         else
         {
+            crosshair.SetActive(true);
             anim.SetBool("isAiming", false);
         }
 
@@ -111,7 +116,7 @@ public class GunScript : MonoBehaviour
     {
         Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
         muzzleFlash.Play();
-        gunSound.pitch = Random.Range(.5f, 1.5f);
+        gunSound.pitch = Random.Range(.8f, 1.3f);
         gunSound.PlayOneShot(gunShot, .2f);
         if(bulletCount > 0)
         {
