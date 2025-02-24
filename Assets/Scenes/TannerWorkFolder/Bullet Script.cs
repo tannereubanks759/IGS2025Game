@@ -12,7 +12,7 @@ public class BulletScript : MonoBehaviour
     public AudioSource bulletImpactSound;
     public AudioClip headshotSound;
     public AudioClip bodyshotSound;
-
+    public AudioClip normalImpactSound;
     miniGameScript miniScript;
     void Start()
     {
@@ -60,6 +60,9 @@ public class BulletScript : MonoBehaviour
         }
         else
         {
+            float randomPitch = Random.Range(.08f, 1.3f);
+            bulletImpactSound.pitch = randomPitch;
+            bulletImpactSound.PlayOneShot(normalImpactSound);
             Debug.Log("bullet collided");
             bulletImpact.Play();
             rb.isKinematic = true;
