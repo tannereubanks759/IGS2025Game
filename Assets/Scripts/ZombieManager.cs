@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using TMPro;
 
 public class ZombieManager : MonoBehaviour
 {
@@ -16,12 +18,16 @@ public class ZombieManager : MonoBehaviour
     // max number of zombies for the wave
     public bool spawnMaxReached;
 
+    // The reference to the UI wave count
+    public TextMeshPro waveText;
+
     // Initialize variables to their starting values
     void Start()
     {
         waveCount = 1;
         maxZombies = 30;
         spawnMaxReached = false;
+        WaveTextUpdate();
     }
 
     void Update()
@@ -45,6 +51,7 @@ public class ZombieManager : MonoBehaviour
             waveCount++;
             totalSpawnedZombies = 0;
             WaveManager();
+            WaveTextUpdate();
         }
     }
 
@@ -52,5 +59,10 @@ public class ZombieManager : MonoBehaviour
     void WaveManager()
     {
         maxZombies += 20 + (5 * (waveCount - 2));
+    }
+
+    void WaveTextUpdate()
+    {
+        waveText.text = waveCount.ToString();
     }
 }
