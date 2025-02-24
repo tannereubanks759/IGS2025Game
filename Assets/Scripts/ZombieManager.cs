@@ -19,7 +19,7 @@ public class ZombieManager : MonoBehaviour
     public bool spawnMaxReached;
 
     // The reference to the UI wave count
-    public TextMeshPro waveText;
+    public Text waveText;
 
     // Initialize variables to their starting values
     void Start()
