@@ -9,13 +9,14 @@ public class BulletScript : MonoBehaviour
     private float nextTime;
     public ParticleSystem bulletImpact;
     public VisualEffect zombieImpact;
-    private AudioSource bulletImpactSound;
-    private AudioClip headshotSound;
-    private AudioClip bodyshotSound;
+    public AudioSource bulletImpactSound;
+    public AudioClip headshotSound;
+    public AudioClip bodyshotSound;
 
     miniGameScript miniScript;
     void Start()
     {
+        
         zombieImpact.gameObject.SetActive(false);
         nextTime = Time.time + lifeTimer;
         rb = GetComponent<Rigidbody>();

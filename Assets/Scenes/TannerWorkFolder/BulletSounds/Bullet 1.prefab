@@ -55,6 +55,9 @@ MonoBehaviour:
   velocity: 2
   bulletImpact: {fileID: 3999320162442059673}
   zombieImpact: {fileID: 2767916183357354839}
+  bulletImpactSound: {fileID: 7936301533436533553}
+  headshotSound: {fileID: 8300000, guid: 8452ede881a959045846f3ef93e0466c, type: 3}
+  bodyshotSound: {fileID: 8300000, guid: 725292aab1e9ff04c8732c3293393c83, type: 3}
 --- !u!54 &6332558549674359251
 Rigidbody:
   m_ObjectHideFlags: 0
