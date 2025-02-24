@@ -24,8 +24,8 @@ public class ZombieManager : MonoBehaviour
 
     void Update()
     {
-        WaveCountUpdate();
         WaveManager();
+        WaveCountUpdate();
     }
 
     // Updates the wave count based on the # of zombies

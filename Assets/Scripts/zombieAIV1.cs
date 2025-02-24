@@ -30,8 +30,12 @@ public class zombieAIV1 : MonoBehaviour
 
     public int maxRunningAnimCount;
 
+    // ZombieManager refs
     private GameObject zombieManagerOBJ;
     private ZombieManager zombieManager;
+
+    // allows for only 1 pass of the death logic
+    private bool deathGateKeeper;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,6 +62,10 @@ public class zombieAIV1 : MonoBehaviour
         zombieManagerOBJ = GameObject.FindGameObjectWithTag("ZombieManager");
         zombieManager = zombieManagerOBJ.GetComponent<ZombieManager>();
 
+        // Set this to false so that the death logic will pass through
+        // the first time only
+        deathGateKeeper = false;
+
     }
 
     // Update is called once per frame
@@ -67,7 +75,12 @@ public class zombieAIV1 : MonoBehaviour
         MoveAI();
         CanAttack();
         IsDead();
+        OnFire();
+        
+    }
 
+    void OnFire()
+    {
         // If the zombie is on fire (set by the flamethrowerDamage Script)
         if (onFire)
         {
@@ -79,7 +92,7 @@ public class zombieAIV1 : MonoBehaviour
             {
                 // The zombie takes damage
                 TakeDamage(1);
-                
+
                 // The timer is reset
                 fireTimer = 0;
 
@@ -178,7 +191,8 @@ public class zombieAIV1 : MonoBehaviour
     // Checks if the AI is dead
     void IsDead()
     {
-        if (animator.GetInteger("health") <= 0)
+        // If the health is 0 and we haven't gone through the logic yet
+        if (animator.GetInteger("health") <= 0 && !deathGateKeeper)
         {
             animator.SetBool("isDead", true);
 
@@ -196,6 +210,9 @@ public class zombieAIV1 : MonoBehaviour
             {
                 colliders[i].enabled = false;
             }
+
+            // Set this to true so that this logic only passes through once
+            deathGateKeeper = true;
         }
     }
 
