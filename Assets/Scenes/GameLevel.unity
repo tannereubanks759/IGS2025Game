@@ -12429,7 +12429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe024102e61c4584a96c74a685069d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalZombies: 0
+  totalZombiesAlive: 0
+  totalSpawnedZombies: 0
   spawnMaxReached: 0
 --- !u!4 &2132771478
 Transform:
