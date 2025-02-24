@@ -464,7 +464,8 @@ MonoBehaviour:
   leftHand: {fileID: 8674313860493494252}
   isDead: 0
   objWscript: {fileID: 0}
-  maxRunningAnimCount: 0
+  onFire: 0
+  maxRunningAnimCount: 2
 --- !u!195 &5080776727895555336
 NavMeshAgent:
   m_ObjectHideFlags: 0
