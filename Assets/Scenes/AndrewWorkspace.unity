@@ -20869,6 +20869,10 @@ PrefabInstance:
       value: blueBalloon
       objectReference: {fileID: 0}
     - target: {fileID: 1833479776836846017, guid: eca11d92c388ab84984bba8a3374e2d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833479776836846017, guid: eca11d92c388ab84984bba8a3374e2d1, type: 3}
       propertyPath: m_TagString
       value: blueBalloon
       objectReference: {fileID: 0}
