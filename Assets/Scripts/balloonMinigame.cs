@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class balloonMinigame : MonoBehaviour
 {
+    
     public GameObject[] balloons;
     public GameObject redBalloon;
     public GameObject greenBalloon;
@@ -17,7 +18,7 @@ public class balloonMinigame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // lights off, array of all red, lights on, randomly choose parts of the red to change material to gold, then shooting logic
     }
     public void startBalloon()
     {
