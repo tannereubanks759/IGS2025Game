@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 7717131689797446279}
   m_Layer: 0
   m_Name: blueBalloon
-  m_TagString: Untagged
+  m_TagString: blueBalloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123

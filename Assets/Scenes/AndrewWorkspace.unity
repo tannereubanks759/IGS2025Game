@@ -2051,23 +2051,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 341275761816557282, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: m_Size.y
-      value: 5.7563224
+      value: 5.3768415
       objectReference: {fileID: 0}
     - target: {fileID: 341275761816557282, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: m_Size.z
-      value: 17.82783
+      value: 16.530565
       objectReference: {fileID: 0}
     - target: {fileID: 341275761816557282, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: m_Center.x
-      value: 0.21205088
+      value: 0.21205077
       objectReference: {fileID: 0}
     - target: {fileID: 341275761816557282, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: m_Center.y
-      value: -9.220216
+      value: -9.03047
       objectReference: {fileID: 0}
     - target: {fileID: 341275761816557282, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: m_Center.z
-      value: -0.34826872
+      value: 0.3003688
       objectReference: {fileID: 0}
     - target: {fileID: 473142896083765115, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: m_Enabled
@@ -2141,6 +2141,10 @@ PrefabInstance:
       propertyPath: swingTrapRef
       value: 
       objectReference: {fileID: 566592149}
+    - target: {fileID: 6609120080065844317, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: playerHealthManagerRef
+      value: 
+      objectReference: {fileID: 1273948365}
     - target: {fileID: 7107884069005439356, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -7606,6 +7610,8 @@ MonoBehaviour:
   redBalloon: {fileID: 504034821}
   greenBalloon: {fileID: 1431960754}
   blueBalloon: {fileID: 830098885}
+  color: 0
+  colorTag: 
 --- !u!4 &830098884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4848273562366562406, guid: eca11d92c388ab84984bba8a3374e2d1, type: 3}
