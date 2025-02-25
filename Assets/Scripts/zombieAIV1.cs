@@ -74,7 +74,7 @@ public class zombieAIV1 : MonoBehaviour
         PlayerDetected();
         MoveAI();
         CanAttack();
-        IsDead();
+        // IsDead();
         OnFire();
         
     }
@@ -138,6 +138,10 @@ public class zombieAIV1 : MonoBehaviour
             // set the agent's destination to be the player's position
             agent.destination = player.transform.position;
         }
+        else
+        {
+            agent.isStopped = true;
+        }
     }
 
     // Checks if the AI can attack
@@ -189,30 +193,21 @@ public class zombieAIV1 : MonoBehaviour
     }
 
     // Checks if the AI is dead
-    void IsDead()
+    public void IsDead()
     {
-        // If the health is 0 and we haven't gone through the logic yet
-        if (animator.GetInteger("health") <= 0 && !deathGateKeeper)
+        // Decrement the total # of zombies
+        zombieManager.totalZombiesAlive--;
+
+        // Anim plays multiple times, not sure if the agent.isStopped line is even working
+        agent.isStopped = true;
+
+        // Get the colliders on the gameobject
+        Collider[] colliders = this.GetComponentsInChildren<Collider>();
+
+        // Disable colliders
+        for (int i = 0; i < colliders.Length; i++)
         {
-            animator.SetBool("isDead", true);
-
-            // Decrement the total # of zombies
-            zombieManager.totalZombiesAlive--;
-
-            // Anim plays multiple times, not sure if the agent.isStopped line is even working
-            agent.isStopped = true;
-
-            // Get the colliders on the gameobject
-            Collider[] colliders = this.GetComponentsInChildren<Collider>();
-
-            // Disable colliders
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                colliders[i].enabled = false;
-            }
-
-            // Set this to true so that this logic only passes through once
-            deathGateKeeper = true;
+            colliders[i].enabled = false;
         }
     }
 

@@ -58,9 +58,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: isDead
-    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: health
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4344738953440608578}
   m_Solo: 0
@@ -215,9 +215,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: isDead
-    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: health
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1766490913899944463}
   m_Solo: 0
@@ -300,13 +300,13 @@ AnimatorStateMachine:
     m_Position: {x: 100, y: 70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4669684972705065936}
-    m_Position: {x: 150, y: -60, z: 0}
+    m_Position: {x: 230, y: -90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1766490913899944463}
     m_Position: {x: -410, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -113247001480475245}
-    m_Position: {x: -150, y: -100, z: 0}
+    m_Position: {x: -180, y: -150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -91043091278652819}
     m_Position: {x: 100, y: 150, z: 0}
@@ -363,9 +363,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: isDead
-    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: health
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1766490913899944463}
   m_Solo: 0
@@ -654,9 +654,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: isDead
-    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: health
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1766490913899944463}
   m_Solo: 0
@@ -731,9 +731,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: isDead
-    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: health
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1766490913899944463}
   m_Solo: 0
