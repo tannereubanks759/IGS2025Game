@@ -27,6 +27,7 @@ public class zombieAIV1 : MonoBehaviour
     // On fire variables
     public bool onFire;
     private float fireTimer;
+    [SerializeField] float fireTickTime = 1f;
 
     public int maxRunningAnimCount;
 
@@ -34,8 +35,7 @@ public class zombieAIV1 : MonoBehaviour
     private GameObject zombieManagerOBJ;
     private ZombieManager zombieManager;
 
-    // allows for only 1 pass of the death logic
-    private bool deathGateKeeper;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,11 +61,6 @@ public class zombieAIV1 : MonoBehaviour
         // Find and get the zombie manager script reference
         zombieManagerOBJ = GameObject.FindGameObjectWithTag("ZombieManager");
         zombieManager = zombieManagerOBJ.GetComponent<ZombieManager>();
-
-        // Set this to false so that the death logic will pass through
-        // the first time only
-        deathGateKeeper = false;
-
     }
 
     // Update is called once per frame
@@ -88,7 +83,7 @@ public class zombieAIV1 : MonoBehaviour
             fireTimer += Time.deltaTime;
 
             // The zombie has been on fire for 3 seconds
-            if (fireTimer > 3)
+            if (fireTimer > fireTickTime)
             {
                 // The zombie takes damage
                 TakeDamage(1);
@@ -103,7 +98,7 @@ public class zombieAIV1 : MonoBehaviour
                  * and keep the timer/damage going at the 1 damage
                  * for every 3 seconds on fire rate
                  */
-                onFire = false;
+                // onFire = false;
             }
         }
     }

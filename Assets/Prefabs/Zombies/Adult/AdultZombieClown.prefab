@@ -867,6 +867,7 @@ MonoBehaviour:
   isDead: 0
   objWscript: {fileID: 0}
   onFire: 0
+  fireTickTime: 1
   maxRunningAnimCount: 2
 --- !u!195 &175364179217721678
 NavMeshAgent:
