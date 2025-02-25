@@ -80,7 +80,7 @@ public class zombieSpawner : MonoBehaviour
         // half the time
         if (weightedSpawn <= 10)
         {
-            index = UnityEngine.Random.Range(0, 1);
+            index = UnityEngine.Random.Range(0, 2);
         }
         // This should be the position of the GS zombie
         else if (weightedSpawn <= 16)

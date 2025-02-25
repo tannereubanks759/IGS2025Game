@@ -35,7 +35,7 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
-            float randomPitch = Random.Range(.08f, 1.3f);
+            float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
             bulletImpactSound.PlayOneShot(bodyshotSound);
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(1);
@@ -46,7 +46,7 @@ public class BulletScript : MonoBehaviour
         }
         else if (collision.gameObject.layer == 9)
         {
-            float randomPitch = Random.Range(.08f, 1.3f);
+            float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
             bulletImpactSound.PlayOneShot(headshotSound);
             zombieImpact.gameObject.SetActive(true);
@@ -60,9 +60,9 @@ public class BulletScript : MonoBehaviour
         }
         else
         {
-            float randomPitch = Random.Range(.08f, 1.3f);
+            float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
-            bulletImpactSound.PlayOneShot(normalImpactSound);
+            bulletImpactSound.PlayOneShot(normalImpactSound, .5f);
             Debug.Log("bullet collided");
             bulletImpact.Play();
             rb.isKinematic = true;
