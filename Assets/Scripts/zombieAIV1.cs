@@ -28,6 +28,7 @@ public class zombieAIV1 : MonoBehaviour
     public bool onFire;
     private float fireTimer;
     [SerializeField] float fireTickTime = 1f;
+    [SerializeField] ParticleSystem onFirePS;
 
     public int maxRunningAnimCount;
 
@@ -61,6 +62,9 @@ public class zombieAIV1 : MonoBehaviour
         // Find and get the zombie manager script reference
         zombieManagerOBJ = GameObject.FindGameObjectWithTag("ZombieManager");
         zombieManager = zombieManagerOBJ.GetComponent<ZombieManager>();
+
+        onFire = false;
+        onFirePS.Stop();
     }
 
     // Update is called once per frame
@@ -69,7 +73,6 @@ public class zombieAIV1 : MonoBehaviour
         PlayerDetected();
         MoveAI();
         CanAttack();
-        // IsDead();
         OnFire();
         
     }
@@ -79,6 +82,9 @@ public class zombieAIV1 : MonoBehaviour
         // If the zombie is on fire (set by the flamethrowerDamage Script)
         if (onFire)
         {
+            // Plays the onFirePS
+            onFirePS.Play();
+
             // Increment the timer
             fireTimer += Time.deltaTime;
 
@@ -224,6 +230,12 @@ public class zombieAIV1 : MonoBehaviour
     // "Despawns" the bodies of dead zombies (add a fade out later)
     public void Death()
     {
+        // stops the onFirePS if the zombie is on fire at the time of death
+        if (onFire)
+        {
+            onFirePS.Stop();
+        }
+
         Destroy(this.gameObject);
     }
     public void SetMinigameScript(miniGameScript script)
