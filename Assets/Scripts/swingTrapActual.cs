@@ -4,6 +4,7 @@ using UnityEngine;
 public class swingTrapActual : MonoBehaviour
 {
     public swingTrap swingTrapRef;
+    public PlayerHealthManager playerHealthManagerRef;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +23,10 @@ public class swingTrapActual : MonoBehaviour
         {
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(10);
             
+        }
+        if(collision.gameObject.layer == 11)
+        {
+            playerHealthManagerRef.pause.Die();
         }
 
     }

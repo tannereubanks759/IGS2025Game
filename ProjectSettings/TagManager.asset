@@ -9,6 +9,9 @@ TagManager:
   - trap starter
   - ticketGiver
   - ZombieManager
+  - redBalloon
+  - greenBalloon
+  - blueBalloon
   layers:
   - Default
   - TransparentFX
