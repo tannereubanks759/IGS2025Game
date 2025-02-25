@@ -6,6 +6,9 @@ public class balloonMinigame : MonoBehaviour
     public GameObject redBalloon;
     public GameObject greenBalloon;
     public GameObject blueBalloon;
+    private int number;
+    public int color;
+    public string colorTag;
     void Start()
     {
         int size = balloons.Length; 
@@ -18,26 +21,33 @@ public class balloonMinigame : MonoBehaviour
     }
     public void startBalloon()
     {
-        int color = generateColor();
+         color = generateColor();
         if(color==1)
         {
-            Debug.Log("Red");
+            colorTag = "Red";
+            
         }
         else if(color==2) 
         {
-            Debug.Log("Blue");
+            colorTag = "Blue";
+            
         }
         else
         {
-            Debug.Log("Yellow");
+            colorTag = "Yellow";
+            
         }
     }
     private int generateColor()
     {
-        int number = Random.Range(1, 3);
+        number = Random.Range(1, 3);
         return number;
     }
-    public void shotBalloon()
+    public void shotRightBalloon()
+    {
+
+    }
+    public void shotWrongBalloon()
     {
 
     }
