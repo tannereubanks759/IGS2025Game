@@ -34,12 +34,12 @@ public class BulletScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name + ", Game Active: " + balloonMinigameRef.isMiniActive);
+        //Debug.Log(collision.gameObject.name + ", Game Active: " + balloonMinigameRef.isMiniActive);
         if (collision.gameObject.layer == 8)
         {
             float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
-            bulletImpactSound.PlayOneShot(bodyshotSound);
+            bulletImpactSound.PlayOneShot(bodyshotSound, .2f);
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(1);
             zombieImpact.gameObject.SetActive(true);
             zombieImpact.Play();
@@ -49,7 +49,7 @@ public class BulletScript : MonoBehaviour
         {
             float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
-            bulletImpactSound.PlayOneShot(headshotSound);
+            bulletImpactSound.PlayOneShot(headshotSound, .2f);
             zombieImpact.gameObject.SetActive(true);
             zombieImpact.Play();
             collision.gameObject.GetComponentInChildren<VisualEffect>().Play();
@@ -72,7 +72,7 @@ public class BulletScript : MonoBehaviour
         {
             float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
-            bulletImpactSound.PlayOneShot(normalImpactSound, .5f);
+            bulletImpactSound.PlayOneShot(normalImpactSound, .1f);
             bulletImpact.Play();
             rb.isKinematic = true;
         }
