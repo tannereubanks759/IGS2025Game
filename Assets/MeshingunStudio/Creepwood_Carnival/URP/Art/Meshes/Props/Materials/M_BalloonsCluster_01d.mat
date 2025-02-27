@@ -384,7 +384,7 @@ Material:
     - _MainUV: {r: 1, g: 1, b: 11, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _TintB1: {r: 0.14126332, g: 0.22322798, b: 1, a: 1}
+    - _TintB1: {r: 1, g: 0.14117646, b: 0.16109505, a: 1}
     - _TintB2: {r: 1, g: 1, b: 1, a: 1}
     - _TintG1: {r: 1, g: 1, b: 1, a: 1}
     - _TintG2: {r: 1, g: 1, b: 1, a: 1}

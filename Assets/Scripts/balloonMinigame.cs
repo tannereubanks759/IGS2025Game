@@ -1,48 +1,70 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class balloonMinigame : MonoBehaviour
 {
     
     public GameObject[] balloons;
-    public GameObject redBalloon;
-    public GameObject greenBalloon;
-    public GameObject blueBalloon;
-    private int number;
-    public int color;
-    public string colorTag;
+    private GameObject balloonToEdit;
+    public int number;
+    private int sizeBall;
+    public int numberOfGoldenBalloons;
+    private int positionOne;
+    public List<int> prevNumbers;
+    public GameObject goldenBalloon;
+    public Material goldenMatieral;
     void Start()
     {
-        int size = balloons.Length; 
+        sizeBall = balloons.Length;
+        Renderer renderer = goldenBalloon.GetComponent<Renderer>();
+        renderer.material = goldenMatieral;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.F)) { startBalloon(); }
         // lights off, array of all red, lights on, randomly choose parts of the red to change material to gold, then shooting logic
     }
     public void startBalloon()
     {
-         color = generateColor();
-        if(color==1)
+        for(int i = 0; i<numberOfGoldenBalloons;i++)
         {
-            colorTag = "Red";
-            
+            positionOne = generateGoldenBalloonLocations();
+            UpdateBalloons(positionOne);
         }
-        else if(color==2) 
+        
+        
+    }
+    private int generateGoldenBalloonLocations()
+    {
+        if(prevNumbers!=null) 
         {
-            colorTag = "Blue";
-            
+            while (prevNumbers.Contains(number))
+            {
+                Debug.Log("Generated a duplicate number of" + number);
+                number = Random.Range(0, sizeBall);
+
+            }
+            prevNumbers.Add(number);
+
+            return number;
         }
         else
         {
-            colorTag = "Yellow";
-            
+            number = Random.Range(0, sizeBall);
+            prevNumbers.Add(number);
+            return number;
         }
+       
     }
-    private int generateColor()
+    private void UpdateBalloons(int number)
     {
-        number = Random.Range(1, 3);
-        return number;
+        balloonToEdit = balloons[number];
+        Instantiate(goldenBalloon, balloonToEdit.transform.position, balloonToEdit.transform.rotation);
+        balloonToEdit.SetActive(false);
     }
     public void shotRightBalloon()
     {
