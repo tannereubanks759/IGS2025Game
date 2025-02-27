@@ -32,7 +32,7 @@ public class balloonMinigame : MonoBehaviour
     public void startBalloon()
     {
         isMiniActive = true;
-        for(int i = 0; i<numberOfGoldenBalloons;i++)
+        for (int i = 0; i<numberOfGoldenBalloons;i++)
         {
             positionOne = generateGoldenBalloonLocations();
             UpdateBalloons(positionOne);

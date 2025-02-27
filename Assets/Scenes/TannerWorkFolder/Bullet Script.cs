@@ -17,7 +17,7 @@ public class BulletScript : MonoBehaviour
     miniGameScript miniScript;
     void Start()
     {
-        
+        balloonMinigameRef = GameObject.FindFirstObjectByType<balloonMinigame>();
         zombieImpact.gameObject.SetActive(false);
         nextTime = Time.time + lifeTimer;
         rb = GetComponent<Rigidbody>();
@@ -34,14 +34,13 @@ public class BulletScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
+        Debug.Log(collision.gameObject.name + ", Game Active: " + balloonMinigameRef.isMiniActive);
         if (collision.gameObject.layer == 8)
         {
             float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
             bulletImpactSound.PlayOneShot(bodyshotSound);
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(1);
-            Debug.Log("Hit Zombie");
             zombieImpact.gameObject.SetActive(true);
             zombieImpact.Play();
             
@@ -57,18 +56,15 @@ public class BulletScript : MonoBehaviour
             collision.transform.parent.localScale = new Vector3(.01f, .01f, .01f);
             collision.gameObject.GetComponentInChildren<VisualEffect>().gameObject.transform.localScale = new Vector3(100f, 100f, 100f);
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(3);
-            Debug.Log("Hit Zombie head");
             
         }
-        else if(collision.gameObject.layer==14 && balloonMinigameRef.isMiniActive)
+        else if(collision.gameObject.layer==13 && balloonMinigameRef.isMiniActive)
         {
-            //Debug.Log("HIT Gold BALL");
             balloonMinigameRef.shotRightBalloon();
             Destroy(collision.gameObject);
         }
-        else if(collision.gameObject.layer==14 && balloonMinigameRef.isMiniActive)
+        else if(collision.gameObject.layer==13 && balloonMinigameRef.isMiniActive)
         {
-            //Debug.Log("HIT RED BALL");
             balloonMinigameRef.shotWrongBalloon();
             Destroy(collision.gameObject);
         }
@@ -77,7 +73,6 @@ public class BulletScript : MonoBehaviour
             float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
             bulletImpactSound.PlayOneShot(normalImpactSound, .5f);
-            Debug.Log("bullet collided");
             bulletImpact.Play();
             rb.isKinematic = true;
         }
