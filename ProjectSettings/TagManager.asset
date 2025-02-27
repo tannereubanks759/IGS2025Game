@@ -12,6 +12,7 @@ TagManager:
   - redBalloon
   - greenBalloon
   - blueBalloon
+  - goldenBalloon
   layers:
   - Default
   - TransparentFX
@@ -26,8 +27,8 @@ TagManager:
   - ZombieHand
   - Player
   - Fire
-  - 
-  - 
+  - rightBalloon
+  - wrongBalloon
   - 
   - 
   - 

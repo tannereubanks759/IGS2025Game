@@ -14,10 +14,11 @@ public class balloonMinigame : MonoBehaviour
     public List<int> prevNumbers;
     public GameObject goldenBalloon;
     public Material goldenMatieral;
+    public bool isMiniActive = false;
     void Start()
     {
         sizeBall = balloons.Length;
-        Renderer renderer = goldenBalloon.GetComponent<Renderer>();
+        Renderer renderer = goldenBalloon.GetComponentInChildren<Renderer>();
         renderer.material = goldenMatieral;
 
     }
@@ -30,6 +31,7 @@ public class balloonMinigame : MonoBehaviour
     }
     public void startBalloon()
     {
+        isMiniActive = true;
         for(int i = 0; i<numberOfGoldenBalloons;i++)
         {
             positionOne = generateGoldenBalloonLocations();
@@ -68,10 +70,14 @@ public class balloonMinigame : MonoBehaviour
     }
     public void shotRightBalloon()
     {
-
+        numberOfGoldenBalloons--;
+        if(numberOfGoldenBalloons==0)
+        {
+            Debug.Log("Finished quest");
+        }
     }
     public void shotWrongBalloon()
     {
-
+        Debug.Log("Wrong");
     }
 }

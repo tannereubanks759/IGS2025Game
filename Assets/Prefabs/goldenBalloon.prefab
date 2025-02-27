@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6374379800998842862}
   - component: {fileID: 6207825280789478007}
   - component: {fileID: 4322527194879409252}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SM_balloon_01d_LOD2
-  m_TagString: Untagged
+  m_TagString: goldenBalloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
@@ -97,9 +97,9 @@ GameObject:
   - component: {fileID: 4158762839649967114}
   - component: {fileID: 8842573726726844443}
   - component: {fileID: 6331831430219413470}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SM_balloon_01d_LOD3
-  m_TagString: Untagged
+  m_TagString: goldenBalloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
@@ -183,9 +183,9 @@ GameObject:
   - component: {fileID: 19516833894332668}
   - component: {fileID: 8487436173287230469}
   - component: {fileID: 1750223318022111160}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SM_balloon_01d_LOD1
-  m_TagString: Untagged
+  m_TagString: goldenBalloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
@@ -269,9 +269,9 @@ GameObject:
   - component: {fileID: 4800287058988605430}
   - component: {fileID: 2171726706789566588}
   - component: {fileID: 5303612633926604157}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SM_balloon_01d_LOD0
-  m_TagString: Untagged
+  m_TagString: goldenBalloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
@@ -314,7 +314,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bed7f52de070dd146ba511c78313b78b, type: 2}
+  - {fileID: 2100000, guid: 42df425c126a9b9439764965564438f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -355,9 +355,9 @@ GameObject:
   - component: {fileID: 4635186457049388519}
   - component: {fileID: 1074672102934647740}
   - component: {fileID: 3032593093406824849}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: goldenBalloon
-  m_TagString: redBalloon
+  m_TagString: goldenBalloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3426288773936524981}
   - component: {fileID: 1763520357224742194}
   - component: {fileID: 1563011717210663525}
-  m_Layer: 0
+  - component: {fileID: -7873767318319728829}
+  m_Layer: 14
   m_Name: redBalloon
   m_TagString: redBalloon
   m_Icon: {fileID: 0}
@@ -90,6 +91,33 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: abc00000000016151623094144584445, type: 3}
+--- !u!54 &-7873767318319728829
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194169589743553859}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &401423173834400249
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,9 +129,9 @@ GameObject:
   - component: {fileID: 816586212268552239}
   - component: {fileID: 8221553235114555656}
   - component: {fileID: 3731030477883226348}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_balloon_01d_LOD3
-  m_TagString: Untagged
+  m_TagString: redBalloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
@@ -187,9 +215,9 @@ GameObject:
   - component: {fileID: 7605906000476829472}
   - component: {fileID: 7512808557648714181}
   - component: {fileID: 2701028134067822270}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_balloon_01d_LOD2
-  m_TagString: Untagged
+  m_TagString: redBalloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
@@ -273,9 +301,9 @@ GameObject:
   - component: {fileID: 6727473226248228551}
   - component: {fileID: 5599767482558548066}
   - component: {fileID: 9007858099564868198}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_balloon_01d_LOD1
-  m_TagString: Untagged
+  m_TagString: redBalloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
@@ -359,9 +387,9 @@ GameObject:
   - component: {fileID: 5871694969440396671}
   - component: {fileID: 4790870753904694512}
   - component: {fileID: 8762088588781976052}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SM_balloon_01d_LOD0
-  m_TagString: Untagged
+  m_TagString: redBalloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123

@@ -13,6 +13,7 @@ public class BulletScript : MonoBehaviour
     public AudioClip headshotSound;
     public AudioClip bodyshotSound;
     public AudioClip normalImpactSound;
+    public balloonMinigame balloonMinigameRef;
     miniGameScript miniScript;
     void Start()
     {
@@ -33,6 +34,7 @@ public class BulletScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.layer == 8)
         {
             float randomPitch = Random.Range(.8f, 1.3f);
@@ -57,6 +59,18 @@ public class BulletScript : MonoBehaviour
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(3);
             Debug.Log("Hit Zombie head");
             
+        }
+        else if(collision.gameObject.layer==14 && balloonMinigameRef.isMiniActive)
+        {
+            //Debug.Log("HIT Gold BALL");
+            balloonMinigameRef.shotRightBalloon();
+            Destroy(collision.gameObject);
+        }
+        else if(collision.gameObject.layer==14 && balloonMinigameRef.isMiniActive)
+        {
+            //Debug.Log("HIT RED BALL");
+            balloonMinigameRef.shotWrongBalloon();
+            Destroy(collision.gameObject);
         }
         else
         {
