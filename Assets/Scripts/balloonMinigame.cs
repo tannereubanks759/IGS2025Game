@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class balloonMinigame : MonoBehaviour
@@ -15,6 +16,8 @@ public class balloonMinigame : MonoBehaviour
     public GameObject goldenBalloon;
     public Material goldenMatieral;
     public bool isMiniActive = false;
+    
+    public List<GameObject> disabledBalloons;
     void Start()
     {
         sizeBall = balloons.Length;
@@ -66,6 +69,7 @@ public class balloonMinigame : MonoBehaviour
     {
         balloonToEdit = balloons[number];
         Instantiate(goldenBalloon, balloonToEdit.transform.position, balloonToEdit.transform.rotation);
+        disabledBalloons.Add(balloonToEdit);
         balloonToEdit.SetActive(false);
     }
     public void shotRightBalloon()
@@ -74,10 +78,20 @@ public class balloonMinigame : MonoBehaviour
         if(numberOfGoldenBalloons==0)
         {
             Debug.Log("Finished quest");
+            Invoke("resetBalloons", 3);
+            resetBalloons();
         }
     }
     public void shotWrongBalloon()
     {
         Debug.Log("Wrong");
+    }
+    public void resetBalloons()
+    {
+        for(int i = 0; i<disabledBalloons.Count; i++) 
+        {
+            Debug.Log("Enabled balloon" + i);
+            disabledBalloons[i].SetActive(true);
+        }
     }
 }
