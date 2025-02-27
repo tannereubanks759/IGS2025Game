@@ -55,21 +55,21 @@ public class miniGameScript : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && hasQuest == false && ticketGiverScriptRef.hasTaken==true)
+        /*if (other.gameObject.tag == "Player" && hasQuest == false && ticketGiverScriptRef.hasTaken==true)
         {
             
             ui.SetActive(true);
             isInteractable = true;
-        }
+        }*/
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        /*if (other.gameObject.tag == "Player")
         {
             //Debug.Log("Left Zone");
             ui.SetActive(false);
             isInteractable = false;
-        }
+        }*/
     }
  
     public void printHs()

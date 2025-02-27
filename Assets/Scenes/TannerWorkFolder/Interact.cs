@@ -33,8 +33,9 @@ public class Interact : MonoBehaviour
         if(other.gameObject.tag == "Minigame Starter")
         {
             InteractText.SetActive(true);
-            if (Input.GetKey(KeyCode.E) && minigameScriptRef.isInteractable && minigameScriptRef.hasQuest == false && ticketGiverScriptRef.hasTaken == true)
+            if (Input.GetKey(KeyCode.E) && minigameScriptRef.hasQuest == false && ticketGiverScriptRef.hasTaken == true)
             {
+                Debug.Log("Start Minigame");
                 minigameScriptRef.startMinigame();
             }
         }

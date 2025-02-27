@@ -23,7 +23,7 @@ public class timeInAreaScript : MonoBehaviour
             {
                 timeInArea += Time.deltaTime;
                 miniGameScript.currentScore.text = timeInArea.ToString("F2");
-                Debug.Log(timeInArea);
+                
             }
             
         }

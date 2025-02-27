@@ -14363,7 +14363,7 @@ GameObject:
   - component: {fileID: 6227924007905138582}
   m_Layer: 0
   m_Name: MinigameHandler
-  m_TagString: Untagged
+  m_TagString: Minigame Starter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16549,6 +16549,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.327015, y: 3.2184312, z: 2.0906627}
   m_Center: {x: 0.050964355, y: 1.1092151, z: -0.54533136}
+--- !u!114 &8744748368649255440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7847962618414279397, guid: 80e62a6cdeb7c194b989dfeae43ca996, type: 3}
+  m_PrefabInstance: {fileID: 1423039696076172684}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8744748368649255435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e82f43ddcb8c5145b87ef3effb7cab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8749058240518231657
 GameObject:
   m_ObjectHideFlags: 0
@@ -16635,9 +16646,9 @@ MonoBehaviour:
   InteractText: {fileID: 567568270}
   SoundEffects: {fileID: 8806082064906759172}
   RefillAmmoSound: {fileID: 8300000, guid: a8c0b6eb47ab5b045a776be2bd5eabb8, type: 3}
-  minigameScriptRef: {fileID: 0}
-  ticketGiverScriptRef: {fileID: 0}
-  swingTrapRef: {fileID: 0}
+  minigameScriptRef: {fileID: 6227924007905138582}
+  ticketGiverScriptRef: {fileID: 8744748368649255440}
+  swingTrapRef: {fileID: 1580207501}
 --- !u!82 &8806082064906759172
 AudioSource:
   m_ObjectHideFlags: 0
