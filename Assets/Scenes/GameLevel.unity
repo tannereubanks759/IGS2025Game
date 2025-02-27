@@ -13039,13 +13039,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ticketBooth
       objectReference: {fileID: 0}
+    - target: {fileID: 7847962618414279397, guid: 80e62a6cdeb7c194b989dfeae43ca996, type: 3}
+      propertyPath: interactUI
+      value: 
+      objectReference: {fileID: 567568270}
+    - target: {fileID: 7847962618414279397, guid: 80e62a6cdeb7c194b989dfeae43ca996, type: 3}
+      propertyPath: miniGameScriptRef
+      value: 
+      objectReference: {fileID: 6227924007905138582}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5210317921667463325, guid: 80e62a6cdeb7c194b989dfeae43ca996, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8744748368649255436}
     - targetCorrespondingSourceObject: {fileID: 5210317921667463325, guid: 80e62a6cdeb7c194b989dfeae43ca996, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8744748368649255438}
@@ -15101,7 +15106,7 @@ MonoBehaviour:
   - Get 5 headshots
   - Touch Grass for 10 seconds
   areaScriptRef: {fileID: 1601496818}
-  ticketGiverScriptRef: {fileID: 8744748368649255436}
+  ticketGiverScriptRef: {fileID: 0}
   goGetTicketText: {fileID: 1958469335}
   miniGameTime: 0
 --- !u!4 &6239981536199690785
@@ -16510,24 +16515,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5210317921667463325, guid: 80e62a6cdeb7c194b989dfeae43ca996, type: 3}
   m_PrefabInstance: {fileID: 1423039696076172684}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8744748368649255436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744748368649255435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e82f43ddcb8c5145b87ef3effb7cab5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  miniGameScriptRef: {fileID: 6227924007905138582}
-  canClaimTicket: 0
-  interactUI: {fileID: 567568270}
-  inRangeToInteract: 0
-  ticketSound: {fileID: 766089835}
-  hasTaken: 1
 --- !u!65 &8744748368649255438
 BoxCollider:
   m_ObjectHideFlags: 0
