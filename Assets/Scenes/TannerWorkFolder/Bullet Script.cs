@@ -63,10 +63,10 @@ public class BulletScript : MonoBehaviour
             balloonMinigameRef.shotRightBalloon();
             Destroy(collision.gameObject);
         }
-        else if(collision.gameObject.layer==13 && balloonMinigameRef.isMiniActive)
+        else if(collision.gameObject.layer==14 && balloonMinigameRef.isMiniActive)
         {
             balloonMinigameRef.shotWrongBalloon();
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
         else
         {
