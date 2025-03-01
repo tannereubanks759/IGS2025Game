@@ -4,12 +4,14 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseScreen;
+    public GameObject SettingsScreen;
     public bool isPaused;
     public KeyCode pauseKey;
     public FirstPersonController player;
     public GameObject DeathScreen;
     public GameObject playerUi;
     public bool isDead;
+
     void Start()
     {
         Resume();
@@ -79,5 +81,11 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
         Time.timeScale = 1f;
         LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void SettingsMenu()
+    {
+        PauseScreen.SetActive(false);
+        SettingsScreen.SetActive(true);
     }
 }
