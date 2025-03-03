@@ -6425,6 +6425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b31f323595659f40a5ed1c049f08320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reloadSpeed: 0
   bulletSpawnPoint: {fileID: 1619283472}
   bullet: {fileID: 44114013129905757, guid: 62c1c5f6629bdb9479545f549bcbfd35, type: 3}
   ShootKey: 323
@@ -6436,6 +6437,7 @@ MonoBehaviour:
   anim: {fileID: 1463663066}
   playerScript: {fileID: 120642500}
   crosshair: {fileID: 1817278997}
+  maxAmmo: 0
   velocityThresh: 2
   BulletText: {fileID: 1739195919}
   gunSound: {fileID: 792017452}
@@ -8349,6 +8351,79 @@ Transform:
   - {fileID: 673507067}
   m_Father: {fileID: 925955660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1869338480
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229897421581392414, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_Name
+      value: swingTrap
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
 --- !u!1 &1873421116
 GameObject:
   m_ObjectHideFlags: 0
@@ -9001,6 +9076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseScreen: {fileID: 412900333}
+  SettingsScreen: {fileID: 0}
   isPaused: 0
   pauseKey: 9
   player: {fileID: 120642500}
@@ -9568,3 +9644,4 @@ SceneRoots:
   - {fileID: 1598124193203890554}
   - {fileID: 1141769958}
   - {fileID: 769213693}
+  - {fileID: 1869338480}
