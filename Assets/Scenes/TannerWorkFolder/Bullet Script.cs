@@ -14,6 +14,7 @@ public class BulletScript : MonoBehaviour
     public AudioClip bodyshotSound;
     public AudioClip normalImpactSound;
     public balloonMinigame balloonMinigameRef;
+    public static int baseDamage = 1;
     miniGameScript miniScript;
     void Start()
     {
@@ -40,7 +41,7 @@ public class BulletScript : MonoBehaviour
             float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
             bulletImpactSound.PlayOneShot(bodyshotSound, .2f);
-            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(1);
+            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(baseDamage);
             zombieImpact.gameObject.SetActive(true);
             zombieImpact.Play();
             
@@ -55,7 +56,7 @@ public class BulletScript : MonoBehaviour
             collision.gameObject.GetComponentInChildren<VisualEffect>().Play();
             collision.transform.parent.localScale = new Vector3(.01f, .01f, .01f);
             collision.gameObject.GetComponentInChildren<VisualEffect>().gameObject.transform.localScale = new Vector3(100f, 100f, 100f);
-            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(3);
+            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamageOnHead(baseDamage + 2);
             
         }
         else if(collision.gameObject.layer==13 && balloonMinigameRef.isMiniActive)

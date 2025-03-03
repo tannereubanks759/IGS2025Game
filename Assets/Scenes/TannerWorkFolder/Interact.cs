@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Interact : MonoBehaviour
@@ -24,9 +25,9 @@ public class Interact : MonoBehaviour
         if(other.gameObject.tag == "Ammo")
         {
             InteractText.SetActive(true);
-            if (Input.GetKey(KeyCode.E) && GetComponentInChildren<GunScript>().GetTotalAmmo() < 400)
+            if (Input.GetKey(KeyCode.E) && GetComponentInChildren<GunScript>().GetTotalAmmo() < GetComponentInChildren<GunScript>().maxAmmo)
             {
-                GetComponentInChildren<GunScript>().SetTotalAmmo(400);
+                GetComponentInChildren<GunScript>().SetTotalAmmo();
                 SoundEffects.PlayOneShot(RefillAmmoSound, .5f);
             }
         }
@@ -55,10 +56,24 @@ public class Interact : MonoBehaviour
                 ticketGiverScriptRef.giveTicket();
             }
         }
+        if(other.gameObject.tag == "FoodStand")
+        {
+            InteractText.SetActive(true);
+            FoodTruck truck = other.GetComponent<FoodTruck>();
+            InteractText.GetComponent<TextMeshProUGUI>().text = truck.priceTextString;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                truck.BuyPerk();
+            }
+        }
         
     }
     private void OnTriggerExit(Collider other)
     {
+        if(other.gameObject.tag == "FoodStand")
+        {
+            InteractText.GetComponent<TextMeshProUGUI>().text = "Interact (E)";
+        }
         InteractText.SetActive(false);
     }
 }

@@ -28,8 +28,12 @@ public class ticketGiverScript : MonoBehaviour
             canClaimTicket = false;
             hasTaken = true;
         }*/
-        
-        
+
+        if (Input.GetKeyDown(KeyCode.T)) //For debugging purposes
+        {
+            miniGameScriptRef.tickets += 1;
+            miniGameScriptRef.ticketText.text = miniGameScriptRef.tickets.ToString();
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {

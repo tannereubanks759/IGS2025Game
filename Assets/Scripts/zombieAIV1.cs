@@ -175,22 +175,29 @@ public class zombieAIV1 : MonoBehaviour
         {
             animator.SetInteger("health", animator.GetInteger("health") - i);
             animator.SetTrigger("takeDamage");
-            // If a headshot
-            if (i == 3)
-            {
-                
-                // and the headshot minigame is active
-                if (miniGameS.headShotQuest == true)
-                {
-                    
-                    miniGameS.currentHeadShots += 1;
-                    Debug.Log("Headshot tracked");
-                    isDead = true;
-                    miniGameS.printHs();
-                }
-            }
+            
         }
        
+    }
+    public void TakeDamageOnHead(int i)
+    {
+        // Set the health by getting the health and subtracting 1
+        if (isDead != true)
+        {
+            animator.SetInteger("health", animator.GetInteger("health") - i);
+            animator.SetTrigger("takeDamage");
+            
+            // and the headshot minigame is active
+            if (miniGameS.headShotQuest == true)
+            {
+
+                miniGameS.currentHeadShots += 1;
+                Debug.Log("Headshot tracked");
+                isDead = true;
+                miniGameS.printHs();
+            }
+            
+        }
     }
 
     // Checks if the AI is dead

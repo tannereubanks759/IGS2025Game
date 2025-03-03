@@ -13,6 +13,8 @@ TagManager:
   - greenBalloon
   - blueBalloon
   - goldenBalloon
+  - Vehicle
+  - FoodStand
   layers:
   - Default
   - TransparentFX

@@ -12474,6 +12474,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
+--- !u!1001 &1649129294
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 853001806515387621, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 853001806515387621, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: 853001806515387621, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -33.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 853001806515387621, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9199722
+      objectReference: {fileID: 0}
+    - target: {fileID: 853001806515387621, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 853001806515387621, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.3919838
+      objectReference: {fileID: 0}
+    - target: {fileID: 853001806515387621, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 853001806515387621, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 853001806515387621, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -46.156
+      objectReference: {fileID: 0}
+    - target: {fileID: 853001806515387621, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319294602461081035, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
+      propertyPath: m_Name
+      value: Food Shops Prefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e228220fa39af04eab006d0cb34c164, type: 3}
 --- !u!1 &1663635206
 GameObject:
   m_ObjectHideFlags: 0
@@ -16877,6 +16934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b31f323595659f40a5ed1c049f08320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reloadSpeed: 0
   bulletSpawnPoint: {fileID: 8479556757145333042}
   bullet: {fileID: 44114013129905757, guid: 62c1c5f6629bdb9479545f549bcbfd35, type: 3}
   ShootKey: 323
@@ -16888,6 +16946,7 @@ MonoBehaviour:
   anim: {fileID: 8908529551512895415}
   playerScript: {fileID: 1318154952095606874}
   crosshair: {fileID: 2431089210027246023}
+  maxAmmo: 0
   velocityThresh: 2
   BulletText: {fileID: 1739195919}
   gunSound: {fileID: 6309910279687992833}
@@ -19403,3 +19462,4 @@ SceneRoots:
   - {fileID: 66132324}
   - {fileID: 2132771478}
   - {fileID: 1196438383}
+  - {fileID: 1649129294}

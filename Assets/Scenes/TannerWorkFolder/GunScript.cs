@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class GunScript : MonoBehaviour
 {
-    
+    public float reloadSpeed;
     public GameObject bulletSpawnPoint;
     public GameObject bullet;
     public KeyCode ShootKey;
@@ -20,6 +20,7 @@ public class GunScript : MonoBehaviour
     private float nextFire;
     public FirstPersonController playerScript;
     public GameObject crosshair;
+    public float maxAmmo;
     
     public float velocityThresh;
     public TextMeshProUGUI BulletText;
@@ -33,6 +34,8 @@ public class GunScript : MonoBehaviour
 
     void Start()
     {
+        maxAmmo = 400;
+        reloadSpeed = 1f;
         bulletCount = magazineSize;
         nextFire = Time.time;
         totalAmmo = 400;
@@ -106,8 +109,9 @@ public class GunScript : MonoBehaviour
 
 
         //anim for reloading
-        if (((Input.GetKeyDown(ReloadKey) && bulletCount != 30f) || (Input.GetKey(ShootKey) && bulletCount <= 0f)) && anim.GetBool("isReloading") == false)
+        if (((Input.GetKeyDown(ReloadKey) && bulletCount != magazineSize) || (Input.GetKey(ShootKey) && bulletCount <= 0f)) && anim.GetBool("isReloading") == false)
         {
+            anim.speed = reloadSpeed;
             anim.SetBool("isReloading", true);
             //Reload();
         }
@@ -129,12 +133,12 @@ public class GunScript : MonoBehaviour
     public void Reload()
     {
         gunSound.pitch = 1f;
-        if(totalAmmo >= 30)
+        if(totalAmmo >= magazineSize)
         {
             totalAmmo -= magazineSize - bulletCount;
             bulletCount = magazineSize;
         }
-        else if(totalAmmo < 30 && totalAmmo > 0)
+        else if(totalAmmo < magazineSize && totalAmmo > 0)
         {
             bulletCount = totalAmmo;
             totalAmmo = 0;
@@ -144,11 +148,12 @@ public class GunScript : MonoBehaviour
 
     public void SetReloadingFalse()
     {
+        anim.speed = 1f;
         anim.SetBool("isReloading", false);
     }
-    public void SetTotalAmmo(float total)
+    public void SetTotalAmmo()
     {
-        totalAmmo = total;
+        totalAmmo = maxAmmo;
         BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
     }
     public float GetTotalAmmo()
