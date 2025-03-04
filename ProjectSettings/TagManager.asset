@@ -17,6 +17,7 @@ TagManager:
   - FoodStand
   - Wrong Grass
   - Active Grass
+  - coaster trap starter
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ public class Interact : MonoBehaviour
     public miniGameScript minigameScriptRef;
     public ticketGiverScript ticketGiverScriptRef;
     public swingTrap swingTrapRef;
+    public KiddieCoaster coasterRef;
     void Start()
     {
         InteractText.SetActive(false);
@@ -46,6 +47,14 @@ public class Interact : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 swingTrapRef.startTrap();
+            }
+        }
+        if(other.gameObject.tag == "coaster trap starter")
+        {
+            InteractText.SetActive(true);
+            if (Input.GetKey(KeyCode.E))
+            {
+                coasterRef.startCoaster();
             }
         }
         if(other.gameObject.tag== "ticketGiver")
