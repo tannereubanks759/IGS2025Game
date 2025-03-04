@@ -26,6 +26,9 @@ public class miniGameScript : MonoBehaviour
     public ticketGiverScript ticketGiverScriptRef;
     public TextMeshProUGUI goGetTicketText;
     public float miniGameTime=0f;
+    public int randomNumber;
+    public GameObject[] grassAreas;
+    private Collider[] colliderToEnable;
     #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,7 +36,11 @@ public class miniGameScript : MonoBehaviour
         currentHeadShots = 0;
         ui.SetActive(false);
         questUI.SetActive(false);
-        
+        for (int i = 0; i < grassAreas.Length; i++)
+        {
+            grassAreas[i].tag = "Wrong Grass";
+        }
+
     }
     private void Awake()
     {
@@ -45,31 +52,18 @@ public class miniGameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /*if(hasQuest)
-        {
-            miniGameTime += Time.deltaTime;
-        }*/
+       
         
         
     }
    
     private void OnTriggerEnter(Collider other)
     {
-        /*if (other.gameObject.tag == "Player" && hasQuest == false && ticketGiverScriptRef.hasTaken==true)
-        {
-            
-            ui.SetActive(true);
-            isInteractable = true;
-        }*/
+        
     }
     private void OnTriggerExit(Collider other)
     {
-        /*if (other.gameObject.tag == "Player")
-        {
-            //Debug.Log("Left Zone");
-            ui.SetActive(false);
-            isInteractable = false;
-        }*/
+        
     }
  
     public void printHs()
@@ -102,6 +96,11 @@ public class miniGameScript : MonoBehaviour
         ticketGiverScriptRef.calculateScore(miniGameTime);
         goGetTicketText.gameObject.SetActive(true);
         ticketGiverScriptRef.canClaimTicket = true;
+        for(int i = 0; i<colliderToEnable.Length; i++) 
+        {
+            colliderToEnable[i].enabled = false;
+        }
+        
 
     }
     public void startMinigame()
@@ -150,15 +149,25 @@ public class miniGameScript : MonoBehaviour
             currentScore.rectTransform.anchoredPosition += new Vector2(-60f, 0f);
             isChanged = true;
         }
+        determineGrass();
         areaScriptRef.timeInAreaMinigameOn = true;
         currentOutOfScore.text = "/10";
         currentScore.text = " ";
 
         // tracks time in area with colliders
     }
+
+     void determineGrass()
+    {
+        randomNumber = Random.Range(1, grassAreas.Length);
+        colliderToEnable = grassAreas[randomNumber].GetComponents<Collider>();
+        for (int i = 0; i < colliderToEnable.Length; i++)
+        {
+            colliderToEnable[i].enabled = true;
+        }
         
+    }
 
 
-    
-    
+
 }
