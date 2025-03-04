@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 7504471730233763587, guid: d1a71e5c4e753e845a88ff929023fe72, type: 3}
   - {fileID: 8162022862266174422, guid: c6a17551877fb8e44ad6179e24bc408f, type: 3}
   spawnRate: 6
-  spawnRange: 30
+  spawnRange: 60
 --- !u!1 &7342430809366302475
 GameObject:
   m_ObjectHideFlags: 0

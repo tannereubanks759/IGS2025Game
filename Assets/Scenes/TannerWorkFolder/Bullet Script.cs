@@ -5,7 +5,7 @@ public class BulletScript : MonoBehaviour
 {
     public float velocity = 100;
     private Rigidbody rb;
-    private float lifeTimer = 1f; //Seconds
+    private float lifeTimer = 2f; //Seconds
     private float nextTime;
     public ParticleSystem bulletImpact;
     public VisualEffect zombieImpact;

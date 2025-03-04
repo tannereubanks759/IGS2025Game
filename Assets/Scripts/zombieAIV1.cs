@@ -70,11 +70,13 @@ public class zombieAIV1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerDetected();
-        MoveAI();
-        CanAttack();
-        OnFire();
-        
+        if(agent.enabled == true)
+        {
+            PlayerDetected();
+            MoveAI();
+            CanAttack();
+            OnFire();
+        }
     }
 
     void OnFire()
@@ -205,9 +207,8 @@ public class zombieAIV1 : MonoBehaviour
     {
         // Decrement the total # of zombies
         zombieManager.totalZombiesAlive--;
-
         // Anim plays multiple times, not sure if the agent.isStopped line is even working
-        agent.isStopped = true;
+        agent.enabled = false;
 
         // Get the colliders on the gameobject
         Collider[] colliders = this.GetComponentsInChildren<Collider>();
