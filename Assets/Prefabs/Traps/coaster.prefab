@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PS_FlameThrowerRight
       objectReference: {fileID: 0}
+    - target: {fileID: 4397211970513763328, guid: d1170bf7a1d362b49850a9344ca2acde, type: 3}
+      propertyPath: m_TagString
+      value: rightFlamethrower
+      objectReference: {fileID: 0}
     - target: {fileID: 7894461816880394949, guid: d1170bf7a1d362b49850a9344ca2acde, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.00006221235
@@ -352,6 +356,10 @@ PrefabInstance:
     - target: {fileID: 4397211970513763328, guid: d1170bf7a1d362b49850a9344ca2acde, type: 3}
       propertyPath: m_Name
       value: PS_FlameThrowerLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397211970513763328, guid: d1170bf7a1d362b49850a9344ca2acde, type: 3}
+      propertyPath: m_TagString
+      value: leftFlameThrower
       objectReference: {fileID: 0}
     - target: {fileID: 7894461816880394949, guid: d1170bf7a1d362b49850a9344ca2acde, type: 3}
       propertyPath: m_LocalPosition.x
@@ -534,3 +542,5 @@ MonoBehaviour:
   costPrice: 1
   paid: 0
   revolutionsCompleted: 0
+  lFlamethrower: {fileID: 0}
+  rFlamethrower: {fileID: 0}

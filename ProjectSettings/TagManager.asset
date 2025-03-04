@@ -18,6 +18,8 @@ TagManager:
   - Wrong Grass
   - Active Grass
   - coaster trap starter
+  - rightFlamethrower
+  - leftFlameThrower
   layers:
   - Default
   - TransparentFX
