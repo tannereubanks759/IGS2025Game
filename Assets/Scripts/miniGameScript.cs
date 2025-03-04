@@ -28,7 +28,7 @@ public class miniGameScript : MonoBehaviour
     public float miniGameTime=0f;
     public int randomNumber;
     public GameObject[] grassAreas;
-    private Collider[] colliderToEnable;
+    public SphereCollider[] colliderToEnable;
     #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -96,10 +96,7 @@ public class miniGameScript : MonoBehaviour
         ticketGiverScriptRef.calculateScore(miniGameTime);
         goGetTicketText.gameObject.SetActive(true);
         ticketGiverScriptRef.canClaimTicket = true;
-        for(int i = 0; i<colliderToEnable.Length; i++) 
-        {
-            colliderToEnable[i].enabled = false;
-        }
+        
         
 
     }
@@ -159,8 +156,8 @@ public class miniGameScript : MonoBehaviour
 
      void determineGrass()
     {
-        randomNumber = Random.Range(1, grassAreas.Length);
-        colliderToEnable = grassAreas[randomNumber].GetComponents<Collider>();
+        randomNumber = Random.Range(0, grassAreas.Length);
+        colliderToEnable = grassAreas[randomNumber].GetComponents<SphereCollider>();
         for (int i = 0; i < colliderToEnable.Length; i++)
         {
             colliderToEnable[i].enabled = true;
@@ -168,6 +165,12 @@ public class miniGameScript : MonoBehaviour
         
     }
 
-
+    public void turnOffColliders()
+    {
+        for (int i = 0; i < colliderToEnable.Length; i++)
+        {
+            colliderToEnable[i].enabled = false;
+        }
+    }
 
 }
