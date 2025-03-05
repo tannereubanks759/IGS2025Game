@@ -29,6 +29,7 @@ public class miniGameScript : MonoBehaviour
     public int randomNumber;
     public GameObject[] grassAreas;
     public SphereCollider[] colliderToEnable;
+    public balloonMinigame balloonMinigameRef;
     #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -126,6 +127,10 @@ public class miniGameScript : MonoBehaviour
         {
             timeInArea();
         }
+        else if(numberOfQuest == 2)
+        { 
+            startBalloon();
+        }
     }
     void headShot()
     {
@@ -164,7 +169,12 @@ public class miniGameScript : MonoBehaviour
         }
         
     }
-
+    void startBalloon()
+    {
+        currentOutOfScore.text = "/5";
+        
+        balloonMinigameRef.startBalloon();
+    }
     public void turnOffColliders()
     {
         for (int i = 0; i < colliderToEnable.Length; i++)

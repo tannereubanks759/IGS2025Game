@@ -16,6 +16,8 @@ public class balloonMinigame : MonoBehaviour
     public GameObject goldenBalloon;
     public Material goldenMatieral;
     public bool isMiniActive = false;
+    public miniGameScript minigameRef;
+    private int score =0;
     
     public List<GameObject> disabledBalloons;
     void Start()
@@ -49,7 +51,7 @@ public class balloonMinigame : MonoBehaviour
         {
             while (prevNumbers.Contains(number))
             {
-                Debug.Log("Generated a duplicate number of" + number);
+                //Debug.Log("Generated a duplicate number of" + number);
                 number = Random.Range(0, sizeBall);
 
             }
@@ -74,12 +76,15 @@ public class balloonMinigame : MonoBehaviour
     }
     public void shotRightBalloon()
     {
+        score++;
+        minigameRef.currentScore.text = score.ToString();
         numberOfGoldenBalloons--;
         if(numberOfGoldenBalloons==0)
         {
             Debug.Log("Finished quest");
             Invoke("resetBalloons", 3);
-            resetBalloons();
+            minigameRef.resetQuest();
+            //resetBalloons();
         }
     }
     public void shotWrongBalloon()
