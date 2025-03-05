@@ -31,7 +31,7 @@ public class balloonMinigame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F)) { startBalloon(); }
+        //if(Input.GetKeyDown(KeyCode.F)) { startBalloon(); }
         // lights off, array of all red, lights on, randomly choose parts of the red to change material to gold, then shooting logic
     }
     public void startBalloon()
