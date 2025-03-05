@@ -737,7 +737,7 @@ PrefabInstance:
     - target: {fileID: 7847962618414279397, guid: 80e62a6cdeb7c194b989dfeae43ca996, type: 3}
       propertyPath: miniGameScriptRef
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1898328103}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25126,6 +25126,17 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 45.942596
   m_Center: {x: -25.37371, y: 0, z: 9.752846}
+--- !u!114 &1033535418 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4971040893782315361, guid: 7385c248bf5c26a4094102cf18101709, type: 3}
+  m_PrefabInstance: {fileID: 1293586745}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033535405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64da67e947e6783458e6d385f93ea84b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1033688000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1030989617, guid: abc00000000006620175528037469958, type: 3}
@@ -36161,6 +36172,18 @@ PrefabInstance:
       propertyPath: miniGameObject
       value: 
       objectReference: {fileID: 1898328103}
+    - target: {fileID: 5004203057863678320, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_TagString
+      value: trap starter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609120080065844317, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: swingTrapRef
+      value: 
+      objectReference: {fileID: 299971975}
+    - target: {fileID: 6609120080065844317, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: playerHealthManagerRef
+      value: 
+      objectReference: {fileID: 1980175575}
     - target: {fileID: 7107884069005439356, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -41296,7 +41319,7 @@ PrefabInstance:
     - target: {fileID: 1267678280926971958, guid: fd2b747e306176e48be337b1376342b0, type: 3}
       propertyPath: areaScriptRef
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1033535418}
     - target: {fileID: 1267678280926971958, guid: fd2b747e306176e48be337b1376342b0, type: 3}
       propertyPath: goGetTicketText
       value: 
@@ -41320,15 +41343,15 @@ PrefabInstance:
     - target: {fileID: 1267678280926971958, guid: fd2b747e306176e48be337b1376342b0, type: 3}
       propertyPath: 'grassAreas.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1033535405}
     - target: {fileID: 1267678280926971958, guid: fd2b747e306176e48be337b1376342b0, type: 3}
       propertyPath: 'grassAreas.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 533507750}
     - target: {fileID: 1267678280926971958, guid: fd2b747e306176e48be337b1376342b0, type: 3}
       propertyPath: 'grassAreas.Array.data[2]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1985812357}
     - target: {fileID: 2237528569515356141, guid: fd2b747e306176e48be337b1376342b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.3444335
