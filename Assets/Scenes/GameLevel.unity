@@ -40115,6 +40115,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2224564127910561525, guid: 348fa1db4c959994187ae0278ba69d4a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 502cb55c3e06f714f8d6370766bc9d93, type: 2}
     - target: {fileID: 2904841395135578705, guid: 348fa1db4c959994187ae0278ba69d4a, type: 3}
       propertyPath: minigameRef
       value: 
