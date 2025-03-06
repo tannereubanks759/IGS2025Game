@@ -36,7 +36,9 @@ public class zombieAIV1 : MonoBehaviour
     private GameObject zombieManagerOBJ;
     private ZombieManager zombieManager;
 
-    
+    // values for having the zombie be the last alive
+    private float lastAliveTimer;
+    private bool isLastAlive = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -76,6 +78,7 @@ public class zombieAIV1 : MonoBehaviour
             MoveAI();
             CanAttack();
             OnFire();
+            LastAlive();
         }
     }
 
@@ -207,6 +210,7 @@ public class zombieAIV1 : MonoBehaviour
     {
         // Decrement the total # of zombies
         zombieManager.totalZombiesAlive--;
+
         // Anim plays multiple times, not sure if the agent.isStopped line is even working
         agent.enabled = false;
 
@@ -249,5 +253,18 @@ public class zombieAIV1 : MonoBehaviour
     public void SetMinigameScript(miniGameScript script)
     {
         miniGameS = script;
+    }
+
+    void LastAlive()
+    {
+        if (isLastAlive)
+        {
+            lastAliveTimer += Time.deltaTime;
+
+            if (lastAliveTimer > 45)
+            {
+                TakeDamage(10);
+            }
+        }
     }
 }
