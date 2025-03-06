@@ -257,6 +257,11 @@ public class zombieAIV1 : MonoBehaviour
 
     void LastAlive()
     {
+        if (zombieManager.totalZombiesAlive == 1)
+        {
+            isLastAlive = true;
+        }
+
         if (isLastAlive)
         {
             lastAliveTimer += Time.deltaTime;
