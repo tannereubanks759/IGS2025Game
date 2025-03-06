@@ -97,8 +97,8 @@ public class miniGameScript : MonoBehaviour
         ticketGiverScriptRef.calculateScore(miniGameTime);
         goGetTicketText.gameObject.SetActive(true);
         ticketGiverScriptRef.canClaimTicket = true;
-        
-        
+        areaScriptRef.timeInAreaMinigameOn = false;
+
 
     }
     public void startMinigame()
@@ -109,8 +109,8 @@ public class miniGameScript : MonoBehaviour
         int number = Random.Range( 0,  quests.Length);
         
         hasQuest = true;
-        quest = quests[number];
-        questStarter(quest, number);
+        quest = quests[1];
+        questStarter(quest, 1);
         
         
     }

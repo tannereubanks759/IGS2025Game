@@ -26,7 +26,7 @@ public class Interact : MonoBehaviour
         if(other.gameObject.tag == "Ammo")
         {
             InteractText.SetActive(true);
-            if (Input.GetKey(KeyCode.E) && GetComponentInChildren<GunScript>().GetTotalAmmo() < GetComponentInChildren<GunScript>().maxAmmo)
+            if (Input.GetKeyDown(KeyCode.E) && GetComponentInChildren<GunScript>().GetTotalAmmo() < GetComponentInChildren<GunScript>().maxAmmo)
             {
                 GetComponentInChildren<GunScript>().SetTotalAmmo();
                 SoundEffects.PlayOneShot(RefillAmmoSound, .5f);
@@ -35,7 +35,7 @@ public class Interact : MonoBehaviour
         if(other.gameObject.tag == "Minigame Starter")
         {
             InteractText.SetActive(true);
-            if (Input.GetKey(KeyCode.E) && minigameScriptRef.hasQuest == false && ticketGiverScriptRef.hasTaken == true)
+            if (Input.GetKeyDown(KeyCode.E) && minigameScriptRef.hasQuest == false && ticketGiverScriptRef.hasTaken == true)
             {
                 Debug.Log("Start Minigame");
                 minigameScriptRef.startMinigame();
@@ -44,7 +44,7 @@ public class Interact : MonoBehaviour
         if(other.gameObject.tag == "trap starter")
         {
             InteractText.SetActive(true);
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 swingTrapRef.startTrap();
             }
@@ -52,7 +52,7 @@ public class Interact : MonoBehaviour
         if(other.gameObject.tag == "coaster trap starter")
         {
             InteractText.SetActive(true);
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 coasterRef.startCoaster();
             }
@@ -60,7 +60,7 @@ public class Interact : MonoBehaviour
         if(other.gameObject.tag== "ticketGiver")
         {
             InteractText.SetActive(true);
-            if (Input.GetKey(KeyCode.E) && ticketGiverScriptRef.inRangeToInteract && ticketGiverScriptRef.canClaimTicket)
+            if (Input.GetKeyDown(KeyCode.E) && ticketGiverScriptRef.canClaimTicket)
             {
                 ticketGiverScriptRef.giveTicket();
             }

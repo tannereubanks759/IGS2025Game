@@ -40,7 +40,7 @@ public class timeInAreaScript : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         
-        if (other.CompareTag("Player") && timeInAreaMinigameOn)
+        if (other.CompareTag("Player"))
         {
             inZone = true;
             if (timeInArea >= miniGameScript.totalTime)
