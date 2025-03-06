@@ -59,14 +59,14 @@ public class BulletScript : MonoBehaviour
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamageOnHead(baseDamage + 2);
             
         }
-        else if(collision.gameObject.layer==13 && balloonMinigameRef.isMiniActive)
+        /*else if(collision.gameObject.layer==13 && balloonMinigameRef.isMiniActive)
         {
-            balloonMinigameRef.shotRightBalloon();
+            balloonMinigameRef.shotRightBalloon(collision);
             Destroy(collision.gameObject);
-        }
-        else if(collision.gameObject.layer==14 && balloonMinigameRef.isMiniActive)
+        }*/
+       else if(collision.gameObject.layer==14 && balloonMinigameRef.isMiniActive)
         {
-            balloonMinigameRef.shotWrongBalloon();
+            balloonMinigameRef.shotRightBalloon(collision);
             collision.gameObject.SetActive(false);
         }
         else

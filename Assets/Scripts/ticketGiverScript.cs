@@ -35,22 +35,7 @@ public class ticketGiverScript : MonoBehaviour
             miniGameScriptRef.ticketText.text = miniGameScriptRef.tickets.ToString();
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            interactUI.SetActive(true);
-            inRangeToInteract=true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            interactUI.SetActive(false);
-            inRangeToInteract=false;
-        }
-    }
+    
     public void giveTicket()
     {
         miniGameScriptRef.tickets += scoreInt;
