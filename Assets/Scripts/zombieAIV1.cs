@@ -257,7 +257,7 @@ public class zombieAIV1 : MonoBehaviour
 
     void LastAlive()
     {
-        if (zombieManager.totalZombiesAlive == 1)
+        if (zombieManager.totalZombiesAlive == 1 && zombieManager.spawnMaxReached)
         {
             isLastAlive = true;
         }
