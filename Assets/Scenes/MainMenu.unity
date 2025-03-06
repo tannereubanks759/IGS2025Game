@@ -6005,7 +6005,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\nSurvive the Flesh Fair by killing hordes of the undead. \nComplete challenges
     within the fair grounds to gain tickets.\n Use those tickets to slay zombies
-    and wreak havoc.\nWill you survive the flesh fair? (need a question mark)"
+    and wreak havoc.\nSurvive the flesh fair!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd6948fd26c75de489664f63419c1b46, type: 2}
   m_sharedMaterial: {fileID: -4445905176072854765, guid: cd6948fd26c75de489664f63419c1b46, type: 2}
