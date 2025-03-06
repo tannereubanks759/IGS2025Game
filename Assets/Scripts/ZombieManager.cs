@@ -48,10 +48,13 @@ public class ZombieManager : MonoBehaviour
         {
             spawnMaxReached = false;
             
+            WaveTextFadeOut();
+            new WaitForSeconds(1f);
             waveCount++;
             totalSpawnedZombies = 0;
             WaveManager();
             WaveTextUpdate();
+            WaveTextFadeIn();
         }
     }
 
@@ -64,5 +67,15 @@ public class ZombieManager : MonoBehaviour
     void WaveTextUpdate()
     {
         waveText.text = waveCount.ToString();
+    }
+
+    void WaveTextFadeOut()
+    {
+        waveText.CrossFadeAlpha(0f, 1f, false);
+    }
+
+    void WaveTextFadeIn()
+    {
+        waveText.CrossFadeAlpha(1f, 1f, false);
     }
 }
