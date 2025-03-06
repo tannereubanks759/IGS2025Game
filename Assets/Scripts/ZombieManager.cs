@@ -48,13 +48,13 @@ public class ZombieManager : MonoBehaviour
         {
             spawnMaxReached = false;
             
-            WaveTextFadeOut();
-            new WaitForSeconds(1f);
+            //WaveTextFadeOut();
+            //new WaitForSeconds(1f);
             waveCount++;
             totalSpawnedZombies = 0;
             WaveManager();
             WaveTextUpdate();
-            WaveTextFadeIn();
+           // WaveTextFadeIn();
         }
     }
 
