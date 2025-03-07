@@ -21,6 +21,10 @@ public class ZombieManager : MonoBehaviour
     // The reference to the UI wave count
     public Text waveText;
 
+    // reference for adding tickets
+    public miniGameScript miniGameObject;
+    [SerializeField] int ticketsOnCompletion;
+
     // Initialize variables to their starting values
     void Start()
     {
@@ -47,7 +51,9 @@ public class ZombieManager : MonoBehaviour
         if (spawnMaxReached && totalZombiesAlive == 0)
         {
             spawnMaxReached = false;
-            
+
+            miniGameObject.tickets += ticketsOnCompletion;
+
             //WaveTextFadeOut();
             //new WaitForSeconds(1f);
             waveCount++;
