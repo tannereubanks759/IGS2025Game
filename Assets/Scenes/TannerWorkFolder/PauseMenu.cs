@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseScreen;
@@ -12,10 +13,19 @@ public class PauseMenu : MonoBehaviour
     public GameObject playerUi;
     public bool isDead;
 
+    // audio control
+    [SerializeField] private Slider masterVol, musicVol, sfxVol;
+    [SerializeField] private AudioMixer mainAudioMixer;
+
     void Start()
     {
         Resume();
         DeathScreen.SetActive(false);
+
+        // when the game starts we set the audio values from the playerprefs
+        mainAudioMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol"));
+        mainAudioMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
+        mainAudioMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
     }
 
     // Update is called once per frame
@@ -87,5 +97,35 @@ public class PauseMenu : MonoBehaviour
     {
         PauseScreen.SetActive(false);
         SettingsScreen.SetActive(true);
+    }
+
+    public void PausefromSettings()
+    {
+        SettingsScreen.SetActive(false);
+        PauseScreen.SetActive(true);
+    }
+
+    // Change the master volume
+    public void ChangeMasterVolume()
+    {
+        mainAudioMixer.SetFloat("MasterVol", masterVol.value);
+        PlayerPrefs.SetFloat("MasterVol", masterVol.value);
+        PlayerPrefs.Save();
+    }
+
+    // Change the music volume
+    public void ChangeMusicVolume()
+    {
+        mainAudioMixer.SetFloat("MusicVol", musicVol.value);
+        PlayerPrefs.SetFloat("MusicVol", musicVol.value);
+        PlayerPrefs.Save();
+    }
+
+    // Change the SFX volume
+    public void ChangeSFXVolume()
+    {
+        mainAudioMixer.SetFloat("SFXVol", sfxVol.value);
+        PlayerPrefs.SetFloat("SFXVol", sfxVol.value);
+        PlayerPrefs.Save();
     }
 }
