@@ -1,4 +1,5 @@
 using System;
+using Unity.AppUI.UI;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -27,6 +28,9 @@ public class zombieSpawner : MonoBehaviour
     // references for the zombiemanager script
     private GameObject zombieManagerOBJ;
     private ZombieManager zombieManager;
+
+    // debug gizmo tool
+    float alpha = .2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -147,5 +151,19 @@ public class zombieSpawner : MonoBehaviour
     void CanSpawnUpdate()
     {
         canSpawn = !zombieManager.spawnMaxReached;
+    }
+
+    // shows us the spawn range in the editor
+    private void OnDrawGizmos()
+    {
+        // Set the color with custom alpha.
+        Gizmos.color = new Color(1f, 0f, 0f, alpha); // Red with custom alpha
+
+        // Draw the sphere.
+        Gizmos.DrawSphere(transform.position, spawnRange);
+
+        // Draw wire sphere outline.
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, spawnRange);
     }
 }
