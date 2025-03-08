@@ -4,9 +4,11 @@ using UnityEngine.UI;
 
 public class SettingsMenuManager : MonoBehaviour
 {
-    // Inspector references
+    // Inspector references for audio
     [SerializeField] private Slider masterVol, musicVol, sfxVol;
     [SerializeField] private AudioMixer mainAudioMixer;
+
+    [SerializeField] private Slider mouseSens;
 
     // Change the master volume
     public void ChangeMasterVolume()
@@ -29,6 +31,12 @@ public class SettingsMenuManager : MonoBehaviour
     {
         mainAudioMixer.SetFloat("SFXVol", sfxVol.value);
         PlayerPrefs.SetFloat("SFXVol", sfxVol.value);
+        PlayerPrefs.Save();
+    }
+
+    public void ChangeMouseSens()
+    {
+        PlayerPrefs.SetFloat("MouseSens", mouseSens.value);
         PlayerPrefs.Save();
     }
 }

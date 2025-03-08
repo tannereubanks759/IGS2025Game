@@ -248,6 +248,8 @@ public class zombieAIV1 : MonoBehaviour
             onFirePS.Stop();
         }
 
+        zombieManager.totalZombiesKilled++;
+
         Destroy(this.gameObject);
     }
     public void SetMinigameScript(miniGameScript script)

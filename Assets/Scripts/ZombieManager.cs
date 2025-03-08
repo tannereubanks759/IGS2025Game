@@ -25,9 +25,14 @@ public class ZombieManager : MonoBehaviour
     public miniGameScript miniGameObject;
     [SerializeField] int ticketsOnCompletion;
 
+    // holds the total number of zombies killed
+    public int totalZombiesKilled = 0;
+    //[SerializeField] GameObject scoreboardUI;
+
     // Initialize variables to their starting values
     void Start()
     {
+        //scoreboardUI.SetActive(false);
         waveCount = 1;
         maxZombies = 30;
         spawnMaxReached = false;
