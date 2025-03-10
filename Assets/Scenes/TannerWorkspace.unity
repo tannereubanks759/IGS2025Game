@@ -27794,6 +27794,7 @@ MonoBehaviour:
   musicVol: {fileID: 170437397}
   sfxVol: {fileID: 1426615334}
   mainAudioMixer: {fileID: 24100000, guid: 3c6ea1776df61114893b1d5cd0439238, type: 2}
+  mouseSens: {fileID: 0}
 --- !u!4 &1196438383
 Transform:
   m_ObjectHideFlags: 0
@@ -37640,6 +37641,11 @@ MonoBehaviour:
   DeathScreen: {fileID: 682093714}
   playerUi: {fileID: 973613884}
   isDead: 0
+  masterVol: {fileID: 0}
+  musicVol: {fileID: 0}
+  sfxVol: {fileID: 0}
+  mainAudioMixer: {fileID: 0}
+  mouseSens: {fileID: 0}
 --- !u!114 &2052397225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39179,6 +39185,9 @@ MonoBehaviour:
   totalSpawnedZombies: 0
   spawnMaxReached: 0
   waveText: {fileID: 2130417231}
+  miniGameObject: {fileID: 0}
+  ticketsOnCompletion: 0
+  totalZombiesKilled: 0
 --- !u!4 &2132771478
 Transform:
   m_ObjectHideFlags: 0

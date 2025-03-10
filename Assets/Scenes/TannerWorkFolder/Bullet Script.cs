@@ -59,12 +59,33 @@ public class BulletScript : MonoBehaviour
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamageOnHead(baseDamage + 2);
             
         }
+        else if (collision.gameObject.layer == 15) //Hit C4
+        {
+            Debug.Log("HitC4");
+            zombieAIV1 zomScript = collision.gameObject.GetComponentInParent<zombieAIV1>();
+            if (!zomScript.c4Active)
+            {
+                zomScript.c4Active = true;
+                collision.gameObject.GetComponent<AudioSource>().Play();
+                collision.gameObject.GetComponent<Collider>().enabled = false;
+                collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+                float randomPitch = Random.Range(.8f, 1.3f);
+                bulletImpactSound.pitch = randomPitch;
+                bulletImpactSound.PlayOneShot(headshotSound, .2f);
+                zomScript.TakeDamage(baseDamage);
+                zombieImpact.gameObject.SetActive(true);
+                zombieImpact.Play();
+                zomScript.Explode();
+            }
+            
+
+        }
         /*else if(collision.gameObject.layer==13 && balloonMinigameRef.isMiniActive)
         {
             balloonMinigameRef.shotRightBalloon(collision);
             Destroy(collision.gameObject);
         }*/
-       else if(collision.gameObject.layer==14 && balloonMinigameRef.isMiniActive)
+        else if(collision.gameObject.layer==14 && balloonMinigameRef.isMiniActive)
         {
             balloonMinigameRef.shotRightBalloon(collision);
             collision.gameObject.SetActive(false);

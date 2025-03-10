@@ -39,12 +39,14 @@ public class zombieAIV1 : MonoBehaviour
     // values for having the zombie be the last alive
     private float lastAliveTimer;
     private bool isLastAlive = false;
-
+    
+    public  bool c4Active;
+    public GameObject ExplodePref;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         miniGameS = miniGameScript.instance;
-
+        c4Active = false;
         // Get the navmesh agent from the gameObject
         agent = GetComponent<NavMeshAgent>();
 
@@ -273,5 +275,25 @@ public class zombieAIV1 : MonoBehaviour
                 TakeDamage(10);
             }
         }
+    }
+
+    //Whenever the c4 on chest gets hit by a bullet, this gets called from the bullet script
+    //Purpose: Make cop zombie start running and after a few seconds, it will explode.
+    public void Explode()
+    {
+        animator.SetBool("c4Active", true);
+        agent.speed = agent.speed * 7;
+        Invoke("C4Death", 3);
+    }
+
+    //Called from Explode function
+    //Purpose: Play Explode effect and remove zombie from scene.
+    public void C4Death()
+    {
+        Instantiate(ExplodePref, this.transform.position + new Vector3(0, 1, 0), this.transform.rotation);
+        // Decrement the total # of zombies
+        zombieManager.totalZombiesAlive--;
+        Death();
+       
     }
 }
