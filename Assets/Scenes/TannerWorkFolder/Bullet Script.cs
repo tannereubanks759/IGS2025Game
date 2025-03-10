@@ -59,6 +59,34 @@ public class BulletScript : MonoBehaviour
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamageOnHead(baseDamage + 2);
             
         }
+        else if (collision.gameObject.layer == 16) //hit left arm
+        {
+            zombieAIV1 zomScript = collision.gameObject.GetComponentInParent<zombieAIV1>();
+            float randomPitch = Random.Range(.8f, 1.3f);
+            bulletImpactSound.pitch = randomPitch;
+            bulletImpactSound.PlayOneShot(headshotSound, .2f);
+            zombieImpact.gameObject.SetActive(true);
+            zombieImpact.Play();
+            zomScript.leftArm.GetComponentInChildren<VisualEffect>().Play();
+            zomScript.leftArm.transform.localScale = new Vector3(.01f, .01f, .01f);
+            zomScript.leftArm.GetComponentInChildren<VisualEffect>().gameObject.transform.localScale = new Vector3(100f, 100f, 100f);
+            zomScript.TakeDamage(baseDamage);
+
+        }
+        else if (collision.gameObject.layer == 17) //hit right arm
+        {
+            zombieAIV1 zomScript = collision.gameObject.GetComponentInParent<zombieAIV1>();
+            float randomPitch = Random.Range(.8f, 1.3f);
+            bulletImpactSound.pitch = randomPitch;
+            bulletImpactSound.PlayOneShot(headshotSound, .2f);
+            zombieImpact.gameObject.SetActive(true);
+            zombieImpact.Play();
+            zomScript.rightArm.GetComponentInChildren<VisualEffect>().Play();
+            zomScript.rightArm.transform.localScale = new Vector3(.01f, .01f, .01f);
+            zomScript.rightArm.GetComponentInChildren<VisualEffect>().gameObject.transform.localScale = new Vector3(100f, 100f, 100f);
+            zomScript.TakeDamage(baseDamage);
+
+        }
         else if (collision.gameObject.layer == 15) //Hit C4
         {
             Debug.Log("HitC4");

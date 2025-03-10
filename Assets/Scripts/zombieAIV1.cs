@@ -42,6 +42,8 @@ public class zombieAIV1 : MonoBehaviour
     
     public  bool c4Active;
     public GameObject ExplodePref;
+    public GameObject rightArm;
+    public GameObject leftArm;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
