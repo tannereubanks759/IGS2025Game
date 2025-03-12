@@ -10,6 +10,7 @@ public class Interact : MonoBehaviour
     public ticketGiverScript ticketGiverScriptRef;
     public swingTrap swingTrapRef;
     public KiddieCoaster coasterRef;
+    public clownTrap clownTrapRef;
     void Start()
     {
         InteractText.SetActive(false);
@@ -73,6 +74,14 @@ public class Interact : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 truck.BuyPerk();
+            }
+        }
+        if(other.gameObject.tag == "clown trap starter")
+        {
+            InteractText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                clownTrapRef.startClownTrap();
             }
         }
         

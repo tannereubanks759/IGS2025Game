@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class ClownRideMovement : MonoBehaviour
 {
+    // To change time of trap change acceleration and deceleration values
+
+
     public Transform center; // Center point
     public Transform childToRotate; // Child object that should rotate on its own axis
     public float maxRotationSpeed = 20f; // Maximum rotation speed
@@ -9,7 +12,8 @@ public class ClownRideMovement : MonoBehaviour
     public float deceleration = 5f; // Deceleration rate
     public float maxSpeedDuration = 2f; // Time spent at maximum speed
     public float waitAtRestTime = 2f; // Rest time after deceleration
-
+    public bool isActive = false;
+    public float copyOfSpeed;
     public float minRiseHeight = 5f; // Minimum rise height
     public float maxRiseHeight = 15f; // Maximum rise height
     public float riseDuration = 2f; // Time taken to rise along the Y-axis
@@ -41,6 +45,7 @@ public class ClownRideMovement : MonoBehaviour
 
     void Start()
     {
+        copyOfSpeed = maxRotationSpeed;
         initialY = transform.position.y; // Set initial Y position
         randomTiltAngle = Random.Range(minTiltAngle, maxTiltAngle);
         randomSwingFrequency = Random.Range(minSwingFrequency, maxSwingFrequency);
@@ -53,7 +58,8 @@ public class ClownRideMovement : MonoBehaviour
     }
 
     void Update()
-    {
+    {   if(isActive) 
+        { 
         if (isAtRest)
         {
             waitTimeElapsed += Time.deltaTime;
@@ -82,6 +88,7 @@ public class ClownRideMovement : MonoBehaviour
             currentSpeed -= deceleration * Time.deltaTime;
             if (currentSpeed <= 0)
             {
+                isActive = false;
                 currentSpeed = 0;
                 isDecelerating = false;
                 isAtRest = true;
@@ -104,6 +111,16 @@ public class ClownRideMovement : MonoBehaviour
             float tiltAngle = Mathf.Sin(swingTimer) * dynamicTiltAngle;
 
             childToRotate.localRotation = Quaternion.Euler(childToRotate.localRotation.eulerAngles.x, tiltAngle, childToRotate.localRotation.eulerAngles.z);
+        }
+           /* if(copyOfSpeed>=6)
+            {
+                copyOfSpeed -= Time.deltaTime*25;
+            }
+            else
+            {
+                isActive = false;
+            }*/
+            
         }
     }
 
