@@ -33,7 +33,7 @@ public class PauseMenu : MonoBehaviour
         mainAudioMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
 
         // when the game starts we set the mouse sens from playerprefs
-        player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
+        //player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
     }
 
     // Update is called once per frame
