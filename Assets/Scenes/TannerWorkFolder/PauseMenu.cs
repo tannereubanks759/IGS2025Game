@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using TMPro;
+
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseScreen;
@@ -18,7 +20,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private AudioMixer mainAudioMixer;
 
     // mouse sens control
-    [SerializeField] private Slider mouseSens;
+    [SerializeField] private InputField mouseSens;
 
     void Start()
     {
@@ -138,7 +140,9 @@ public class PauseMenu : MonoBehaviour
     // Change the mouse sens
     public void ChangeMouseSens()
     {
-        PlayerPrefs.SetFloat("MouseSens", mouseSens.value);
+        PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
         PlayerPrefs.Save();
+
+        player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
     }
 }

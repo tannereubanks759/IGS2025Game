@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsMenuManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class SettingsMenuManager : MonoBehaviour
     [SerializeField] private Slider masterVol, musicVol, sfxVol;
     [SerializeField] private AudioMixer mainAudioMixer;
 
-    [SerializeField] private Slider mouseSens;
+    [SerializeField] private InputField mouseSens;
 
     // Change the master volume
     public void ChangeMasterVolume()
@@ -36,7 +37,7 @@ public class SettingsMenuManager : MonoBehaviour
 
     public void ChangeMouseSens()
     {
-        PlayerPrefs.SetFloat("MouseSens", mouseSens.value);
+        PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
         PlayerPrefs.Save();
     }
 }
