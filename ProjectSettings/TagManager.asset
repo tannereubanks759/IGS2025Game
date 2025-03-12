@@ -20,6 +20,7 @@ TagManager:
   - coaster trap starter
   - rightFlamethrower
   - leftFlameThrower
+  - clown trap starter
   layers:
   - Default
   - TransparentFX
