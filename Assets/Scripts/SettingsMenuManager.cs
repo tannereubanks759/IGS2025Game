@@ -35,9 +35,9 @@ public class SettingsMenuManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void ChangeMouseSens()
-    {
-        PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
-        PlayerPrefs.Save();
-    }
+    //public void ChangeMouseSens()
+    //{
+    //    PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
+    //    PlayerPrefs.Save();
+    //}
 }
