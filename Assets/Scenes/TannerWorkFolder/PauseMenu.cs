@@ -27,10 +27,13 @@ public class PauseMenu : MonoBehaviour
         Resume();
         DeathScreen.SetActive(false);
 
-        // when the game starts we set the audio values from the playerprefs
-        mainAudioMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol"));
-        mainAudioMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
-        mainAudioMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
+        if (mainAudioMixer != null)
+        {
+            // when the game starts we set the audio values from the playerprefs
+            mainAudioMixer.SetFloat("MasterVol", PlayerPrefs.GetFloat("MasterVol"));
+            mainAudioMixer.SetFloat("MusicVol", PlayerPrefs.GetFloat("MusicVol"));
+            mainAudioMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
+        }
 
         // when the game starts we set the mouse sens from playerprefs
         //player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
