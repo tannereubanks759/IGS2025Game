@@ -6,6 +6,7 @@ public class clownTrapHitDetection : MonoBehaviour
     public ClownRideMovement clownRideMovementRef;
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.name);
         if(clownRideMovementRef.isActive)
         {
             if (collision.gameObject.layer == 8)
@@ -13,10 +14,10 @@ public class clownTrapHitDetection : MonoBehaviour
                 collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(10);
 
             }
-            if (collision.gameObject.layer == 11)
+            /*if (collision.gameObject.layer == 11)
             {
                 playerHealthManagerRef.pause.Die();
-            }
+            }*/
         }
        
     }
