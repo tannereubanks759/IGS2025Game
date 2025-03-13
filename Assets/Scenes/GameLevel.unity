@@ -43108,6 +43108,7 @@ MonoBehaviour:
   ticketGiverScriptRef: {fileID: 928304555}
   swingTrapRef: {fileID: 299971975}
   coasterRef: {fileID: 1704788040}
+  clownTrapRef: {fileID: 0}
 --- !u!82 &8806082064906759172
 AudioSource:
   m_ObjectHideFlags: 0
