@@ -43,7 +43,7 @@ public class ClownRideMovement : MonoBehaviour
     private float riseTimer = 0f; // Timer for rising
     private float descendTimer = 0f; // Timer for descending
     private float initialY; // Initial Y position
-
+    //public PlayerHealthManager playerHealthManagerRef;
     void Start()
     {
         copyOfSpeed = maxRotationSpeed;
@@ -154,8 +154,8 @@ public class ClownRideMovement : MonoBehaviour
             }
         }
     }
-
-    private void SetNewTargetHeight()
+    
+        private void SetNewTargetHeight()
     {
         targetRiseHeight = Random.Range(minRiseHeight, maxRiseHeight);
     }

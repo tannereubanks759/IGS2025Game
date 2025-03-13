@@ -33,7 +33,7 @@ public class Interact : MonoBehaviour
                 SoundEffects.PlayOneShot(RefillAmmoSound, .5f);
             }
         }
-        if(other.gameObject.tag == "Minigame Starter")
+        else if(other.gameObject.tag == "Minigame Starter")
         {
             InteractText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E) && minigameScriptRef.hasQuest == false && ticketGiverScriptRef.hasTaken == true)
@@ -42,7 +42,7 @@ public class Interact : MonoBehaviour
                 minigameScriptRef.startMinigame();
             }
         }
-        if(other.gameObject.tag == "trap starter")
+        else if(other.gameObject.tag == "trap starter")
         {
             InteractText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
@@ -50,7 +50,7 @@ public class Interact : MonoBehaviour
                 swingTrapRef.startTrap();
             }
         }
-        if(other.gameObject.tag == "coaster trap starter")
+        else if(other.gameObject.tag == "coaster trap starter")
         {
             InteractText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
@@ -58,7 +58,7 @@ public class Interact : MonoBehaviour
                 coasterRef.startCoaster();
             }
         }
-        if(other.gameObject.tag== "ticketGiver")
+        else if(other.gameObject.tag== "ticketGiver")
         {
             InteractText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E) && ticketGiverScriptRef.canClaimTicket)
@@ -66,7 +66,7 @@ public class Interact : MonoBehaviour
                 ticketGiverScriptRef.giveTicket();
             }
         }
-        if(other.gameObject.tag == "FoodStand")
+        else if(other.gameObject.tag == "FoodStand")
         {
             InteractText.SetActive(true);
             FoodTruck truck = other.GetComponent<FoodTruck>();
@@ -76,7 +76,7 @@ public class Interact : MonoBehaviour
                 truck.BuyPerk();
             }
         }
-        if(other.gameObject.tag == "clown trap starter")
+        else if(other.gameObject.tag == "clown trap starter")
         {
             InteractText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
