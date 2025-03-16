@@ -24574,11 +24574,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f772b94f9cfa1042b57ed07f6853695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterVol: {fileID: 0}
-  musicVol: {fileID: 0}
-  sfxVol: {fileID: 0}
+  masterVol: {fileID: 1663635208}
+  musicVol: {fileID: 170437397}
+  sfxVol: {fileID: 1426615334}
   mainAudioMixer: {fileID: 24100000, guid: 3c6ea1776df61114893b1d5cd0439238, type: 2}
-  mouseSens: {fileID: 0}
+  mouseSens: {fileID: 337108497}
   defaultSens: 1
 --- !u!4 &1196438383
 Transform:
