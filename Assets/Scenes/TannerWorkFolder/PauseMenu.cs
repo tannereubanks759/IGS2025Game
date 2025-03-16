@@ -20,7 +20,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private AudioMixer mainAudioMixer;
 
     // mouse sens control
-    [SerializeField] private InputField mouseSens;
+    public TMP_InputField mouseSens;
+    public float defaultSens = 1f;
 
     void Start()
     {
@@ -35,8 +36,18 @@ public class PauseMenu : MonoBehaviour
             mainAudioMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
         }
 
+
+
         // when the game starts we set the mouse sens from playerprefs
-        //player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
+        if (PlayerPrefs.GetFloat("MouseSens") != 0f)
+        {
+            player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
+            mouseSens.text = PlayerPrefs.GetFloat("MouseSens").ToString();
+        }
+        else
+        {
+            player.mouseSensitivity = defaultSens;
+        }
     }
 
     // Update is called once per frame
@@ -143,9 +154,16 @@ public class PauseMenu : MonoBehaviour
     // Change the mouse sens
     public void ChangeMouseSens()
     {
-        PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
-        PlayerPrefs.Save();
+        try
+        {
+            PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
+            PlayerPrefs.Save();
 
-        player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
+            player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
+        }
+        catch 
+        {
+            player.mouseSensitivity = defaultSens;
+        }
     }
 }

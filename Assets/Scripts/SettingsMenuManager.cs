@@ -9,7 +9,22 @@ public class SettingsMenuManager : MonoBehaviour
     [SerializeField] private Slider masterVol, musicVol, sfxVol;
     [SerializeField] private AudioMixer mainAudioMixer;
 
-    [SerializeField] private InputField mouseSens;
+    [SerializeField] private TMP_InputField mouseSens;
+    public float defaultSens = 1f;
+
+    void Start()
+    {
+        if (PlayerPrefs.GetFloat("MouseSens") != 0f)
+        {
+            mouseSens.text = PlayerPrefs.GetFloat("MouseSens").ToString();
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("MouseSens", defaultSens);
+            mouseSens.text = PlayerPrefs.GetFloat("MouseSens").ToString();
+            PlayerPrefs.Save();
+        }
+    }
 
     // Change the master volume
     public void ChangeMasterVolume()
@@ -35,9 +50,9 @@ public class SettingsMenuManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    //public void ChangeMouseSens()
-    //{
-    //    PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
-    //    PlayerPrefs.Save();
-    //}
+    public void ChangeMouseSens()
+    {
+        PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
+        PlayerPrefs.Save();
+    }
 }
