@@ -30,6 +30,8 @@ public class miniGameScript : MonoBehaviour
     public GameObject[] grassAreas;
     public SphereCollider[] colliderToEnable;
     public balloonMinigame balloonMinigameRef;
+
+    public ParticleSystem[] grassHighlights;
     #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,6 +42,12 @@ public class miniGameScript : MonoBehaviour
         for (int i = 0; i < grassAreas.Length; i++)
         {
             grassAreas[i].tag = "Wrong Grass";
+        }
+
+        for (int i = 0; i < grassHighlights.Length; i++)
+        {
+            grassHighlights[i].Stop();
+            grassHighlights[i].Clear();
         }
 
     }
@@ -167,6 +175,8 @@ public class miniGameScript : MonoBehaviour
         {
             colliderToEnable[i].enabled = true;
         }
+
+        PlayGrassHighlight(randomNumber);
         
     }
     void startBalloon()
@@ -181,6 +191,17 @@ public class miniGameScript : MonoBehaviour
         {
             colliderToEnable[i].enabled = false;
         }
+    }
+
+    void PlayGrassHighlight(int i)
+    {
+        grassHighlights[i].Play();
+    }
+
+    public void StopGrassHighlight(int i)
+    {
+        grassHighlights[i].Stop();
+        grassHighlights[i].Clear();
     }
 
 }

@@ -49,6 +49,7 @@ public class timeInAreaScript : MonoBehaviour
                 miniGameScript.resetQuest();
                 //this.gameObject.tag = "Wrong Grass";
                 miniGameScript.turnOffColliders();
+                miniGameScript.StopGrassHighlight(miniGameScript.randomNumber);
                 timeInArea = 0f;
                 inZone = false;
             }
