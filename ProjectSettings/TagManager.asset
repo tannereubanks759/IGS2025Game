@@ -21,6 +21,7 @@ TagManager:
   - rightFlamethrower
   - leftFlameThrower
   - clown trap starter
+  - Middle Clown Point
   layers:
   - Default
   - TransparentFX

@@ -44,11 +44,15 @@ public class zombieAIV1 : MonoBehaviour
     public GameObject ExplodePref;
     public GameObject rightArm;
     public GameObject leftArm;
+    public ClownRideMovement clownRideMovementRef;
+    public GameObject clowntrap;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         miniGameS = miniGameScript.instance;
         c4Active = false;
+        clownRideMovementRef =  FindAnyObjectByType<ClownRideMovement>();
+        clowntrap = GameObject.FindWithTag("Middle Clown Point");
         // Get the navmesh agent from the gameObject
         agent = GetComponent<NavMeshAgent>();
 
@@ -143,10 +147,15 @@ public class zombieAIV1 : MonoBehaviour
     // Handles AI movement
     void MoveAI()
     {
-        if (animator.GetBool("playerDetected") && animator.GetBool("isStanding") && !animator.GetBool("canAttack") && (animator.GetInteger("health") >= 1))
+        // if the trap isn't active, do regular pathfinding
+        if (animator.GetBool("playerDetected") && animator.GetBool("isStanding") && !animator.GetBool("canAttack") && (animator.GetInteger("health") >= 1) && !clownRideMovementRef.isActive)
         {
             // set the agent's destination to be the player's position
             agent.destination = player.transform.position;
+        }
+        else if (animator.GetBool("playerDetected") && animator.GetBool("isStanding") && !animator.GetBool("canAttack") && (animator.GetInteger("health") >= 1) && clownRideMovementRef.isActive)
+        {
+            agent.destination = clowntrap.transform.position;
         }
         else
         {
