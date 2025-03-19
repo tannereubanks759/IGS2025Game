@@ -96,7 +96,10 @@ public class zombieAIV1 : MonoBehaviour
         if (onFire)
         {
             // Plays the onFirePS
-            onFirePS.Play();
+            if (!onFirePS.isPlaying)
+            {
+                onFirePS.Play();
+            }
 
             // Increment the timer
             fireTimer += Time.deltaTime;
@@ -224,6 +227,8 @@ public class zombieAIV1 : MonoBehaviour
         // Decrement the total # of zombies
         zombieManager.totalZombiesAlive--;
 
+        zombieManager.totalZombiesKilled++;
+
         // Anim plays multiple times, not sure if the agent.isStopped line is even working
         agent.enabled = false;
 
@@ -260,8 +265,6 @@ public class zombieAIV1 : MonoBehaviour
         {
             onFirePS.Stop();
         }
-
-        zombieManager.totalZombiesKilled++;
 
         Destroy(this.gameObject);
     }
@@ -304,6 +307,7 @@ public class zombieAIV1 : MonoBehaviour
         Instantiate(ExplodePref, this.transform.position + new Vector3(0, 1, 0), this.transform.rotation);
         // Decrement the total # of zombies
         zombieManager.totalZombiesAlive--;
+        zombieManager.totalZombiesKilled++;
         Death();
        
     }
