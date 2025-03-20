@@ -53,6 +53,8 @@ public class zombieSpawner : MonoBehaviour
 
         // the starting value of the max zombies alive
         maxAliveZombies = 8;
+
+        StopParticles();
     }
 
     void Update()
@@ -75,6 +77,7 @@ public class zombieSpawner : MonoBehaviour
 
         if (gameTime > spawnRate && playerNear)
         {
+            //PlayParticles();
             SpawnZombie(zombies);
         }
     }
@@ -135,12 +138,12 @@ public class zombieSpawner : MonoBehaviour
         if (playerDistance > spawnRange)
         {
             playerNear = false;
-            StopParticles();
+            //StopParticles();
         }
         else
         {
             playerNear = true;
-            PlayParticles();
+            //PlayParticles();
         }
     }
 
