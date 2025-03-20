@@ -7,7 +7,10 @@ public class zombieSpawner : MonoBehaviour
 {
     // The zombie prefabs
     [SerializeField] private GameObject[] zombies;
-    [SerializeField] private float spawnRate;
+
+    // The spawn rate of the spawners
+    public static float spawnRate;
+
     // The game time
     private float gameTime;
 
@@ -29,6 +32,9 @@ public class zombieSpawner : MonoBehaviour
     private GameObject zombieManagerOBJ;
     private ZombieManager zombieManager;
 
+    // the maximum number of zombies allowed alive at one time
+    public static int maxAliveZombies;
+
     // debug gizmo tool
     float alpha = .2f;
 
@@ -44,6 +50,9 @@ public class zombieSpawner : MonoBehaviour
         // Find and get the zombie manager script reference
         zombieManagerOBJ = GameObject.FindGameObjectWithTag("ZombieManager");
         zombieManager = zombieManagerOBJ.GetComponent<ZombieManager>();
+
+        // the starting value of the max zombies alive
+        maxAliveZombies = 8;
     }
 
     void Update()
@@ -150,7 +159,19 @@ public class zombieSpawner : MonoBehaviour
     // Update the can spawn variable
     void CanSpawnUpdate()
     {
-        canSpawn = !zombieManager.spawnMaxReached;
+        if (zombieManager.totalZombiesAlive >= maxAliveZombies)
+        {
+            canSpawn = false;
+        }
+        else if (zombieManager.spawnMaxReached)
+        {
+            canSpawn = false;
+        }
+        else if (zombieManager.totalZombiesAlive < maxAliveZombies)
+        {
+            canSpawn = true;
+
+        }        
     }
 
     // shows us the spawn range in the editor
