@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using UnityEngine.VFX;
 
 public class zombieAIV1 : MonoBehaviour
 {
@@ -39,8 +40,11 @@ public class zombieAIV1 : MonoBehaviour
     // values for having the zombie be the last alive
     private float lastAliveTimer;
     private bool isLastAlive = false;
-    
-    public  bool c4Active;
+
+    // the spawn effect
+    [SerializeField] private VisualEffect spawnEffect;
+
+    public bool c4Active;
     public GameObject ExplodePref;
     public GameObject rightArm;
     public GameObject leftArm;
@@ -51,7 +55,7 @@ public class zombieAIV1 : MonoBehaviour
     {
         miniGameS = FindAnyObjectByType<miniGameScript>();
         c4Active = false;
-        clownRideMovementRef =  FindAnyObjectByType<ClownRideMovement>();
+        clownRideMovementRef = FindAnyObjectByType<ClownRideMovement>();
         clowntrap = GameObject.FindWithTag("Middle Clown Point");
         // Get the navmesh agent from the gameObject
         agent = GetComponent<NavMeshAgent>();
@@ -75,12 +79,15 @@ public class zombieAIV1 : MonoBehaviour
 
         onFire = false;
         onFirePS.Stop();
+
+        spawnEffect = GetComponentInChildren<VisualEffect>();
+        Debug.Log(spawnEffect.name);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(agent.enabled == true)
+        if (agent.enabled == true)
         {
             PlayerDetected();
             MoveAI();
@@ -128,6 +135,8 @@ public class zombieAIV1 : MonoBehaviour
     // Set the is standing bool to true
     public void IsStanding()
     {
+        StopParticles();
+
         animator.SetBool("isStanding", true);
     }
 
@@ -178,7 +187,7 @@ public class zombieAIV1 : MonoBehaviour
             // Stop the agent then attack
             animator.SetBool("canAttack", true);
             agent.isStopped = true;
-            
+
         }
         else
         {
@@ -192,13 +201,13 @@ public class zombieAIV1 : MonoBehaviour
     public void TakeDamage(int i)
     {
         // Set the health by getting the health and subtracting 1
-        if(isDead!=true)
+        if (isDead != true)
         {
             animator.SetInteger("health", animator.GetInteger("health") - i);
             animator.SetTrigger("takeDamage");
-            
+
         }
-       
+
     }
     public void TakeDamageOnHead(int i)
     {
@@ -207,7 +216,7 @@ public class zombieAIV1 : MonoBehaviour
         {
             animator.SetInteger("health", animator.GetInteger("health") - i);
             animator.SetTrigger("takeDamage");
-            
+
             // and the headshot minigame is active
             if (miniGameS.headShotQuest == true)
             {
@@ -217,7 +226,7 @@ public class zombieAIV1 : MonoBehaviour
                 isDead = true;
                 miniGameS.printHs();
             }
-            
+
         }
     }
 
@@ -309,6 +318,19 @@ public class zombieAIV1 : MonoBehaviour
         zombieManager.totalZombiesAlive--;
         zombieManager.totalZombiesKilled++;
         Death();
-       
+
+    }
+    // Play the particle system
+    void PlayParticles()
+    {
+        spawnEffect.Play();
+
+    }
+
+    void StopParticles()
+    {
+        spawnEffect.pause = true;
+  
+
     }
 }

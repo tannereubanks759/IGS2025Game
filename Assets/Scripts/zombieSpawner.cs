@@ -22,8 +22,8 @@ public class zombieSpawner : MonoBehaviour
     private GameObject player;
     private float playerDistance;
 
-    // The particles that play during spawning
-    private VisualEffect spawnEffect;
+    //// The particles that play during spawning
+    //private VisualEffect spawnEffect;
 
     // The bool to control if the spawners can spawn
     public static bool canSpawn;
@@ -44,8 +44,8 @@ public class zombieSpawner : MonoBehaviour
         // Find the player
         player = GameObject.FindGameObjectWithTag("Player");
 
-        // Get the reference to the spawn effect
-        spawnEffect = GetComponentInChildren<VisualEffect>();
+        //// Get the reference to the spawn effect
+        //spawnEffect = GetComponentInChildren<VisualEffect>();
 
         // Find and get the zombie manager script reference
         zombieManagerOBJ = GameObject.FindGameObjectWithTag("ZombieManager");
@@ -54,7 +54,7 @@ public class zombieSpawner : MonoBehaviour
         // the starting value of the max zombies alive
         maxAliveZombies = 8;
 
-        StopParticles();
+        //StopParticles();
     }
 
     void Update()
@@ -147,17 +147,17 @@ public class zombieSpawner : MonoBehaviour
         }
     }
 
-    // Play the particle system
-    void PlayParticles()
-    {
-        spawnEffect.Play();
+    //// Play the particle system
+    //void PlayParticles()
+    //{
+    //    spawnEffect.Play();
 
-    }
+    //}
     
-    void StopParticles()
-    {
-        spawnEffect.Stop();
-    }
+    //void StopParticles()
+    //{
+    //    spawnEffect.Stop();
+    //}
 
     // Update the can spawn variable
     void CanSpawnUpdate()
