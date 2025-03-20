@@ -15,7 +15,6 @@ public class BulletScript : MonoBehaviour
     public AudioClip normalImpactSound;
     public balloonMinigame balloonMinigameRef;
     public static int baseDamage = 1;
-    miniGameScript miniScript;
     void Start()
     {
         balloonMinigameRef = GameObject.FindFirstObjectByType<balloonMinigame>();

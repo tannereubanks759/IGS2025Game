@@ -23,6 +23,7 @@ public class balloonMinigame : MonoBehaviour
     //public List<GameObject> disabledBalloons;
     void Start()
     {
+        minigameRef = FindAnyObjectByType<miniGameScript>();
         sizeBall = balloons.Length;
         /*Renderer renderer = goldenBalloon.GetComponentInChildren<Renderer>();
         renderer.material = goldenBalloonMatieral;*/

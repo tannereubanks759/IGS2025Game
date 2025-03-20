@@ -14,7 +14,7 @@ public class timeInAreaScript : MonoBehaviour
     
     void Start()
     {
-       
+        miniGameScript = FindAnyObjectByType<miniGameScript>();
     }
 
     // Update is called once per frame

@@ -13,6 +13,7 @@ public class Interact : MonoBehaviour
     public clownTrap clownTrapRef;
     void Start()
     {
+        minigameScriptRef = FindAnyObjectByType<miniGameScript>();
         InteractText.SetActive(false);
     }
 
@@ -33,14 +34,20 @@ public class Interact : MonoBehaviour
                 SoundEffects.PlayOneShot(RefillAmmoSound, .5f);
             }
         }
-        else if(other.gameObject.tag == "Minigame Starter")
+        else if(other.gameObject.tag == "Minigame Starter" && other.gameObject.layer == 18)
         {
             InteractText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E) && ticketGiverScriptRef.canClaimTicket)
+            {
+                ticketGiverScriptRef.giveTicket();
+            }
             if (Input.GetKeyDown(KeyCode.E) && minigameScriptRef.hasQuest == false && ticketGiverScriptRef.hasTaken == true)
             {
                 Debug.Log("Start Minigame");
                 minigameScriptRef.startMinigame();
             }
+
+            
         }
         else if(other.gameObject.tag == "trap starter")
         {
@@ -58,14 +65,14 @@ public class Interact : MonoBehaviour
                 coasterRef.startCoaster();
             }
         }
-        else if(other.gameObject.tag== "ticketGiver")
+        /*else if(other.gameObject.tag== "ticketGiver")
         {
             InteractText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E) && ticketGiverScriptRef.canClaimTicket)
             {
                 ticketGiverScriptRef.giveTicket();
             }
-        }
+        }*/
         else if(other.gameObject.tag == "FoodStand")
         {
             InteractText.SetActive(true);
