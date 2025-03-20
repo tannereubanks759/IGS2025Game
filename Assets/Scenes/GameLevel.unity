@@ -124,79 +124,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1030989617, guid: abc00000000006620175528037469958, type: 3}
   m_PrefabInstance: {fileID: 1031556492}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &20694935
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 180.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9941392
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.108107984
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747363719037613569, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7094193734141190369, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
-      propertyPath: m_Name
-      value: Clown_Ride
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dcf0455b12c81f94992d05f96b53393a, type: 3}
 --- !u!1001 &23902638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -315,6 +242,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c64146025c1a03f4c82cd625a4da1b6c, type: 3}
+--- !u!114 &55660005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1053072320054435320, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+  m_PrefabInstance: {fileID: 2104941128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830c62ab4339bd248b512994d4dfa6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &64514670
 GameObject:
   m_ObjectHideFlags: 0
@@ -33820,6 +33758,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1001 &2104941128
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1053072320054435320, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: miniGameObject
+      value: 
+      objectReference: {fileID: 1898328103}
+    - target: {fileID: 4215845305716970396, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_Name
+      value: Actual Clown Trap
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 178.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9941392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.108107984
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740392351075094502, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
 --- !u!43 &2107077528
 Mesh:
   m_ObjectHideFlags: 0
@@ -38200,7 +38203,7 @@ MonoBehaviour:
   ticketGiverScriptRef: {fileID: 928304555}
   swingTrapRef: {fileID: 299971975}
   coasterRef: {fileID: 1704788040}
-  clownTrapRef: {fileID: 0}
+  clownTrapRef: {fileID: 55660005}
 --- !u!82 &8806082064906759172
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38485,7 +38488,6 @@ SceneRoots:
   - {fileID: 816380976}
   - {fileID: 1934205805}
   - {fileID: 555964232}
-  - {fileID: 20694935}
   - {fileID: 130841031}
   - {fileID: 112392044}
   - {fileID: 1543675826}
@@ -38500,3 +38502,4 @@ SceneRoots:
   - {fileID: 928787318}
   - {fileID: 413723868}
   - {fileID: 326363469}
+  - {fileID: 2104941128}
