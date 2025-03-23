@@ -4471,6 +4471,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 53.595192
   m_Center: {x: 7.940838, y: -4.2202225, z: 5.4067764}
+--- !u!1 &538242777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 538242778}
+  m_Layer: 0
+  m_Name: GrenadeSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &538242778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538242777}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.327, z: 0.792}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8806082064906759168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &555964232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30805,6 +30836,7 @@ MonoBehaviour:
   miniGameObject: {fileID: 1898328103}
   ticketsOnCompletion: 0
   totalZombiesKilled: 0
+  spawnerSpawnRate: {fileID: 0}
 --- !u!4 &2132771478
 Transform:
   m_ObjectHideFlags: 0
@@ -34497,6 +34529,7 @@ GameObject:
   - component: {fileID: 4151338716056870961}
   - component: {fileID: 7404252193940268333}
   - component: {fileID: 3820841184028613410}
+  - component: {fileID: 8536945239686813498}
   - component: {fileID: 4453645751452997668}
   - component: {fileID: 1318154952095606874}
   - component: {fileID: 8536945239686813496}
@@ -34544,6 +34577,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8536945239686813498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536945239686813495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a2ea1d62dd5a541ae1c8639648125e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grenadePref: {fileID: 60242843336987468, guid: a5a6370ce57dc6c4b8a879bf4156aadd, type: 3}
+  cooldown: 10
+  grenadeSpawn: {fileID: 538242777}
 --- !u!1 &8676023483320712239
 GameObject:
   m_ObjectHideFlags: 0
@@ -34657,6 +34705,7 @@ Transform:
   - {fileID: 6713038587143163534}
   - {fileID: 6322002878652407981}
   - {fileID: 829618555}
+  - {fileID: 538242778}
   m_Father: {fileID: 4039490559627658731}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8806082064906759170

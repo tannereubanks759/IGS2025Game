@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 using UnityEngine.VFX;
+using Unity.VisualScripting;
 
 public class zombieAIV1 : MonoBehaviour
 {
@@ -313,7 +314,46 @@ public class zombieAIV1 : MonoBehaviour
     //Purpose: Play Explode effect and remove zombie from scene.
     public void C4Death()
     {
+        Vector3 position = this.transform.position;
+        zombieAIV1[] zombies = GameObject.FindObjectsByType<zombieAIV1>(FindObjectsSortMode.None);
+        float distancefromplayer = Vector3.Distance(position, player.transform.position);
+        if (distancefromplayer < 4)
+        {
+            PlayerHealthManager manager = GameObject.FindAnyObjectByType<PlayerHealthManager>();
+            if (distancefromplayer < 1)
+            {
+                manager.TakeDamage();
+                manager.TakeDamage();
+                manager.TakeDamage();
+                manager.TakeDamage();
+                
+            }
+            else if(distancefromplayer < 2)
+            {
+                manager.TakeDamage();
+                manager.TakeDamage();
+                manager.TakeDamage();
+            }
+            else if(distancefromplayer < 3)
+            {
+                manager.TakeDamage();
+                manager.TakeDamage();
+            }
+            else
+            {
+                manager.TakeDamage();
+            }
+            
+        }
+        for (int i = 0; i < zombies.Length; i++)
+        {
+            if (Vector3.Distance(position, zombies[i].gameObject.transform.position) < 4)
+            {
+                zombies[i].TakeDamage(10);
+            }
+        }
         Instantiate(ExplodePref, this.transform.position + new Vector3(0, 1, 0), this.transform.rotation);
+        
         // Decrement the total # of zombies
         zombieManager.totalZombiesAlive--;
         zombieManager.totalZombiesKilled++;
@@ -333,4 +373,6 @@ public class zombieAIV1 : MonoBehaviour
   
 
     }
+
+    
 }

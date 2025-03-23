@@ -391,6 +391,37 @@ RectTransform:
   m_AnchoredPosition: {x: 598, y: 363}
   m_SizeDelta: {x: 335.4669, y: 105.08}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &70086084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 70086085}
+  m_Layer: 0
+  m_Name: Grenade Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &70086085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70086084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.255, z: 0.839}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8806082064906759168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &70750989
 GameObject:
   m_ObjectHideFlags: 0
@@ -10275,6 +10306,7 @@ RectTransform:
   - {fileID: 64514673}
   - {fileID: 1958469334}
   - {fileID: 2130417230}
+  - {fileID: 1168652307}
   m_Father: {fileID: 2052397228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -24530,6 +24562,78 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 918f9d212a345ab49a7f283290e03aa2, type: 2}
   m_BuildHeightMesh: 0
+--- !u!1 &1168652306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168652307}
+  - component: {fileID: 1168652309}
+  - component: {fileID: 1168652308}
+  m_Layer: 5
+  m_Name: grenadeicon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1168652307
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168652306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6133767, y: 0.72378445, z: 0.6133767}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 973613885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 717, y: -132}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 1, y: 0}
+--- !u!114 &1168652308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168652306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: df324aa0b85bd3149a063cef730f86e7, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1168652309
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168652306}
+  m_CullTransparentMesh: 1
 --- !u!1 &1176268223
 GameObject:
   m_ObjectHideFlags: 0
@@ -34355,9 +34459,10 @@ MonoBehaviour:
   totalSpawnedZombies: 0
   spawnMaxReached: 0
   waveText: {fileID: 2130417231}
-  miniGameObject: {fileID: 0}
+  miniGameObject: {fileID: 1918203277}
   ticketsOnCompletion: 0
   totalZombiesKilled: 0
+  spawnerSpawnRate: {fileID: 0}
 --- !u!4 &2132771478
 Transform:
   m_ObjectHideFlags: 0
@@ -37913,6 +38018,7 @@ GameObject:
   - component: {fileID: 4151338716056870961}
   - component: {fileID: 7404252193940268333}
   - component: {fileID: 3820841184028613410}
+  - component: {fileID: 8536945239686813498}
   - component: {fileID: 4453645751452997668}
   - component: {fileID: 1318154952095606874}
   - component: {fileID: 8536945239686813496}
@@ -37960,6 +38066,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8536945239686813498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536945239686813495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a2ea1d62dd5a541ae1c8639648125e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grenadePref: {fileID: 60242843336987468, guid: a5a6370ce57dc6c4b8a879bf4156aadd, type: 3}
+  cooldown: 10
+  grenadeSpawn: {fileID: 70086084}
+  grenadeIcon: {fileID: 1168652308}
 --- !u!1 &8676023483320712239
 GameObject:
   m_ObjectHideFlags: 0
@@ -38073,6 +38195,7 @@ Transform:
   - {fileID: 6713038587143163534}
   - {fileID: 6322002878652407981}
   - {fileID: 829618555}
+  - {fileID: 70086085}
   m_Father: {fileID: 4039490559627658731}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8806082064906759170
