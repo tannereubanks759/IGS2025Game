@@ -28,9 +28,6 @@ public class ZombieManager : MonoBehaviour
     // holds the total number of zombies killed
     public int totalZombiesKilled = 0;
 
-    // reference for changing the spawnrates
-    public zombieSpawner spawnerSpawnRate;
-
     //[SerializeField] GameObject scoreboardUI;
 
     // Initialize variables to their starting values
@@ -41,6 +38,8 @@ public class ZombieManager : MonoBehaviour
         maxZombies = 12;
         spawnMaxReached = false;
         WaveTextUpdate();
+
+        Debug.Log(zombieSpawner.spawnRate);
     }
 
     void Update()
@@ -78,12 +77,24 @@ public class ZombieManager : MonoBehaviour
         zombieSpawner.maxAliveZombies += 5;
     }
 
+    void SpawnRateUpdate()
+    {
+        if (zombieSpawner.spawnRate >= 1f)
+        {
+            zombieSpawner.spawnRate -= 1;
+        }
+
+        Debug.Log(zombieSpawner.spawnRate);
+    }
+
     // Changes the maximum # of zombies based on the wave #
     void WaveManager()
     {
         maxZombies += 5 + (3 * (waveCount - 2));
 
         MaxZombiesAllowedUpdate();
+
+        SpawnRateUpdate();
     }
 
     void WaveTextUpdate()
