@@ -32884,19 +32884,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d487eac443e756244af20a6cef76cbd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseScreen: {fileID: 0}
-  SettingsScreen: {fileID: 0}
+  PauseScreen: {fileID: 412900333}
+  SettingsScreen: {fileID: 2079658655}
   isPaused: 0
-  pauseKey: 0
-  player: {fileID: 0}
-  DeathScreen: {fileID: 0}
-  playerUi: {fileID: 0}
+  pauseKey: 9
+  player: {fileID: 1318154952095606874}
+  DeathScreen: {fileID: 682093714}
+  playerUi: {fileID: 973613884}
   isDead: 0
-  masterVol: {fileID: 0}
-  musicVol: {fileID: 0}
-  sfxVol: {fileID: 0}
-  mainAudioMixer: {fileID: 0}
-  mouseSens: {fileID: 0}
+  masterVol: {fileID: 1663635208}
+  musicVol: {fileID: 170437397}
+  sfxVol: {fileID: 1426615334}
+  mainAudioMixer: {fileID: 24100000, guid: 3c6ea1776df61114893b1d5cd0439238, type: 2}
+  mouseSens: {fileID: 337108497}
   defaultSens: 1
 --- !u!114 &2052397225
 MonoBehaviour:
