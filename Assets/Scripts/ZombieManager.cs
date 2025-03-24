@@ -79,7 +79,7 @@ public class ZombieManager : MonoBehaviour
 
     void SpawnRateUpdate()
     {
-        if (zombieSpawner.spawnRate >= 1f)
+        if (zombieSpawner.spawnRate > 6f)
         {
             zombieSpawner.spawnRate -= 1;
         }
