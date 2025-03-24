@@ -31988,6 +31988,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: swingTrap
       objectReference: {fileID: 0}
+    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_Size.x
+      value: 0.75006086
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0532712
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_Size.z
+      value: 0.7285059
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_Center.x
+      value: -0.015452323
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_Center.y
+      value: 0.663427
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: m_Center.z
+      value: 0.002386068
+      objectReference: {fileID: 0}
     - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05
@@ -32040,7 +32064,7 @@ PrefabInstance:
     - target: {fileID: 214533652718239989, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
       propertyPath: miniGameObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1918203277}
     - target: {fileID: 3836897152547950847, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -32356,8 +32380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316065263fb760b48a7df395ea0bafe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: {fileID: 2052397224}
-  healTime: 5
+  pause: {fileID: 0}
+  healTime: 0
 --- !u!95 &1980175576
 Animator:
   serializedVersion: 7
@@ -32860,19 +32884,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d487eac443e756244af20a6cef76cbd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseScreen: {fileID: 412900333}
-  SettingsScreen: {fileID: 2079658655}
+  PauseScreen: {fileID: 0}
+  SettingsScreen: {fileID: 0}
   isPaused: 0
-  pauseKey: 9
-  player: {fileID: 1318154952095606874}
-  DeathScreen: {fileID: 682093714}
-  playerUi: {fileID: 973613884}
+  pauseKey: 0
+  player: {fileID: 0}
+  DeathScreen: {fileID: 0}
+  playerUi: {fileID: 0}
   isDead: 0
-  masterVol: {fileID: 1663635208}
-  musicVol: {fileID: 170437397}
-  sfxVol: {fileID: 1426615334}
-  mainAudioMixer: {fileID: 24100000, guid: 3c6ea1776df61114893b1d5cd0439238, type: 2}
-  mouseSens: {fileID: 337108497}
+  masterVol: {fileID: 0}
+  musicVol: {fileID: 0}
+  sfxVol: {fileID: 0}
+  mainAudioMixer: {fileID: 0}
+  mouseSens: {fileID: 0}
   defaultSens: 1
 --- !u!114 &2052397225
 MonoBehaviour:
@@ -33922,7 +33946,7 @@ PrefabInstance:
     - target: {fileID: 1053072320054435320, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: miniGameObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1918203277}
     - target: {fileID: 4215845305716970396, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: m_Name
       value: Actual Clown Trap
@@ -35432,7 +35456,7 @@ PrefabInstance:
     - target: {fileID: 2904841395135578705, guid: 348fa1db4c959994187ae0278ba69d4a, type: 3}
       propertyPath: minigameRef
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1918203277}
     - target: {fileID: 2904841395135578705, guid: 348fa1db4c959994187ae0278ba69d4a, type: 3}
       propertyPath: goldenMatieral
       value: 
