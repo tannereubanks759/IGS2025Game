@@ -28,8 +28,10 @@ public class Interact : MonoBehaviour
         if(other.gameObject.tag == "Ammo")
         {
             InteractText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E) && GetComponentInChildren<GunScript>().GetTotalAmmo() < GetComponentInChildren<GunScript>().maxAmmo)
+            if (minigameScriptRef.tickets>0 && Input.GetKeyDown(KeyCode.E) && GetComponentInChildren<GunScript>().GetTotalAmmo() < GetComponentInChildren<GunScript>().maxAmmo)
             {
+                minigameScriptRef.tickets -= 1;
+                minigameScriptRef.ticketText.text = minigameScriptRef.tickets.ToString();
                 GetComponentInChildren<GunScript>().SetTotalAmmo();
                 SoundEffects.PlayOneShot(RefillAmmoSound, .5f);
             }
