@@ -39,7 +39,6 @@ public class balloonMinigame : MonoBehaviour
     }
     public void startBalloon()
     {
-        Debug.Log("start balloon");
         isMiniActive = true;
         for (int i = 0; i<numberOfGoldenBalloons;i++)
         {

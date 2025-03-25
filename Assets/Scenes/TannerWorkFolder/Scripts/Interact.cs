@@ -18,13 +18,10 @@ public class Interact : MonoBehaviour
     }
 
     
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         if(other.gameObject.tag == "Ammo")
         {
             InteractText.SetActive(true);
@@ -77,14 +74,6 @@ public class Interact : MonoBehaviour
                 coasterRef.startCoaster();
             }
         }
-        /*else if(other.gameObject.tag== "ticketGiver")
-        {
-            InteractText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E) && ticketGiverScriptRef.canClaimTicket)
-            {
-                ticketGiverScriptRef.giveTicket();
-            }
-        }*/
         else if(other.gameObject.tag == "FoodStand")
         {
             InteractText.SetActive(true);
