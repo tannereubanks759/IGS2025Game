@@ -45,6 +45,12 @@ public class zombieAIV1 : MonoBehaviour
     // the spawn effect
     [SerializeField] private VisualEffect spawnEffect;
 
+    // audio files/references
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip footStep;
+    [SerializeField] private AudioClip hurt;
+    [SerializeField] private AudioClip deathSound;
+
     public bool c4Active;
     public GameObject ExplodePref;
     public GameObject rightArm;
@@ -83,6 +89,8 @@ public class zombieAIV1 : MonoBehaviour
 
         spawnEffect = GetComponentInChildren<VisualEffect>();
         Debug.Log(spawnEffect.name);
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -207,6 +215,9 @@ public class zombieAIV1 : MonoBehaviour
             animator.SetInteger("health", animator.GetInteger("health") - i);
             animator.SetTrigger("takeDamage");
 
+            // play hurt audio
+            PlayHurt();
+
         }
 
     }
@@ -227,6 +238,8 @@ public class zombieAIV1 : MonoBehaviour
                 isDead = true;
                 miniGameS.printHs();
             }
+
+            PlayHurt();
 
         }
     }
@@ -250,6 +263,8 @@ public class zombieAIV1 : MonoBehaviour
         {
             colliders[i].enabled = false;
         }
+
+        PlayDeath();
     }
 
     // Activates the attack colliders
@@ -352,13 +367,16 @@ public class zombieAIV1 : MonoBehaviour
                 zombies[i].TakeDamage(10);
             }
         }
+
         Instantiate(ExplodePref, this.transform.position + new Vector3(0, 1, 0), this.transform.rotation);
         
         // Decrement the total # of zombies
         zombieManager.totalZombiesAlive--;
         zombieManager.totalZombiesKilled++;
-        Death();
 
+        PlayDeath();
+
+        Death();
     }
     // Play the particle system
     void PlayParticles()
@@ -370,8 +388,21 @@ public class zombieAIV1 : MonoBehaviour
     void StopParticles()
     {
         spawnEffect.pause = true;
-  
+    }
 
+    void PlayFootstep()
+    {
+        audioSource.PlayOneShot(footStep);
+    }
+
+    void PlayHurt()
+    {
+        audioSource.PlayOneShot(hurt);
+    }
+
+    void PlayDeath()
+    {
+        audioSource.PlayOneShot(deathSound);
     }
 
     
