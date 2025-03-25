@@ -16,7 +16,7 @@ public class SettingsMenuManager : MonoBehaviour
     // throws an error at line 24 but still works???
     void Start()
     {
-        PlayerPrefs.SetFloat("MouseSense", defaultSens);
+        PlayerPrefs.SetFloat("MouseSens", defaultSens);
         PlayerPrefs.Save();
 
         if (PlayerPrefs.GetFloat("MouseSens") != 0f)

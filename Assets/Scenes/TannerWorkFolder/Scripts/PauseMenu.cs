@@ -48,6 +48,10 @@ public class PauseMenu : MonoBehaviour
         {
             player.mouseSensitivity = defaultSens;
         }
+
+        masterVol.value = PlayerPrefs.GetFloat("MasterVol");
+        musicVol.value = PlayerPrefs.GetFloat("MusicVol");
+        sfxVol.value = PlayerPrefs.GetFloat("SFXVol");
     }
 
     // Update is called once per frame
