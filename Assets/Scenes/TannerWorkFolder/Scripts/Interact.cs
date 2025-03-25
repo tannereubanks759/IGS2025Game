@@ -36,6 +36,16 @@ public class Interact : MonoBehaviour
                 SoundEffects.PlayOneShot(RefillAmmoSound, .5f);
             }
         }
+        else if (other.gameObject.tag == "Truck")
+        {
+            Truck T = other.GetComponent<Truck>();
+            InteractText.SetActive(true);
+            InteractText.GetComponent<TextMeshProUGUI>().text = T.InteractionString;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                T.Repair();
+            }
+        }
         else if(other.gameObject.tag == "Minigame Starter" && other.gameObject.layer == 18)
         {
             InteractText.SetActive(true);
@@ -94,10 +104,11 @@ public class Interact : MonoBehaviour
             }
         }
         
+        
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "FoodStand")
+        if(other.gameObject.tag == "FoodStand" || other.gameObject.tag == "Truck")
         {
             InteractText.GetComponent<TextMeshProUGUI>().text = "Interact (E)";
         }

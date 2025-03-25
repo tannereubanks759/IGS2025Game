@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 306d23c20af50e345835abeb28e61540
+timeCreated: 1516808553
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100132
+  packageName: Military SUVs (Body color customizable)
+  packageVersion: 1.1
+  assetPath: Assets/Car/Car_2/Materials/Car_2_Vehicle_interior.mat
+  uploadId: 242295
