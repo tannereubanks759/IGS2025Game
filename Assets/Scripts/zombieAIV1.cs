@@ -264,7 +264,6 @@ public class zombieAIV1 : MonoBehaviour
             colliders[i].enabled = false;
         }
 
-        PlayDeath();
     }
 
     // Activates the attack colliders
@@ -374,7 +373,6 @@ public class zombieAIV1 : MonoBehaviour
         zombieManager.totalZombiesAlive--;
         zombieManager.totalZombiesKilled++;
 
-        PlayDeath();
 
         Death();
     }
@@ -392,7 +390,8 @@ public class zombieAIV1 : MonoBehaviour
 
     void PlayFootstep()
     {
-        audioSource.PlayOneShot(footStep);
+        float random = Random.Range(.8f, 1.2f);
+        audioSource.PlayOneShot(footStep, random);
     }
 
     void PlayHurt()
