@@ -39,7 +39,6 @@ public class ZombieManager : MonoBehaviour
         spawnMaxReached = false;
         WaveTextUpdate();
 
-        Debug.Log(zombieSpawner.spawnRate);
     }
 
     void Update()
@@ -84,7 +83,6 @@ public class ZombieManager : MonoBehaviour
             zombieSpawner.spawnRate -= 1;
         }
 
-        Debug.Log(zombieSpawner.spawnRate);
     }
 
     // Changes the maximum # of zombies based on the wave #
