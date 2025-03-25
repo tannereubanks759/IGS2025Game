@@ -33423,8 +33423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316065263fb760b48a7df395ea0bafe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: {fileID: 0}
-  healTime: 0
+  pause: {fileID: 2052397224}
+  healTime: 5
 --- !u!95 &1980175576
 Animator:
   serializedVersion: 7
