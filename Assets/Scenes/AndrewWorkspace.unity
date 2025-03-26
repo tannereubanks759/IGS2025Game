@@ -39488,7 +39488,7 @@ PrefabInstance:
       objectReference: {fileID: 1996410386}
     - target: {fileID: 648588238532148638, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: forceStrength
-      value: 6.7
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1053072320054435320, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: miniGameObject
@@ -39500,7 +39500,7 @@ PrefabInstance:
       objectReference: {fileID: 1996410386}
     - target: {fileID: 1458701646116113264, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: forceStrength
-      value: 6.7
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2889584509828501138, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: centerOfTrap
@@ -39508,7 +39508,7 @@ PrefabInstance:
       objectReference: {fileID: 1996410386}
     - target: {fileID: 2889584509828501138, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: forceStrength
-      value: 6.7
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4215845305716970396, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: m_Name
@@ -39520,7 +39520,7 @@ PrefabInstance:
       objectReference: {fileID: 1996410386}
     - target: {fileID: 7331279261059929644, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: forceStrength
-      value: 6.7
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7934013638428504933, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39568,7 +39568,7 @@ PrefabInstance:
       objectReference: {fileID: 1996410386}
     - target: {fileID: 8007008462420923511, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: forceStrength
-      value: 6.7
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8586534524627587357, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: centerOfTrap
@@ -39576,7 +39576,7 @@ PrefabInstance:
       objectReference: {fileID: 1996410386}
     - target: {fileID: 8586534524627587357, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: forceStrength
-      value: 6.7
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8740392351075094502, guid: 2867ce61dff1c1d4bacfde089972186f, type: 3}
       propertyPath: m_LocalPosition.y
