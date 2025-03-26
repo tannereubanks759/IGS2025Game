@@ -94,6 +94,7 @@ public class zombieSpawner : MonoBehaviour
         // The clown and female zombie need to be in the first and second
         // position in the array for this to work properly, they will spawn
         // half the time
+
         if (weightedSpawn <= 10)
         {
             index = UnityEngine.Random.Range(0, 2);

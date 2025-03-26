@@ -1,24 +1,63 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class clownTrapHitDetection : MonoBehaviour
 {
     public PlayerHealthManager playerHealthManagerRef;
     public ClownRideMovement clownRideMovementRef;
+    public float forceStrength = 10f;
+    public Transform centerOfTrap;
+    public ZombieManager zombieManagerRef;
+    private void Start()
+    {
+        zombieManagerRef = FindAnyObjectByType<ZombieManager>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         if(clownRideMovementRef.isActive)
         {
             if (collision.gameObject.layer == 8)
             {
-                collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(10);
+               
+                zombieAIV1 zombieAI = collision.gameObject.GetComponentInParent<zombieAIV1>();
+                // calculates the direction away from the middle of the trap and the position of zombie
+                Vector3 directionToPush = (collision.transform.position - centerOfTrap.position).normalized;
+                // makes the direction to the left of the trap since blades are spinning that way
+                Vector3 forceDirection = Quaternion.Euler(0, 90, 0) * directionToPush;
+                //zombie takes damage
+                zombieAI.TakeDamage(10);
+                //ragdoll is started
+                collision.gameObject.GetComponentInParent<ragdollScript>().startRagdoll(forceDirection, forceStrength);
+                
+                
+
+                StartCoroutine(deathFunctions(zombieAI));
 
             }
+            // IF PLAYER GETS HIT
             /*if (collision.gameObject.layer == 11)
             {
                 playerHealthManagerRef.pause.Die();
             }*/
         }
        
+    }
+    
+    IEnumerator deathFunctions(zombieAIV1 zombieAI) 
+    {
+        yield return new WaitForSeconds(2f);
+        if(zombieAI!=null)
+        {
+            zombieManagerRef.totalZombiesAlive--;
+            zombieManagerRef.totalZombiesKilled++;
+
+            Destroy(zombieAI.gameObject);
+        }
+       
+        //zombieAI.IsDead();
+       
+        //zombieAI.Death();
     }
 }

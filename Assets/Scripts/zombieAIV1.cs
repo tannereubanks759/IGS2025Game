@@ -253,7 +253,10 @@ public class zombieAIV1 : MonoBehaviour
         zombieManager.totalZombiesKilled++;
 
         // Anim plays multiple times, not sure if the agent.isStopped line is even working
-        agent.enabled = false;
+        
+            agent.enabled = false;
+        
+        
 
         // Get the colliders on the gameobject
         Collider[] colliders = this.GetComponentsInChildren<Collider>();
