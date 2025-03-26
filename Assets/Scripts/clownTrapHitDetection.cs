@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem.Processors;
 
 public class clownTrapHitDetection : MonoBehaviour
 {
@@ -22,18 +23,23 @@ public class clownTrapHitDetection : MonoBehaviour
             {
                
                 zombieAIV1 zombieAI = collision.gameObject.GetComponentInParent<zombieAIV1>();
-                // calculates the direction away from the middle of the trap and the position of zombie
-                Vector3 directionToPush = (collision.transform.position - centerOfTrap.position).normalized;
-                // makes the direction to the left of the trap since blades are spinning that way
-                Vector3 forceDirection = Quaternion.Euler(0, 90, 0) * directionToPush;
-                //zombie takes damage
-                zombieAI.TakeDamage(10);
-                //ragdoll is started
-                collision.gameObject.GetComponentInParent<ragdollScript>().startRagdoll(forceDirection, forceStrength);
-                
-                
+                if(zombieAI.isDead!=true) 
+                {
+                    // calculates the direction away from the middle of the trap and the position of zombie
+                    Vector3 directionToPush = (collision.transform.position - centerOfTrap.position).normalized;
+                    // makes the direction to the left of the trap since blades are spinning that way
+                    Vector3 forceDirection = Quaternion.Euler(0, 90, 0) * directionToPush;
+                    //zombie takes damage
+                    zombieAI.TakeDamage(10);
+                    zombieAI.isDead = true;
+                    //ragdoll is started
+                    collision.gameObject.GetComponentInParent<ragdollScript>().startRagdoll(forceDirection, forceStrength);
 
-                StartCoroutine(deathFunctions(zombieAI));
+
+
+                    StartCoroutine(deathFunctions(zombieAI));
+                }
+               
 
             }
             // IF PLAYER GETS HIT
@@ -50,10 +56,15 @@ public class clownTrapHitDetection : MonoBehaviour
         yield return new WaitForSeconds(2f);
         if(zombieAI!=null)
         {
-            zombieManagerRef.totalZombiesAlive--;
-            zombieManagerRef.totalZombiesKilled++;
+            zombieAI.IsDead();
 
+            zombieAI.Death();
             Destroy(zombieAI.gameObject);
+
+            /*zombieManagerRef.totalZombiesAlive--;
+            zombieManagerRef.totalZombiesKilled++;*/
+
+            
         }
        
         //zombieAI.IsDead();
