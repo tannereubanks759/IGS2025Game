@@ -46,11 +46,11 @@ public class Interact : MonoBehaviour
         else if(other.gameObject.tag == "Minigame Starter" && other.gameObject.layer == 18)
         {
             InteractText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E) && ticketGiverScriptRef.canClaimTicket)
+            if (Input.GetKey(KeyCode.E) && ticketGiverScriptRef.canClaimTicket)
             {
                 ticketGiverScriptRef.giveTicket();
             }
-            if (Input.GetKeyDown(KeyCode.E) && minigameScriptRef.hasQuest == false && ticketGiverScriptRef.hasTaken == true)
+            if (Input.GetKey(KeyCode.E) && minigameScriptRef.hasQuest == false && ticketGiverScriptRef.hasTaken == true)
             {
                 Debug.Log("Start Minigame");
                 minigameScriptRef.startMinigame();
@@ -61,7 +61,7 @@ public class Interact : MonoBehaviour
         else if(other.gameObject.tag == "trap starter")
         {
             InteractText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 swingTrapRef.startTrap();
             }
@@ -69,7 +69,7 @@ public class Interact : MonoBehaviour
         else if(other.gameObject.tag == "coaster trap starter")
         {
             InteractText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 coasterRef.startCoaster();
             }
@@ -87,7 +87,7 @@ public class Interact : MonoBehaviour
         else if(other.gameObject.tag == "clown trap starter")
         {
             InteractText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 clownTrapRef.startClownTrap();
             }
