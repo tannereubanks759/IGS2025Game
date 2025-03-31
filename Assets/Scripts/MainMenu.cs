@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject instructionsMenu;
     [SerializeField] GameObject settingsMenu;
+    [SerializeField] GameObject controlsMenu;
 
     // Button sound
     //[SerializeField] AudioSource clickSound;
@@ -17,6 +18,7 @@ public class MainMenu : MonoBehaviour
         instructionsMenu.SetActive(false);
         settingsMenu.SetActive(false);
         mainMenu.SetActive(true);
+        controlsMenu.SetActive(false);
     }
 
     // Plays a button sound, waits for 1 second, then plays the game level
@@ -33,6 +35,7 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(false);
         settingsMenu.SetActive(false);
         instructionsMenu.SetActive(true);
+        controlsMenu.SetActive(false);
     }
 
     // Plays a button sound, then changes the active canvas panel
@@ -42,6 +45,7 @@ public class MainMenu : MonoBehaviour
         settingsMenu.SetActive(false);
         instructionsMenu.SetActive(false);
         mainMenu.SetActive(true);
+        controlsMenu.SetActive(false);
     }
 
     // Plays a button sound, then changes the active canvas panel
@@ -51,6 +55,7 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(false);
         instructionsMenu.SetActive(false);
         settingsMenu.SetActive(true);
+        controlsMenu.SetActive(false);
     }
 
     // Plays a button sound, then exits the game
@@ -58,6 +63,16 @@ public class MainMenu : MonoBehaviour
     {
         //Invoke(nameof(PlayAudio), 1);
         Application.Quit();
+    }
+
+    // Opens the controls menu
+    public void ControlsMenu()
+    {
+        //clickSound.Play();
+        controlsMenu.SetActive(true);
+        mainMenu.SetActive(false);
+        instructionsMenu.SetActive(false);
+        settingsMenu.SetActive(false);
     }
 
     // Method for Invoke
