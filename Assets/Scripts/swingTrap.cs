@@ -61,6 +61,7 @@ public class swingTrap : MonoBehaviour
     {
         if (miniGameObject.tickets >= costPrice&&paid==false)
         {
+            GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();
             paid = true;
             trapAnim.SetBool("isOn", true);
             miniGameObject.tickets -= costPrice;

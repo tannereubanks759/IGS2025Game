@@ -22,6 +22,7 @@ public class clownTrap : MonoBehaviour
     {
         if (miniGameObject.tickets >= costPrice && paid == false)
         {
+            GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();
             clownRideMovementRef.isActive = true;
             paid = true;
             miniGameObject.tickets -= costPrice;

@@ -23,6 +23,7 @@ TagManager:
   - clown trap starter
   - Middle Clown Point
   - Truck
+  - ExitBarrier
   layers:
   - Default
   - TransparentFX

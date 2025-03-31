@@ -86,6 +86,7 @@ public class KiddieCoaster : MonoBehaviour
         // the player has enough tickets and the trap is not on
         if (miniGameObject.tickets >= costPrice && paid == false)
         {
+            GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();
             // set bools to true to turn the trap on
             paid = true;
             coasterAnimator.SetBool("isOn", true);

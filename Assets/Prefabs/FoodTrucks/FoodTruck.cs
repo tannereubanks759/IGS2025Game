@@ -45,6 +45,7 @@ public class FoodTruck : MonoBehaviour
     {
         if(ticketRef.tickets >= price)
         {
+            GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();
             ticketRef.tickets -= price;
             ticketRef.ticketText.text = ticketRef.tickets.ToString();
             Donut();

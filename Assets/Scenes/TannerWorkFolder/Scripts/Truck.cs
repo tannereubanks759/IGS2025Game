@@ -22,6 +22,7 @@ public class Truck : MonoBehaviour
         miniGameScript mini = GameObject.FindAnyObjectByType<miniGameScript>();
         if (mini.tickets >= price && numberofwheelsrepaired < truckWheels.Length)
         {
+            GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();
             numberofwheelsrepaired++;
             InteractionString = "Repair For 10 Tickets (" + numberofwheelsrepaired + "/4)";
             mini.tickets -= price;

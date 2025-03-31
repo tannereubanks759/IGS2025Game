@@ -11,6 +11,8 @@ public class Interact : MonoBehaviour
     public swingTrap swingTrapRef;
     public KiddieCoaster coasterRef;
     public clownTrap clownTrapRef;
+    public AudioClip purchaseSound;
+    public float purchaseSoundVolume = .5f;
     void Start()
     {
         minigameScriptRef = FindAnyObjectByType<miniGameScript>();
@@ -92,12 +94,27 @@ public class Interact : MonoBehaviour
                 clownTrapRef.startClownTrap();
             }
         }
+        else if(other.gameObject.tag == "ExitBarrier")
+        {
+            InteractText.SetActive(true);
+            BuyWall wall = other.GetComponent<BuyWall>();
+            InteractText.GetComponent<TextMeshProUGUI>().text = wall.InteractTextOveride;
+            if (Input.GetKey(KeyCode.E))
+            {
+                wall.buy();
+            }
+        }
         
         
     }
+
+    public void PlayPurchaseSound()
+    {
+        SoundEffects.PlayOneShot(purchaseSound, purchaseSoundVolume);
+    }
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "FoodStand" || other.gameObject.tag == "Truck")
+        if(other.gameObject.tag == "FoodStand" || other.gameObject.tag == "Truck" || other.gameObject.tag == "ExitBarrier")
         {
             InteractText.GetComponent<TextMeshProUGUI>().text = "Interact (E)";
         }
