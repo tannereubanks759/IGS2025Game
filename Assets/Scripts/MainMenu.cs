@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGameButton()
     {
         //Invoke(nameof(PlayAudio), 1);
-        SceneManager.LoadScene("AndrewWorkspace");
+        SceneManager.LoadScene("mapLayout");
     }
 
     // Plays a button sound, then changes the active canvas panel
