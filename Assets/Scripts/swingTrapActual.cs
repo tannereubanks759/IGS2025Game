@@ -5,6 +5,8 @@ public class swingTrapActual : MonoBehaviour
 {
     public swingTrap swingTrapRef;
     public PlayerHealthManager playerHealthManagerRef;
+    public float trapForce = 14f;
+    public Transform centerOfShip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,15 +21,19 @@ public class swingTrapActual : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.layer == 8)
-        {
-            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(10);
-            
-        }
-        if(collision.gameObject.layer == 11)
+        if (collision.gameObject.layer == 11)
         {
             playerHealthManagerRef.pause.Die();
         }
+        else if (collision.gameObject.layer == 8)
+        {
+            Vector3 directionToPush = (collision.transform.position - centerOfShip.position).normalized;
+
+            Vector3 forceDirection = Quaternion.Euler(0, 90, 0) * directionToPush;
+            collision.gameObject.GetComponentInParent<ragdollScript>().startRagdoll(forceDirection, trapForce);
+            collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(10);
+        }
+        
 
     }
     private void OnTriggerEnter(Collider other)
