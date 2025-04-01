@@ -16,8 +16,14 @@ public class SettingsMenuManager : MonoBehaviour
     // throws an error at line 24 but still works???
     void Start()
     {
-        PlayerPrefs.SetFloat("MouseSens", defaultSens);
-        PlayerPrefs.Save();
+        if (!PlayerPrefs.HasKey("MouseSens"))
+        {
+            Debug.Log("Start of start menu script " + PlayerPrefs.GetFloat("MouseSens"));
+
+            PlayerPrefs.SetFloat("MouseSens", defaultSens);
+            PlayerPrefs.Save();
+        }
+        
 
         if (PlayerPrefs.GetFloat("MouseSens") != 0f)
         {
@@ -30,7 +36,7 @@ public class SettingsMenuManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        Debug.Log("Start of start menu script" + PlayerPrefs.GetFloat("MouseSens"));
+        
     }
 
     // Change the master volume
