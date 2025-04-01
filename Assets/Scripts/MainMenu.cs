@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject controlsMenu;
 
     // Button sound
-    //[SerializeField] AudioSource clickSound;
+    [SerializeField] AudioSource clickSound;
 
     // Whenever the scene starts, the default layout will be active
     void Start()
@@ -24,14 +24,14 @@ public class MainMenu : MonoBehaviour
     // Plays a button sound, waits for 1 second, then plays the game level
     public void PlayGameButton()
     {
-        //Invoke(nameof(PlayAudio), 1);
+        Invoke(nameof(PlayAudio), .5f);
         SceneManager.LoadScene("mapLayout");
     }
 
     // Plays a button sound, then changes the active canvas panel
     public void InstructionsMenuButton()
     {
-        //clickSound.Play();
+        clickSound.Play();
         mainMenu.SetActive(false);
         settingsMenu.SetActive(false);
         instructionsMenu.SetActive(true);
@@ -41,7 +41,7 @@ public class MainMenu : MonoBehaviour
     // Plays a button sound, then changes the active canvas panel
     public void MainMenuButton()
     {
-        //clickSound.Play();
+        clickSound.Play();
         settingsMenu.SetActive(false);
         instructionsMenu.SetActive(false);
         mainMenu.SetActive(true);
@@ -51,7 +51,7 @@ public class MainMenu : MonoBehaviour
     // Plays a button sound, then changes the active canvas panel
     public void SettingsMenuButton()
     {
-        //clickSound.Play();
+        clickSound.Play();
         mainMenu.SetActive(false);
         instructionsMenu.SetActive(false);
         settingsMenu.SetActive(true);
@@ -61,14 +61,14 @@ public class MainMenu : MonoBehaviour
     // Plays a button sound, then exits the game
     public void QuitGameButton()
     {
-        //Invoke(nameof(PlayAudio), 1);
+        Invoke(nameof(PlayAudio), .5f);
         Application.Quit();
     }
 
     // Opens the controls menu
     public void ControlsMenu()
     {
-        //clickSound.Play();
+        clickSound.Play();
         controlsMenu.SetActive(true);
         mainMenu.SetActive(false);
         instructionsMenu.SetActive(false);
@@ -78,6 +78,6 @@ public class MainMenu : MonoBehaviour
     // Method for Invoke
     void PlayAudio()
     {
-        //clickSound.Play();
+        clickSound.Play();
     }
 }
