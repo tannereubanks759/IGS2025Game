@@ -23,7 +23,7 @@ public class PauseMenu : MonoBehaviour
     public TMP_InputField mouseSens;
     public float defaultSens = 1f;
 
-    void Start()
+    private void Start()
     {
         Resume();
         DeathScreen.SetActive(false);
@@ -36,7 +36,7 @@ public class PauseMenu : MonoBehaviour
             mainAudioMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
         }
 
-
+        Debug.Log("Before the start if " + PlayerPrefs.GetFloat("MouseSens"));
 
         // when the game starts we set the mouse sens from playerprefs
         if (PlayerPrefs.GetFloat("MouseSens") != 0f)

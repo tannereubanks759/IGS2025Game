@@ -29,6 +29,8 @@ public class SettingsMenuManager : MonoBehaviour
             mouseSens.text = PlayerPrefs.GetFloat("MouseSens").ToString();
             PlayerPrefs.Save();
         }
+
+        Debug.Log("Start of start menu script" + PlayerPrefs.GetFloat("MouseSens"));
     }
 
     // Change the master volume
