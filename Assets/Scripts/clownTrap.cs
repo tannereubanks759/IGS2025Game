@@ -6,6 +6,8 @@ public class clownTrap : MonoBehaviour
     public bool paid = false;
     public miniGameScript miniGameObject;
     public ClownRideMovement clownRideMovementRef;
+    public Animator clownRideAnim;
+    private string nameOfFunction = "startMovement";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,11 +24,19 @@ public class clownTrap : MonoBehaviour
     {
         if (miniGameObject.tickets >= costPrice && paid == false)
         {
-            GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();
-            clownRideMovementRef.isActive = true;
+            clownRideAnim.SetBool("isTrapActive", true);
             paid = true;
+            GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();
             miniGameObject.tickets -= costPrice;
             miniGameObject.ticketText.text = miniGameObject.tickets.ToString();
+            Invoke(nameOfFunction, 1.15f);
         }
+    }
+    private void startMovement()
+    {
+        
+        clownRideMovementRef.isActive = true;
+        
+        
     }
 }

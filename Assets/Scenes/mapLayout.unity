@@ -8153,8 +8153,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1196438382}
-        m_TargetAssemblyTypeName: SettingsMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 2052397224}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ChangeMouseSens
         m_Mode: 1
         m_Arguments:
@@ -8164,7 +8164,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -1012,6 +1012,7 @@ MonoBehaviour:
   maxSpeedDuration: 1
   waitAtRestTime: 0
   isActive: 0
+  clownRideAnimator: {fileID: 5529102816181361867}
   clownTrapRef: {fileID: 1053072320054435320}
   copyOfSpeed: 0
   minRiseHeight: 0.2
@@ -1496,7 +1497,7 @@ Transform:
   m_GameObject: {fileID: 1145563211093973986}
   serializedVersion: 2
   m_LocalRotation: {x: 0.70628005, y: -0.03418341, z: 0.03418341, w: 0.70628005}
-  m_LocalPosition: {x: 0.011, y: -0.64033437, z: 3.888}
+  m_LocalPosition: {x: 0.011, y: -0.6403344, z: 3.888}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1591,6 +1592,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthManagerRef: {fileID: 0}
   clownRideMovementRef: {fileID: 8486369798734694796}
+  forceStrength: 19
+  centerOfTrap: {fileID: 290271260966522023}
+  zombieManagerRef: {fileID: 0}
 --- !u!54 &83903436086108368
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2577,7 +2581,7 @@ Transform:
   m_GameObject: {fileID: 2357586352807204086}
   serializedVersion: 2
   m_LocalRotation: {x: 0.707066, y: -0.0075975065, z: 0.0075975065, w: 0.707066}
-  m_LocalPosition: {x: -0.082, y: -0.64033437, z: 3.866}
+  m_LocalPosition: {x: -0.082, y: -0.6403344, z: 3.866}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2672,6 +2676,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthManagerRef: {fileID: 0}
   clownRideMovementRef: {fileID: 8486369798734694796}
+  forceStrength: 19
+  centerOfTrap: {fileID: 290271260966522023}
+  zombieManagerRef: {fileID: 0}
 --- !u!54 &7279265347248731041
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4024,6 +4031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7934013638428504933}
   - component: {fileID: 473937722668412516}
+  - component: {fileID: 5529102816181361867}
   m_Layer: 0
   m_Name: Actual Clown Trap
   m_TagString: Untagged
@@ -4039,7 +4047,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4215845305716970396}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.108107984, z: -0, w: 0.9941392}
+  m_LocalRotation: {x: 0, y: -0.108112186, z: 0, w: 0.9941387}
   m_LocalPosition: {x: 18, y: 2.3, z: 184.71}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
@@ -4049,7 +4057,7 @@ Transform:
   - {fileID: 8740392351075094502}
   - {fileID: 5128330182487477757}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -12.413, z: 0}
 --- !u!82 &473937722668412516
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4147,6 +4155,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &5529102816181361867
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4215845305716970396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5910831a5d4220c47a84e206f20537d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4232851131088510234
 GameObject:
   m_ObjectHideFlags: 0
@@ -7386,7 +7416,7 @@ Transform:
   m_GameObject: {fileID: 6740182421126803606}
   serializedVersion: 2
   m_LocalRotation: {x: 0.017209506, y: -0.7068974, z: -0.7068974, w: -0.017209506}
-  m_LocalPosition: {x: -0.049822982, y: -0.64033437, z: 3.9498062}
+  m_LocalPosition: {x: -0.049822982, y: -0.6403344, z: 3.9498062}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -7481,6 +7511,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthManagerRef: {fileID: 0}
   clownRideMovementRef: {fileID: 8486369798734694796}
+  forceStrength: 19
+  centerOfTrap: {fileID: 290271260966522023}
+  zombieManagerRef: {fileID: 0}
 --- !u!54 &1238219268534732153
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8806,7 +8839,7 @@ Transform:
   m_GameObject: {fileID: 7624100631511202519}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7070925, y: -0.0044980124, z: 0.0044980124, w: 0.7070925}
-  m_LocalPosition: {x: -0.074, y: -0.64033437, z: 3.897}
+  m_LocalPosition: {x: -0.074, y: -0.6403344, z: 3.897}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -8901,6 +8934,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthManagerRef: {fileID: 0}
   clownRideMovementRef: {fileID: 8486369798734694796}
+  forceStrength: 19
+  centerOfTrap: {fileID: 290271260966522023}
+  zombieManagerRef: {fileID: 0}
 --- !u!54 &3698467499193308426
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9456,6 +9492,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthManagerRef: {fileID: 0}
   clownRideMovementRef: {fileID: 8486369798734694796}
+  forceStrength: 19
+  centerOfTrap: {fileID: 290271260966522023}
+  zombieManagerRef: {fileID: 0}
 --- !u!54 &7487934139460603913
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9513,7 +9552,7 @@ Transform:
   m_GameObject: {fileID: 8396191129703705837}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7068966, y: 0.017241031, z: -0.017241031, w: 0.7068966}
-  m_LocalPosition: {x: -0.03249073, y: -0.64033437, z: 3.949791}
+  m_LocalPosition: {x: -0.03249073, y: -0.6403344, z: 3.949791}
   m_LocalScale: {x: 0.6, y: 0.5999999, z: 0.59999996}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9608,6 +9647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthManagerRef: {fileID: 0}
   clownRideMovementRef: {fileID: 8486369798734694796}
+  forceStrength: 19
+  centerOfTrap: {fileID: 290271260966522023}
+  zombieManagerRef: {fileID: 0}
 --- !u!54 &275722061570200834
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9836,7 +9878,7 @@ Transform:
   m_GameObject: {fileID: 8517049600001849857}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.2090301, z: -0, w: 0.9779092}
-  m_LocalPosition: {x: -10.05, y: -0.252, z: -0.26}
+  m_LocalPosition: {x: -10.05, y: -0.44, z: -0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -9880,6 +9922,7 @@ MonoBehaviour:
   paid: 0
   miniGameObject: {fileID: 0}
   clownRideMovementRef: {fileID: 8486369798734694796}
+  clownRideAnim: {fileID: 5529102816181361867}
 --- !u!1 &8518346037202419575
 GameObject:
   m_ObjectHideFlags: 0

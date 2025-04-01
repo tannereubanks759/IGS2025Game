@@ -13,6 +13,7 @@ public class ClownRideMovement : MonoBehaviour
     public float maxSpeedDuration = 2f; // Time spent at maximum speed
     public float waitAtRestTime = 2f; // Rest time after deceleration
     public bool isActive = false;
+    public Animator clownRideAnimator;
     public clownTrap clownTrapRef;
     public float copyOfSpeed;
     public float minRiseHeight = 5f; // Minimum rise height
@@ -91,6 +92,7 @@ public class ClownRideMovement : MonoBehaviour
             {
                 isActive = false;
                 clownTrapRef.paid = false;
+                clownRideAnimator.SetBool("isTrapActive", false);
                 currentSpeed = 0;
                 isDecelerating = false;
                 isAtRest = true;
