@@ -41,6 +41,7 @@ public class PauseMenu : MonoBehaviour
         // when the game starts we set the mouse sens from playerprefs
         if (PlayerPrefs.GetFloat("MouseSens") != 0f)
         {
+            Debug.Log("Starting Sens in level is " + PlayerPrefs.GetFloat("MouseSens"));
             player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
             mouseSens.text = PlayerPrefs.GetFloat("MouseSens").ToString();
         }
@@ -158,6 +159,7 @@ public class PauseMenu : MonoBehaviour
     // Change the mouse sens
     public void ChangeMouseSens()
     {
+        
         try
         {
             PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
@@ -169,5 +171,7 @@ public class PauseMenu : MonoBehaviour
         {
             player.mouseSensitivity = defaultSens;
         }
+
+        Debug.Log("Changing sens in level to " + PlayerPrefs.GetFloat("MouseSens"));
     }
 }
