@@ -162,7 +162,9 @@ public class PauseMenu : MonoBehaviour
         
         try
         {
+            Debug.Log("try parse start");
             PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
+            Debug.Log("try parse end");
             PlayerPrefs.Save();
 
             player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
