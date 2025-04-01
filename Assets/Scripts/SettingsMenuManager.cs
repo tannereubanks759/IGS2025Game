@@ -69,5 +69,7 @@ public class SettingsMenuManager : MonoBehaviour
         }
 
         PlayerPrefs.Save();
+
+        Debug.Log("Main Menu sens " + PlayerPrefs.GetFloat("MouseSens"));
     }
 }
