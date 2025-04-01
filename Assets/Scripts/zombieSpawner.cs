@@ -73,12 +73,15 @@ public class zombieSpawner : MonoBehaviour
     // Time calculations
     void GameTimeManager()
     {
-        gameTime += Time.deltaTime;
-
-        if (gameTime > spawnRate && playerNear)
+        if (playerNear)
         {
-            //PlayParticles();
-            SpawnZombie(zombies);
+            gameTime += Time.deltaTime;
+
+            if (gameTime > spawnRate)
+            {
+                //PlayParticles();
+                SpawnZombie(zombies);
+            }
         }
     }
 
