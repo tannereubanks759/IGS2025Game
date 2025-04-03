@@ -8,6 +8,7 @@ public class TakeDamage : MonoBehaviour
     {
         if(other.gameObject.layer == 10)
         {
+            other.gameObject.SetActive(false);
             playerHealth.TakeDamage();
         }
     }
