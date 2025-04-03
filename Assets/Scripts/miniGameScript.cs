@@ -30,7 +30,7 @@ public class miniGameScript : MonoBehaviour
     public GameObject[] grassAreas;
     public SphereCollider[] colliderToEnable;
     public balloonMinigame balloonMinigameRef;
-
+    public bool firstQuest = false;
     public ParticleSystem[] grassHighlights;
     #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -111,7 +111,7 @@ public class miniGameScript : MonoBehaviour
     }
     public void startMinigame()
     {
-        
+        firstQuest = true;
         miniGameTime = Time.time;
         ticketGiverScriptRef.hasTaken = false;
         int number = Random.Range( 0,  quests.Length);

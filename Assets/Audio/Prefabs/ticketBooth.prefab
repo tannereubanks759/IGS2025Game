@@ -462,6 +462,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101782824659619802}
   m_Mesh: {fileID: 4300000, guid: abc00000000014149889421711124223, type: 3}
+--- !u!1 &1268943252758052572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4445235499936528347}
+  m_Layer: 18
+  m_Name: iconSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4445235499936528347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268943252758052572}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4160923981981287142}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1759848248116880748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,9 +1237,10 @@ GameObject:
   - component: {fileID: 6175254902740033638}
   - component: {fileID: 7847962618414279397}
   - component: {fileID: 3988634586418550531}
-  m_Layer: 0
+  - component: {fileID: 3020523315733980108}
+  m_Layer: 18
   m_Name: ticketBooth
-  m_TagString: ticketGiver
+  m_TagString: Minigame Starter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 123
@@ -1224,7 +1256,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.384048, y: 0, z: 4.1115274}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8050376130742906865}
   - {fileID: 4406388979691362041}
@@ -1236,6 +1268,7 @@ Transform:
   - {fileID: 7338496433994907960}
   - {fileID: 6223524787247302608}
   - {fileID: 537733382880376867}
+  - {fileID: 4445235499936528347}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &6175254902740033638
@@ -1281,9 +1314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e82f43ddcb8c5145b87ef3effb7cab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniGameScriptRef: {fileID: 0}
+  miniGameScriptRef: {fileID: 3020523315733980108}
   canClaimTicket: 0
   interactUI: {fileID: 0}
+  inRangeToInteract: 0
   ticketSound: {fileID: 3322025309216818382}
   hasTaken: 1
 --- !u!65 &3988634586418550531
@@ -1307,6 +1341,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.327015, y: 3.2184312, z: 2.0906627}
   m_Center: {x: 0.050964355, y: 1.1092151, z: -0.54533136}
+--- !u!114 &3020523315733980108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5210317921667463325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a8785027ee13f4eba2095172790387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 0}
+  questUI: {fileID: 0}
+  isInteractable: 0
+  hasQuest: 0
+  quest: 
+  questText: {fileID: 0}
+  currentHeadShots: 0
+  headShotQuest: 0
+  currentScore: {fileID: 0}
+  currentOutOfScore: {fileID: 0}
+  ticketText: {fileID: 0}
+  tickets: 0
+  totalTime: 10
+  quests:
+  - Get 5 Headshots
+  - Touch Grass for 10 seconds
+  - Pop The Golden Balloons
+  areaScriptRef: {fileID: 0}
+  ticketGiverScriptRef: {fileID: 7847962618414279397}
+  goGetTicketText: {fileID: 0}
+  miniGameTime: 0
+  randomNumber: 0
+  grassAreas:
+  - {fileID: 0}
+  - {fileID: 0}
+  colliderToEnable: []
+  balloonMinigameRef: {fileID: 0}
+  grassHighlights:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &5544532172700688133
 GameObject:
   m_ObjectHideFlags: 0
