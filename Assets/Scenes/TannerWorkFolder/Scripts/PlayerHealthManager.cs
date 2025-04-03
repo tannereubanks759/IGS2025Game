@@ -11,21 +11,13 @@ public class PlayerHealthManager : MonoBehaviour
 
     // Audio
     [SerializeField] private AudioSource audioSource;
-    private AudioClip[] hurtList;
-    [SerializeField] private AudioClip hurt1;
-    [SerializeField] private AudioClip hurt2;
-    [SerializeField] private AudioClip hurt3;
+    [SerializeField] private AudioClip[] hurtList;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         this.anim = GetComponent<Animator>();
         anim.SetInteger("Health", 5);
-
-        // Populate the array of audio clips
-        hurtList.Append<AudioClip>(hurt1);
-        hurtList.Append<AudioClip>(hurt2);
-        hurtList.Append<AudioClip>(hurt3);
     }
 
     public void Update()
@@ -47,13 +39,14 @@ public class PlayerHealthManager : MonoBehaviour
         anim.SetInteger("Health", health - 1);
 
         // Play a random audio clip from the list
-        var index = Random.Range(0, hurtList.Length);
+        var index = Random.Range(0, hurtList.Length - 1);
         PlayHurtAudio(index);
     }
 
     // Plays audio
-    void PlayHurtAudio(int i)
+    public void PlayHurtAudio(int i)
     {
+        Debug.Log("Hurt Audio " + i);
         audioSource.clip = hurtList[i];
         audioSource.Play();
     }

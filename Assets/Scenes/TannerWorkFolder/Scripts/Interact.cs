@@ -23,7 +23,7 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.gameObject.name);
+        //Debug.Log(other.gameObject.name);
         if(other.gameObject.tag == "Ammo")
         {
             InteractText.SetActive(true);
