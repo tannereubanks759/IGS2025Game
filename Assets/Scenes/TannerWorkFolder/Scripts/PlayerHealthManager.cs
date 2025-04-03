@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class PlayerHealthManager : MonoBehaviour
@@ -7,11 +8,24 @@ public class PlayerHealthManager : MonoBehaviour
     public float healTime;
     private float nextHeal;
     private int health;
+
+    // Audio
+    [SerializeField] private AudioSource audioSource;
+    private AudioClip[] hurtList;
+    [SerializeField] private AudioClip hurt1;
+    [SerializeField] private AudioClip hurt2;
+    [SerializeField] private AudioClip hurt3;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         this.anim = GetComponent<Animator>();
         anim.SetInteger("Health", 5);
+
+        // Populate the array of audio clips
+        hurtList.Append<AudioClip>(hurt1);
+        hurtList.Append<AudioClip>(hurt2);
+        hurtList.Append<AudioClip>(hurt3);
     }
 
     public void Update()
@@ -31,6 +45,17 @@ public class PlayerHealthManager : MonoBehaviour
     {
         nextHeal = Time.time + healTime;
         anim.SetInteger("Health", health - 1);
+
+        // Play a random audio clip from the list
+        var index = Random.Range(0, hurtList.Length);
+        PlayHurtAudio(index);
+    }
+
+    // Plays audio
+    void PlayHurtAudio(int i)
+    {
+        audioSource.clip = hurtList[i];
+        audioSource.Play();
     }
     public void Die()
     {
