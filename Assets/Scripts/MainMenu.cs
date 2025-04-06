@@ -22,10 +22,10 @@ public class MainMenu : MonoBehaviour
     }
 
     // Plays a button sound, waits for 1 second, then plays the game level
-    public void PlayGameButton()
+    public void PlayGameButton(string name)
     {
         Invoke(nameof(PlayAudio), .5f);
-        SceneManager.LoadScene("mapLayout");
+        SceneManager.LoadScene(name);
     }
 
     // Plays a button sound, then changes the active canvas panel
