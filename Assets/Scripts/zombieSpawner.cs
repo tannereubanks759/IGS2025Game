@@ -35,6 +35,9 @@ public class zombieSpawner : MonoBehaviour
     // the maximum number of zombies allowed alive at one time
     public static int maxAliveZombies;
 
+    // audio control
+    private AudioSource spawnerSource;
+
     // debug gizmo tool
     float alpha = .2f;
 
@@ -53,6 +56,8 @@ public class zombieSpawner : MonoBehaviour
 
         // the starting value of the max zombies alive
         maxAliveZombies = 8;
+
+        spawnerSource = GetComponent<AudioSource>();
 
         //StopParticles();
     }
@@ -112,6 +117,9 @@ public class zombieSpawner : MonoBehaviour
         {
             index = 3;
         }
+
+        // play spawning audio
+        PlayAudio();
 
         // Spawn a zombie
         GameObject Zombie = Instantiate(zombArray[index], this.transform.position, Quaternion.identity);
@@ -179,6 +187,11 @@ public class zombieSpawner : MonoBehaviour
             canSpawn = true;
 
         }        
+    }
+
+    void PlayAudio()
+    {
+        spawnerSource.Play();
     }
 
     // shows us the spawn range in the editor
