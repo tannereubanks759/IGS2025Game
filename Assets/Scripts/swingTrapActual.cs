@@ -24,7 +24,7 @@ public class swingTrapActual : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.layer == 11)
         {
-            playerHealthManagerRef.pause.Die();
+            playerHealthManagerRef.TakeDamage();
         }
         else if (collision.gameObject.layer == 8)
         {

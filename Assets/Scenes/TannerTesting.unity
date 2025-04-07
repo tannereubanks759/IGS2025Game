@@ -1445,11 +1445,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &53257996 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 725482048542152223, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-  m_PrefabInstance: {fileID: 1934205805}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &57379273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63380,26 +63375,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 473142896083765115, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 473142896083765115, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 975467448040956848, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14
@@ -63444,98 +63419,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: swingTrap
       objectReference: {fileID: 0}
-    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_Size.x
-      value: 0.75006086
-      objectReference: {fileID: 0}
-    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_Size.y
-      value: 1.0532712
-      objectReference: {fileID: 0}
-    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_Size.z
-      value: 0.7285059
-      objectReference: {fileID: 0}
-    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_Center.x
-      value: -0.015452323
-      objectReference: {fileID: 0}
-    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_Center.y
-      value: 0.663427
-      objectReference: {fileID: 0}
-    - target: {fileID: 2951422359841834481, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_Center.z
-      value: 0.002386068
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.363
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -17.407
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.489
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.61834955
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.6183495
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.3429925
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.34299257
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 31.967
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339692575228306283, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 3809091178188598028, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: interactUI
       value: 
       objectReference: {fileID: 567568270}
-    - target: {fileID: 3809091178188598028, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: miniGameObject
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5004203057863678320, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_TagString
-      value: trap starter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609120080065844317, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: centerOfShip
-      value: 
-      objectReference: {fileID: 53257996}
-    - target: {fileID: 6609120080065844317, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: swingTrapRef
-      value: 
-      objectReference: {fileID: 299971975}
     - target: {fileID: 6609120080065844317, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: playerHealthManagerRef
       value: 
       objectReference: {fileID: 1980175575}
-    - target: {fileID: 7107884069005439356, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -72459,7 +72350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f84cb1e026d4dc4bb4426b64ee9e79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthManagerRef: {fileID: 0}
+  playerHealthManagerRef: {fileID: 1980175575}
   clownRideMovementRef: {fileID: 8486369800700400580}
   forceStrength: 19
   centerOfTrap: {fileID: 290271262924396271}
@@ -77705,7 +77596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f84cb1e026d4dc4bb4426b64ee9e79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthManagerRef: {fileID: 0}
+  playerHealthManagerRef: {fileID: 1980175575}
   clownRideMovementRef: {fileID: 8486369800700400580}
   forceStrength: 19
   centerOfTrap: {fileID: 290271262924396271}
@@ -80745,7 +80636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f84cb1e026d4dc4bb4426b64ee9e79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthManagerRef: {fileID: 0}
+  playerHealthManagerRef: {fileID: 1980175575}
   clownRideMovementRef: {fileID: 8486369800700400580}
   forceStrength: 19
   centerOfTrap: {fileID: 290271262924396271}
@@ -88725,7 +88616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f84cb1e026d4dc4bb4426b64ee9e79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthManagerRef: {fileID: 0}
+  playerHealthManagerRef: {fileID: 1980175575}
   clownRideMovementRef: {fileID: 8486369800700400580}
   forceStrength: 19
   centerOfTrap: {fileID: 290271262924396271}
@@ -89955,7 +89846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f84cb1e026d4dc4bb4426b64ee9e79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthManagerRef: {fileID: 0}
+  playerHealthManagerRef: {fileID: 1980175575}
   clownRideMovementRef: {fileID: 8486369800700400580}
   forceStrength: 19
   centerOfTrap: {fileID: 290271262924396271}
@@ -90964,7 +90855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f84cb1e026d4dc4bb4426b64ee9e79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthManagerRef: {fileID: 0}
+  playerHealthManagerRef: {fileID: 1980175575}
   clownRideMovementRef: {fileID: 8486369800700400580}
   forceStrength: 19
   centerOfTrap: {fileID: 290271262924396271}

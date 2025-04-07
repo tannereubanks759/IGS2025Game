@@ -45,8 +45,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 307e6149cb2580840ad1c23fe2fb0971, type: 3}
-  m_Resource: {fileID: 8300000, guid: 307e6149cb2580840ad1c23fe2fb0971, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
@@ -702,14 +702,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5004203057863678320}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.05, y: -18.59, z: -1.489}
+  m_LocalRotation: {x: 0.6183495, y: 0.3429925, z: 0.34299257, w: 0.61834955}
+  m_LocalPosition: {x: 2.363, y: -17.407, z: -1.489}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3768349905884049868}
   m_Father: {fileID: 975467448040956848}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.967, y: 90, z: 90}
 --- !u!114 &3809091178188598028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -746,8 +746,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.28151882, y: 0.2651078, z: 0.27717564}
-  m_Center: {x: 0.27791762, y: -0.36744633, z: -0.2232797}
+  m_Size: {x: 0.75006086, y: 1.0532712, z: 0.7285059}
+  m_Center: {x: -0.015452323, y: 0.663427, z: 0.002386068}
 --- !u!1 &5365086908444717520
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +928,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swingTrapRef: {fileID: 3809091178188598028}
   playerHealthManagerRef: {fileID: 0}
+  trapForce: 14
+  centerOfShip: {fileID: 725482048542152223}
 --- !u!54 &6719723489056504933
 Rigidbody:
   m_ObjectHideFlags: 0

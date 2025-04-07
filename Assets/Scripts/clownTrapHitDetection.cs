@@ -42,11 +42,11 @@ public class clownTrapHitDetection : MonoBehaviour
                
 
             }
-            // IF PLAYER GETS HIT
-            /*if (collision.gameObject.layer == 11)
+            //IF PLAYER GETS HIT
+            if (collision.gameObject.layer == 11)
             {
-                playerHealthManagerRef.pause.Die();
-            }*/
+                playerHealthManagerRef.TakeDamage();
+            }
         }
        
     }
