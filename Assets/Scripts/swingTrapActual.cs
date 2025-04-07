@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -27,14 +28,36 @@ public class swingTrapActual : MonoBehaviour
         }
         else if (collision.gameObject.layer == 8)
         {
+            zombieAIV1 zombieAI = collision.gameObject.GetComponentInParent<zombieAIV1>();
             Vector3 directionToPush = (collision.transform.position - centerOfShip.position).normalized;
 
             Vector3 forceDirection = Quaternion.Euler(0, 90, 0) * directionToPush;
             collision.gameObject.GetComponentInParent<ragdollScript>().startRagdoll(forceDirection, trapForce);
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(10);
+            StartCoroutine(deathFunctions(zombieAI));
         }
         
 
+    }
+    IEnumerator deathFunctions(zombieAIV1 zombieAI)
+    {
+        yield return new WaitForSeconds(2f);
+        if (zombieAI != null)
+        {
+            zombieAI.IsDead();
+
+            zombieAI.Death();
+            Destroy(zombieAI.gameObject);
+
+            /*zombieManagerRef.totalZombiesAlive--;
+            zombieManagerRef.totalZombiesKilled++;*/
+
+
+        }
+
+        //zombieAI.IsDead();
+
+        //zombieAI.Death();
     }
     private void OnTriggerEnter(Collider other)
     {

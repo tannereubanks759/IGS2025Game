@@ -1445,6 +1445,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &53257996 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 725482048542152223, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+  m_PrefabInstance: {fileID: 1934205805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &57379273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63035,7 +63040,6 @@ MonoBehaviour:
   randomNumber: 0
   grassAreas:
   - {fileID: 1033535405}
-  - {fileID: 1985812357}
   colliderToEnable: []
   balloonMinigameRef: {fileID: 1772310461}
   firstQuest: 0
@@ -63516,6 +63520,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: trap starter
       objectReference: {fileID: 0}
+    - target: {fileID: 6609120080065844317, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
+      propertyPath: centerOfShip
+      value: 
+      objectReference: {fileID: 53257996}
     - target: {fileID: 6609120080065844317, guid: e4a5de757a99dcc43b79e66f95891646, type: 3}
       propertyPath: swingTrapRef
       value: 
