@@ -9,7 +9,7 @@ public class zombieSpawner : MonoBehaviour
     [SerializeField] private GameObject[] zombies;
 
     // The spawn rate of the spawners
-    public static float spawnRate = 8f;
+    public static float spawnRate = 6f;
 
     // The game time
     private float gameTime;
