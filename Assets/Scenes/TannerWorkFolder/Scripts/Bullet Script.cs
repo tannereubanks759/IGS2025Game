@@ -128,5 +128,7 @@ public class BulletScript : MonoBehaviour
         }
         nextTime += .3f;
         rb.isKinematic = true;
+
+        this.GetComponent<Collider>().enabled = false;
     }
 }
