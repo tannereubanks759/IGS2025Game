@@ -23845,7 +23845,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!82 &793126545
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28209,7 +28209,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &981185767
@@ -28363,7 +28363,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!82 &995947469
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64318,7 +64318,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!82 &1978862274
 AudioSource:
   m_ObjectHideFlags: 0
@@ -66772,7 +66772,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!82 &2065147628
 AudioSource:
   m_ObjectHideFlags: 0
@@ -70199,7 +70199,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!82 &2122141301
 AudioSource:
   m_ObjectHideFlags: 0
@@ -72074,7 +72074,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!114 &583939959363585188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72092,7 +72092,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!114 &583939959593550081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72110,7 +72110,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!114 &583939960271677511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72128,7 +72128,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!114 &583939960741696940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72146,7 +72146,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!114 &583939960783924052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72164,7 +72164,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!114 &583939960957867490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72182,7 +72182,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!114 &583939960958270452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72200,7 +72200,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!114 &583939961003523397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72218,7 +72218,7 @@ MonoBehaviour:
   - {fileID: 810090435266614120, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
   - {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
   - {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-  spawnRange: 20
+  spawnRange: 30
 --- !u!4 &585110589772336396
 Transform:
   m_ObjectHideFlags: 0
