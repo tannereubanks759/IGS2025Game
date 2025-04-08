@@ -12,7 +12,7 @@ public class ZombieManager : MonoBehaviour
     private int maxZombies;
 
     // The current wave count
-    private int waveCount;
+    public static int waveCount;
 
     // The bool to tell us if we've reached the 
     // max number of zombies for the wave
@@ -26,7 +26,7 @@ public class ZombieManager : MonoBehaviour
     [SerializeField] int ticketsOnCompletion;
 
     // holds the total number of zombies killed
-    public int totalZombiesKilled = 0;
+    public static int totalZombiesKilled = 0;
 
     //[SerializeField] GameObject scoreboardUI;
 

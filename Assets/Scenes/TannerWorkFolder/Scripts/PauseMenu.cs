@@ -19,6 +19,9 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider masterVol, musicVol, sfxVol;
     [SerializeField] private AudioMixer mainAudioMixer;
 
+    // Endgame Stats
+    [SerializeField] private GameObject endgameStats;
+
     // mouse sens control
     public TMP_InputField mouseSens;
     public float defaultSens = 1f;
@@ -110,6 +113,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
         player.cameraCanMove = false;
+
+        endgameStats.GetComponent<EndgameStats>().StatsUpdate();
 
     }
 

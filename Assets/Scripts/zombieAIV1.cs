@@ -250,7 +250,7 @@ public class zombieAIV1 : MonoBehaviour
         // Decrement the total # of zombies
         zombieManager.totalZombiesAlive--;
 
-        zombieManager.totalZombiesKilled++;
+        ZombieManager.totalZombiesKilled++;
 
         // Anim plays multiple times, not sure if the agent.isStopped line is even working
         
@@ -375,7 +375,7 @@ public class zombieAIV1 : MonoBehaviour
         
         // Decrement the total # of zombies
         zombieManager.totalZombiesAlive--;
-        zombieManager.totalZombiesKilled++;
+        ZombieManager.totalZombiesKilled++;
 
 
         Death();

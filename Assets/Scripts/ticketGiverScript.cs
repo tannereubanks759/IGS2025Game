@@ -10,6 +10,9 @@ public class ticketGiverScript : MonoBehaviour
     public bool hasTaken = true;
     float score = 0f;
     int scoreInt = 0;
+
+    public static int totTicketsGained;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +42,7 @@ public class ticketGiverScript : MonoBehaviour
     public void giveTicket()
     {
         miniGameScriptRef.tickets += scoreInt;
+        totTicketsGained += scoreInt;
         miniGameScriptRef.ticketText.text = miniGameScriptRef.tickets.ToString();
         miniGameScriptRef.goGetTicketText.gameObject.SetActive(false);
         ticketSound.Play();
