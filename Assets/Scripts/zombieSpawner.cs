@@ -41,6 +41,9 @@ public class zombieSpawner : MonoBehaviour
     // debug gizmo tool
     float alpha = .2f;
 
+    //public static zombieSpawner closestSpawner;
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -59,6 +62,7 @@ public class zombieSpawner : MonoBehaviour
 
         spawnerSource = GetComponent<AudioSource>();
 
+        //closestSpawner = this;
         //StopParticles();
     }
 
@@ -78,7 +82,7 @@ public class zombieSpawner : MonoBehaviour
     // Time calculations
     void GameTimeManager()
     {
-        if (playerNear)
+        if (playerNear /*&& closestSpawner == this*/)
         {
             gameTime += Time.deltaTime;
 
@@ -145,6 +149,10 @@ public class zombieSpawner : MonoBehaviour
     {
         // calculate player distance
         playerDistance = (player.transform.position - this.transform.position).magnitude;
+        /*if(playerDistance < closestSpawner.playerDistance)
+        {
+            closestSpawner = this;
+        }*/
 
         // set variables
         if (playerDistance > spawnRange)
