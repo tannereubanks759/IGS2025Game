@@ -28596,7 +28596,7 @@ GameObject:
   - component: {fileID: 6704337413483282688}
   - component: {fileID: 135902475151525078}
   - component: {fileID: 5384374078146243492}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: mixamorig:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28642,7 +28642,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.14084196
-  m_Center: {x: 0, y: 0.14084196, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &135902475151525078
 Rigidbody:
   m_ObjectHideFlags: 0

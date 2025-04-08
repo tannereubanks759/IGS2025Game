@@ -210,7 +210,7 @@ public class zombieAIV1 : MonoBehaviour
     public void TakeDamage(int i)
     {
         // Set the health by getting the health and subtracting 1
-        if (isDead != true)
+        if (isDead != true && c4Active == false)
         {
             animator.SetInteger("health", animator.GetInteger("health") - i);
             animator.SetTrigger("takeDamage");
@@ -322,6 +322,7 @@ public class zombieAIV1 : MonoBehaviour
     //Purpose: Make cop zombie start running and after a few seconds, it will explode.
     public void Explode()
     {
+        c4Active = true;
         animator.SetBool("c4Active", true);
         agent.speed = agent.speed * 7;
         Invoke("C4Death", 3);
