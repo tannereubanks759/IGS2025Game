@@ -20,7 +20,6 @@ public class zombieAIV1 : MonoBehaviour
 
     // Colliders to handle the ai attacking the player
     [SerializeField] private Collider rightHand;
-    [SerializeField] private Collider leftHand;
 
     public bool isDead = false;
     private miniGameScript miniGameS;
@@ -75,7 +74,6 @@ public class zombieAIV1 : MonoBehaviour
 
         // turn attack collider off by deafault
         rightHand.enabled = false;
-        leftHand.enabled = false;
 
         int randomRun = Random.Range(0, maxRunningAnimCount);
         animator.SetInteger("randRun", randomRun);
@@ -273,14 +271,12 @@ public class zombieAIV1 : MonoBehaviour
     public void ActivateColliders()
     {
         rightHand.enabled = true;
-        leftHand.enabled = true;
     }
 
     // De-activates the attack colliders
     public void DeactivateColliders()
     {
         rightHand.enabled = false;
-        leftHand.enabled = false;
     }
 
 
