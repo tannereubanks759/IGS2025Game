@@ -194,6 +194,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(rb.linearVelocity);
         #region Camera
 
         // Control camera movement
