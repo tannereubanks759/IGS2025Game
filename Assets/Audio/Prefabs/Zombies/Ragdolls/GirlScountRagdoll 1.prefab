@@ -2205,7 +2205,7 @@ Transform:
   m_GameObject: {fileID: 6744324038302317064}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.73174036, z: 0, w: 0.68158346}
-  m_LocalPosition: {x: 8.328012, y: 0.000005722046, z: 180.01465}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2289,6 +2289,7 @@ MonoBehaviour:
   leftArm: {fileID: 0}
   clownRideMovementRef: {fileID: 0}
   clowntrap: {fileID: 0}
+  bloodParticleObject: {fileID: 9063964320037891089}
 --- !u!82 &6066885514754032709
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3679,15 +3680,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 125.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3729,6 +3730,11 @@ PrefabInstance:
 --- !u!4 &7990395634598026748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
+  m_PrefabInstance: {fileID: 101538576204769984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9063964320037891089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8980484741719606993, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
   m_PrefabInstance: {fileID: 101538576204769984}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1274125335291339643

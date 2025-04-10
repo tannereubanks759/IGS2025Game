@@ -23,6 +23,7 @@ public class clownTrapHitDetection : MonoBehaviour
             {
                
                 zombieAIV1 zombieAI = collision.gameObject.GetComponentInParent<zombieAIV1>();
+                zombieAI.bloodParticleObject.SetActive(true);
                 if(zombieAI.isDead!=true) 
                 {
                     // calculates the direction away from the middle of the trap and the position of zombie

@@ -12,13 +12,13 @@ public class iconUIScript : MonoBehaviour
     public GameObject image;
     private ticketGiverScript ticketGiverScript;
     private miniGameScript miniGameScript;
-    private GameObject usingImage;
+    //private GameObject usingImage;
     public bool isOn;
     void Start()
     {
         
         mainCam = Camera.main;
-        usingImage = image;
+        
         ticketGiverScript =  FindAnyObjectByType<ticketGiverScript>();
         miniGameScript = FindAnyObjectByType<miniGameScript>();
         
@@ -62,25 +62,29 @@ public class iconUIScript : MonoBehaviour
                 Vector3 pos = mainCam.WorldToScreenPoint(lookPoint.position + offset);
 
 
-                if (usingImage.transform.position != pos)
+                if (image.transform.position != pos)
                 {
-                    usingImage.transform.position = pos;
+                    image.transform.position = pos;
                 }
 
                 //renable if previously was false
-                if (!usingImage.activeSelf)
+                if (!image.activeSelf)
                 {
-                    usingImage.SetActive(true);
+                    image.SetActive(true);
                 }
             }
             else
             {
 
-                if (usingImage.activeSelf)
+                if (image.activeSelf)
                 {
-                    usingImage.SetActive(false);
+                    image.SetActive(false);
                 }
             }
+        }
+        else
+        {
+            image.SetActive(false);
         }
     }
 }

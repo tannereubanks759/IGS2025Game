@@ -56,9 +56,11 @@ public class zombieAIV1 : MonoBehaviour
     public GameObject leftArm;
     public ClownRideMovement clownRideMovementRef;
     public GameObject clowntrap;
+    public GameObject bloodParticleObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        bloodParticleObject.SetActive(false);
         miniGameS = FindAnyObjectByType<miniGameScript>();
         c4Active = false;
         clownRideMovementRef = FindAnyObjectByType<ClownRideMovement>();
@@ -218,6 +220,10 @@ public class zombieAIV1 : MonoBehaviour
 
         }
 
+    }
+    public void trapBlood()
+    {
+        bloodParticleObject.SetActive(true);
     }
     public void TakeDamageOnHead(int i)
     {
