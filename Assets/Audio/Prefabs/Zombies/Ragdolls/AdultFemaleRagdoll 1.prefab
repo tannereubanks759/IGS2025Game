@@ -183,15 +183,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.143423
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000009536743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 125.218666
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
       propertyPath: m_LocalRotation.w
@@ -848,6 +848,7 @@ MonoBehaviour:
   leftArm: {fileID: 2334980592785239092}
   clownRideMovementRef: {fileID: 0}
   clowntrap: {fileID: 0}
+  bloodParticleObject: {fileID: 5221927698045898327}
 --- !u!195 &3344350383098730429
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2071,15 +2072,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 125.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2118,6 +2119,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
+--- !u!1 &5221927698045898327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8980484741719606993, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
+  m_PrefabInstance: {fileID: 3808097885142108294}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6580390635284266938 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}

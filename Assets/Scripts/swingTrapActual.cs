@@ -29,6 +29,7 @@ public class swingTrapActual : MonoBehaviour
         else if (collision.gameObject.layer == 8)
         {
             zombieAIV1 zombieAI = collision.gameObject.GetComponentInParent<zombieAIV1>();
+            zombieAI.bloodParticleObject.SetActive(true);
             Vector3 directionToPush = (collision.transform.position - centerOfShip.position).normalized;
 
             Vector3 forceDirection = Quaternion.Euler(0, 90, 0) * directionToPush;
