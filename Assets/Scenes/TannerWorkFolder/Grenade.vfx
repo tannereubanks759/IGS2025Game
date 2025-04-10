@@ -38,9 +38,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: 598
-    y: -1434
-    width: 730
-    height: 2271
+    y: -1433
+    width: 729
+    height: 2278
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,7 +214,7 @@ MonoBehaviour:
   particlePerStripCount: 32
   needsComputeBounds: 0
   boundsMode: 0
-  m_Space: 1
+  m_Space: 0
 --- !u!114 &8926484042661614628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +686,7 @@ MonoBehaviour:
         m_SerializableType: UnityEditor.VFX.AABox, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       m_SerializableObject: '{"center":{"x":0.05470367893576622,"y":0.10380709916353226,"z":0.7679675221443176},"size":{"x":0.9884882569313049,"y":0.6439478397369385,"z":0.9544354677200317}}'
-    m_Space: 0
+    m_Space: -1
   m_Property:
     name: bounds
     m_serializedType:

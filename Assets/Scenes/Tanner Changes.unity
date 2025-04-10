@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.20392157, g: 0.24705882, b: 0.23921569, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.050980393, g: 0.06666667, b: 0.09019608, a: 1}
@@ -18097,6 +18097,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1809647, y: 7.616381, z: 4.11}
   m_Center: {x: -0.12, y: 2.5039062, z: -0.15}
+--- !u!114 &582308873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 214533652718239989, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
+  m_PrefabInstance: {fileID: 1464234082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1779128b2ca3a4dafb346d803c86ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &586209015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46700,7 +46711,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: bd64fcc300cebf64180904a40630e954, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 12d8d40af47a4fb4e976f284f97a0ecd, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1151349076 stripped
 GameObject:
@@ -53396,19 +53407,19 @@ PrefabInstance:
       objectReference: {fileID: 815294447}
     - target: {fileID: 3836897152547950847, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 0.99088
       objectReference: {fileID: 0}
     - target: {fileID: 3836897152547950847, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 0.99088
       objectReference: {fileID: 0}
     - target: {fileID: 3836897152547950847, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 0.99088
       objectReference: {fileID: 0}
     - target: {fileID: 3836897152547950847, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.624962
+      value: -22.77
       objectReference: {fileID: 0}
     - target: {fileID: 3836897152547950847, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -53416,7 +53427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3836897152547950847, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 183.59486
+      value: 187.15
       objectReference: {fileID: 0}
     - target: {fileID: 3836897152547950847, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53449,6 +53460,18 @@ PrefabInstance:
     - target: {fileID: 4500420995959769669, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
       propertyPath: m_Name
       value: coaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493272399434707347, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.83868474
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493272399434707347, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.83868474
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493272399434707347, guid: bfca073ef90d5ca40a52ed992ea85f5e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.83868474
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69808,7 +69831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 350.02002, y: 96.679794, z: 350.02002}
+  size: {x: 353.01, y: 99.66979, z: 353.01}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -69817,7 +69840,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 7
   overridesSubdivLevels: 0
-  mightNeedRebaking: 0
+  mightNeedRebaking: 1
   cachedTransform:
     e00: 0
     e01: 0
@@ -73295,7 +73318,7 @@ Transform:
   m_GameObject: {fileID: 2122141298}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -46.7, y: 0, z: 2.5}
+  m_LocalPosition: {x: -48.2, y: 0, z: 7.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81887,14 +81910,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8690315256992630897}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.0069867503, z: -0, w: 0.9999756}
-  m_LocalPosition: {x: -0.10649593, y: 0.037, z: -0.135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.115, y: 0.037, z: -0.135}
   m_LocalScale: {x: 1.2120997, y: 1.2121, z: 1.2120997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6663455300924022206}
   m_Father: {fileID: 8806082064906759168}
-  m_LocalEulerAnglesHint: {x: 0, y: -0.801, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6328926682498558632
 Transform:
   m_ObjectHideFlags: 0
@@ -83160,7 +83183,7 @@ MonoBehaviour:
   minigameScriptRef: {fileID: 1918203277}
   ticketGiverScriptRef: {fileID: 928304555}
   swingTrapRef: {fileID: 299971975}
-  coasterRef: {fileID: 0}
+  coasterRef: {fileID: 582308873}
   clownTrapRef: {fileID: 55660005}
   purchaseSound: {fileID: 8300000, guid: ccf6bdb2a5beef24582be6eeae288e9d, type: 3}
   purchaseSoundVolume: 0.5
