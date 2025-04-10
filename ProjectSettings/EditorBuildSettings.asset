@@ -26,9 +26,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/mapLayout.unity
     guid: 2e22d4ff5eee12d44af8abc10955d1e8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TannerTesting.unity
     guid: 0c6665ebd5ff4b64dbdef1d7ff038e17
+  - enabled: 1
+    path: Assets/Scenes/Tanner Changes.unity
+    guid: 3ac9d41cb18db9e44b4ee6ea15bcbeed
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
