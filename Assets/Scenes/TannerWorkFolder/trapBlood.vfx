@@ -1337,7 +1337,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.0,"inTangent":10.958670616149903,"outTangent":10.958670616149903,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.36310577392578127,"value":3.979156494140625,"inTangent":10.958670616149903,"outTangent":10.958670616149903,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.0,"inTangent":14.001668930053711,"outTangent":14.001668930053711,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.09142303466796875,"value":1.2800750732421876,"inTangent":14.001668930053711,"outTangent":14.001668930053711,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: -1
   m_Property:
     name: Size
@@ -1980,7 +1980,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 5.5
+      m_SerializableObject: 4.5
     m_Space: -1
   m_Property:
     name: MaxSpeed
