@@ -79051,18 +79051,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdultZombieRagdollTest_6
       objectReference: {fileID: 0}
-    - target: {fileID: 2230916705932656179, guid: 2b9a2f1446d18d54abc720ad539ae7b7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2230916705932656179, guid: 2b9a2f1446d18d54abc720ad539ae7b7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2230916705932656179, guid: 2b9a2f1446d18d54abc720ad539ae7b7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5684770311923667766, guid: 2b9a2f1446d18d54abc720ad539ae7b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.712056
@@ -79468,18 +79456,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2277395691687317872, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3186029379004635856, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3186029379004635856, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3186029379004635856, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3500732064818342564, guid: 21ca4fc9dfd877f4eb191f2475df64ee, type: 3}
@@ -81586,22 +81562,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdultFemaleRagdoll 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1247506679451983081, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6580390635284266938, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6580390635284266938, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6580390635284266938, guid: 6527791a5ce9411409a54b7e34c05b87, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -82175,18 +82135,6 @@ PrefabInstance:
     - target: {fileID: 6744324038302317064, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
       propertyPath: m_Name
       value: GirlScountRagdoll 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7990395634598026748, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7990395634598026748, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7990395634598026748, guid: 9f68956bfcfacda4089cdc8d04f43f03, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
