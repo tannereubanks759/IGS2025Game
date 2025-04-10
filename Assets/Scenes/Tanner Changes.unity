@@ -68738,7 +68738,7 @@ MonoBehaviour:
   musicVol: {fileID: 170437397}
   sfxVol: {fileID: 1426615334}
   mainAudioMixer: {fileID: 24100000, guid: 3c6ea1776df61114893b1d5cd0439238, type: 2}
-  endgameStats: {fileID: 0}
+  endgameStats: {fileID: 682093714}
   mouseSens: {fileID: 337108497}
   defaultSens: 1
 --- !u!114 &2052397225
