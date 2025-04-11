@@ -24,7 +24,7 @@ public class miniGameScript : MonoBehaviour
     public timeInAreaScript areaScriptRef;
     private bool isChanged = false;
     public ticketGiverScript ticketGiverScriptRef;
-    public TextMeshProUGUI goGetTicketText;
+    public GameObject goGetTicketText;
     public float miniGameTime=0f;
     public int randomNumber;
     public GameObject[] grassAreas;
@@ -103,7 +103,7 @@ public class miniGameScript : MonoBehaviour
         miniGameTime *=  -1;
         Debug.Log("Sent call to function of time");
         ticketGiverScriptRef.calculateScore(miniGameTime);
-        goGetTicketText.gameObject.SetActive(true);
+        goGetTicketText.SetActive(true);
         ticketGiverScriptRef.canClaimTicket = true;
         areaScriptRef.timeInAreaMinigameOn = false;
 
@@ -181,6 +181,11 @@ public class miniGameScript : MonoBehaviour
     }
     void startBalloon()
     {
+        if (isChanged)
+        {
+            currentScore.rectTransform.anchoredPosition += new Vector2(+60f, 0f);
+            isChanged = false;
+        }
         currentOutOfScore.text = "/5";
         
         balloonMinigameRef.startBalloon();

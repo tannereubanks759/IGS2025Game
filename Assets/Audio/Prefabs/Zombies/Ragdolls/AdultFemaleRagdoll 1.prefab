@@ -848,7 +848,9 @@ MonoBehaviour:
   leftArm: {fileID: 2334980592785239092}
   clownRideMovementRef: {fileID: 0}
   clowntrap: {fileID: 0}
-  bloodParticleObject: {fileID: 5221927698045898327}
+  bloodParticleObject: {fileID: 8980484741719606993, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
+  testBloodSpray: {fileID: 1834194341294532, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
+  head: {fileID: 5385637200421573343}
 --- !u!195 &3344350383098730429
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1521,6 +1523,11 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1 &5385637200421573343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5567237881422871782, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
+  m_PrefabInstance: {fileID: 576299281163431481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5968865880082225842 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3086436065929644917, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
@@ -2119,11 +2126,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
---- !u!1 &5221927698045898327 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8980484741719606993, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
-  m_PrefabInstance: {fileID: 3808097885142108294}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6580390635284266938 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}

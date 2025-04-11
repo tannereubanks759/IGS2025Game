@@ -57,6 +57,8 @@ public class zombieAIV1 : MonoBehaviour
     public ClownRideMovement clownRideMovementRef;
     public GameObject clowntrap;
     public GameObject bloodParticleObject;
+    public GameObject testBloodSpray;
+    public GameObject head;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -232,7 +234,8 @@ public class zombieAIV1 : MonoBehaviour
         {
             animator.SetInteger("health", animator.GetInteger("health") - i);
             animator.SetTrigger("takeDamage");
-
+            GameObject brainChunks = Instantiate(testBloodSpray, head.transform.position, Quaternion.identity);
+            Destroy(brainChunks, 5f);
             // and the headshot minigame is active
             if (miniGameS.headShotQuest == true)
             {

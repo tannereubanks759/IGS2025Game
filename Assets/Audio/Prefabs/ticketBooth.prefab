@@ -487,7 +487,7 @@ Transform:
   m_GameObject: {fileID: 1268943252758052572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 1.83, z: -0.007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1237,7 +1237,7 @@ GameObject:
   - component: {fileID: 6175254902740033638}
   - component: {fileID: 7847962618414279397}
   - component: {fileID: 3988634586418550531}
-  - component: {fileID: 3020523315733980108}
+  - component: {fileID: 313420181459284279}
   m_Layer: 18
   m_Name: ticketBooth
   m_TagString: Minigame Starter
@@ -1314,12 +1314,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e82f43ddcb8c5145b87ef3effb7cab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniGameScriptRef: {fileID: 3020523315733980108}
+  miniGameScriptRef: {fileID: 313420181459284279}
   canClaimTicket: 0
   interactUI: {fileID: 0}
   inRangeToInteract: 0
   ticketSound: {fileID: 3322025309216818382}
   hasTaken: 1
+  timeBonusText: {fileID: 0}
 --- !u!65 &3988634586418550531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1341,7 +1342,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.327015, y: 3.2184312, z: 2.0906627}
   m_Center: {x: 0.050964355, y: 1.1092151, z: -0.54533136}
---- !u!114 &3020523315733980108
+--- !u!114 &313420181459284279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1377,11 +1378,10 @@ MonoBehaviour:
   randomNumber: 0
   grassAreas:
   - {fileID: 0}
-  - {fileID: 0}
   colliderToEnable: []
   balloonMinigameRef: {fileID: 0}
+  firstQuest: 0
   grassHighlights:
-  - {fileID: 0}
   - {fileID: 0}
 --- !u!1 &5544532172700688133
 GameObject:

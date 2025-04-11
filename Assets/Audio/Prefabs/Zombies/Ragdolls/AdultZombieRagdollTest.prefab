@@ -661,6 +661,8 @@ MonoBehaviour:
   clownRideMovementRef: {fileID: 0}
   clowntrap: {fileID: 0}
   bloodParticleObject: {fileID: 999784911726039006}
+  testBloodSpray: {fileID: 1834194341294532, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
+  head: {fileID: 1911416168157256194}
 --- !u!195 &7214143570129108225
 NavMeshAgent:
   m_ObjectHideFlags: 0

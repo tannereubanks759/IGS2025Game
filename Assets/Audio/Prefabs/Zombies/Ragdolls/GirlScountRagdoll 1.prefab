@@ -2290,6 +2290,8 @@ MonoBehaviour:
   clownRideMovementRef: {fileID: 0}
   clowntrap: {fileID: 0}
   bloodParticleObject: {fileID: 9063964320037891089}
+  testBloodSpray: {fileID: 1834194341294532, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
+  head: {fileID: 3926208744463792980}
 --- !u!82 &6066885514754032709
 AudioSource:
   m_ObjectHideFlags: 0

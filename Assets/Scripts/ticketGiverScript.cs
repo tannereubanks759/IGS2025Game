@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ticketGiverScript : MonoBehaviour
@@ -10,7 +11,7 @@ public class ticketGiverScript : MonoBehaviour
     public bool hasTaken = true;
     float score = 0f;
     int scoreInt = 0;
-
+    public TextMeshProUGUI timeBonusText;
     public static int totTicketsGained;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,9 +55,11 @@ public class ticketGiverScript : MonoBehaviour
         Debug.Log("Time taken to complete quest: " + timeTaken);
         score = 100f / timeTaken;
         scoreInt =  Mathf.RoundToInt(score);
+
         if(scoreInt <1)
         {
             scoreInt = 1;
         }
+        timeBonusText.text = scoreInt.ToString();
     }
 }
