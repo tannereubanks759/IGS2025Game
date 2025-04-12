@@ -125,6 +125,7 @@ public class PauseMenu : MonoBehaviour
         LoadScene(SceneManager.GetActiveScene().name);
 
         ZombieManager.totalZombiesKilled = 0;
+        ticketGiverScript.totTicketsGained = 0;
     }
 
     public void SettingsMenu()
