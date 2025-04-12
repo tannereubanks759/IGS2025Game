@@ -123,6 +123,8 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
         Time.timeScale = 1f;
         LoadScene(SceneManager.GetActiveScene().name);
+
+        ZombieManager.totalZombiesKilled = 0;
     }
 
     public void SettingsMenu()
