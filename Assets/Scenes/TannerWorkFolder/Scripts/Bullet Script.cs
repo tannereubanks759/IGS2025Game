@@ -95,7 +95,7 @@ public class BulletScript : MonoBehaviour
             {
                 zomScript.c4Active = true;
                 collision.gameObject.GetComponent<AudioSource>().Play();
-                collision.gameObject.GetComponent<Collider>().enabled = false;
+                //collision.gameObject.GetComponent<Collider>().enabled = false;
                 collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
                 float randomPitch = Random.Range(.8f, 1.3f);
                 bulletImpactSound.pitch = randomPitch;
@@ -104,6 +104,11 @@ public class BulletScript : MonoBehaviour
                 zombieImpact.gameObject.SetActive(true);
                 zombieImpact.Play();
                 zomScript.Explode();
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                zomScript.C4Death();
             }
             
 

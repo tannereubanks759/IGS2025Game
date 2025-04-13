@@ -28557,17 +28557,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5684770311923667766}
     m_Modifications:
+    - target: {fileID: 5708019509934104973, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 8037564906828150588, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28600,6 +28604,10 @@ PrefabInstance:
     - target: {fileID: 8980484741719606993, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
       propertyPath: m_Name
       value: bloodEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980484741719606993, guid: b24598be2dc89c84483afd5c417d7b3f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

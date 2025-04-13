@@ -37,10 +37,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 705
-    y: -1432
+    x: 706
+    y: -1434
     width: 622
-    height: 2268
+    height: 2252
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1337,7 +1337,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.001834869384765625,"value":1.276458740234375,"inTangent":-1.2479357719421387,"outTangent":-1.2479357719421387,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.9593076109886169,"value":0.08159425854682923,"inTangent":-1.2479357719421387,"outTangent":-1.2479357719421387,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.048616159707307819,"value":9.965557098388672,"inTangent":-4.867129802703857,"outTangent":-4.867129802703857,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":2.084242820739746,"value":0.057897359132766727,"inTangent":-4.867129802703857,"outTangent":-4.867129802703857,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: -1
   m_Property:
     name: Size
@@ -2185,7 +2185,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.TArcSphere, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"sphere":{"transform":{"position":{"x":0.0,"y":0.0,"z":0.0},"angles":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},"radius":1.0},"arc":6.2831854820251469}'
+      m_SerializableObject: '{"sphere":{"transform":{"position":{"x":0.08693607151508331,"y":0.15930145978927613,"z":-3.1773268460710826e-9},"angles":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},"radius":0.09338653832674027},"arc":6.2831854820251469}'
     m_Space: 0
   m_Property:
     name: arcSphere

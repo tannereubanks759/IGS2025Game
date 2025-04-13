@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b426d798881504ab8def4fa3035a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 2
+  velocity: 4
   bulletImpact: {fileID: 3999320162442059673}
   zombieImpact: {fileID: 2767916183357354839}
   bulletImpactSound: {fileID: 7936301533436533553}
