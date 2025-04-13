@@ -15,8 +15,15 @@ public class BulletScript : MonoBehaviour
     public AudioClip normalImpactSound;
     public balloonMinigame balloonMinigameRef;
     public static int baseDamage = 1;
+    
     void Start()
     {
+        Vector3 ScreenPos = Input.mousePosition;
+        Ray Ray = Camera.main.ScreenPointToRay(ScreenPos);
+        if(Physics.Raycast(Ray, out RaycastHit hit))
+        {
+            this.transform.LookAt(hit.point);
+        }
         balloonMinigameRef = GameObject.FindFirstObjectByType<balloonMinigame>();
         zombieImpact.gameObject.SetActive(false);
         nextTime = Time.time + lifeTimer;
