@@ -15,9 +15,15 @@ public class BulletScript : MonoBehaviour
     public AudioClip normalImpactSound;
     public balloonMinigame balloonMinigameRef;
     public static int baseDamage = 1;
+    private GunScript gun;
     
     void Start()
     {
+        gun = GameObject.FindAnyObjectByType<GunScript>();
+        if(gun.bulletCount % 3 == 0)
+        {
+            this.GetComponentInChildren<TrailRenderer>().enabled = true;
+        }
         Vector3 ScreenPos = Input.mousePosition;
         Ray Ray = Camera.main.ScreenPointToRay(ScreenPos);
         if(Physics.Raycast(Ray, out RaycastHit hit))
