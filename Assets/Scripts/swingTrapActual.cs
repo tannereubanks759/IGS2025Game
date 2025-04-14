@@ -8,17 +8,7 @@ public class swingTrapActual : MonoBehaviour
     public PlayerHealthManager playerHealthManagerRef;
     public float trapForce = 14f;
     public Transform centerOfShip;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
@@ -26,9 +16,10 @@ public class swingTrapActual : MonoBehaviour
         {
             playerHealthManagerRef.TakeDamage();
         }
-        else if (collision.gameObject.layer == 8)
+        else if (collision.gameObject.layer == 8 && collision.gameObject.GetComponentInParent<zombieAIV1>().hitByTrap == false) 
         {
             zombieAIV1 zombieAI = collision.gameObject.GetComponentInParent<zombieAIV1>();
+            zombieAI.hitByTrap = true;
             zombieAI.bloodParticleObject.SetActive(true);
             Vector3 directionToPush = (collision.transform.position - centerOfShip.position).normalized;
 
@@ -60,10 +51,7 @@ public class swingTrapActual : MonoBehaviour
 
         //zombieAI.Death();
     }
-    private void OnTriggerEnter(Collider other)
-    {
-      
-    }
+    
     public void callResetFunctin()
     {
         swingTrapRef.trapAnim.SetBool("isOn", false);

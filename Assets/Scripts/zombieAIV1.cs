@@ -59,9 +59,12 @@ public class zombieAIV1 : MonoBehaviour
     public GameObject bloodParticleObject;
     public GameObject testBloodSpray;
     public GameObject head;
+
+    public bool hitByTrap;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        hitByTrap = false;
         bloodParticleObject.SetActive(false);
         miniGameS = FindAnyObjectByType<miniGameScript>();
         c4Active = false;
