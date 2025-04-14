@@ -209,13 +209,16 @@ public class zombieAIV1 : MonoBehaviour
     {
         if (playerDist > 35)
         {
-            TakeDamage(10);
-
             ZombieManager.totalSpawnedZombies--;
+
+            ZombieManager.totalZombiesAlive--;
 
             ZombieManager.totalZombiesKilled--;
 
             ZombieManager.spawnMaxReached = false;
+
+            TakeDamage(10);
+
         }
     }
 

@@ -11,7 +11,7 @@ public class swingTrapActual : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         if (collision.gameObject.layer == 11)
         {
             playerHealthManagerRef.TakeDamage();

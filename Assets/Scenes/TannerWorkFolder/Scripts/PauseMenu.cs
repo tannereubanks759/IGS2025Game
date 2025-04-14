@@ -39,12 +39,9 @@ public class PauseMenu : MonoBehaviour
             mainAudioMixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
         }
 
-        Debug.Log("Before the start if " + PlayerPrefs.GetFloat("MouseSens"));
-
         // when the game starts we set the mouse sens from playerprefs
         if (PlayerPrefs.GetFloat("MouseSens") != 0f)
         {
-            Debug.Log("Starting Sens in level is " + PlayerPrefs.GetFloat("MouseSens"));
             player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
             mouseSens.text = PlayerPrefs.GetFloat("MouseSens").ToString();
         }
@@ -170,9 +167,7 @@ public class PauseMenu : MonoBehaviour
         
         try
         {
-            Debug.Log("try parse start");
             PlayerPrefs.SetFloat("MouseSens", float.Parse(mouseSens.text));
-            Debug.Log("try parse end");
             PlayerPrefs.Save();
 
             player.mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
@@ -181,7 +176,5 @@ public class PauseMenu : MonoBehaviour
         {
             player.mouseSensitivity = defaultSens;
         }
-
-        Debug.Log("Changing sens in level to " + PlayerPrefs.GetFloat("MouseSens"));
     }
 }

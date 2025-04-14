@@ -149,35 +149,17 @@ public class zombieSpawner : MonoBehaviour
     {
         // calculate player distance
         playerDistance = (player.transform.position - this.transform.position).magnitude;
-        /*if(playerDistance < closestSpawner.playerDistance)
-        {
-            closestSpawner = this;
-        }*/
 
         // set variables
         if (playerDistance > spawnRange)
         {
             playerNear = false;
-            //StopParticles();
         }
         else
         {
             playerNear = true;
-            //PlayParticles();
         }
     }
-
-    //// Play the particle system
-    //void PlayParticles()
-    //{
-    //    spawnEffect.Play();
-
-    //}
-    
-    //void StopParticles()
-    //{
-    //    spawnEffect.Stop();
-    //}
 
     // Update the can spawn variable
     void CanSpawnUpdate()
