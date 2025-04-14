@@ -129,8 +129,8 @@ public class zombieSpawner : MonoBehaviour
         GameObject Zombie = Instantiate(zombArray[index], this.transform.position, Quaternion.identity);
 
         // Increment the total # of zombies in the scene
-        zombieManager.totalSpawnedZombies++;
-        zombieManager.totalZombiesAlive++;
+        ZombieManager.totalSpawnedZombies++;
+        ZombieManager.totalZombiesAlive++;
 
         // Either Andrew or Tanner did this part
         zombieAIV1 zombieScript = Zombie.GetComponent<zombieAIV1>();
@@ -182,15 +182,15 @@ public class zombieSpawner : MonoBehaviour
     // Update the can spawn variable
     void CanSpawnUpdate()
     {
-        if (zombieManager.totalZombiesAlive >= maxAliveZombies)
+        if (ZombieManager.totalZombiesAlive >= maxAliveZombies)
         {
             canSpawn = false;
         }
-        else if (zombieManager.spawnMaxReached)
+        else if (ZombieManager.spawnMaxReached)
         {
             canSpawn = false;
         }
-        else if (zombieManager.totalZombiesAlive < maxAliveZombies)
+        else if (ZombieManager.totalZombiesAlive < maxAliveZombies)
         {
             canSpawn = true;
 

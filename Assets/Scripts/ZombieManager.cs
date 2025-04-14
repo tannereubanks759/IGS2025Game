@@ -7,8 +7,8 @@ public class ZombieManager : MonoBehaviour
 {
     // Holds the total/current number of zombies
     // and the max number of zombies
-    public int totalZombiesAlive;
-    public int totalSpawnedZombies;
+    public static int totalZombiesAlive;
+    public static int totalSpawnedZombies;
     private int maxZombies;
 
     // The current wave count
@@ -16,7 +16,7 @@ public class ZombieManager : MonoBehaviour
 
     // The bool to tell us if we've reached the 
     // max number of zombies for the wave
-    public bool spawnMaxReached;
+    public static bool spawnMaxReached;
 
     // The reference to the UI wave count
     public Text waveText;

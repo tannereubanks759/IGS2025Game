@@ -50,6 +50,9 @@ public class zombieAIV1 : MonoBehaviour
     [SerializeField] private AudioClip hurt;
     [SerializeField] private AudioClip deathSound;
 
+    // variable to track players distance form the zombies
+    public float playerDist;
+
     public bool c4Active;
     public GameObject ExplodePref;
     public GameObject rightArm;
@@ -108,6 +111,12 @@ public class zombieAIV1 : MonoBehaviour
             CanAttack();
             OnFire();
             LastAlive();
+
+            if (ExplodePref != null)
+            {
+                PlayerDistance();
+                Respawn();
+            }
         }
     }
 
@@ -189,6 +198,27 @@ public class zombieAIV1 : MonoBehaviour
         }
     }
 
+    void PlayerDistance()
+    {
+        playerDist = Vector3.Distance(player.transform.position, this.transform.position);
+
+        Debug.Log(playerDist);
+    }
+
+    void Respawn()
+    {
+        if (playerDist > 35)
+        {
+            TakeDamage(10);
+
+            ZombieManager.totalSpawnedZombies--;
+
+            ZombieManager.totalZombiesKilled--;
+
+            ZombieManager.spawnMaxReached = false;
+        }
+    }
+
     // Checks if the AI can attack
     void CanAttack()
     {
@@ -258,7 +288,7 @@ public class zombieAIV1 : MonoBehaviour
     public void IsDead()
     {
         // Decrement the total # of zombies
-        zombieManager.totalZombiesAlive--;
+        ZombieManager.totalZombiesAlive--;
 
         ZombieManager.totalZombiesKilled++;
 
@@ -310,7 +340,7 @@ public class zombieAIV1 : MonoBehaviour
 
     void LastAlive()
     {
-        if (zombieManager.totalZombiesAlive == 1 && zombieManager.spawnMaxReached)
+        if (ZombieManager.totalZombiesAlive == 1 && ZombieManager.spawnMaxReached)
         {
             isLastAlive = true;
         }
@@ -382,7 +412,7 @@ public class zombieAIV1 : MonoBehaviour
         Instantiate(ExplodePref, this.transform.position + new Vector3(0, 1, 0), this.transform.rotation);
         
         // Decrement the total # of zombies
-        zombieManager.totalZombiesAlive--;
+        ZombieManager.totalZombiesAlive--;
         ZombieManager.totalZombiesKilled++;
 
 
