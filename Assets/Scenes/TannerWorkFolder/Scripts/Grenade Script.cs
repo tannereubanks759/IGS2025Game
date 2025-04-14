@@ -6,8 +6,11 @@ public class GrenadeScript : MonoBehaviour
     public float throwForce;
     public float explodeTime;
     public GameObject ExplodePref;
+    private AudioSource source;
+    public AudioClip rock;
     void Start()
     {
+        source = this.GetComponent<AudioSource>();
         Rigidbody rb = this.GetComponent<Rigidbody>();
         rb.AddForce(this.transform.forward * throwForce, ForceMode.Impulse);
         Invoke("Explode", explodeTime);
@@ -56,5 +59,9 @@ public class GrenadeScript : MonoBehaviour
         Instantiate(ExplodePref, this.transform.position, this.transform.rotation);
         Destroy(this.gameObject);
     }
-    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        source.PlayOneShot(rock, .5f);
+    }
 }

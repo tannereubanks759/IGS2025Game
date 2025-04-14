@@ -16,6 +16,7 @@ public class BulletScript : MonoBehaviour
     public balloonMinigame balloonMinigameRef;
     public static int baseDamage = 1;
     private GunScript gun;
+    private float bulletRadius; //goes by pixel
     
     void Start()
     {
@@ -24,7 +25,11 @@ public class BulletScript : MonoBehaviour
         {
             this.GetComponentInChildren<TrailRenderer>().enabled = true;
         }
-        Vector3 ScreenPos = Input.mousePosition;
+        bulletRadius = GameObject.Find("RightSideRet").GetComponent<RectTransform>().anchoredPosition.x;
+        Debug.Log(bulletRadius);
+        float randomx = Random.Range(-bulletRadius, bulletRadius);
+        float randomy = Random.Range(-bulletRadius, bulletRadius);
+        Vector3 ScreenPos = Input.mousePosition + new Vector3(randomx, randomy, 0);
         Ray Ray = Camera.main.ScreenPointToRay(ScreenPos);
         if(Physics.Raycast(Ray, out RaycastHit hit))
         {
@@ -47,7 +52,6 @@ public class BulletScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
         //Debug.Log(collision.gameObject.name + ", Game Active: " + balloonMinigameRef.isMiniActive);
         if (collision.gameObject.layer == 8)
         {
@@ -140,7 +144,7 @@ public class BulletScript : MonoBehaviour
         {
             float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
-            bulletImpactSound.PlayOneShot(normalImpactSound, .1f);
+            //bulletImpactSound.PlayOneShot(normalImpactSound, .1f);
             bulletImpact.Play();
             rb.isKinematic = true;
         }
