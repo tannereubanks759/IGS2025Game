@@ -30,7 +30,9 @@ public class GunScript : MonoBehaviour
     public AudioClip ammoEmptySound;
     public AudioClip unload;
     public AudioClip load;
-    public AudioClip gunShot;
+    //public AudioClip gunShot;
+    public AudioClip[] gunShots;
+    public Animator bulletAnim;
 
     void Start()
     {
@@ -68,12 +70,14 @@ public class GunScript : MonoBehaviour
         {
             crosshair.SetActive(false);
             anim.SetBool("isAiming", true);
+            bulletAnim.SetBool("aim", true);
 
         }
         else
         {
             crosshair.SetActive(true);
             anim.SetBool("isAiming", false);
+            bulletAnim.SetBool("aim", false);
         }
 
 
@@ -83,10 +87,12 @@ public class GunScript : MonoBehaviour
             if(bulletCount > 0f)
             {
                 anim.SetBool("isFiring", true);
+                bulletAnim.SetBool("fire", true);
             }
             else
             {
                 anim.SetBool("isFiring", false);
+                bulletAnim.SetBool("fire", false);
                 if (Time.time > nextFire)
                 {
                     gunSound.PlayOneShot(ammoEmptySound, .5f);
@@ -100,6 +106,7 @@ public class GunScript : MonoBehaviour
         else
         {
             anim.SetBool("isFiring", false);
+            bulletAnim.SetBool("fire", false);
         }
 
         if (Input.GetKeyDown(ShootKey) && bulletCount <= 0f)
@@ -121,7 +128,9 @@ public class GunScript : MonoBehaviour
         Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
         muzzleFlash.Play();
         gunSound.pitch = Random.Range(.8f, 1.3f);
-        gunSound.PlayOneShot(gunShot, .2f);
+        AudioClip CLIP = gunShots[Random.Range(0, gunShots.Length)];
+        Debug.Log(CLIP.name);
+        gunSound.PlayOneShot(CLIP, .2f);
         if(bulletCount > 0)
         {
             bulletCount -= 1f;
