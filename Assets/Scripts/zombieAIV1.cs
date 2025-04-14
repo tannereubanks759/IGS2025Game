@@ -96,7 +96,6 @@ public class zombieAIV1 : MonoBehaviour
         onFirePS.Stop();
 
         spawnEffect = GetComponentInChildren<VisualEffect>();
-        Debug.Log(spawnEffect.name);
 
         audioSource = GetComponent<AudioSource>();
     }
@@ -110,7 +109,7 @@ public class zombieAIV1 : MonoBehaviour
             MoveAI();
             CanAttack();
             OnFire();
-            LastAlive();
+            //LastAlive();
 
             if (ExplodePref != null)
             {
@@ -201,21 +200,25 @@ public class zombieAIV1 : MonoBehaviour
     void PlayerDistance()
     {
         playerDist = Vector3.Distance(player.transform.position, this.transform.position);
-
-        Debug.Log(playerDist);
     }
 
     void Respawn()
     {
         if (playerDist > 35)
         {
-            ZombieManager.totalSpawnedZombies--;
-
-            ZombieManager.totalZombiesAlive--;
-
-            ZombieManager.totalZombiesKilled--;
-
             ZombieManager.spawnMaxReached = false;
+
+            //Debug.Log(ZombieManager.totalSpawnedZombies);
+            ZombieManager.totalSpawnedZombies--;
+            //Debug.Log(ZombieManager.totalSpawnedZombies);
+
+            //Debug.Log(ZombieManager.totalZombiesAlive);
+            ZombieManager.totalZombiesAlive--;
+            //Debug.Log(ZombieManager.totalZombiesAlive);
+
+            //Debug.Log(ZombieManager.totalZombiesKilled);
+            ZombieManager.totalZombiesKilled--;
+            //Debug.Log(ZombieManager.totalZombiesKilled);
 
             TakeDamage(10);
 
