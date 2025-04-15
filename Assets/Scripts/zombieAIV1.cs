@@ -53,6 +53,8 @@ public class zombieAIV1 : MonoBehaviour
     // variable to track players distance form the zombies
     public float playerDist;
 
+    private zombieSpawner[] zombieSpawners;
+
     public bool c4Active;
     public GameObject ExplodePref;
     public GameObject rightArm;
@@ -64,9 +66,12 @@ public class zombieAIV1 : MonoBehaviour
     public GameObject head;
 
     public bool hitByTrap;
+
+    public bool isRespawned;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isRespawned = false;
         hitByTrap = false;
         bloodParticleObject.SetActive(false);
         miniGameS = FindAnyObjectByType<miniGameScript>();
@@ -98,6 +103,11 @@ public class zombieAIV1 : MonoBehaviour
         spawnEffect = GetComponentInChildren<VisualEffect>();
 
         audioSource = GetComponent<AudioSource>();
+
+        if (ExplodePref != null)
+        {
+            zombieSpawners = GetComponents<zombieSpawner>();
+        }
     }
 
     // Update is called once per frame
@@ -206,21 +216,56 @@ public class zombieAIV1 : MonoBehaviour
     {
         if (playerDist > 35)
         {
-            ZombieManager.spawnMaxReached = false;
+            var closestSpawner = Vector3.zero;
 
-            //Debug.Log(ZombieManager.totalSpawnedZombies);
-            ZombieManager.totalSpawnedZombies--;
-            //Debug.Log(ZombieManager.totalSpawnedZombies);
+            var closestSpawnerDistance = 0f;
 
-            //Debug.Log(ZombieManager.totalZombiesAlive);
-            ZombieManager.totalZombiesAlive--;
-            //Debug.Log(ZombieManager.totalZombiesAlive);
+            var firstPass = true;
 
-            //Debug.Log(ZombieManager.totalZombiesKilled);
-            ZombieManager.totalZombiesKilled--;
-            //Debug.Log(ZombieManager.totalZombiesKilled);
+            foreach (zombieSpawner t in zombieSpawners)
+            {
+                var spawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
 
-            TakeDamage(10);
+                if (firstPass)
+                {
+                    closestSpawner = t.transform.position;
+
+                    closestSpawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
+                }
+                else if (spawnerDistance < closestSpawnerDistance)
+                {
+                    closestSpawner = t.transform.position;
+
+                    closestSpawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
+                }
+            }
+
+            //MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+
+            //meshRenderer.enabled = false;
+
+            this.transform.position = closestSpawner;
+
+            //meshRenderer.enabled = true;
+
+            animator.SetBool("isStanding", false);
+
+            ////ZombieManager.maxZombies++;
+            //ZombieManager.spawnMaxReached = false;
+
+            ////Debug.Log(ZombieManager.totalSpawnedZombies);
+            //ZombieManager.totalSpawnedZombies--;
+            ////Debug.Log(ZombieManager.totalSpawnedZombies);
+
+            ////Debug.Log(ZombieManager.totalZombiesAlive);
+            ////ZombieManager.totalZombiesAlive--;
+            ////Debug.Log(ZombieManager.totalZombiesAlive);
+
+            ////Debug.Log(ZombieManager.totalZombiesKilled);
+            ////ZombieManager.totalZombiesKilled--;
+            ////Debug.Log(ZombieManager.totalZombiesKilled);
+
+            //TakeDamage(10);
 
         }
     }
@@ -293,10 +338,13 @@ public class zombieAIV1 : MonoBehaviour
     // Checks if the AI is dead
     public void IsDead()
     {
-        // Decrement the total # of zombies
-        ZombieManager.totalZombiesAlive--;
+        if(isRespawned == false)
+        {
+            ZombieManager.totalZombiesAlive--;
 
-        ZombieManager.totalZombiesKilled++;
+            ZombieManager.totalZombiesKilled++;
+        }
+        
 
         // Anim plays multiple times, not sure if the agent.isStopped line is even working
         
