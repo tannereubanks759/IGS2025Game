@@ -9,7 +9,7 @@ public class ZombieManager : MonoBehaviour
     // and the max number of zombies
     public static int totalZombiesAlive;
     public static int totalSpawnedZombies;
-    private int maxZombies;
+    public static int maxZombies;
 
     // The current wave count
     public static int waveCount;
@@ -33,6 +33,7 @@ public class ZombieManager : MonoBehaviour
     // Initialize variables to their starting values
     void Start()
     {
+        maxZombies = 0;
         //scoreboardUI.SetActive(false);
         waveCount = 1;
         maxZombies = 12;
@@ -60,6 +61,7 @@ public class ZombieManager : MonoBehaviour
 
         if (spawnMaxReached && totalZombiesAlive == 0)
         {
+            Debug.Log(spawnMaxReached + " " + totalZombiesAlive);
             spawnMaxReached = false;
 
             miniGameObject.tickets += ticketsOnCompletion;
