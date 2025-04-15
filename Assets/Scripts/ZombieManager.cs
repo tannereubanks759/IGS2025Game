@@ -37,6 +37,10 @@ public class ZombieManager : MonoBehaviour
         waveCount = 1;
         maxZombies = 12;
         spawnMaxReached = false;
+        totalZombiesKilled = 0;
+        waveCount = 1;
+        totalZombiesAlive = 0;
+        totalSpawnedZombies = 0;
         WaveTextUpdate();
 
     }
