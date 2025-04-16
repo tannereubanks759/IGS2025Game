@@ -1,7 +1,8 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
+using NUnit.Framework;
 
 public class ZombieManager : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class ZombieManager : MonoBehaviour
 
     // holds the total number of zombies killed
     public static int totalZombiesKilled = 0;
+
+    public List<GameObject> zombies;
+
+    private bool allCops;
+
 
     //[SerializeField] GameObject scoreboardUI;
 
@@ -104,6 +110,37 @@ public class ZombieManager : MonoBehaviour
     void WaveTextUpdate()
     {
         waveText.text = waveCount.ToString();
+    }
+
+    public void CheckZombieType()
+    {
+        allCops = false;
+
+        for (int i = 0; i < zombies.Count; i++)
+        {
+            if (zombies[i].GetComponent<zombieAIV1>().ExplodePref != null)
+            {
+                allCops = true;
+            }
+            else
+            {
+                allCops = false;
+                break;
+            }
+        }
+
+        OnlyCopsAlive();
+    }
+
+    void OnlyCopsAlive()
+    {
+        if (allCops)
+        {
+            for (int i = 0; i < zombies.Count; i++)
+            {
+                zombies[i].GetComponent<zombieAIV1>().onlyCopsAlive = true;
+            }
+        }
     }
 
     void WaveTextFadeOut()

@@ -38,8 +38,8 @@ public class zombieAIV1 : MonoBehaviour
     private ZombieManager zombieManager;
 
     // values for having the zombie be the last alive
-    private float lastAliveTimer;
-    private bool isLastAlive = false;
+    private float onlyCopsAliveTimer;
+    public bool onlyCopsAlive = false;
 
     // the spawn effect
     [SerializeField] private VisualEffect spawnEffect;
@@ -127,13 +127,7 @@ public class zombieAIV1 : MonoBehaviour
             MoveAI();
             CanAttack();
             OnFire();
-            //LastAlive();
-
-            if (ExplodePref != null)
-            {
-                PlayerDistance();
-                //Respawn();
-            }
+            OnlyCopsAlive();
         }
     }
 
@@ -215,75 +209,6 @@ public class zombieAIV1 : MonoBehaviour
         }
     }
 
-    void PlayerDistance()
-    {
-        playerDist = Vector3.Distance(player.transform.position, this.transform.position);
-    }
-
-    //void Respawn()
-    //{
-    //    if (playerDist > 35 && !isRespawned)
-    //    {
-    //        isRespawned = true;
-
-    //        var closestSpawnerDistance = 0f;
-
-    //        var firstPass = true;
-
-    //        foreach (zombieSpawner t in zombieSpawners)
-    //        {
-    //            Debug.Log("Iterating");
-
-    //            var spawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
-
-    //            if (firstPass)
-    //            {
-    //                closestSpawner = t.transform.position;
-
-    //                closestSpawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
-    //            }
-    //            else if (spawnerDistance < closestSpawnerDistance)
-    //            {
-    //                closestSpawner = t.transform.position;
-
-    //                closestSpawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
-    //            }
-    //        }
-
-    //        Debug.Log(closestSpawner);
-    //        //MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
-
-    //        //meshRenderer.enabled = false;
-
-    //        this.transform.position = closestSpawner;
-
-    //        //meshRenderer.enabled = true;
-
-    //        animator.SetBool("isStanding", false);
-
-    //        firstPass = false;
-
-    //        isRespawned = false;
-
-    //        ////ZombieManager.maxZombies++;
-    //        //ZombieManager.spawnMaxReached = false;
-
-    //        ////Debug.Log(ZombieManager.totalSpawnedZombies);
-    //        //ZombieManager.totalSpawnedZombies--;
-    //        ////Debug.Log(ZombieManager.totalSpawnedZombies);
-
-    //        ////Debug.Log(ZombieManager.totalZombiesAlive);
-    //        ////ZombieManager.totalZombiesAlive--;
-    //        ////Debug.Log(ZombieManager.totalZombiesAlive);
-
-    //        ////Debug.Log(ZombieManager.totalZombiesKilled);
-    //        ////ZombieManager.totalZombiesKilled--;
-    //        ////Debug.Log(ZombieManager.totalZombiesKilled);
-
-    //        //TakeDamage(10);
-
-    //    }
-    //}
 
     // Checks if the AI can attack
     void CanAttack()
@@ -353,17 +278,14 @@ public class zombieAIV1 : MonoBehaviour
     // Checks if the AI is dead
     public void IsDead()
     {
-        if(isRespawned == false)
-        {
-            ZombieManager.totalZombiesAlive--;
+        ZombieManager.totalZombiesAlive--;
 
-            ZombieManager.totalZombiesKilled++;
-        }
-        
+        ZombieManager.totalZombiesKilled++;
+
 
         // Anim plays multiple times, not sure if the agent.isStopped line is even working
-        
-            agent.enabled = false;
+
+        agent.enabled = false;
         
         
 
@@ -400,6 +322,10 @@ public class zombieAIV1 : MonoBehaviour
             onFirePS.Stop();
         }
 
+        zombieManager.zombies.Remove(this.gameObject);
+
+        zombieManager.CheckZombieType();
+
         Destroy(this.gameObject);
     }
     public void SetMinigameScript(miniGameScript script)
@@ -407,18 +333,13 @@ public class zombieAIV1 : MonoBehaviour
         miniGameS = script;
     }
 
-    void LastAlive()
+    public void OnlyCopsAlive()
     {
-        if (ZombieManager.totalZombiesAlive == 1 && ZombieManager.spawnMaxReached)
+        if (onlyCopsAlive)
         {
-            isLastAlive = true;
-        }
+            onlyCopsAliveTimer += Time.deltaTime;
 
-        if (isLastAlive)
-        {
-            lastAliveTimer += Time.deltaTime;
-
-            if (lastAliveTimer > 45)
+            if (onlyCopsAliveTimer > 30)
             {
                 TakeDamage(10);
             }

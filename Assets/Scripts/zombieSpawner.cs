@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Unity.AppUI.UI;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -139,6 +140,9 @@ public class zombieSpawner : MonoBehaviour
         {
             zombieScript.SetMinigameScript(miniGameScript.instance);
         }
+
+        zombieManager.zombies.Add(Zombie);
+
         
         // Reset the gameTime so the spawn-time resets
         gameTime = 0;
