@@ -3689,6 +3689,7 @@ MonoBehaviour:
   loadingScreen: {fileID: 645039144}
   MainMenu: {fileID: 1034056972}
   slider: {fileID: 1979587607}
+  buttonSound: {fileID: 1196438384}
 --- !u!1 &730540215
 GameObject:
   m_ObjectHideFlags: 0

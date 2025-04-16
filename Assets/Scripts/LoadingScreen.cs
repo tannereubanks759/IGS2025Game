@@ -10,6 +10,7 @@ public class LoadingScreen : MonoBehaviour
 
     public Slider slider;
 
+    public AudioSource buttonSound;
     private void Start()
     {
         loadingScreen.SetActive(false);
@@ -17,6 +18,7 @@ public class LoadingScreen : MonoBehaviour
     }
     public void LoadLevelBtn(string level)
     {
+        buttonSound.Play();
         MainMenu.SetActive(false);
         loadingScreen.SetActive(true);
         StartCoroutine(LoadLevelAsync(level));
