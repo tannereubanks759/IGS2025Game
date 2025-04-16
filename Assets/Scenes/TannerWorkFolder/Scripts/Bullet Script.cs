@@ -26,7 +26,7 @@ public class BulletScript : MonoBehaviour
             this.GetComponentInChildren<TrailRenderer>().enabled = true;
         }
         bulletRadius = GameObject.Find("RightSideRet").GetComponent<RectTransform>().anchoredPosition.x;
-        Debug.Log(bulletRadius);
+        //Debug.Log(bulletRadius);
         float randomx = Random.Range(-bulletRadius, bulletRadius);
         float randomy = Random.Range(-bulletRadius, bulletRadius);
         Vector3 ScreenPos = Input.mousePosition + new Vector3(randomx, randomy, 0);

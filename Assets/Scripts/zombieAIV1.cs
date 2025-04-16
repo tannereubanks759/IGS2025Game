@@ -55,6 +55,8 @@ public class zombieAIV1 : MonoBehaviour
 
     private zombieSpawner[] zombieSpawners;
 
+    private Vector3 closestSpawner = Vector3.zero;
+
     public bool c4Active;
     public GameObject ExplodePref;
     public GameObject rightArm;
@@ -68,6 +70,7 @@ public class zombieAIV1 : MonoBehaviour
     public bool hitByTrap;
 
     public bool isRespawned;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -106,7 +109,12 @@ public class zombieAIV1 : MonoBehaviour
 
         if (ExplodePref != null)
         {
-            zombieSpawners = GetComponents<zombieSpawner>();
+            zombieSpawners = FindObjectsByType<zombieSpawner>(FindObjectsSortMode.None); //GetComponents<zombieSpawner>();
+
+            foreach (zombieSpawner z in zombieSpawners)
+            {
+                Debug.Log(z.name);
+            }
         }
     }
 
@@ -124,7 +132,7 @@ public class zombieAIV1 : MonoBehaviour
             if (ExplodePref != null)
             {
                 PlayerDistance();
-                Respawn();
+                //Respawn();
             }
         }
     }
@@ -212,63 +220,70 @@ public class zombieAIV1 : MonoBehaviour
         playerDist = Vector3.Distance(player.transform.position, this.transform.position);
     }
 
-    void Respawn()
-    {
-        if (playerDist > 35)
-        {
-            var closestSpawner = Vector3.zero;
+    //void Respawn()
+    //{
+    //    if (playerDist > 35 && !isRespawned)
+    //    {
+    //        isRespawned = true;
 
-            var closestSpawnerDistance = 0f;
+    //        var closestSpawnerDistance = 0f;
 
-            var firstPass = true;
+    //        var firstPass = true;
 
-            foreach (zombieSpawner t in zombieSpawners)
-            {
-                var spawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
+    //        foreach (zombieSpawner t in zombieSpawners)
+    //        {
+    //            Debug.Log("Iterating");
 
-                if (firstPass)
-                {
-                    closestSpawner = t.transform.position;
+    //            var spawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
 
-                    closestSpawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
-                }
-                else if (spawnerDistance < closestSpawnerDistance)
-                {
-                    closestSpawner = t.transform.position;
+    //            if (firstPass)
+    //            {
+    //                closestSpawner = t.transform.position;
 
-                    closestSpawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
-                }
-            }
+    //                closestSpawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
+    //            }
+    //            else if (spawnerDistance < closestSpawnerDistance)
+    //            {
+    //                closestSpawner = t.transform.position;
 
-            //MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+    //                closestSpawnerDistance = Vector3.Distance(player.transform.position, t.transform.position);
+    //            }
+    //        }
 
-            //meshRenderer.enabled = false;
+    //        Debug.Log(closestSpawner);
+    //        //MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
 
-            this.transform.position = closestSpawner;
+    //        //meshRenderer.enabled = false;
 
-            //meshRenderer.enabled = true;
+    //        this.transform.position = closestSpawner;
 
-            animator.SetBool("isStanding", false);
+    //        //meshRenderer.enabled = true;
 
-            ////ZombieManager.maxZombies++;
-            //ZombieManager.spawnMaxReached = false;
+    //        animator.SetBool("isStanding", false);
 
-            ////Debug.Log(ZombieManager.totalSpawnedZombies);
-            //ZombieManager.totalSpawnedZombies--;
-            ////Debug.Log(ZombieManager.totalSpawnedZombies);
+    //        firstPass = false;
 
-            ////Debug.Log(ZombieManager.totalZombiesAlive);
-            ////ZombieManager.totalZombiesAlive--;
-            ////Debug.Log(ZombieManager.totalZombiesAlive);
+    //        isRespawned = false;
 
-            ////Debug.Log(ZombieManager.totalZombiesKilled);
-            ////ZombieManager.totalZombiesKilled--;
-            ////Debug.Log(ZombieManager.totalZombiesKilled);
+    //        ////ZombieManager.maxZombies++;
+    //        //ZombieManager.spawnMaxReached = false;
 
-            //TakeDamage(10);
+    //        ////Debug.Log(ZombieManager.totalSpawnedZombies);
+    //        //ZombieManager.totalSpawnedZombies--;
+    //        ////Debug.Log(ZombieManager.totalSpawnedZombies);
 
-        }
-    }
+    //        ////Debug.Log(ZombieManager.totalZombiesAlive);
+    //        ////ZombieManager.totalZombiesAlive--;
+    //        ////Debug.Log(ZombieManager.totalZombiesAlive);
+
+    //        ////Debug.Log(ZombieManager.totalZombiesKilled);
+    //        ////ZombieManager.totalZombiesKilled--;
+    //        ////Debug.Log(ZombieManager.totalZombiesKilled);
+
+    //        //TakeDamage(10);
+
+    //    }
+    //}
 
     // Checks if the AI can attack
     void CanAttack()

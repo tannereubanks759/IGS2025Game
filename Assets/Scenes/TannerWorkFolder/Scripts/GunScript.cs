@@ -129,14 +129,14 @@ public class GunScript : MonoBehaviour
         muzzleFlash.Play();
         gunSound.pitch = Random.Range(.8f, 1.3f);
         AudioClip CLIP = gunShots[Random.Range(0, gunShots.Length)];
-        Debug.Log(CLIP.name);
+        //Debug.Log(CLIP.name);
         gunSound.PlayOneShot(CLIP, .2f);
         if(bulletCount > 0)
         {
             bulletCount -= 1f;
         }
         BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
-        Debug.Log("Fire");
+        //Debug.Log("Fire");
     }
 
     public void Reload()
