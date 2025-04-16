@@ -21,6 +21,10 @@ public class balloonMinigame : MonoBehaviour
     public Material redBalloonMaterial;
     public Material goldenBalloonMatieral;
     //public List<GameObject> disabledBalloons;
+
+    private AudioSource audioSource;
+    [SerializeField] private GameObject playerUI;
+
     void Start()
     {
         minigameRef = FindAnyObjectByType<miniGameScript>();
@@ -28,6 +32,8 @@ public class balloonMinigame : MonoBehaviour
         /*Renderer renderer = goldenBalloon.GetComponentInChildren<Renderer>();
         renderer.material = goldenBalloonMatieral;*/
         goldenBalloonMatieral.color = Color.yellow;
+
+        audioSource = playerUI.GetComponent<AudioSource>();
 
     }
 
@@ -108,6 +114,9 @@ public class balloonMinigame : MonoBehaviour
                 Debug.Log("Finished quest");
                 resetBalloons();
                 minigameRef.resetQuest();
+
+                audioSource.Play();
+
                 //resetBalloons();
             }
         }

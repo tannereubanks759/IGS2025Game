@@ -9,12 +9,17 @@ public class timeInAreaScript : MonoBehaviour
     float timeInArea = 0f;
     public miniGameScript miniGameScript;
     private bool inZone = false;
-    
-    
-    
+
+    private AudioSource audioSource;
+    [SerializeField] private GameObject playerUI;
+
+
+
     void Start()
     {
         miniGameScript = FindAnyObjectByType<miniGameScript>();
+
+        audioSource = playerUI.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +50,8 @@ public class timeInAreaScript : MonoBehaviour
             inZone = true;
             if (timeInArea >= miniGameScript.totalTime)
             {
+                audioSource.Play();
+
                 timeInAreaMinigameOn = false;
                 miniGameScript.resetQuest();
                 //this.gameObject.tag = "Wrong Grass";
