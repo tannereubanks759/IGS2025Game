@@ -61,7 +61,6 @@ MonoBehaviour:
   bodyshotSound: {fileID: 8300000, guid: 725292aab1e9ff04c8732c3293393c83, type: 3}
   normalImpactSound: {fileID: 8300000, guid: 5591d7ed98da24c42b09b8d38d4ece84, type: 3}
   balloonMinigameRef: {fileID: 0}
-  bulletRadius: 100
 --- !u!54 &6332558549674359251
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -296,7 +295,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.0050354004
+        value: 0.012374878
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -342,7 +341,7 @@ TrailRenderer:
     textureMode: 0
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
-    generateLightingData: 0
+    generateLightingData: 1
   m_MinVertexDistance: 0.1
   m_MaskInteraction: 0
   m_Autodestruct: 1
