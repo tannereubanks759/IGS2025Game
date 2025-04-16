@@ -32,6 +32,10 @@ public class miniGameScript : MonoBehaviour
     public balloonMinigame balloonMinigameRef;
     public bool firstQuest = false;
     public ParticleSystem[] grassHighlights;
+
+    private AudioSource audioSource;
+    [SerializeField] private GameObject playerUI;
+
     #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,29 +54,13 @@ public class miniGameScript : MonoBehaviour
             grassHighlights[i].Clear();
         }
 
+        audioSource = playerUI.GetComponent<AudioSource>();
     }
     private void Awake()
     {
         instance = this;
         
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-        
-        
-    }
-   
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        
     }
  
     public void printHs()
@@ -83,6 +71,7 @@ public class miniGameScript : MonoBehaviour
             headShotQuest = false;
             resetQuest();
 
+            audioSource.Play();
         }
         else
         {
