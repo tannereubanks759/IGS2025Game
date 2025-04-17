@@ -34,8 +34,10 @@ public class GunScript : MonoBehaviour
     public AudioClip[] gunShots;
     public Animator bulletAnim;
 
+    public static bool isFiring;
     void Start()
     {
+        isFiring = false;
         maxAmmo = 400;
         reloadSpeed = 1f;
         bulletCount = magazineSize;
@@ -88,11 +90,13 @@ public class GunScript : MonoBehaviour
             {
                 anim.SetBool("isFiring", true);
                 bulletAnim.SetBool("fire", true);
+                isFiring = true;
             }
             else
             {
                 anim.SetBool("isFiring", false);
                 bulletAnim.SetBool("fire", false);
+                isFiring = false;
                 if (Time.time > nextFire)
                 {
                     gunSound.PlayOneShot(ammoEmptySound, .5f);
@@ -107,6 +111,7 @@ public class GunScript : MonoBehaviour
         {
             anim.SetBool("isFiring", false);
             bulletAnim.SetBool("fire", false);
+            isFiring = false;
         }
 
         if (Input.GetKeyDown(ShootKey) && bulletCount <= 0f)
