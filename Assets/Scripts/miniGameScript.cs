@@ -32,14 +32,19 @@ public class miniGameScript : MonoBehaviour
     public balloonMinigame balloonMinigameRef;
     public bool firstQuest = false;
     public ParticleSystem[] grassHighlights;
-
+    private minigameIcon minigameIconBal;
+    private grassIconUpdater grassIconUpdater;
     private AudioSource audioSource;
+    private bool balFirstTime = true;
+    private bool grassFirstTime = true;
     [SerializeField] private GameObject playerUI;
 
     #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        minigameIconBal = FindAnyObjectByType<minigameIcon>();
+        grassIconUpdater = FindAnyObjectByType<grassIconUpdater>();
         currentHeadShots = 0;
         ui.SetActive(false);
         questUI.SetActive(false);
@@ -95,7 +100,8 @@ public class miniGameScript : MonoBehaviour
         goGetTicketText.SetActive(true);
         ticketGiverScriptRef.canClaimTicket = true;
         areaScriptRef.timeInAreaMinigameOn = false;
-
+        minigameIconBal.firstTime = false;
+        grassIconUpdater.firstTime = false;
 
     }
     public void startMinigame()
@@ -122,10 +128,18 @@ public class miniGameScript : MonoBehaviour
         }
         else if (numberOfQuest == 1) 
         {
+            if(grassFirstTime==true) 
+            {
+                grassIconUpdater.firstTime = true;
+            }
             timeInArea();
         }
         else if(numberOfQuest == 2)
-        { 
+        {
+            if (balFirstTime == true)
+            {
+                minigameIconBal.firstTime = true;
+            }
             startBalloon();
         }
     }
@@ -142,6 +156,7 @@ public class miniGameScript : MonoBehaviour
     }
     void timeInArea()
     {
+        grassFirstTime = false;
         Debug.Log("time quest");
         if(isChanged==false)
         {
@@ -170,6 +185,7 @@ public class miniGameScript : MonoBehaviour
     }
     void startBalloon()
     {
+        balFirstTime = false;
         if (isChanged)
         {
             currentScore.rectTransform.anchoredPosition += new Vector2(+60f, 0f);
