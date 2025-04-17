@@ -56,6 +56,10 @@ public class swingTrapActual : MonoBehaviour
     {
         swingTrapRef.trapAnim.SetBool("isOn", false);
         swingTrapRef.paid = false;
-        
+
+        // turn the onButton off and the offButton on
+        swingTrapRef.onMat.SetActive(true);
+        swingTrapRef.offMat.SetActive(false);
+
     }
 }

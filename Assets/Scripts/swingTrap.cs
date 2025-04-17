@@ -9,12 +9,20 @@ public class swingTrap : MonoBehaviour
     public miniGameScript miniGameObject;
     public int costPrice;
     
-     public bool paid=false;    
+     public bool paid=false;
+
+    // mats to show if trap is able to be bought or not
+    public GameObject onMat;
+    public GameObject offMat;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         miniGameObject= FindAnyObjectByType<miniGameScript>();
         interactUI.SetActive(false);
+
+        onMat.SetActive(true);
+        offMat.SetActive(false);
     }
     
 
@@ -55,7 +63,6 @@ public class swingTrap : MonoBehaviour
     public void resetAnimationTrigger()
     {
         trapAnim.SetBool("isOn", false);
-        
     }
     public void startTrap()
     {
@@ -66,6 +73,10 @@ public class swingTrap : MonoBehaviour
             trapAnim.SetBool("isOn", true);
             miniGameObject.tickets -= costPrice;
             miniGameObject.ticketText.text = miniGameObject.tickets.ToString();
+
+            // turn the onButton off and the offButton on
+            onMat.SetActive(false);
+            offMat.SetActive(true);
         }
         
     }

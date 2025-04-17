@@ -25,6 +25,10 @@ public class KiddieCoaster : MonoBehaviour
     // pertaining to the flamethrower PS's
     public ParticleSystem [] Flamethrowers;
 
+    // mats to show if trap is able to be bought or not
+    public GameObject onMat;
+    public GameObject offMat;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,6 +52,9 @@ public class KiddieCoaster : MonoBehaviour
             p.Pause ();
             p.Clear ();
         }
+
+        onMat.SetActive(true);
+        offMat.SetActive(false);
     }
 
     // called in an animation event at the end of the animation
@@ -69,6 +76,9 @@ public class KiddieCoaster : MonoBehaviour
                 p.Pause (); 
                 p.Clear ();
             }
+
+            onMat.SetActive(true);
+            offMat.SetActive(false);
 
             // reset the paid bool
             paid = false;
@@ -100,6 +110,10 @@ public class KiddieCoaster : MonoBehaviour
             // update the tickets
             miniGameObject.tickets -= costPrice;
             miniGameObject.ticketText.text = miniGameObject.tickets.ToString();
+
+            // turn the onButton off and the offButton on
+            onMat.SetActive(false);
+            offMat.SetActive(true);
         }
     }
 }

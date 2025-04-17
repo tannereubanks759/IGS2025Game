@@ -97,6 +97,8 @@ public class ClownRideMovement : MonoBehaviour
                 isDecelerating = false;
                 isAtRest = true;
                 waitTimeElapsed = 0f;
+                clownTrapRef.onMat.SetActive(true);
+                clownTrapRef.offMat.SetActive(false);
             }
         }
 
