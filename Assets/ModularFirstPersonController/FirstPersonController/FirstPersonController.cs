@@ -33,8 +33,8 @@ public class FirstPersonController : MonoBehaviour
     private float maxRecoilHeight;
     private float originalRecoilSensitivity;
     public float recoilGrowthModifier;
-    public float recoilCeilingModifier;
     private Image crosshairObject;
+    private float maxRecoilSens = 5f;
 
     #region Camera Zoom Variables
 
@@ -206,14 +206,22 @@ public class FirstPersonController : MonoBehaviour
         if(cameraCanMove)
         {
             yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
-            float recoilSensitivityFinal = Random.Range(recoilSensitivity, recoilSensitivity * 2);
+            float recoilSensitivityFinal = 0;
+            
+            recoilSensitivityFinal = Random.Range(recoilSensitivity, recoilSensitivity * 2);
+            
+            
             if (!invertCamera)
             {
                 pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
 
                 if (GunScript.isFiring == true)
                 {
-                    recoilSensitivity += recoilGrowthModifier * Time.deltaTime;
+                    if(recoilSensitivity < maxRecoilSens)
+                    {
+                        recoilSensitivity += recoilGrowthModifier * Time.deltaTime;
+                    }
+                    
                     pitch -= recoilSensitivityFinal * Time.deltaTime;
                 }
                 else
@@ -227,20 +235,10 @@ public class FirstPersonController : MonoBehaviour
                 pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
             }
 
-            // Clamp pitch between lookAngle
-            if(GunScript.isFiring == false)
-            {
-                maxRecoilHeight = 0;
-                pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
-            }
-            else
-            {
-                if(maxRecoilHeight == 0)
-                {
-                    maxRecoilHeight = pitch + (recoilCeilingModifier);
-                }
-                pitch = Mathf.Clamp(pitch, -maxRecoilHeight, maxLookAngle);
-            }
+            
+            maxRecoilHeight = 0;
+            pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
+            
 
             transform.localEulerAngles = new Vector3(0, yaw, 0);
             playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
