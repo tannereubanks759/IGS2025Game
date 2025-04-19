@@ -13,10 +13,11 @@ public class ticketGiverScript : MonoBehaviour
     int scoreInt = 0;
     public TextMeshProUGUI timeBonusText;
     public static int totTicketsGained;
-
+    public Animator borderAnimator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         miniGameScriptRef = FindAnyObjectByType<miniGameScript>();
     }
 
@@ -61,5 +62,6 @@ public class ticketGiverScript : MonoBehaviour
             scoreInt = 1;
         }
         timeBonusText.text = scoreInt.ToString();
+        borderAnimator.SetTrigger("slide");
     }
 }
