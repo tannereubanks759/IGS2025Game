@@ -45,7 +45,7 @@ public class ticketGiverScript : MonoBehaviour
         miniGameScriptRef.tickets += scoreInt;
         totTicketsGained += scoreInt;
         miniGameScriptRef.ticketText.text = miniGameScriptRef.tickets.ToString();
-        miniGameScriptRef.goGetTicketText.gameObject.SetActive(false);
+        miniGameScriptRef.goGetTicketUIAnimator.SetTrigger("deactivate");
         ticketSound.Play();
         canClaimTicket = false;
         hasTaken = true;

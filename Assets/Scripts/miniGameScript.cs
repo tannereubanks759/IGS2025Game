@@ -37,6 +37,9 @@ public class miniGameScript : MonoBehaviour
     private AudioSource audioSource;
     private bool balFirstTime = true;
     private bool grassFirstTime = true;
+    public Animator animatorForUI;
+    public Animator goGetTicketUIAnimator;
+    //public GameObject borderOfQuestUI;
     [SerializeField] private GameObject playerUI;
 
     #endregion
@@ -47,7 +50,7 @@ public class miniGameScript : MonoBehaviour
         grassIconUpdater = FindAnyObjectByType<grassIconUpdater>();
         currentHeadShots = 0;
         ui.SetActive(false);
-        questUI.SetActive(false);
+        questUI.SetActive(true);
         for (int i = 0; i < grassAreas.Length; i++)
         {
             grassAreas[i].tag = "Wrong Grass";
@@ -58,7 +61,7 @@ public class miniGameScript : MonoBehaviour
             grassHighlights[i].Stop();
             grassHighlights[i].Clear();
         }
-
+        goGetTicketText.SetActive(true);
         audioSource = playerUI.GetComponent<AudioSource>();
     }
     private void Awake()
@@ -87,7 +90,8 @@ public class miniGameScript : MonoBehaviour
     }
     public void resetQuest()
     {
-        questUI.SetActive(false);
+        //questUI.SetActive(false);
+        animatorForUI.SetTrigger("endQuest");
         currentHeadShots = 0;
         currentOutOfScore.text = " ";
         currentScore.text = "0";
@@ -95,14 +99,16 @@ public class miniGameScript : MonoBehaviour
         // gives negative of time taken
         miniGameTime -= Time.time;
         miniGameTime *=  -1;
-        Debug.Log("Sent call to function of time");
+        //Debug.Log("Sent call to function of time");
         ticketGiverScriptRef.calculateScore(miniGameTime);
-        goGetTicketText.SetActive(true);
+        goGetTicketUIAnimator.SetTrigger("activate");
+        //goGetTicketText.SetActive(true);
         ticketGiverScriptRef.canClaimTicket = true;
         areaScriptRef.timeInAreaMinigameOn = false;
         minigameIconBal.firstTime = false;
         grassIconUpdater.firstTime = false;
-
+        
+        
     }
     public void startMinigame()
     {
@@ -153,6 +159,8 @@ public class miniGameScript : MonoBehaviour
         }
         headShotQuest = true;
         currentOutOfScore.text = "/5";
+        animatorForUI.SetTrigger("startQuest");
+        
     }
     void timeInArea()
     {
@@ -167,7 +175,8 @@ public class miniGameScript : MonoBehaviour
         areaScriptRef.timeInAreaMinigameOn = true;
         currentOutOfScore.text = "/10";
         currentScore.text = " ";
-
+        animatorForUI.SetTrigger("startQuest");
+        
         // tracks time in area with colliders
     }
 
@@ -192,6 +201,7 @@ public class miniGameScript : MonoBehaviour
             isChanged = false;
         }
         currentOutOfScore.text = "/5";
+        animatorForUI.SetTrigger("startQuest");
         
         balloonMinigameRef.startBalloon();
     }
