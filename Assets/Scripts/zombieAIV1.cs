@@ -66,7 +66,8 @@ public class zombieAIV1 : MonoBehaviour
     public GameObject bloodParticleObject;
     public GameObject testBloodSpray;
     public GameObject head;
-
+    public GameObject leftArmExplode;
+    public GameObject rightArmExplode;
     public bool hitByTrap;
 
     public bool isRespawned;
@@ -74,6 +75,13 @@ public class zombieAIV1 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(leftArm != null && leftArm.GetComponentInChildren<VisualEffect>().gameObject != null)
+        {
+            leftArmExplode = leftArm.GetComponentInChildren<VisualEffect>().gameObject;
+            rightArmExplode = rightArm.GetComponentInChildren<VisualEffect>().gameObject;
+            leftArmExplode.SetActive(false);
+            rightArmExplode.SetActive(false);
+        }
         isRespawned = false;
         hitByTrap = false;
         bloodParticleObject.SetActive(false);

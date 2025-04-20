@@ -11630,19 +11630,23 @@ MonoBehaviour:
   fireTickTime: 1
   onFirePS: {fileID: 6500884726395484327}
   maxRunningAnimCount: 1
+  onlyCopsAlive: 0
   spawnEffect: {fileID: 0}
   footStep: {fileID: 8300000, guid: 3ea4e2e09f0c69941a1ac72311488559, type: 3}
   hurt: {fileID: 8300000, guid: 5dbb07f2b53c0bb4ba24ec2123fc53dd, type: 3}
   deathSound: {fileID: 8300000, guid: f997c28e3b4e323408e3081bda076e67, type: 3}
+  playerDist: 0
   c4Active: 0
   ExplodePref: {fileID: 9003077176751462839, guid: b070c375161919b40b293656274e2225, type: 3}
-  rightArm: {fileID: 1835458523716008443}
-  leftArm: {fileID: 6686327514594003162}
+  rightArm: {fileID: 0}
+  leftArm: {fileID: 0}
   clownRideMovementRef: {fileID: 0}
   clowntrap: {fileID: 0}
   bloodParticleObject: {fileID: 4547845276985453373}
   testBloodSpray: {fileID: 1834194341294532, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
   head: {fileID: 5766401734962940725}
+  hitByTrap: 0
+  isRespawned: 0
 --- !u!82 &6827136643691107378
 AudioSource:
   m_ObjectHideFlags: 0

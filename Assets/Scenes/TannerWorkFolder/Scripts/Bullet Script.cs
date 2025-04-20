@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -5,10 +6,11 @@ public class BulletScript : MonoBehaviour
 {
     public float velocity = 100;
     private Rigidbody rb;
-    private float lifeTimer = 2f; //Seconds
+    private float lifeTimer = 8f; //Seconds
     private float nextTime;
     public ParticleSystem bulletImpact;
-    public VisualEffect zombieImpact;
+    public GameObject[] zombieImpacts;
+    public GameObject zombieImpact;
     public AudioSource bulletImpactSound;
     public AudioClip headshotSound;
     public AudioClip bodyshotSound;
@@ -17,9 +19,10 @@ public class BulletScript : MonoBehaviour
     public static int baseDamage = 1;
     private GunScript gun;
     private float bulletRadius; //goes by pixel
-    
     void Start()
     {
+        int bulletImpactRandom = Random.Range(0, zombieImpacts.Length);
+        zombieImpact = zombieImpacts[bulletImpactRandom];
         gun = GameObject.FindAnyObjectByType<GunScript>();
         if(gun.bulletCount % 3 == 0)
         {
@@ -36,7 +39,7 @@ public class BulletScript : MonoBehaviour
             this.transform.LookAt(hit.point);
         }
         balloonMinigameRef = GameObject.FindFirstObjectByType<balloonMinigame>();
-        zombieImpact.gameObject.SetActive(false);
+        zombieImpact.SetActive(false);
         nextTime = Time.time + lifeTimer;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(this.transform.forward * velocity, ForceMode.Impulse);
@@ -59,18 +62,18 @@ public class BulletScript : MonoBehaviour
             bulletImpactSound.pitch = randomPitch;
             bulletImpactSound.PlayOneShot(bodyshotSound, .2f);
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamage(baseDamage);
-            zombieImpact.gameObject.SetActive(true);
-            zombieImpact.Play();
+            zombieImpact.SetActive(true);
+            //zombieImpact.Play();
             
         }
-        else if (collision.gameObject.layer == 9)
+        else if (collision.gameObject.layer == 9) //hithead
         {
             float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
             bulletImpactSound.PlayOneShot(headshotSound, .2f);
-            zombieImpact.gameObject.SetActive(true);
-            zombieImpact.Play();
-            collision.gameObject.GetComponentInChildren<VisualEffect>().Play();
+            zombieImpact.SetActive(true);
+            //zombieImpact.Play();
+            //collision.gameObject.GetComponentInChildren<VisualEffect>().Play();
             collision.transform.parent.localScale = new Vector3(.01f, .01f, .01f);
             collision.gameObject.GetComponentInChildren<VisualEffect>().gameObject.transform.localScale = new Vector3(100f, 100f, 100f);
             collision.gameObject.GetComponentInParent<zombieAIV1>().TakeDamageOnHead(baseDamage + 2);
@@ -82,9 +85,10 @@ public class BulletScript : MonoBehaviour
             float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
             bulletImpactSound.PlayOneShot(headshotSound, .2f);
-            zombieImpact.gameObject.SetActive(true);
-            zombieImpact.Play();
-            zomScript.leftArm.GetComponentInChildren<VisualEffect>().Play();
+            zombieImpact.SetActive(true);
+            //zombieImpact.Play();
+            //zomScript.leftArm.GetComponentInChildren<VisualEffect>().gameObject.SetActive(true);
+            zomScript.leftArmExplode.SetActive(true);
             zomScript.leftArm.transform.localScale = new Vector3(.01f, .01f, .01f);
             zomScript.leftArm.GetComponentInChildren<VisualEffect>().gameObject.transform.localScale = new Vector3(100f, 100f, 100f);
             zomScript.TakeDamage(baseDamage);
@@ -96,9 +100,10 @@ public class BulletScript : MonoBehaviour
             float randomPitch = Random.Range(.8f, 1.3f);
             bulletImpactSound.pitch = randomPitch;
             bulletImpactSound.PlayOneShot(headshotSound, .2f);
-            zombieImpact.gameObject.SetActive(true);
-            zombieImpact.Play();
-            zomScript.rightArm.GetComponentInChildren<VisualEffect>().Play();
+            zombieImpact.SetActive(true);
+            //zombieImpact.Play();
+            //zomScript.rightArm.GetComponentInChildren<VisualEffect>().gameObject.SetActive(true);
+            zomScript.rightArmExplode.SetActive(true);
             zomScript.rightArm.transform.localScale = new Vector3(.01f, .01f, .01f);
             zomScript.rightArm.GetComponentInChildren<VisualEffect>().gameObject.transform.localScale = new Vector3(100f, 100f, 100f);
             zomScript.TakeDamage(baseDamage);
@@ -118,8 +123,8 @@ public class BulletScript : MonoBehaviour
                 bulletImpactSound.pitch = randomPitch;
                 bulletImpactSound.PlayOneShot(headshotSound, .2f);
                 zomScript.TakeDamage(baseDamage);
-                zombieImpact.gameObject.SetActive(true);
-                zombieImpact.Play();
+                zombieImpact.SetActive(true);
+                //zombieImpact.Play();
                 zomScript.Explode();
                 Destroy(this.gameObject);
             }
@@ -150,7 +155,7 @@ public class BulletScript : MonoBehaviour
         }
         nextTime += .3f;
         rb.isKinematic = true;
-
+        this.GetComponentInChildren<MeshRenderer>().enabled = false;
         this.GetComponent<Collider>().enabled = false;
     }
 }

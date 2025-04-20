@@ -838,10 +838,12 @@ MonoBehaviour:
   fireTickTime: 1
   onFirePS: {fileID: 76798222271791076}
   maxRunningAnimCount: 2
+  onlyCopsAlive: 0
   spawnEffect: {fileID: 0}
   footStep: {fileID: 8300000, guid: 3ea4e2e09f0c69941a1ac72311488559, type: 3}
   hurt: {fileID: 8300000, guid: 5dbb07f2b53c0bb4ba24ec2123fc53dd, type: 3}
   deathSound: {fileID: 8300000, guid: da934f908c7fa6745a812ee36b5fc8a4, type: 3}
+  playerDist: 0
   c4Active: 0
   ExplodePref: {fileID: 0}
   rightArm: {fileID: 567444987488690368}
@@ -851,6 +853,8 @@ MonoBehaviour:
   bloodParticleObject: {fileID: 5221927698045898327}
   testBloodSpray: {fileID: 1834194341294532, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
   head: {fileID: 5385637200421573343}
+  hitByTrap: 0
+  isRespawned: 0
 --- !u!195 &3344350383098730429
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2214,6 +2218,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2767783524088327885}
     m_Modifications:
+    - target: {fileID: 441258470484690503, guid: bfe57a4f93d773c48bf81e2e3de78a73, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180095534114105495, guid: bfe57a4f93d773c48bf81e2e3de78a73, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4217546549453921434, guid: bfe57a4f93d773c48bf81e2e3de78a73, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02

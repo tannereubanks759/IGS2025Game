@@ -251,7 +251,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.6792453, g: 0.05446779, b: 0.05446779, a: 1}
+    - _BaseColor: {r: 0.3764706, g: 0.054467745, b: 0.054467745, a: 1}
     - _Base_Color: {r: 33333, g: 1, b: 1, a: 1}
     - _Base_Color_Tint: {r: 0.8, g: 0.7, b: 0.5, a: 1}
     - _Base_SpecColor: {r: 0, g: 0, b: 0, a: 0}
@@ -259,13 +259,13 @@ Material:
     - _BottomEmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _BottomEmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _BottomSpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _Color: {r: 0.6792453, g: 0.054467767, b: 0.054467767, a: 1}
+    - _Color: {r: 0.37647057, g: 0.054467715, b: 0.054467715, a: 1}
     - _DetailSpecCol1: {r: 1, g: 1, b: 1, a: 1}
     - _DetailSpecCol2: {r: 0.1172414, g: 1, b: 0, a: 1}
     - _DetailSpecCol3: {r: 0, g: 0, b: 1, a: 1}
     - _Dirt_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Dirt_SpecCol: {r: 0.128, g: 0.134, b: 0.147, a: 1}
-    - _EmissionColor: {r: 0.19117647, g: 0.16868512, b: 0.16868512, a: 0.48}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.48}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _Mask1_color: {r: 1, g: 1, b: 1, a: 1}
     - _Mask2_color: {r: 0.05082181, g: 0.6911765, b: 0.1082329, a: 1}
