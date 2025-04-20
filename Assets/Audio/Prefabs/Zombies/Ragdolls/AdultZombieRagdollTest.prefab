@@ -607,6 +607,7 @@ Transform:
   - {fileID: 6355163871290990753}
   - {fileID: 941384066815217509}
   - {fileID: 2230916705932656179}
+  - {fileID: 3613134060309548153}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -46.423, z: 0}
 --- !u!95 &2719623963015534391
@@ -648,12 +649,14 @@ MonoBehaviour:
   objWscript: {fileID: 0}
   onFire: 0
   fireTickTime: 1
-  onFirePS: {fileID: 7457661951531679299}
+  onFirePS: {fileID: 3616514651608070587}
   maxRunningAnimCount: 2
+  onlyCopsAlive: 0
   spawnEffect: {fileID: 0}
   footStep: {fileID: 8300000, guid: 3ea4e2e09f0c69941a1ac72311488559, type: 3}
   hurt: {fileID: 8300000, guid: 5dbb07f2b53c0bb4ba24ec2123fc53dd, type: 3}
   deathSound: {fileID: 8300000, guid: f997c28e3b4e323408e3081bda076e67, type: 3}
+  playerDist: 0
   c4Active: 0
   ExplodePref: {fileID: 0}
   rightArm: {fileID: 976376158391484848}
@@ -663,6 +666,10 @@ MonoBehaviour:
   bloodParticleObject: {fileID: 999784911726039006}
   testBloodSpray: {fileID: 1834194341294532, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
   head: {fileID: 1911416168157256194}
+  leftArmExplode: {fileID: 0}
+  rightArmExplode: {fileID: 0}
+  hitByTrap: 0
+  isRespawned: 0
 --- !u!195 &7214143570129108225
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -28549,6 +28556,73 @@ Transform:
   - {fileID: 4394796503251387503}
   m_Father: {fileID: 3039957166364657019}
   m_LocalEulerAnglesHint: {x: -2.8306398, y: -3.0902193, z: -10.065275}
+--- !u!1001 &6055661009160524963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5684770311923667766}
+    m_Modifications:
+    - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366331466074713368, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+      propertyPath: m_Name
+      value: ZomFire
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+--- !u!4 &3613134060309548153 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+  m_PrefabInstance: {fileID: 6055661009160524963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3616514651608070587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7366331466074713368, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
+  m_PrefabInstance: {fileID: 6055661009160524963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8178225066773481743
 PrefabInstance:
   m_ObjectHideFlags: 0

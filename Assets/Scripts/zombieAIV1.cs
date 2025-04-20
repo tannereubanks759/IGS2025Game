@@ -29,8 +29,8 @@ public class zombieAIV1 : MonoBehaviour
     public bool onFire;
     private float fireTimer;
     [SerializeField] float fireTickTime = 1f;
-    [SerializeField] ParticleSystem onFirePS;
-
+    //[SerializeField] ParticleSystem onFirePS;
+    public GameObject onFirePS;
     public int maxRunningAnimCount;
 
     // ZombieManager refs
@@ -109,7 +109,7 @@ public class zombieAIV1 : MonoBehaviour
         zombieManager = zombieManagerOBJ.GetComponent<ZombieManager>();
 
         onFire = false;
-        onFirePS.Stop();
+        onFirePS.SetActive(false);
 
         spawnEffect = GetComponentInChildren<VisualEffect>();
 
@@ -145,9 +145,9 @@ public class zombieAIV1 : MonoBehaviour
         if (onFire)
         {
             // Plays the onFirePS
-            if (!onFirePS.isPlaying)
+            if (onFirePS.activeSelf == false)
             {
-                onFirePS.Play();
+                onFirePS.SetActive(true);
             }
 
             // Increment the timer
@@ -327,7 +327,7 @@ public class zombieAIV1 : MonoBehaviour
         // stops the onFirePS if the zombie is on fire at the time of death
         if (onFire)
         {
-            onFirePS.Stop();
+            onFirePS.SetActive(false);
         }
 
         zombieManager.zombies.Remove(this.gameObject);

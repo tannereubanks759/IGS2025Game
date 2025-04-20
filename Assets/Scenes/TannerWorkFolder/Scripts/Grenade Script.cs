@@ -56,7 +56,7 @@ public class GrenadeScript : MonoBehaviour
                 zombies[i].TakeDamage(10);
             }
         }
-        Instantiate(ExplodePref, this.transform.position, this.transform.rotation);
+        Instantiate(ExplodePref, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 
