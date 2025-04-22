@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     public KeyCode pauseKey;
     public FirstPersonController player;
     public GameObject DeathScreen;
-    public GameObject playerUi;
+    public CanvasGroup playerUi;
     public bool isDead;
 
     // audio control
@@ -73,7 +73,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        playerUi.SetActive(true);
+        playerUi.alpha = 1f;
         isPaused = false;
         PauseScreen.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
@@ -82,7 +82,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
-        playerUi.SetActive(false);
+        //commented out to fix ui reseting animation
+        //playerUi.SetActive(false);
+        playerUi.alpha = 0f;
         player.cameraCanMove = false;
         isPaused = true;
         PauseScreen.SetActive(true);
@@ -102,7 +104,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Die()
     {
-        playerUi.SetActive(false);
+        playerUi.alpha = 0f;
         isDead = true;
         isPaused = false;
         PauseScreen.SetActive(false);
