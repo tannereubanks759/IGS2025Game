@@ -657,6 +657,7 @@ MonoBehaviour:
   hurt: {fileID: 8300000, guid: 5dbb07f2b53c0bb4ba24ec2123fc53dd, type: 3}
   deathSound: {fileID: 8300000, guid: f997c28e3b4e323408e3081bda076e67, type: 3}
   playerDist: 0
+  isZombieDead: 0
   c4Active: 0
   ExplodePref: {fileID: 0}
   rightArm: {fileID: 976376158391484848}
@@ -16028,6 +16029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6355163871290990753}
   - component: {fileID: 1931864489749439545}
+  - component: {fileID: 3882567605564290353}
   m_Layer: 8
   m_Name: WhiteClown
   m_TagString: Untagged
@@ -16173,6 +16175,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.07548839, y: -0.09726629, z: 0.17480254}
     m_Extent: {x: 0.55273354, y: 0.9971281, z: 0.41927767}
   m_DirtyAABB: 0
+--- !u!114 &3882567605564290353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3374079237717064615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3044beaa86f7f40b3ad74113621170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3408411763069685603
 GameObject:
   m_ObjectHideFlags: 0

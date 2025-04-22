@@ -2286,6 +2286,7 @@ MonoBehaviour:
   hurt: {fileID: 8300000, guid: 5dbb07f2b53c0bb4ba24ec2123fc53dd, type: 3}
   deathSound: {fileID: 8300000, guid: 3a8cbfd228905a44cacdbbffd10181a6, type: 3}
   playerDist: 0
+  isZombieDead: 0
   c4Active: 0
   ExplodePref: {fileID: 0}
   rightArm: {fileID: 0}
@@ -2772,6 +2773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 695514677010521236}
   - component: {fileID: 6490238659997882881}
+  - component: {fileID: 5217944797894836624}
   m_Layer: 0
   m_Name: GirlScout
   m_TagString: Untagged
@@ -2918,6 +2920,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0000072717667, y: -0.093345016, z: -0.042996287}
     m_Extent: {x: 0.8977712, y: 1.0748851, z: 0.30599493}
   m_DirtyAABB: 0
+--- !u!114 &5217944797894836624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8090773965198458114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3044beaa86f7f40b3ad74113621170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8200560068331474993
 GameObject:
   m_ObjectHideFlags: 0
