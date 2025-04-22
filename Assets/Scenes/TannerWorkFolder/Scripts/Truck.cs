@@ -10,7 +10,7 @@ public class Truck : MonoBehaviour
     public GameObject WinScreen;
    // private int numberofwheelsrepaired;
     public Animator uiWinAnimator;
-    
+    public int killsToWin;
     public bool isFirstTime = false;
 
     private void Start()
@@ -25,11 +25,11 @@ public class Truck : MonoBehaviour
     private void Update()
     {
         InteractionString = ZombieManager.totalZombiesKilled + "/170 Kills To Unlock";
-        if(ZombieManager.totalZombiesKilled >=170&&isFirstTime==false)
+        if(ZombieManager.totalZombiesKilled >=killsToWin&&isFirstTime==false)
         {
             InteractionString = "Escape Carnival";
             uiWinAnimator.SetTrigger("escapeUI");
-            
+            isFirstTime = true;
             //uiWinAnimator.SetBool("firstTime",true);
         }
 
@@ -37,7 +37,7 @@ public class Truck : MonoBehaviour
     public void Repair()
     {
         //miniGameScript mini = GameObject.FindAnyObjectByType<miniGameScript>();
-        if (ZombieManager.totalZombiesKilled>=170)
+        if (ZombieManager.totalZombiesKilled>=killsToWin)
         {
             GameObject.FindAnyObjectByType<CutsceneScript>().PlayCutscene();
             //GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();

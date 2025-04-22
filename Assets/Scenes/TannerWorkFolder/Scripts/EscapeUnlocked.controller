@@ -58,9 +58,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: escapeUI
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: firstTime
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2633752232079256422}
   m_Solo: 0
