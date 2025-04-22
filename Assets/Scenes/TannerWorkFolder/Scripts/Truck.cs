@@ -1,4 +1,5 @@
 using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Truck : MonoBehaviour
@@ -7,27 +8,44 @@ public class Truck : MonoBehaviour
     public int price;
     public string InteractionString;
     public GameObject WinScreen;
-    private int numberofwheelsrepaired;
+   // private int numberofwheelsrepaired;
+    public Animator uiWinAnimator;
+    
+    public bool isFirstTime = false;
+
     private void Start()
     {
-        InteractionString = "Repair For 10 Tickets (0/4)";
-        numberofwheelsrepaired = 0;
-        for(int i = 0; i < truckWheels.Length; i++)
+        InteractionString = "0/170 Kills To Unlock";
+        //numberofwheelsrepaired = 0;
+        /*for(int i = 0; i < truckWheels.Length; i++)
         {
             truckWheels[i].SetActive(false);
+        }*/
+    }
+    private void Update()
+    {
+        InteractionString = ZombieManager.totalZombiesKilled + "/170 Kills To Unlock";
+        if(ZombieManager.totalZombiesKilled >=170&&isFirstTime==false)
+        {
+            InteractionString = "Escape Carnival";
+            uiWinAnimator.SetTrigger("escapeUI");
+            
+            //uiWinAnimator.SetBool("firstTime",true);
         }
+
     }
     public void Repair()
     {
-        miniGameScript mini = GameObject.FindAnyObjectByType<miniGameScript>();
-        if (mini.tickets >= price && numberofwheelsrepaired < truckWheels.Length)
+        //miniGameScript mini = GameObject.FindAnyObjectByType<miniGameScript>();
+        if (ZombieManager.totalZombiesKilled>=170)
         {
-            GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();
-            numberofwheelsrepaired++;
-            InteractionString = "Repair For 5 Tickets (" + numberofwheelsrepaired + "/4)";
-            mini.tickets -= price;
-            mini.ticketText.text = mini.tickets.ToString();
-            for(int i = 0; i < truckWheels.Length; i++)
+            GameObject.FindAnyObjectByType<CutsceneScript>().PlayCutscene();
+            //GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();
+            //numberofwheelsrepaired++;
+
+            //mini.tickets -= price;
+            //mini.ticketText.text = mini.tickets.ToString();
+            /*for(int i = 0; i < truckWheels.Length; i++)
             {
                 if (!truckWheels[i].activeSelf)
                 {
@@ -41,7 +59,7 @@ public class Truck : MonoBehaviour
                 }
                 
                 
-            }
+            }*/
         }
     }
 
