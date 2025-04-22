@@ -43,7 +43,7 @@ public class KiddieCoaster : MonoBehaviour
         revolutionsCompleted = 0;
 
         // get all PS's in children in the coaster
-        Flamethrowers = GetComponentsInChildren<ParticleSystem> ();
+        //Flamethrowers = GetComponentsInChildren<ParticleSystem> ();
 
         // turn each PS off and clear the particles at the start
         // so that it is "off"
