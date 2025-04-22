@@ -652,6 +652,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -290750445479886849, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5237897295309167596}
+    - targetCorrespondingSourceObject: {fileID: 6835093890288579312, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2285514042771621758}
   m_SourcePrefab: {fileID: 100100000, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
 --- !u!4 &33166054963431890 stripped
 Transform:
@@ -847,6 +850,7 @@ MonoBehaviour:
   hurt: {fileID: 8300000, guid: 5dbb07f2b53c0bb4ba24ec2123fc53dd, type: 3}
   deathSound: {fileID: 8300000, guid: da934f908c7fa6745a812ee36b5fc8a4, type: 3}
   playerDist: 0
+  isZombieDead: 0
   c4Active: 0
   ExplodePref: {fileID: 0}
   rightArm: {fileID: 567444987488690368}
@@ -1643,6 +1647,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -3321919801592875672, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
   m_PrefabInstance: {fileID: 576299281163431481}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6423343121896627401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6835093890288579312, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}
+  m_PrefabInstance: {fileID: 576299281163431481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2285514042771621758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423343121896627401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3044beaa86f7f40b3ad74113621170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6969378391258590557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1781356600409242780, guid: 0023186b55bff2f47a25d4bfbf5eaf65, type: 3}

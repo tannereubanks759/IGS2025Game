@@ -55,7 +55,8 @@ public class zombieAIV1 : MonoBehaviour
 
     private zombieSpawner[] zombieSpawners;
 
-    private Vector3 closestSpawner = Vector3.zero;
+    // to check if the zombie is dead
+    public bool isZombieDead;
 
     public bool c4Active;
     public GameObject ExplodePref;
@@ -111,6 +112,8 @@ public class zombieAIV1 : MonoBehaviour
         onFire = false;
         onFirePS.SetActive(false);
 
+        isZombieDead = false;
+
         spawnEffect = GetComponentInChildren<VisualEffect>();
 
         audioSource = GetComponent<AudioSource>();
@@ -118,11 +121,6 @@ public class zombieAIV1 : MonoBehaviour
         if (ExplodePref != null)
         {
             zombieSpawners = FindObjectsByType<zombieSpawner>(FindObjectsSortMode.None); //GetComponents<zombieSpawner>();
-
-            foreach (zombieSpawner z in zombieSpawners)
-            {
-                Debug.Log(z.name);
-            }
         }
     }
 
@@ -334,7 +332,13 @@ public class zombieAIV1 : MonoBehaviour
 
         zombieManager.CheckZombieType();
 
-        Destroy(this.gameObject);
+        isZombieDead = true;
+
+        if (ExplodePref != null)
+        {
+            Destroy(this.gameObject);
+        }
+        
     }
     public void SetMinigameScript(miniGameScript script)
     {
@@ -443,6 +447,4 @@ public class zombieAIV1 : MonoBehaviour
     {
         audioSource.PlayOneShot(deathSound);
     }
-
-    
 }

@@ -1291,6 +1291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4500612018615474456}
   - component: {fileID: 529590511127124907}
+  - component: {fileID: 1589740065145473754}
   m_Layer: 8
   m_Name: FuzZombie
   m_TagString: Untagged
@@ -1437,6 +1438,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0029791594, y: -0.10400182, z: 0.034312785}
     m_Extent: {x: 1.0903885, y: 1.1003013, z: 0.31532913}
   m_DirtyAABB: 0
+--- !u!114 &1589740065145473754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535707197448303695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3044beaa86f7f40b3ad74113621170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2602814756408905631
 GameObject:
   m_ObjectHideFlags: 0
@@ -11637,6 +11650,7 @@ MonoBehaviour:
   hurt: {fileID: 8300000, guid: 5dbb07f2b53c0bb4ba24ec2123fc53dd, type: 3}
   deathSound: {fileID: 8300000, guid: f997c28e3b4e323408e3081bda076e67, type: 3}
   playerDist: 0
+  isZombieDead: 0
   c4Active: 0
   ExplodePref: {fileID: 9003077176751462839, guid: b070c375161919b40b293656274e2225, type: 3}
   rightArm: {fileID: 0}
