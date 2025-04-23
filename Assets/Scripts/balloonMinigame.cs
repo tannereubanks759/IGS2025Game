@@ -32,7 +32,7 @@ public class balloonMinigame : MonoBehaviour
         /*Renderer renderer = goldenBalloon.GetComponentInChildren<Renderer>();
         renderer.material = goldenBalloonMatieral;*/
         goldenBalloonMatieral.color = Color.yellow;
-
+        prevNumbers =  new List<int>();
         audioSource = playerUI.GetComponent<AudioSource>();
 
     }
