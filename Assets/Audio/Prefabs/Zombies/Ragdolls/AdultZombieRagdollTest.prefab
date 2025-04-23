@@ -672,6 +672,7 @@ MonoBehaviour:
   hitByTrap: 0
   isRespawned: 0
   buffPref: {fileID: 5388580231238296410, guid: 3a5f1794e3c38b94fbcafb0a57ce27bf, type: 3}
+  gunH: {fileID: 0}
 --- !u!195 &7214143570129108225
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -28585,7 +28586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.759
       objectReference: {fileID: 0}
     - target: {fileID: 7362938793033193690, guid: 2a0244a075e6f8f489b343560edb805a, type: 3}
       propertyPath: m_LocalPosition.z
