@@ -10,9 +10,9 @@ public class EndgameStats : MonoBehaviour
     private int totalTicketsAccrued;
     private int totalZombiesKilled;
 
-    [SerializeField] private Text wave;
-    [SerializeField] private Text zombiesKilled;
-    [SerializeField] private Text ticketsGained;
+    [SerializeField] private TextMeshProUGUI wave;
+    [SerializeField] private TextMeshProUGUI zombiesKilled;
+    [SerializeField] private TextMeshProUGUI ticketsGained;
 
     public void StatsUpdate()
     {
@@ -26,7 +26,7 @@ public class EndgameStats : MonoBehaviour
     {
         waveGottenTo = ZombieManager.waveCount;
 
-        wave.text = "Wave (" + waveGottenTo.ToString() + ")";
+        wave.text = waveGottenTo.ToString();
     }
 
     // Get the total Zombies killed
@@ -34,7 +34,7 @@ public class EndgameStats : MonoBehaviour
     {
         totalZombiesKilled = ZombieManager.totalZombiesKilled;
 
-        zombiesKilled.text = "Zombies Killed (" + totalZombiesKilled.ToString() + ")";
+        zombiesKilled.text = totalZombiesKilled.ToString();
     }
 
     // Get the total tickets gained
@@ -42,6 +42,6 @@ public class EndgameStats : MonoBehaviour
     {
         totalTicketsAccrued = ticketGiverScript.totTicketsGained;
 
-        ticketsGained.text = "Tickets Gained (" + totalTicketsAccrued.ToString() + ")";
+        ticketsGained.text = totalTicketsAccrued.ToString();
     }
 }
