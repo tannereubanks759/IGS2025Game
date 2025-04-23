@@ -30,7 +30,6 @@ public class FirstPersonController : MonoBehaviour
     private float yaw = 0.0f;
     private float pitch = 0.0f;
     public float recoilSensitivity;
-    private float maxRecoilHeight;
     private float originalRecoilSensitivity;
     public float recoilGrowthModifier;
     private Image crosshairObject;
@@ -236,7 +235,6 @@ public class FirstPersonController : MonoBehaviour
             }
 
             
-            maxRecoilHeight = 0;
             pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
             
 

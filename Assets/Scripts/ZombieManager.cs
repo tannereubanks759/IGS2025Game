@@ -67,7 +67,7 @@ public class ZombieManager : MonoBehaviour
 
         if (spawnMaxReached && totalZombiesAlive == 0)
         {
-            Debug.Log(spawnMaxReached + " " + totalZombiesAlive);
+            //Debug.Log(spawnMaxReached + " " + totalZombiesAlive);
             spawnMaxReached = false;
 
             miniGameObject.tickets += ticketsOnCompletion;

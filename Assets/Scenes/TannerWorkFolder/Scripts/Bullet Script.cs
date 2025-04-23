@@ -19,12 +19,21 @@ public class BulletScript : MonoBehaviour
     public static int baseDamage = 1;
     private GunScript gun;
     private float bulletRadius; //goes by pixel
+    public bool isMiniBullet;
     void Start()
     {
+        
         int bulletImpactRandom = Random.Range(0, zombieImpacts.Length);
         zombieImpact = zombieImpacts[bulletImpactRandom];
-        gun = GameObject.FindAnyObjectByType<GunScript>();
-        if(gun.bulletCount % 3 == 0)
+        if (!isMiniBullet)
+        {
+            gun = GameObject.FindAnyObjectByType<GunScript>();
+        }
+        if(!isMiniBullet && gun.bulletCount % 3 == 0 )
+        {
+            this.GetComponentInChildren<TrailRenderer>().enabled = true;
+        }
+        else
         {
             this.GetComponentInChildren<TrailRenderer>().enabled = true;
         }
@@ -111,7 +120,7 @@ public class BulletScript : MonoBehaviour
         }
         else if (collision.gameObject.layer == 15) //Hit C4
         {
-            Debug.Log("HitC4");
+            //Debug.Log("HitC4");
             zombieAIV1 zomScript = collision.gameObject.GetComponentInParent<zombieAIV1>();
             if (!zomScript.c4Active)
             {

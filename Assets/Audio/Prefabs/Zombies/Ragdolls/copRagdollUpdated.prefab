@@ -11664,6 +11664,7 @@ MonoBehaviour:
   rightArmExplode: {fileID: 0}
   hitByTrap: 0
   isRespawned: 0
+  buffPref: {fileID: 5388580231238296410, guid: 3a5f1794e3c38b94fbcafb0a57ce27bf, type: 3}
 --- !u!82 &6827136643691107378
 AudioSource:
   m_ObjectHideFlags: 0

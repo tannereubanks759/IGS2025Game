@@ -35,6 +35,7 @@ public class GunScript : MonoBehaviour
     public Animator bulletAnim;
 
     public static bool isFiring;
+    public GunHandler handler;
     void Start()
     {
         isFiring = false;
@@ -183,5 +184,10 @@ public class GunScript : MonoBehaviour
     public void PlayUnloadSound()
     {
         gunSound.PlayOneShot(unload, .5f);
+    }
+    public void PutAway()
+    {
+        handler.isGunAway = true;
+        handler.BuffOver = false;
     }
 }

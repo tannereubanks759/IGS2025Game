@@ -3,6 +3,7 @@ using UnityEngine.AI;
 using System.Collections;
 using UnityEngine.VFX;
 using Unity.VisualScripting;
+using System.Runtime.ExceptionServices;
 
 public class zombieAIV1 : MonoBehaviour
 {
@@ -73,9 +74,14 @@ public class zombieAIV1 : MonoBehaviour
 
     public bool isRespawned;
 
+    public static int chanceToSpawnBuff = 1;
+    public GameObject buffPref;
+    public GunHandler gunH;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gunH = Camera.main.GetComponent<GunHandler>();
         if(leftArm != null && leftArm.GetComponentInChildren<VisualEffect>().gameObject != null)
         {
             leftArmExplode = leftArm.GetComponentInChildren<VisualEffect>().gameObject;
@@ -303,7 +309,19 @@ public class zombieAIV1 : MonoBehaviour
         {
             colliders[i].enabled = false;
         }
-
+        if(gunH.minigun.gameObject.activeSelf == false)
+        {
+            int random = Random.Range(0, 100);
+            if (random <= chanceToSpawnBuff)
+            {
+                Instantiate(buffPref, this.transform.position, Quaternion.identity);
+                chanceToSpawnBuff = 1;
+            }
+            else
+            {
+                chanceToSpawnBuff += Random.Range(0, 2);
+            }
+        }
     }
 
     // Activates the attack colliders
