@@ -7,10 +7,15 @@ public class BuyWall : MonoBehaviour
     public string InteractTextOveride = "Remove Barrier (5 Tickets)";
     private bool isBought;
     public GameObject otherWall;
+
+    public GameObject endingSpawner;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         isBought = false;
+
+        endingSpawner.SetActive(false);
     }
 
     public void buy()
@@ -27,6 +32,7 @@ public class BuyWall : MonoBehaviour
             mini.ticketText.text = mini.tickets.ToString();
             isBought = true;
             this.gameObject.SetActive(false);
+            endingSpawner.SetActive(true);
         }
         
     }
