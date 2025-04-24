@@ -74,11 +74,10 @@ public class zombieAIV1 : MonoBehaviour
 
     public bool isRespawned;
 
-    public static int chanceToSpawnBuff = 1;
-    public static bool buffInScene = false;
+    
     public GameObject buffPref;
     public GunHandler gunH;
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -310,20 +309,21 @@ public class zombieAIV1 : MonoBehaviour
         {
             colliders[i].enabled = false;
         }
-        if(gunH.minigun.gameObject.activeSelf == false && buffInScene == false)
+
+        if(gunH.minigun.gameObject.activeSelf == false && gunH.currentSpawnedBuff == null)
         {
             int random = Random.Range(0, 100);
-            if (random <= chanceToSpawnBuff)
+            if (random <= gunH.chanceToSpawnBuff)
             {
-                Instantiate(buffPref, this.transform.position, Quaternion.identity);
-                chanceToSpawnBuff = 1;
-                buffInScene = true;
+                gunH.currentSpawnedBuff = Instantiate(buffPref, this.transform.position, Quaternion.identity);
+                gunH.chanceToSpawnBuff = 1;
             }
             else
             {
-                chanceToSpawnBuff += 1;
+                gunH.chanceToSpawnBuff += 1;
             }
         }
+        
     }
 
     // Activates the attack colliders

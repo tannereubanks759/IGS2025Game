@@ -10,21 +10,25 @@ public class GunHandler : MonoBehaviour
     public MinigunScript minigun;
     public bool BuffOver;
     public GameObject postProcessing;
+    public GameObject currentSpawnedBuff;
+    public int chanceToSpawnBuff = 1;
     void Start()
     {
+        currentSpawnedBuff = null;
         isGunAway = true;
         isMiniAway = true;
         BuffOver = true;
         postProcessing.GetComponent<Volume>().enabled = false;
+        chanceToSpawnBuff = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            ActivateBuff();
-        }
+        //if (Input.GetKeyDown(KeyCode.V))
+        //{
+        //    ActivateBuff();
+        //}
         if (isGunAway&&isMiniAway)
         {
             if (BuffOver)

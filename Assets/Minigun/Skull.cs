@@ -6,6 +6,7 @@ public class Skull : MonoBehaviour
     private float nextTime;
     public float Lifespan;
     private float destroyTime = -1f;
+    
     void Start()
     {
         nextTime = Time.time+Lifespan;
@@ -32,12 +33,12 @@ public class Skull : MonoBehaviour
         if(collision.collider.gameObject.layer == 11)
         {
             Camera.main.GetComponent<GunHandler>().ActivateBuff();
-            zombieAIV1.buffInScene = false;
-            Destroy(this.gameObject.GetComponentInParent<Animator>().gameObject);
+            delete();
         }
     }
     private void delete()
     {
+        Camera.main.GetComponent<GunHandler>().currentSpawnedBuff = null;
         Destroy(this.gameObject.GetComponentInParent<Animator>().gameObject);
     }
 }

@@ -23,10 +23,10 @@ public class PlayerHealthManager : MonoBehaviour
     public void Update()
     {
         health = anim.GetInteger("Health");
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage();
-        }
+        //if (Input.GetKeyDown(KeyCode.H))
+        //{
+        //    TakeDamage();
+        //}
         if(health != 5 && Time.time > nextHeal)
         {
             anim.SetInteger("Health", 5);

@@ -46,7 +46,6 @@ public class GunScript : MonoBehaviour
         totalAmmo = 400;
         BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
         crosshair.SetActive(true);
-        zombieAIV1.buffInScene = false;
     }
     private void OnEnable()
     {
