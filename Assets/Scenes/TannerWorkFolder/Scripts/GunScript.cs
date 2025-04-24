@@ -46,6 +46,12 @@ public class GunScript : MonoBehaviour
         totalAmmo = 400;
         BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
         crosshair.SetActive(true);
+        zombieAIV1.buffInScene = false;
+    }
+    private void OnEnable()
+    {
+        BulletText.text = bulletCount.ToString() + "/" + totalAmmo.ToString();
+        crosshair.SetActive(true);
     }
     void Update()
     {
@@ -189,5 +195,13 @@ public class GunScript : MonoBehaviour
     {
         handler.isGunAway = true;
         handler.BuffOver = false;
+    }
+    public void SetIsPickedUpTrue()
+    {
+        anim.SetBool("isPickedUp", true);
+    }
+    public void SetIsPickedUpFalse()
+    {
+        anim.SetBool("isPickedUp", false);
     }
 }

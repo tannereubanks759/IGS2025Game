@@ -75,6 +75,7 @@ public class zombieAIV1 : MonoBehaviour
     public bool isRespawned;
 
     public static int chanceToSpawnBuff = 1;
+    public static bool buffInScene = false;
     public GameObject buffPref;
     public GunHandler gunH;
 
@@ -309,13 +310,14 @@ public class zombieAIV1 : MonoBehaviour
         {
             colliders[i].enabled = false;
         }
-        if(gunH.minigun.gameObject.activeSelf == false)
+        if(gunH.minigun.gameObject.activeSelf == false && buffInScene == false)
         {
             int random = Random.Range(0, 100);
             if (random <= chanceToSpawnBuff)
             {
                 Instantiate(buffPref, this.transform.position, Quaternion.identity);
                 chanceToSpawnBuff = 1;
+                buffInScene = true;
             }
             else
             {
