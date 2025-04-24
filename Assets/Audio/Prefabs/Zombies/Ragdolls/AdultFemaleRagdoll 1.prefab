@@ -866,6 +866,7 @@ MonoBehaviour:
   isRespawned: 0
   buffPref: {fileID: 5388580231238296410, guid: 3a5f1794e3c38b94fbcafb0a57ce27bf, type: 3}
   gunH: {fileID: 0}
+  bloodGameObject: {fileID: 5899588992949805786, guid: b50cba25d5f91dc49b4f0ca3e73c3bf2, type: 3}
 --- !u!195 &3344350383098730429
 NavMeshAgent:
   m_ObjectHideFlags: 0

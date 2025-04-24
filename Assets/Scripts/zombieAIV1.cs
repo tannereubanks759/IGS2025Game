@@ -77,7 +77,7 @@ public class zombieAIV1 : MonoBehaviour
     
     public GameObject buffPref;
     public GunHandler gunH;
-    
+    public GameObject bloodGameObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
