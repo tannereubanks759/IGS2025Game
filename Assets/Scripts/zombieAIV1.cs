@@ -371,7 +371,7 @@ public class zombieAIV1 : MonoBehaviour
         {
             onlyCopsAliveTimer += Time.deltaTime;
 
-            if (onlyCopsAliveTimer > 30)
+            if (onlyCopsAliveTimer > 20)
             {
                 TakeDamage(10);
             }
