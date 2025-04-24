@@ -80,7 +80,7 @@ public class MinigunScript : MonoBehaviour
         muzzleFlash.Play();
         gunSound.pitch = Random.Range(1.5f, 1.9f);
         AudioClip CLIP = gunShots[Random.Range(0, gunShots.Length)];
-        gunSound.PlayOneShot(CLIP, .2f);
+        gunSound.PlayOneShot(CLIP, 1f);
     }
     public void PutAway()
     {

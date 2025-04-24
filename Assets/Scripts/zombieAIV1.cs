@@ -321,7 +321,7 @@ public class zombieAIV1 : MonoBehaviour
             }
             else
             {
-                chanceToSpawnBuff += Random.Range(0, 2);
+                chanceToSpawnBuff += 1;
             }
         }
     }
