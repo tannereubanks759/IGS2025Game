@@ -22,7 +22,7 @@ public class BulletScript : MonoBehaviour
     public bool isMiniBullet;
     public AudioClip balloonPopSound;
     public AudioSource balloonSource;
-    public GameObject bloodGameObject;
+    
     void Start()
     {
         
