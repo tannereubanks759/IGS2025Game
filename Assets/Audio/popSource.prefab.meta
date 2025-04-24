@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Audio/popSource.prefab.meta
 guid: b50cba25d5f91dc49b4f0ca3e73c3bf2
 PrefabImporter:
+========
+guid: b127a85c6c52d6045bb1dbe32eb53173
+DefaultImporter:
+>>>>>>>> a676b124274b60f3980d6feabe2c85bae3e80a00:Assets/Scenes/Adam's_Version.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
