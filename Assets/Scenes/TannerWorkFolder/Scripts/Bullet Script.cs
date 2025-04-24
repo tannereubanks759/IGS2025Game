@@ -20,6 +20,8 @@ public class BulletScript : MonoBehaviour
     private GunScript gun;
     private float bulletRadius; //goes by pixel
     public bool isMiniBullet;
+    public AudioClip balloonPopSound;
+    public AudioSource balloonSource;
     void Start()
     {
         
@@ -130,7 +132,7 @@ public class BulletScript : MonoBehaviour
                 collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
                 float randomPitch = Random.Range(.8f, 1.3f);
                 bulletImpactSound.pitch = randomPitch;
-                bulletImpactSound.PlayOneShot(headshotSound, .2f);
+                bulletImpactSound.PlayOneShot(headshotSound, .5f);
                 zomScript.TakeDamage(baseDamage);
                 zombieImpact.SetActive(true);
                 //zombieImpact.Play();
@@ -153,6 +155,7 @@ public class BulletScript : MonoBehaviour
         {
             balloonMinigameRef.shotRightBalloon(collision);
             collision.gameObject.SetActive(false);
+            balloonSource.PlayOneShot(balloonPopSound, .2f);
         }
         else
         {
