@@ -12,6 +12,7 @@ public class GunHandler : MonoBehaviour
     public GameObject postProcessing;
     public GameObject currentSpawnedBuff;
     public int chanceToSpawnBuff = 1;
+    public MusicManager music;
     void Start()
     {
         currentSpawnedBuff = null;
@@ -37,6 +38,7 @@ public class GunHandler : MonoBehaviour
                 gun.gameObject.SetActive(true);
                 minigun.gameObject.SetActive(false);
                 postProcessing.GetComponent<Animator>().SetBool("isActive", false);
+                music.PlayNextSong();
             }
             else
             {
@@ -52,6 +54,7 @@ public class GunHandler : MonoBehaviour
     public void ActivateBuff()
     {
         postProcessing.GetComponent<Volume>().enabled = true;
+        music.PlayBuffMusic();
         gun.anim.SetBool("drop", true);
     }
 

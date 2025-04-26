@@ -27,16 +27,17 @@ public class MinigunScript : MonoBehaviour
 
     private float nextFire;
     public GunHandler handler;
+    public float buffTime = 30f;
     void Start()
     {
-        nextFire = Time.time + 15f;
+        nextFire = Time.time + buffTime;
         isFiring = false;
         BulletText.text = "999/999";
         crosshair.SetActive(true);
     }
     private void OnEnable()
     {
-        nextFire = Time.time + 15f;
+        nextFire = Time.time + buffTime;
     }
     void Update()
     {
