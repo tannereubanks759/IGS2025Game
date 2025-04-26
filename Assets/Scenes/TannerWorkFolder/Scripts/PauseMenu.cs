@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using TMPro;
+using UnityEngine.Rendering;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class PauseMenu : MonoBehaviour
     // mouse sens control
     public TMP_InputField mouseSens;
     public float defaultSens = 1f;
+
+    // background blur
+    public Volume globalVolume;
+    private ControlBlur controlBlur;
 
     private void Start()
     {
@@ -53,6 +58,8 @@ public class PauseMenu : MonoBehaviour
         masterVol.value = PlayerPrefs.GetFloat("MasterVol");
         musicVol.value = PlayerPrefs.GetFloat("MusicVol");
         sfxVol.value = PlayerPrefs.GetFloat("SFXVol");
+
+        controlBlur = globalVolume.GetComponent<ControlBlur>();
     }
 
     // Update is called once per frame
@@ -63,10 +70,12 @@ public class PauseMenu : MonoBehaviour
             if (isPaused)
             {
                 Resume();
+                controlBlur.ToggleBackgroundBlur();
             }
             else
             {
                 Pause();
+                controlBlur.ToggleBackgroundBlur();
             }
         }
     }
@@ -79,6 +88,25 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
         Time.timeScale = 1f;
         player.cameraCanMove = true;
+        if (controlBlur != null)
+        {
+            controlBlur.ToggleBackgroundBlur();
+        }
+        
+    }
+
+    public void ResumeFromSettings()
+    {
+        playerUi.alpha = 1f;
+        isPaused = false;
+        SettingsScreen.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
+        Time.timeScale = 1f;
+        player.cameraCanMove = true;
+        if (controlBlur != null)
+        {
+            controlBlur.ToggleBackgroundBlur();
+        }
     }
     public void Pause()
     {
