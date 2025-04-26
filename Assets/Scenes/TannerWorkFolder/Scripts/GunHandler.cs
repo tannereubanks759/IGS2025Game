@@ -26,10 +26,10 @@ public class GunHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.V))
-        //{
-        //    ActivateBuff();
-        //}
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            ActivateBuff();
+        }
         if (isGunAway&&isMiniAway)
         {
             if (BuffOver)

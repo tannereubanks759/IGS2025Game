@@ -85,6 +85,7 @@ public class MinigunScript : MonoBehaviour
     }
     public void PutAway()
     {
+        isFiring = false;
         handler.isMiniAway = true;
         handler.BuffOver = true;
     }
