@@ -40,7 +40,6 @@ public class Truck : MonoBehaviour
         //miniGameScript mini = GameObject.FindAnyObjectByType<miniGameScript>();
         if (ZombieManager.totalZombiesKilled>=killsToWin)
         {
-            ENDGAME();
             GameObject.FindAnyObjectByType<CutsceneScript>().PlayCutscene();
             //GameObject.FindAnyObjectByType<Interact>().PlayPurchaseSound();
             //numberofwheelsrepaired++;
@@ -71,7 +70,7 @@ public class Truck : MonoBehaviour
         WinScreen.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Time.timeScale = 0.0f;
+        //Time.timeScale = 0.0f;
 
     }
 }
