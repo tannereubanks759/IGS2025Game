@@ -70,12 +70,11 @@ public class PauseMenu : MonoBehaviour
             if (isPaused)
             {
                 Resume();
-                controlBlur.ToggleBackgroundBlur();
+
             }
             else
             {
                 Pause();
-                controlBlur.ToggleBackgroundBlur();
             }
         }
     }
@@ -103,10 +102,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
         Time.timeScale = 1f;
         player.cameraCanMove = true;
-        if (controlBlur != null)
-        {
-            controlBlur.ToggleBackgroundBlur();
-        }
+        controlBlur.ToggleBackgroundBlur();
     }
     public void Pause()
     {
@@ -117,6 +113,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
         PauseScreen.SetActive(true);
         Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
+        controlBlur.ToggleBackgroundBlur();
         Time.timeScale = 0f;
     }
 

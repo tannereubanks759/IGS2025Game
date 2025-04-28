@@ -5,8 +5,6 @@ public class CreditsScroll : MonoBehaviour
     public GameObject credits;
     public float scrollSpeed;
 
-    private bool isWon;
-
     // Update is called once per frame
     void Update()
     {
