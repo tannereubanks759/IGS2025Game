@@ -22,7 +22,8 @@ public class ragdollScript : MonoBehaviour
         foreach (Rigidbody rb in ragdollRigids) 
         { 
             rb.isKinematic = false;
-            rb.AddForce(forceDirection * forceStrength*Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(forceDirection * forceStrength, ForceMode.Impulse);
+            rb.AddExplosionForce(forceStrength, rb.position, 5f, 1.5f);
         }
     }
     // Update is called once per frame

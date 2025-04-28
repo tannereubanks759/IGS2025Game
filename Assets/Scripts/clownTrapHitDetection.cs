@@ -30,10 +30,12 @@ public class clownTrapHitDetection : MonoBehaviour
                     Vector3 directionToPush = (collision.transform.position - centerOfTrap.position).normalized;
                     // makes the direction to the left of the trap since blades are spinning that way
                     Vector3 forceDirection = Quaternion.Euler(0, 90, 0) * directionToPush;
+                    //Vector3 upWardDitection = (forceDirection + Vector3.up * 2).normalized;
                     //zombie takes damage
                     zombieAI.TakeDamage(10);
                     zombieAI.isDead = true;
                     //ragdoll is started
+                    // was forcedirction changed
                     collision.gameObject.GetComponentInParent<ragdollScript>().startRagdoll(forceDirection, forceStrength);
 
 
