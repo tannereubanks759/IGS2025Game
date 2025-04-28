@@ -5,44 +5,41 @@ using UnityEngine.Rendering.Universal;
 public class ControlBlur : MonoBehaviour
 {
     public Volume globalVolume;
-    private DepthOfField dof;
 
-    private bool toggleDof;
+    public GameObject pauseMenu;
+
     public float focusDistance;
+
+    public GameObject[] reticle;
 
     private void Start()
     {
         globalVolume = GetComponent<Volume>();
-
-        toggleDof = false;
     }
 
     public void ToggleBackgroundBlur()
     {
-        toggleDof = !toggleDof;
-
-        if (globalVolume.profile.TryGet(out dof))
+        if (pauseMenu.activeSelf)
         {
-            if (toggleDof)
+            globalVolume.priority = 3;
+
+            globalVolume.weight = 1.0f;
+
+            foreach (GameObject r in reticle)
             {
-                globalVolume.priority = 3;
-
-                globalVolume.weight = 1.0f;
-
-                dof.mode.Override(DepthOfFieldMode.Bokeh);
-
-                dof.focusDistance.overrideState = true;
-
-                dof.focusDistance.value = focusDistance;
+                r.SetActive(false);
             }
-            else
+        }
+        else
+        {
+            globalVolume.priority = 0;
+
+            globalVolume.weight = 0f;
+
+            foreach (GameObject r in reticle)
             {
-                globalVolume.priority = 0;
-
-                globalVolume.weight = 0f;
-
-                dof.mode.Override(DepthOfFieldMode.Gaussian);
+                r.SetActive(true);
             }
-        }  
+        }
     }
 }
