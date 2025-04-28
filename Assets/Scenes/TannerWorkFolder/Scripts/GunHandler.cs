@@ -13,6 +13,7 @@ public class GunHandler : MonoBehaviour
     public GameObject currentSpawnedBuff;
     public int chanceToSpawnBuff = 1;
     public MusicManager music;
+    public GrenadeManager gm;
     void Start()
     {
         currentSpawnedBuff = null;
@@ -38,10 +39,12 @@ public class GunHandler : MonoBehaviour
                 gun.gameObject.SetActive(true);
                 minigun.gameObject.SetActive(false);
                 postProcessing.GetComponent<Animator>().SetBool("isActive", false);
+                gm.canShoot = true;
                 music.PlayNextSong();
             }
             else
             {
+                gm.canShoot = false;
                 isMiniAway = false;
                 minigun.gameObject.SetActive(true);
                 gun.gameObject.SetActive(false);

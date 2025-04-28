@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a6b3a9fb7e82e4ba4259efcd334c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 100
+  throwForce: 400
   explodeTime: 3
   ExplodePref: {fileID: 9003077176751462839, guid: 6b95a39ff30892f47b6bb40b2204aa33, type: 3}
   rock: {fileID: 8300000, guid: 27a19cd8ba50ed54e89f575fd143ac59, type: 3}

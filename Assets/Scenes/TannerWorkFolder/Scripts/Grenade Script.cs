@@ -13,7 +13,6 @@ public class GrenadeScript : MonoBehaviour
         source = this.GetComponent<AudioSource>();
         Rigidbody rb = this.GetComponent<Rigidbody>();
         rb.AddForce(this.transform.forward * throwForce, ForceMode.Impulse);
-        Invoke("Explode", explodeTime);
     }
 
     void Explode()
@@ -62,6 +61,6 @@ public class GrenadeScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        source.PlayOneShot(rock, .5f);
+        Explode();
     }
 }
