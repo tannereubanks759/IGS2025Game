@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class GrenadeScript : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class GrenadeScript : MonoBehaviour
     public GameObject ExplodePref;
     private AudioSource source;
     public AudioClip rock;
+    public GameObject GrenadeBody;
+    public bool isActive;
     void Start()
     {
+        isActive = false;
         source = this.GetComponent<AudioSource>();
         Rigidbody rb = this.GetComponent<Rigidbody>();
         rb.AddForce(this.transform.forward * throwForce, ForceMode.Impulse);
@@ -17,6 +21,8 @@ public class GrenadeScript : MonoBehaviour
 
     void Explode()
     {
+        Destroy(GrenadeBody);
+        this.GetComponent<Collider>().enabled = false;
         Vector3 position = this.transform.position;
         zombieAIV1[] zombies = GameObject.FindObjectsByType<zombieAIV1>(FindObjectsSortMode.None);
         float distancefromplayer = Vector3.Distance(position, GameObject.FindAnyObjectByType<FirstPersonController>().transform.position);
@@ -56,11 +62,23 @@ public class GrenadeScript : MonoBehaviour
             }
         }
         Instantiate(ExplodePref, this.transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
+        this.GetComponent<VisualEffect>().Stop();
+        Invoke("Delete", 2f);
+        //Destroy(this.gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Explode();
+        if (isActive != true)
+        {
+            isActive = true;
+            Explode();
+        }
+        
+    }
+
+    private void Delete()
+    {
+        Destroy(this.gameObject);
     }
 }

@@ -11,6 +11,7 @@ public class GrenadeManager : MonoBehaviour
     float nextTime;
     public RawImage grenadeIcon;
     public bool canShoot;
+    public AudioSource grenadeReload;
     // Update is called once per frame
     private void Start()
     {
@@ -35,6 +36,11 @@ public class GrenadeManager : MonoBehaviour
     }
     void reload()
     {
+        if(grenadeReload.isPlaying == false)
+        {
+            grenadeReload.Play();
+        }
+        
         spawnedGrenade = false;
         grenadeIcon.color = Color.white;
     }
