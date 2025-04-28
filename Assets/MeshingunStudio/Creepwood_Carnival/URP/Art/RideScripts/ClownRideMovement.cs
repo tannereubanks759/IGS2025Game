@@ -44,6 +44,8 @@ public class ClownRideMovement : MonoBehaviour
     private float riseTimer = 0f; // Timer for rising
     private float descendTimer = 0f; // Timer for descending
     private float initialY; // Initial Y position
+    public GameObject audioSourceObj;
+    private AudioSource audioSourceToEnable;
     //public PlayerHealthManager playerHealthManagerRef;
     void Start()
     {
@@ -51,7 +53,7 @@ public class ClownRideMovement : MonoBehaviour
         initialY = transform.position.y; // Set initial Y position
         randomTiltAngle = Random.Range(minTiltAngle, maxTiltAngle);
         randomSwingFrequency = Random.Range(minSwingFrequency, maxSwingFrequency);
-
+        audioSourceToEnable= audioSourceObj.GetComponent<AudioSource>();
         if (enableYAxisMovement)
         {
             SetNewTargetHeight();
@@ -61,7 +63,8 @@ public class ClownRideMovement : MonoBehaviour
 
     void Update()
     {   if(isActive) 
-        { 
+        {
+            audioSourceToEnable.enabled = true;
         if (isAtRest)
         {
             waitTimeElapsed += Time.deltaTime;
@@ -91,6 +94,7 @@ public class ClownRideMovement : MonoBehaviour
             if (currentSpeed <= 0)
             {
                 isActive = false;
+                audioSourceToEnable.enabled = false;
                 clownTrapRef.paid = false;
                 clownRideAnimator.SetBool("isTrapActive", false);
                 currentSpeed = 0;
