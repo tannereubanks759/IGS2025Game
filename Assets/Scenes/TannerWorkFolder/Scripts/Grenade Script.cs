@@ -35,6 +35,9 @@ public class GrenadeScript : MonoBehaviour
         Vector3 position = this.transform.position;
         zombieAIV1[] zombies = GameObject.FindObjectsByType<zombieAIV1>(FindObjectsSortMode.None);
         float distancefromplayer = Vector3.Distance(position, GameObject.FindAnyObjectByType<FirstPersonController>().transform.position);
+        
+        
+        
         if (distancefromplayer < 4)
         {
             PlayerHealthManager manager = GameObject.FindAnyObjectByType<PlayerHealthManager>();
@@ -62,7 +65,9 @@ public class GrenadeScript : MonoBehaviour
                 manager.TakeDamage();
             }
 
-        }
+        } //Player Damage
+        
+        
         for (int i = 0; i < zombies.Length; i++)
         {
             if (Vector3.Distance(position, zombies[i].gameObject.transform.position) < 4)
@@ -90,7 +95,10 @@ public class GrenadeScript : MonoBehaviour
                     
                 }
             }
-        }
+        } //Zombie killing
+        
+        
+        
         Instantiate(ExplodePref, this.transform.position, Quaternion.identity);
         this.GetComponent<VisualEffect>().Stop();
         Invoke("Delete", 2f);

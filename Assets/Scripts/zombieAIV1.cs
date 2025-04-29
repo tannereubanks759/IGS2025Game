@@ -307,16 +307,21 @@ public class zombieAIV1 : MonoBehaviour
         
         
 
-        // Get the colliders on the gameobject
-        Collider[] colliders = this.GetComponentsInChildren<Collider>();
+        
+        
+            Collider[] colliders = this.GetComponentsInChildren<Collider>();
+            // Disable colliders
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                colliders[i].enabled = false;
+            }
 
-        // Disable colliders
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            colliders[i].enabled = false;
-        }
 
-        if(gunH.minigun.gameObject.activeSelf == false && gunH.currentSpawnedBuff == null)
+
+        Debug.Log("Total killed: " + ZombieManager.totalZombiesKilled);
+        Debug.Log("Total alive: " + ZombieManager.totalZombiesAlive);
+
+        if (gunH.minigun.gameObject.activeSelf == false && gunH.currentSpawnedBuff == null)
         {
             int random = Random.Range(0, 100);
             if (random <= gunH.chanceToSpawnBuff)
@@ -333,11 +338,13 @@ public class zombieAIV1 : MonoBehaviour
     }
     public void IsDeadRagDoll() //used in grenade script for ragdolls (Colliders stay on)
     {
+        isDead = true;
         ZombieManager.totalZombiesAlive--;
 
         ZombieManager.totalZombiesKilled++;
 
-
+        Debug.Log(" Ragdoll Total killed: " + ZombieManager.totalZombiesKilled);
+        Debug.Log(" Ragdoll Total alive: " + ZombieManager.totalZombiesAlive);
         // Anim plays multiple times, not sure if the agent.isStopped line is even working
 
         agent.enabled = false;
@@ -385,6 +392,8 @@ public class zombieAIV1 : MonoBehaviour
         zombieManager.CheckZombieType();
 
         isZombieDead = true;
+
+        
 
         if (ExplodePref != null)
         {
@@ -470,7 +479,7 @@ public class zombieAIV1 : MonoBehaviour
         
         for (int i = 0; i < zombies.Length; i++)
         {
-            if (Vector3.Distance(position, zombies[i].gameObject.transform.position) < 4 && this.gameObject != zombies[i])
+            if (Vector3.Distance(position, zombies[i].gameObject.transform.position) < 4 && this != zombies[i])
             {
                 zombieAIV1 zombieAI = zombies[i];
                 zombieAI.bloodGameObject.SetActive(true);
@@ -502,7 +511,8 @@ public class zombieAIV1 : MonoBehaviour
         ZombieManager.totalZombiesAlive--;
         ZombieManager.totalZombiesKilled++;
 
-
+        Debug.Log("Cop Total killed: " + ZombieManager.totalZombiesKilled);
+        Debug.Log(" Cop Total alive: " + ZombieManager.totalZombiesAlive);
         Death();
     }
     
