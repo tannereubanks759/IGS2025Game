@@ -15,6 +15,7 @@ public class ZombieManager : MonoBehaviour
     public int totzomAlive;
     public int totspawnZom;
     public int maxZom;
+    public int totZomKill;
 
     // The current wave count
     public static int waveCount;
@@ -63,7 +64,7 @@ public class ZombieManager : MonoBehaviour
         totspawnZom = totalSpawnedZombies;
         totzomAlive = totalZombiesAlive;
         maxZom = maxZombies;
-
+        totZomKill = totalZombiesKilled;
         
     }
 
