@@ -296,6 +296,7 @@ public class zombieAIV1 : MonoBehaviour
     // Checks if the AI is dead
     public void IsDead()
     {
+        isDead = true;
         ZombieManager.totalZombiesAlive--;
 
         ZombieManager.totalZombiesKilled++;
