@@ -118,8 +118,8 @@ public class miniGameScript : MonoBehaviour
         int number = Random.Range( 0,  quests.Length);
         
         hasQuest = true;
-        quest = quests[2];
-        questStarter(quest, 2);
+        quest = quests[number];
+        questStarter(quest, number);
         
         
     }
