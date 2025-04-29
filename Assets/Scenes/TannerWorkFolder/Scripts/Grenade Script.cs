@@ -31,7 +31,7 @@ public class GrenadeScript : MonoBehaviour
     void Explode()
     {
         Destroy(GrenadeBody);
-        this.GetComponent<Collider>().enabled = false;
+        //this.GetComponent<Collider>().enabled = false;
         Vector3 position = this.transform.position;
         zombieAIV1[] zombies = GameObject.FindObjectsByType<zombieAIV1>(FindObjectsSortMode.None);
         float distancefromplayer = Vector3.Distance(position, GameObject.FindAnyObjectByType<FirstPersonController>().transform.position);
