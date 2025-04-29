@@ -31,6 +31,8 @@ public class PauseMenu : MonoBehaviour
     public Volume globalVolume;
     private ControlBlur controlBlur;
 
+    public GameObject[] speakers;
+
     private void Start()
     {
         Resume();
@@ -91,7 +93,12 @@ public class PauseMenu : MonoBehaviour
         {
             controlBlur.ToggleBackgroundBlur();
         }
-        
+
+        foreach (GameObject s in speakers)
+        {
+            s.GetComponent<AudioSource>().Play();
+        }
+
     }
 
     public void ResumeFromSettings()
@@ -103,6 +110,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         player.cameraCanMove = true;
         controlBlur.ToggleBackgroundBlur();
+
+        foreach (GameObject s in speakers)
+        {
+            s.GetComponent<AudioSource>().Play();
+        }
+
     }
     public void Pause()
     {
@@ -114,6 +127,12 @@ public class PauseMenu : MonoBehaviour
         PauseScreen.SetActive(true);
         Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
         controlBlur.ToggleBackgroundBlur();
+
+        foreach(GameObject s in speakers)
+        {
+            s.GetComponent<AudioSource>().Pause();
+        }
+
         Time.timeScale = 0f;
     }
 
