@@ -96,7 +96,7 @@ public class PauseMenu : MonoBehaviour
 
         foreach (GameObject s in speakers)
         {
-            s.GetComponent<AudioSource>().Play();
+            s.GetComponent<AudioSource>().UnPause();
         }
 
     }
@@ -113,7 +113,7 @@ public class PauseMenu : MonoBehaviour
 
         foreach (GameObject s in speakers)
         {
-            s.GetComponent<AudioSource>().Play();
+            s.GetComponent<AudioSource>().UnPause();
         }
 
     }
