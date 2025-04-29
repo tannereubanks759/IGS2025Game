@@ -133,11 +133,11 @@ public class balloonMinigame : MonoBehaviour
         isMiniActive = false;
         for(int i = 0; i < balloons.Length; i++)
         {
-           if( balloons[i].activeSelf ==false)
-            {
+           //if( balloons[i].activeSelf ==false)
+           // {
                 balloons[i].SetActive(true);
                 balloons[i].GetComponentInChildren<MeshRenderer>().material = redBalloonMaterial;    
-            }
+            //}
         }
         prevNumbers.Clear();
         numberOfGoldenBalloons = 5;
