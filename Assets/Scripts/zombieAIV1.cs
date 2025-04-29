@@ -78,6 +78,8 @@ public class zombieAIV1 : MonoBehaviour
     public GameObject buffPref;
     public GunHandler gunH;
     public GameObject bloodGameObject;
+
+    public float c4Timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -140,6 +142,10 @@ public class zombieAIV1 : MonoBehaviour
             CanAttack();
             OnFire();
             OnlyCopsAlive();
+            if(c4Active && Time.time > c4Timer)
+            {
+                C4Death();
+            }
         }
     }
 
@@ -325,6 +331,32 @@ public class zombieAIV1 : MonoBehaviour
         }
         
     }
+    public void IsDeadRagDoll() //used in grenade script for ragdolls (Colliders stay on)
+    {
+        ZombieManager.totalZombiesAlive--;
+
+        ZombieManager.totalZombiesKilled++;
+
+
+        // Anim plays multiple times, not sure if the agent.isStopped line is even working
+
+        agent.enabled = false;
+
+        if(gunH.minigun.gameObject.activeSelf == false && gunH.currentSpawnedBuff == null)
+        {
+            int random = Random.Range(0, 100);
+            if (random <= gunH.chanceToSpawnBuff)
+            {
+                gunH.currentSpawnedBuff = Instantiate(buffPref, this.transform.position, Quaternion.identity);
+                gunH.chanceToSpawnBuff = 1;
+            }
+            else
+            {
+                gunH.chanceToSpawnBuff += 1;
+            }
+        }
+        
+    }
 
     // Activates the attack colliders
     public void ActivateColliders()
@@ -385,15 +417,27 @@ public class zombieAIV1 : MonoBehaviour
         c4Active = true;
         animator.SetBool("c4Active", true);
         agent.speed = agent.speed * 7;
-        Invoke("C4Death", 3);
+        c4Timer = Time.time + 3f;
     }
 
     //Called from Explode function
     //Purpose: Play Explode effect and remove zombie from scene.
-    public void C4Death()
+    public void C4Death(zombieAIV1[] zombies = null)
     {
+        if (isDead)
+        {
+            return;
+        }
+        else
+        {
+            isDead = true;
+        }
         Vector3 position = this.transform.position;
-        zombieAIV1[] zombies = GameObject.FindObjectsByType<zombieAIV1>(FindObjectsSortMode.None);
+        if(zombies == null)
+        {
+            zombies = GameObject.FindObjectsByType<zombieAIV1>(FindObjectsSortMode.None);
+        }
+        
         float distancefromplayer = Vector3.Distance(position, player.transform.position);
         if (distancefromplayer < 4)
         {
@@ -423,14 +467,35 @@ public class zombieAIV1 : MonoBehaviour
             }
             
         }
+        
         for (int i = 0; i < zombies.Length; i++)
         {
-            if (Vector3.Distance(position, zombies[i].gameObject.transform.position) < 4)
+            if (Vector3.Distance(position, zombies[i].gameObject.transform.position) < 4 && this.gameObject != zombies[i])
             {
-                zombies[i].TakeDamage(10);
+                zombieAIV1 zombieAI = zombies[i];
+                zombieAI.bloodGameObject.SetActive(true);
+                if (zombieAI.isDead != true)
+                {
+                    //zombieAI.isDead = true;
+                    zombieAI.GetComponent<NavMeshAgent>().enabled = false;
+                    if (zombieAI.ExplodePref != null)
+                    {
+                        zombieAI.C4Death(zombies);
+                    }
+                    else
+                    {
+                        Vector3 directionToPush = (zombieAI.transform.position - this.transform.position).normalized;
+
+
+                        zombieAI.gameObject.GetComponent<ragdollScript>().startRagdoll(directionToPush, 10f);
+                        zombieAI.IsDeadRagDoll();
+                        zombieAI.Death();
+                    }
+                    
+                }
             }
         }
-
+        
         Instantiate(ExplodePref, this.transform.position + new Vector3(0, 1, 0), this.transform.rotation);
         
         // Decrement the total # of zombies
@@ -440,6 +505,7 @@ public class zombieAIV1 : MonoBehaviour
 
         Death();
     }
+    
     // Play the particle system
     void PlayParticles()
     {

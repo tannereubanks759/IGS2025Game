@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4032860801413638183}
   - component: {fileID: 5446205690835409439}
   - component: {fileID: 6933657597695043976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,9 +368,29 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6505494680676671688, guid: a5b259fdd104ebe449c3c9e9914ad31d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3133498875991405556, guid: a5b259fdd104ebe449c3c9e9914ad31d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a5b259fdd104ebe449c3c9e9914ad31d, type: 3}
       propertyPath: m_Name
       value: mk2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5b259fdd104ebe449c3c9e9914ad31d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108629213487684686, guid: a5b259fdd104ebe449c3c9e9914ad31d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396913584297481876, guid: a5b259fdd104ebe449c3c9e9914ad31d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

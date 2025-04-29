@@ -29,7 +29,7 @@ public class GrenadeManager : MonoBehaviour
         }
         if(spawnedGrenade == true && Time.time > nextTime)
         {
-            Color newColor = new Color(0, 0, 0, grenadeIcon.color.a + .1f);
+            Color newColor = new Color(0, 0, 0, grenadeIcon.color.a + 1/cooldown);
             grenadeIcon.color = newColor;
             nextTime = Time.time + 1f;
         }

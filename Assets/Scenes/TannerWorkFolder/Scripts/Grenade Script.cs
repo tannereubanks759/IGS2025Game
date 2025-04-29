@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.VFX;
+using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.AI;
 
 public class GrenadeScript : MonoBehaviour
 {
@@ -11,6 +14,12 @@ public class GrenadeScript : MonoBehaviour
     public AudioClip rock;
     public GameObject GrenadeBody;
     public bool isActive;
+
+    public float forceStrength = 10f;
+    
+
+    
+
     void Start()
     {
         isActive = false;
@@ -58,7 +67,28 @@ public class GrenadeScript : MonoBehaviour
         {
             if (Vector3.Distance(position, zombies[i].gameObject.transform.position) < 4)
             {
-                zombies[i].TakeDamage(10);
+                zombieAIV1 zombieAI = zombies[i];
+                zombieAI.bloodGameObject.SetActive(true);
+                if (zombieAI.isDead != true)
+                {
+
+                    zombieAI.GetComponent<NavMeshAgent>().enabled = false;
+                    if(zombieAI.ExplodePref != null)
+                    {
+                        zombieAI.C4Death(zombies);
+                    }
+                    else
+                    {
+                        // calculates the direction away from the middle of the trap and the position of zombie
+                        Vector3 directionToPush = (zombieAI.transform.position - this.transform.position).normalized;
+
+
+                        zombieAI.gameObject.GetComponent<ragdollScript>().startRagdoll(directionToPush, forceStrength);
+                        zombieAI.IsDeadRagDoll();
+                        zombieAI.Death();
+                    }
+                    
+                }
             }
         }
         Instantiate(ExplodePref, this.transform.position, Quaternion.identity);
@@ -67,6 +97,17 @@ public class GrenadeScript : MonoBehaviour
         //Destroy(this.gameObject);
     }
 
+    IEnumerator deathFunctions(zombieAIV1 zombieAI)
+    {
+        yield return new WaitForSeconds(2f);
+        if (zombieAI != null)
+        {
+            
+            zombieAI.Death();
+            //Destroy(zombieAI.gameObject);
+        }
+
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (isActive != true)
