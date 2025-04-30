@@ -34,6 +34,7 @@ public class FirstPersonController : MonoBehaviour
     public float recoilGrowthModifier;
     private Image crosshairObject;
     private float maxRecoilSens = 5f;
+    public GunScript gun;
 
     #region Camera Zoom Variables
 
@@ -214,7 +215,7 @@ public class FirstPersonController : MonoBehaviour
             {
                 pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
 
-                if (GunScript.isFiring == true)
+                if (GunScript.isFiring == true && gun.gameObject.activeSelf)
                 {
                     if(recoilSensitivity < maxRecoilSens)
                     {
