@@ -71,6 +71,9 @@ MonoBehaviour:
   isMiniBullet: 0
   balloonPopSound: {fileID: 8300000, guid: a335f6b5e7800144db2fdbde1b357df8, type: 3}
   balloonSource: {fileID: 7936301533436533553}
+  layers:
+    serializedVersion: 2
+    m_Bits: 23066615
 --- !u!54 &6332558549674359251
 Rigidbody:
   m_ObjectHideFlags: 0

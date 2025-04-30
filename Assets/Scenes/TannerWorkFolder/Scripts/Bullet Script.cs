@@ -22,6 +22,7 @@ public class BulletScript : MonoBehaviour
     public bool isMiniBullet;
     public AudioClip balloonPopSound;
     public AudioSource balloonSource;
+    public LayerMask layers;
     
     void Start()
     {
@@ -46,7 +47,7 @@ public class BulletScript : MonoBehaviour
         float randomy = Random.Range(-bulletRadius, bulletRadius);
         Vector3 ScreenPos = Input.mousePosition + new Vector3(randomx, randomy, 0);
         Ray Ray = Camera.main.ScreenPointToRay(ScreenPos);
-        if(Physics.Raycast(Ray, out RaycastHit hit))
+        if(Physics.Raycast(Ray, out RaycastHit hit, layers))
         {
             this.transform.LookAt(hit.point);
         }
