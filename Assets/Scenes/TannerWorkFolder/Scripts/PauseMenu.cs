@@ -33,6 +33,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject[] speakers;
 
+    public GameObject winScreen;
+
     private void Start()
     {
         Resume();
@@ -67,7 +69,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(pauseKey) && !isDead)
+        if (Input.GetKeyDown(pauseKey) && !isDead && !winScreen.activeSelf)
         {
             if (isPaused)
             {
