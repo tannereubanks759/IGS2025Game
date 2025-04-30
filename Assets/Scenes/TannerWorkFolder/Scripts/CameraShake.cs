@@ -8,7 +8,6 @@ public class CameraShake : MonoBehaviour
     public float shakeSpeed = 5f;
 
     private Vector3 originalPos;
-    private float currentShakeTime = 0f;
     private Vector3 targetOffset;
 
     void OnEnable()
