@@ -34,11 +34,11 @@ public class ticketGiverScript : MonoBehaviour
             hasTaken = true;
         }*/
 
-        if (Input.GetKeyDown(KeyCode.T)) //For debugging purposes
-        {
-            miniGameScriptRef.tickets += 1;
-            miniGameScriptRef.ticketText.text = miniGameScriptRef.tickets.ToString();
-        }
+        //if (Input.GetKeyDown(KeyCode.T)) //For debugging purposes
+        //{
+        //    miniGameScriptRef.tickets += 1;
+        //    miniGameScriptRef.ticketText.text = miniGameScriptRef.tickets.ToString();
+        //}
     }
     
     public void giveTicket()
