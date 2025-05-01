@@ -6,10 +6,13 @@ public class MusicManager : MonoBehaviour
     public AudioSource[] musicSources;
     public AudioClip[] parkMusic;
     public AudioClip buffMusic;
+    public AudioClip johnny;
     public int currentSong;
     public GunHandler gunH;
 
     public PauseMenu pauseMenu;
+
+    public bool isJohnnysRevenge;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +22,11 @@ public class MusicManager : MonoBehaviour
         if(currentSong == 2)
         {
             PlayNextSong();
+        }
+
+        if (isJohnnysRevenge)
+        {
+            buffMusic = johnny;
         }
     }
 
