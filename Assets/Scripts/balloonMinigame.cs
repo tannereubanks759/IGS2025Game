@@ -21,7 +21,7 @@ public class balloonMinigame : MonoBehaviour
     public Material redBalloonMaterial;
     public Material goldenBalloonMatieral;
     //public List<GameObject> disabledBalloons;
-
+    public int countedGolden = 0;
     private AudioSource audioSource;
     [SerializeField] private GameObject playerUI;
 
@@ -108,8 +108,10 @@ public class balloonMinigame : MonoBehaviour
         {
             score++;
             minigameRef.currentScore.text = score.ToString();
-            numberOfGoldenBalloons--;
-            if (numberOfGoldenBalloons == 0)
+            numberOfGoldenBalloons = checkBalloons();
+            //numberOfGoldenBalloons--;
+            //if changing back turn this to 0
+            if (numberOfGoldenBalloons == 1)
             {
                 Debug.Log("Finished quest");
                 resetBalloons();
@@ -127,7 +129,25 @@ public class balloonMinigame : MonoBehaviour
         }
         
     }
-   
+   private int checkBalloons()
+    {
+        countedGolden = 0;
+        for (int i = 0; i < balloons.Length; i++)
+        {
+             
+            if (balloons[i].activeSelf == true&& balloons[i].GetComponentInChildren<MeshRenderer>().material.color == Color.yellow)
+            {
+                countedGolden++;
+
+            }
+            
+            
+            
+        }
+
+        return countedGolden;
+
+    }
     public void resetBalloons()
     {
         isMiniActive = false;

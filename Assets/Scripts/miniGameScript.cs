@@ -39,6 +39,7 @@ public class miniGameScript : MonoBehaviour
     private bool grassFirstTime = true;
     public Animator animatorForUI;
     public Animator goGetTicketUIAnimator;
+    private int lastNumber = 0;
     //public GameObject borderOfQuestUI;
     [SerializeField] private GameObject playerUI;
 
@@ -115,11 +116,16 @@ public class miniGameScript : MonoBehaviour
         firstQuest = true;
         miniGameTime = Time.time;
         ticketGiverScriptRef.hasTaken = false;
-        int number = Random.Range( 0,  quests.Length);
-        
+        int number = 0;
+        //logic for not getting same quest twice
+        while (number == lastNumber)
+        {
+            number = Random.Range(0, quests.Length);
+        }
         hasQuest = true;
         quest = quests[number];
         questStarter(quest, number);
+       lastNumber = number;
         
         
     }
