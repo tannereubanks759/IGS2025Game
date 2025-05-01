@@ -73,7 +73,7 @@ MonoBehaviour:
   balloonSource: {fileID: 0}
   layers:
     serializedVersion: 2
-    m_Bits: 23066599
+    m_Bits: 18872295
 --- !u!54 &6332558549674359251
 Rigidbody:
   m_ObjectHideFlags: 0
